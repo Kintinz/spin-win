@@ -114,6 +114,10 @@
   ::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}::-webkit-scrollbar-thumb:hover{background:var(--muted)}
 
   header{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;flex-wrap:wrap}
+  .header-primary{display:flex;align-items:center;gap:10px;min-width:0}
+  .header-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap;min-width:0;margin-left:auto}
+  .header-tools,.header-utilities{display:contents}
+  .mobile-panel-trigger,.mobile-panel-close,.mobile-panel-backdrop{display:none}
   header,aside,.slot-container,.slot-group,.wheel-picker,#entriesText{transition:background var(--motion-slow) var(--motion-ease),color var(--motion-slow) var(--motion-ease),border-color var(--motion-slow) var(--motion-ease),box-shadow var(--motion-slow) var(--motion-ease)}
   .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.2px}
   .logo .brand{color:var(--brand);font-weight:800}
@@ -379,48 +383,130 @@
   }
 
   @media(max-width:960px){main{grid-template-columns:1fr;grid-template-rows:1fr auto}aside{border-left:none;border-top:1px solid var(--border);max-height:50vh}.logo span:not(.icon){display:none}.mode-sel button{padding:6px 8px;font-size:11px}}
-  @media(max-width:640px){.seo-summary{margin:22px 0 4px;padding:17px 16px}.seo-summary h1{font-size:18px}.seo-summary-grid{grid-template-columns:1fr;gap:15px}}
+  @media(max-width:700px){
+    html,body{min-width:0;overflow-x:hidden}
+    body.mobile-tools-open,body.mobile-config-open{overflow:hidden}
+    header{display:block;padding:10px 12px;}
+    .header-primary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
+    .logo{min-width:0;gap:8px;font-size:16px}
+    .logo svg{width:26px;height:26px}
+    .logo span.brand{display:inline}
+    .mode-sel{grid-column:1/-1;width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px}
+    .mode-sel button{min-height:40px;padding:8px 4px;font-size:11px;gap:4px;white-space:nowrap}
+    .mode-sel button .ui-icon-slot{width:14px;height:14px;flex-basis:14px}
+    #spinAllBtn{grid-column:1/-1;width:100%;min-height:44px;justify-content:center}
+    .header-actions{margin:8px 0 0;padding:0;display:flex;flex-direction:column;align-items:stretch;gap:7px;overflow:visible}
+    .header-tools{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:6px;margin:0 -4px;padding:0 4px 2px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .header-tools::-webkit-scrollbar{display:none}
+    .header-utilities{display:flex;align-items:center;justify-content:flex-end;gap:4px;padding:0 4px}
+    .header-actions .tbtn{flex:0 0 auto;min-height:42px;padding:8px 10px;white-space:nowrap}
+    .header-utilities .tbtn{min-width:42px;justify-content:center;padding:8px}
+    .header-actions .lang-picker{flex:0 0 auto;min-height:42px}
+    .mobile-panel-trigger{display:inline-flex}
+    .header-tools{display:none}
+    .mobile-panel-backdrop{position:fixed;inset:0;border:0;background:rgba(0,0,0,.62);z-index:90;cursor:pointer}
+    body.mobile-tools-open .mobile-panel-backdrop,body.mobile-config-open .mobile-panel-backdrop{display:block}
+    body.mobile-tools-open .header-tools{display:grid;position:absolute;top:calc(100% + 8px);left:12px;right:12px;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0;padding:12px;background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:0 18px 45px rgba(0,0,0,.42);z-index:200}
+    body.mobile-tools-open .header-tools .tbtn{width:100%;min-height:44px;justify-content:center;padding:10px 8px}
+
+    main{display:block;min-height:0}
+    .wheel-area{padding:14px 12px 20px;overflow:visible}
+    .wheel-area::before{position:absolute;right:0;bottom:auto;height:100%}
+    .wheel-grid{grid-template-columns:minmax(0,1fr)!important;gap:12px;min-height:0;width:100%;max-width:none}
+    .wheel-grid[data-n="1"],.wheel-grid[data-n="2"],.wheel-grid[data-n="3"],.wheel-grid[data-n="4"]{grid-template-columns:minmax(0,1fr);place-items:stretch;place-content:initial}
+    .wheel-card{padding:12px;border-radius:12px;gap:10px}
+    .wheel-card-header{gap:6px}
+    .wheel-card-title{font-size:14px;padding:6px 4px}
+    .wheel-stage{padding:2px 0}
+    .wheel-card-footer{flex-wrap:wrap}
+    .spin-btn{min-height:46px;padding:12px 16px}
+    .wheel-info{width:100%;text-align:center;white-space:normal}
+    .slot-container{padding:12px;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden}
+    .slot-group{flex:0 0 auto}
+
+    aside{display:none;max-height:none;min-height:0}
+    body.mobile-config-open main{position:relative;z-index:101}
+    body.mobile-config-open aside{display:flex;position:fixed;left:12px;right:12px;top:max(12px,env(safe-area-inset-top));bottom:max(12px,env(safe-area-inset-bottom));z-index:2000;border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.48)}
+    .aside-header{padding:10px 12px}
+    .wheel-picker{min-height:42px;font-size:14px}
+    .aside-header .sbtn{min-width:44px;min-height:42px}
+    .mobile-panel-close{display:inline-flex;flex:0 0 auto;justify-content:center;padding:8px}
+    .tab-bar button{min-height:46px;font-size:13px}
+    .toolbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px 12px}
+    .toolbar .sbtn{width:100%;min-height:44px;justify-content:center;padding:10px 8px}
+    .panel-body{min-height:0}
+    #entriesText{min-height:220px;padding:16px 14px;font-size:15px}
+    .results-list{max-height:46vh}
+    .result-item{gap:8px;padding:11px 10px}
+
+    .modal{align-items:flex-end;padding:12px 12px max(12px,env(safe-area-inset-bottom))}
+    .modal .box{max-width:none;max-height:calc(100dvh - 24px);padding:22px 16px;border-radius:16px}
+    .modal .actions{display:grid;grid-template-columns:1fr;width:100%}
+    .modal .actions .mbtn{width:100%;min-height:44px}
+    .dlg{max-height:calc(100dvh - 24px);padding:20px 16px!important}
+    .dlg-tabs{overflow-x:auto;margin-inline:-4px;padding-inline:4px}
+    .dlg-tabs button{flex:1 0 auto;min-width:110px;min-height:44px;padding:10px 8px}
+    .dlg-row,.dlg-row.wide{grid-template-columns:1fr;gap:8px;padding:10px 0}
+    .policy-modal{align-items:flex-end}
+    .policy-modal .policy-box{max-height:calc(100dvh - 24px);padding:20px 16px!important}
+    .policy-actions{justify-content:stretch}
+    .policy-actions .mbtn{width:100%;min-height:44px}
+    .policy-fab{width:48px;height:48px}
+
+    .seo-summary{margin:18px 0 0;padding:16px}
+    .seo-summary h1{font-size:18px}
+    .seo-summary-grid{grid-template-columns:1fr;gap:15px}
+  }
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">
-    <svg viewBox="0 0 64 64" aria-hidden="true">
-      <defs><linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5d87b0"/><stop offset="1" stop-color="#78a4c7"/></linearGradient></defs>
-      <circle cx="32" cy="32" r="28" fill="url(#logoG)"/>
-      <path d="M32 8 L38 32 L32 28 L26 32 Z" fill="#fff"/>
-      <circle cx="32" cy="32" r="6" fill="#fff"/>
-      <circle cx="32" cy="32" r="3" fill="url(#logoG)"/>
-    </svg>
-    <span class="brand">Fortuna</span>
+  <div class="header-primary">
+    <div class="logo">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <defs><linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5d87b0"/><stop offset="1" stop-color="#78a4c7"/></linearGradient></defs>
+        <circle cx="32" cy="32" r="28" fill="url(#logoG)"/>
+        <path d="M32 8 L38 32 L32 28 L26 32 Z" fill="#fff"/>
+        <circle cx="32" cy="32" r="6" fill="#fff"/>
+        <circle cx="32" cy="32" r="3" fill="url(#logoG)"/>
+      </svg>
+      <span class="brand">Fortuna</span>
+    </div>
+
+    <div class="mode-sel" id="modeSel">
+      <button data-mode="manual" class="active" title="Từng vòng bấm SPIN riêng"><span class="ui-icon-slot" data-icon="hand" aria-hidden="true"></span>Manual</button>
+      <button data-mode="together" title="Quay tất cả cùng lúc"><span class="ui-icon-slot" data-icon="zap" aria-hidden="true"></span>Together</button>
+      <button data-mode="sequential" title="Quay lần lượt, chờ vòng trước xong"><span class="ui-icon-slot" data-icon="list-ordered" aria-hidden="true"></span>Sequential</button>
+    </div>
+    <button class="tbtn primary" id="spinAllBtn" onclick="app.spinAll()" style="display:none"><span class="ui-icon-slot" data-icon="play" aria-hidden="true"></span>Spin All</button>
   </div>
 
-  <div class="mode-sel" id="modeSel">
-    <button data-mode="manual" class="active" title="Từng vòng bấm SPIN riêng"><span class="ui-icon-slot" data-icon="hand" aria-hidden="true"></span>Manual</button>
-    <button data-mode="together" title="Quay tất cả cùng lúc"><span class="ui-icon-slot" data-icon="zap" aria-hidden="true"></span>Together</button>
-    <button data-mode="sequential" title="Quay lần lượt, chờ vòng trước xong"><span class="ui-icon-slot" data-icon="list-ordered" aria-hidden="true"></span>Sequential</button>
+  <div class="header-actions">
+    <div class="header-tools">
+      <button class="tbtn" onclick="app.addWheel()"><span class="ic ui-icon-slot" data-icon="plus" aria-hidden="true"></span>Vòng quay</button>
+      <button class="tbtn" onclick="app.addNumWheel()"><span class="ic ui-icon-slot" data-icon="hash" aria-hidden="true"></span>Quay số</button>
+      <button class="tbtn" onclick="app.openTemplates()"><span class="ic ui-icon-slot" data-icon="library" aria-hidden="true"></span>Mẫu</button>
+      <button class="tbtn" onclick="app.openTeamSplit()"><span class="ic ui-icon-slot" data-icon="users-round" aria-hidden="true"></span>Chia đội</button>
+      <button class="tbtn" onclick="app.openSessions()"><span class="ic ui-icon-slot" data-icon="archive" aria-hidden="true"></span>Sessions</button>
+      <button class="tbtn" onclick="app.openQR()"><span class="ic ui-icon-slot" data-icon="qr-code" aria-hidden="true"></span>QR</button>
+      <button class="tbtn" onclick="app.openCustomize()"><span class="ic ui-icon-slot" data-icon="settings-2" aria-hidden="true"></span>Tùy chỉnh</button>
+    </div>
+    <div class="header-utilities">
+      <button class="tbtn mobile-panel-trigger" id="mobileToolsButton" onclick="app.toggleMobileTools()" title="Công cụ" aria-label="Công cụ"><span class="ic ui-icon-slot" data-icon="menu" aria-hidden="true"></span></button>
+      <button class="tbtn mobile-panel-trigger" id="mobileConfigButton" onclick="app.toggleMobileConfig()" title="Cấu hình" aria-label="Cấu hình"><span class="ic ui-icon-slot" data-icon="settings-2" aria-hidden="true"></span></button>
+      <select class="lang-picker" id="languageSelect" title="Ngôn ngữ" aria-label="Ngôn ngữ">
+        <option value="vi">VI</option>
+        <option value="en">EN</option>
+      </select>
+      <button class="tbtn" id="themeButton" onclick="app.toggleTheme()" title="Sáng / Tối" aria-label="Sáng / Tối"><span class="ic ui-icon-slot" id="themeIcon" data-icon="moon" aria-hidden="true"></span></button>
+      <button class="tbtn" id="fullscreenButton" onclick="app.toggleFullscreen()" title="Toàn màn hình" aria-label="Toàn màn hình"><span class="ic ui-icon-slot" data-icon="maximize" aria-hidden="true"></span></button>
+      <button class="tbtn" id="muteButton" onclick="app.toggleMute()" title="Âm thanh" aria-label="Âm thanh"><span class="ic ui-icon-slot" id="muteIcon" data-icon="volume-2" aria-hidden="true"></span></button>
+    </div>
   </div>
-  <button class="tbtn primary" id="spinAllBtn" onclick="app.spinAll()" style="display:none"><span class="ui-icon-slot" data-icon="play" aria-hidden="true"></span>Spin All</button>
-
-  <span class="grow"></span>
-
-  <button class="tbtn" onclick="app.addWheel()"><span class="ic ui-icon-slot" data-icon="plus" aria-hidden="true"></span>Vòng quay</button>
-  <button class="tbtn" onclick="app.addNumWheel()"><span class="ic ui-icon-slot" data-icon="hash" aria-hidden="true"></span>Quay số</button>
-  <button class="tbtn" onclick="app.openTemplates()"><span class="ic ui-icon-slot" data-icon="library" aria-hidden="true"></span>Mẫu</button>
-  <button class="tbtn" onclick="app.openTeamSplit()"><span class="ic ui-icon-slot" data-icon="users-round" aria-hidden="true"></span>Chia đội</button>
-  <button class="tbtn" onclick="app.openSessions()"><span class="ic ui-icon-slot" data-icon="archive" aria-hidden="true"></span>Sessions</button>
-  <button class="tbtn" onclick="app.openQR()"><span class="ic ui-icon-slot" data-icon="qr-code" aria-hidden="true"></span>QR</button>
-  <button class="tbtn" onclick="app.openCustomize()"><span class="ic ui-icon-slot" data-icon="settings-2" aria-hidden="true"></span>Tùy chỉnh</button>
-  <select class="lang-picker" id="languageSelect" title="Ngôn ngữ" aria-label="Ngôn ngữ">
-    <option value="vi">VI</option>
-    <option value="en">EN</option>
-  </select>
-  <button class="tbtn" id="themeButton" onclick="app.toggleTheme()" title="Sáng / Tối" aria-label="Sáng / Tối"><span class="ic ui-icon-slot" id="themeIcon" data-icon="moon" aria-hidden="true"></span></button>
-  <button class="tbtn" id="fullscreenButton" onclick="app.toggleFullscreen()" title="Toàn màn hình" aria-label="Toàn màn hình"><span class="ic ui-icon-slot" data-icon="maximize" aria-hidden="true"></span></button>
-  <button class="tbtn" id="muteButton" onclick="app.toggleMute()" title="Âm thanh" aria-label="Âm thanh"><span class="ic ui-icon-slot" id="muteIcon" data-icon="volume-2" aria-hidden="true"></span></button>
 </header>
 
 <main>
+  <button class="mobile-panel-backdrop" id="mobilePanelBackdrop" type="button" onclick="app.closeMobilePanels()" aria-label="Đóng"></button>
   <section class="wheel-area">
     <div class="wheel-grid" id="wheelGrid" data-n="1"></div>
     <section class="seo-summary" aria-labelledby="seoTitle">
@@ -454,6 +540,7 @@
     <div class="aside-header">
       <select class="wheel-picker" id="wheelPicker" title="Vòng đang chỉnh sửa"></select>
     <button class="sbtn" id="asideRename" onclick="app.renameWheel()" title="Đổi tên" aria-label="Đổi tên"><span class="ui-icon-slot" data-icon="pencil" aria-hidden="true"></span></button>
+    <button class="sbtn mobile-panel-close" id="mobileConfigCloseButton" type="button" onclick="app.closeMobilePanels()" title="Đóng" aria-label="Đóng"><span class="ui-icon-slot" data-icon="x" aria-hidden="true"></span></button>
     </div>
     <div class="tab-bar">
       <button class="active" data-tab="entries">Mục <span class="count" id="entryCount">0</span></button>
@@ -809,6 +896,7 @@ const ICON_PATHS = Object.freeze({
   zap:'<path d="M4 14a1 1 0 0 1-.8-1.6l9.9-12.6a.5.5 0 0 1 .9.4l-1.7 6.6A1 1 0 0 0 13.3 8H20a1 1 0 0 1 .8 1.6l-9.9 12.6a.5.5 0 0 1-.9-.4l1.7-6.6A1 1 0 0 0 10.7 14Z"/>',
   'list-ordered':'<line x1="10" x2="21" y1="6" y2="6"/><line x1="10" x2="21" y1="12" y2="12"/><line x1="10" x2="21" y1="18" y2="18"/><path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-1 2-2s-2-2-2-2"/>',
   play:'<polygon points="6 3 20 12 6 21 6 3"/>',
+  menu:'<line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/>',
   plus:'<path d="M5 12h14"/><path d="M12 5v14"/>',
   hash:'<line x1="4" x2="20" y1="9" y2="9"/><line x1="4" x2="20" y1="15" y2="15"/><line x1="10" x2="8" y1="3" y2="21"/><line x1="16" x2="14" y1="3" y2="21"/>',
   library:'<path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 6v14"/><path d="M4 6v14"/><path d="M2 4h20"/><path d="M2 20h20"/>',
@@ -986,7 +1074,7 @@ const I18N = {
     'meta.title':'Fortuna — Vòng Quay May Mắn & Bốc Thăm Ngẫu Nhiên',
     'language.label':'Ngôn ngữ',
     'mode.manual':'Thủ công', 'mode.together':'Cùng lúc', 'mode.sequential':'Lần lượt', 'mode.spinAll':'Quay tất cả', 'mode.manualTitle':'Từng vòng bấm SPIN riêng', 'mode.togetherTitle':'Quay tất cả cùng lúc', 'mode.sequentialTitle':'Quay lần lượt, chờ vòng trước xong',
-    'nav.wheel':'Vòng quay', 'nav.number':'Quay số', 'nav.templates':'Mẫu', 'nav.teams':'Chia đội', 'nav.sessions':'Sessions', 'nav.qr':'QR', 'nav.customize':'Tùy chỉnh',
+    'nav.wheel':'Vòng quay', 'nav.number':'Quay số', 'nav.templates':'Mẫu', 'nav.teams':'Chia đội', 'nav.sessions':'Sessions', 'nav.qr':'QR', 'nav.customize':'Tùy chỉnh', 'nav.mobileTools':'Công cụ', 'nav.mobileConfig':'Cấu hình',
     'nav.theme':'Sáng / Tối', 'nav.fullscreen':'Toàn màn hình', 'nav.sound':'Âm thanh', 'aside.currentWheel':'Vòng đang chỉnh sửa', 'aside.rename':'Đổi tên',
     'tabs.entries':'Mục', 'tabs.results':'Kết quả', 'toolbar.shuffle':'Xáo trộn', 'toolbar.sort':'Sắp xếp', 'toolbar.open':'Mở', 'toolbar.save':'Lưu', 'toolbar.clear':'Xoá',
     'num.configure':'Cấu hình chi tiết', 'entries.placeholder':'Nhập tên vào đây, mỗi dòng một tên...\n\nThêm ảnh:  Tên | https://link-anh.png',
@@ -1025,7 +1113,7 @@ const I18N = {
   en: {
     'meta.title':'Fortuna — Free Lucky Wheel and Random Picker', 'language.label':'Language',
     'mode.manual':'Manual', 'mode.together':'Together', 'mode.sequential':'Sequential', 'mode.spinAll':'Spin all', 'mode.manualTitle':'Spin each wheel separately', 'mode.togetherTitle':'Spin all wheels together', 'mode.sequentialTitle':'Spin in sequence, waiting for the previous wheel',
-    'nav.wheel':'Wheel', 'nav.number':'Number', 'nav.templates':'Templates', 'nav.teams':'Team split', 'nav.sessions':'Sessions', 'nav.qr':'QR', 'nav.customize':'Customize',
+    'nav.wheel':'Wheel', 'nav.number':'Number', 'nav.templates':'Templates', 'nav.teams':'Team split', 'nav.sessions':'Sessions', 'nav.qr':'QR', 'nav.customize':'Customize', 'nav.mobileTools':'Tools', 'nav.mobileConfig':'Configure',
     'nav.theme':'Light / Dark', 'nav.fullscreen':'Fullscreen', 'nav.sound':'Sound', 'aside.currentWheel':'Wheel being edited', 'aside.rename':'Rename',
     'tabs.entries':'Entries', 'tabs.results':'Results', 'toolbar.shuffle':'Shuffle', 'toolbar.sort':'Sort', 'toolbar.open':'Open', 'toolbar.save':'Save', 'toolbar.clear':'Clear',
     'num.configure':'Detailed settings', 'entries.placeholder':'Enter names here, one name per line...\n\nAdd an image:  Name | https://image-link.png',
@@ -1080,7 +1168,7 @@ const STATIC_I18N = Object.freeze({
 });
 
 const STATIC_I18N_ATTRS = Object.freeze([
-  ['#wheelPicker','title','aside.currentWheel'], ['#asideRename','title','aside.rename'], ['#asideRename','aria-label','aside.rename'], ['#themeButton','title','nav.theme'], ['#themeButton','aria-label','nav.theme'], ['#fullscreenButton','title','nav.fullscreen'], ['#fullscreenButton','aria-label','nav.fullscreen'], ['#muteButton','title','nav.sound'], ['#muteButton','aria-label','nav.sound'],
+  ['#wheelPicker','title','aside.currentWheel'], ['#asideRename','title','aside.rename'], ['#asideRename','aria-label','aside.rename'], ['#mobileConfigCloseButton','title','common.close'], ['#mobileConfigCloseButton','aria-label','common.close'], ['#themeButton','title','nav.theme'], ['#themeButton','aria-label','nav.theme'], ['#fullscreenButton','title','nav.fullscreen'], ['#fullscreenButton','aria-label','nav.fullscreen'], ['#muteButton','title','nav.sound'], ['#muteButton','aria-label','nav.sound'], ['#mobileToolsButton','title','nav.mobileTools'], ['#mobileToolsButton','aria-label','nav.mobileTools'], ['#mobileConfigButton','title','nav.mobileConfig'], ['#mobileConfigButton','aria-label','nav.mobileConfig'],
   ['#modeSel [data-mode="manual"]','title','mode.manualTitle'], ['#modeSel [data-mode="together"]','title','mode.togetherTitle'], ['#modeSel [data-mode="sequential"]','title','mode.sequentialTitle'],
   ['#entriesText','placeholder','entries.placeholder'], ['#sessName','placeholder','sessions.namePlaceholder'], ['#policyFab','title','policy.open'], ['#policyFab','aria-label','policy.open'],
   ['#tsNames','placeholder','teams.namesPlaceholder'], ['#tsTeamNames','placeholder','teams.teamNamesPlaceholder'], ['#cfg-tickURL','placeholder','settings.audioUrl'], ['#cfg-winURL','placeholder','settings.audioUrl'], ['#cfg-adminPwd','placeholder','admin.passwordPlaceholder'], ['#languageSelect','aria-label','language.label'], ['#languageSelect','title','language.label'],
@@ -1198,6 +1286,20 @@ const app = {
   },
   openPolicy(){ $('#policyModal')?.classList.add('on'); },
   closePolicy(){ $('#policyModal')?.classList.remove('on'); },
+  bindMobilePanels(){
+    $('.header-tools')?.addEventListener('click', e=>{
+      if(e.target.closest('button')) this.closeMobilePanels();
+    });
+  },
+  toggleMobileTools(){
+    document.body.classList.remove('mobile-config-open');
+    document.body.classList.toggle('mobile-tools-open');
+  },
+  toggleMobileConfig(){
+    document.body.classList.remove('mobile-tools-open');
+    document.body.classList.toggle('mobile-config-open');
+  },
+  closeMobilePanels(){ document.body.classList.remove('mobile-tools-open','mobile-config-open'); },
   setLanguage(lang){
     const next = lang === 'en' ? 'en' : 'vi';
     if(this.getLanguage()!==next){
@@ -1231,7 +1333,7 @@ const app = {
     this.loadState(); this.applyURLMode();
     if(!this.state.wheels.length) this.state.wheels = [makeWheel('Vòng 1')];
     if(!this.state.wheels.find(w=>w.id===this.state.activeWheelId)) this.state.activeWheelId = this.state.wheels[0].id;
-    this.bindTabs(); this.bindKeys(); this.bindEntries(); this.bindCustomize(); this.bindMode(); this.bindLanguage(); this.bindPolicy();
+    this.bindTabs(); this.bindKeys(); this.bindEntries(); this.bindCustomize(); this.bindMode(); this.bindLanguage(); this.bindPolicy(); this.bindMobilePanels();
     this.setupBroadcast(); this.setupScreenShareDetect();
     if(new URL(location.href).searchParams.get('admin')==='1'){
       // Nếu có password → hỏi trước khi bật admin
@@ -3094,7 +3196,7 @@ const app = {
       else if(e.key==='f'||e.key==='F'){ this.toggleFullscreen(); }
       else if(e.key==='m'||e.key==='M'){ this.toggleMute(); }
     });
-    window.addEventListener('keyup', e=>{ if(e.key==='Escape'){ if(esc && Date.now()-esc>1800) this.panic(); else { this.closeResult(); this.closeCustomize(); this.closePolicy(); this._closeExt(); } esc=0; } });
+    window.addEventListener('keyup', e=>{ if(e.key==='Escape'){ if(esc && Date.now()-esc>1800) this.panic(); else { this.closeResult(); this.closeCustomize(); this.closePolicy(); this.closeMobilePanels(); this._closeExt(); } esc=0; } });
     let clk=0, tmr=null;
     document.querySelector('.logo')?.addEventListener('click',()=>{ clk++; clearTimeout(tmr); tmr=setTimeout(()=>{
       if(clk>=3){
