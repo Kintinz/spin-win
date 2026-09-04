@@ -1,6 +1,6 @@
 # Hướng dẫn SEO cho Fortuna
 
-Tài liệu này mô tả trạng thái SEO hiện tại của repo và các bước cần làm khi đưa lên domain thật. Domain đang dùng trong mã nguồn là domain tạm `https://fortuna.example.com/`.
+Tài liệu này mô tả trạng thái SEO hiện tại của repo và các bước cần làm khi đưa lên domain thật. URL deploy hiện tại là GitHub Pages `https://kintinz.github.io/lucky-wheel/`.
 
 ## Đã triển khai trong repo
 
@@ -21,7 +21,7 @@ Tài liệu này mô tả trạng thái SEO hiện tại của repo và các bư
 
 ### `robots.txt` và `sitemap.xml`
 
-- `robots.txt` cho phép crawl và trỏ tới sitemap của domain tạm.
+- `robots.txt` cho phép crawl và trỏ tới sitemap của GitHub Pages.
 - `sitemap.xml` chỉ liệt kê trang chính; các trang nội bộ không được liệt kê.
 - Khi đổi domain, phải thay URL trong cả hai file và trong `index.html`.
 
@@ -40,9 +40,9 @@ Các nguyên tắc cần giữ:
 
 ## Việc cần làm trước khi deploy
 
-### 1. Đổi domain tạm
+### 1. Khi đổi sang domain thật
 
-Thay `https://fortuna.example.com/` bằng domain thật tại:
+Nếu chuyển sang domain riêng, thay `https://kintinz.github.io/lucky-wheel/` bằng domain thật tại:
 
 - `index.html`: canonical, `og:url`, `og:image`, `twitter:image` và URL trong JSON-LD.
 - `robots.txt`: URL sitemap.
