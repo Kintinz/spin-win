@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Fortuna — Vòng quay may mắn</title>
+  <desc id="desc">Vòng quay may mắn và bốc thăm ngẫu nhiên miễn phí</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171b21"/>
+      <stop offset="1" stop-color="#2d3741"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5d87b0"/>
+      <stop offset="1" stop-color="#78a4c7"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#78a4c7" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#78a4c7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="80" r="300" fill="url(#glow)"/>
+  <circle cx="930" cy="450" r="260" fill="url(#glow)" opacity=".55"/>
+  <g transform="translate(90 135)">
+    <circle cx="180" cy="180" r="148" fill="none" stroke="#9fc2df" stroke-opacity=".22" stroke-width="2"/>
+    <path d="M180 50L211 180L180 162L149 180Z" fill="#fff"/>
+    <circle cx="180" cy="180" r="42" fill="url(#brand)" stroke="#fff" stroke-opacity=".8" stroke-width="4"/>
+    <circle cx="180" cy="180" r="12" fill="#fff"/>
+    <path d="M180 32V12M328 180h20M180 328v20M32 180H12" stroke="#9fc2df" stroke-opacity=".4" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <text x="430" y="265" fill="#eef2f5" font-family="Segoe UI,Arial,sans-serif" font-size="74" font-weight="700">Fortuna</text>
+  <text x="435" y="340" fill="#b9d0e3" font-family="Segoe UI,Arial,sans-serif" font-size="34">Vòng quay may mắn</text>
+  <text x="435" y="394" fill="#aeb8c2" font-family="Segoe UI,Arial,sans-serif" font-size="25">Bốc thăm ngẫu nhiên · Chia đội · Quay số</text>
+  <rect x="435" y="450" width="330" height="3" rx="1.5" fill="url(#brand)"/>
+</svg>

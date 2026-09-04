@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fortuna Control Panel — Internal Tool</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow, noarchive">
+<style>
+  *{box-sizing:border-box}
+  :root{--bg:#171b21;--bg2:#1e252d;--panel:#252d35;--panel2:#2d3741;--border:rgba(255,255,255,.10);--text:#eef2f5;--muted:#aeb8c2;--dim:#7a8692;--brand:#5d87b0;--brand2:#78a4c7;--red:#d96060;--icon-box:15px;--motion-fast:140ms;--motion-base:220ms;--motion-slow:320ms;--motion-ease:cubic-bezier(.22,.61,.36,1);--motion-pop:cubic-bezier(.34,1.24,.64,1);}
+  body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;padding:20px;transition:background var(--motion-slow) var(--motion-ease),color var(--motion-slow) var(--motion-ease)}
+  h1{display:flex;align-items:center;gap:8px;margin:0 0 6px;font-size:16px}
+  .warn{display:flex;align-items:flex-start;gap:8px;padding:12px 14px;background:rgba(217,96,96,.10);border:1px solid rgba(217,96,96,.30);border-radius:8px;font-size:12px;color:#e6aaa5;margin:16px 0;line-height:1.5}
+  .row{display:grid;grid-template-columns:108px 1fr;gap:16px;align-items:center;margin:12px 0}
+  label{color:var(--muted);font-size:13px}
+  input,select{background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:8px 11px;border-radius:7px;font:inherit;width:100%;outline:none;transition:background var(--motion-slow) var(--motion-ease),border-color var(--motion-fast) var(--motion-ease),color var(--motion-slow) var(--motion-ease),box-shadow var(--motion-fast) var(--motion-ease),transform var(--motion-fast) var(--motion-ease)}
+  input:focus,select:focus{border-color:var(--brand)}
+  .check{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:13px;cursor:pointer}
+  .check input{width:16px;height:16px;accent-color:var(--brand)}
+  .sep{height:1px;background:var(--border);margin:16px 0}
+  .btn{background:var(--panel);border:1px solid var(--border);color:var(--text);padding:8px 13px;border-radius:7px;cursor:pointer;font:inherit;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:background var(--motion-fast) var(--motion-ease),border-color var(--motion-fast) var(--motion-ease),color var(--motion-fast) var(--motion-ease),transform var(--motion-fast) var(--motion-ease),box-shadow var(--motion-fast) var(--motion-ease)}
+  .ui-icon{width:100%;height:100%;flex:0 0 auto;display:inline-block;vertical-align:middle;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .ui-icon-slot{display:inline-flex;align-items:center;justify-content:center;width:var(--icon-box);height:var(--icon-box);flex:0 0 var(--icon-box);line-height:0;vertical-align:middle}
+  .ui-icon-slot .ui-icon{display:block;vertical-align:0}
+  .btn .ui-icon{font-size:15px}
+  .btn:hover{background:var(--panel2);border-color:var(--muted);transform:translateY(-1px)}
+  .btn:active{transform:translateY(0) scale(.98)}
+  .btn.p{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+  .btn.p:hover{background:var(--brand2);border-color:var(--brand2)}
+  .sched-row{display:grid;grid-template-columns:60px 1fr 30px;gap:8px;padding:5px 0;animation:listEnter var(--motion-base) var(--motion-ease) both}
+  .sched-row button{background:none;border:none;color:var(--muted);cursor:pointer;min-width:28px;min-height:28px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;transition:background var(--motion-fast) var(--motion-ease),color var(--motion-fast) var(--motion-ease),transform var(--motion-fast) var(--motion-ease)}
+  .sched-row button:hover{background:var(--panel2);color:var(--text);transform:translateY(-1px)}
+  .sched-row button:active{transform:scale(.92)}
+  #list{max-height:220px;overflow:auto;margin:8px 0}
+  .empty{color:var(--muted);font-size:12px;padding:10px 0}
+  .foot{font-size:11px;color:var(--dim);margin-top:18px;line-height:1.6}
+  kbd{background:var(--bg2);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:11px}
+  .over{position:fixed;inset:0;background:var(--red);color:#fff;display:flex;visibility:hidden;opacity:0;pointer-events:none;transform:scale(1.02);align-items:center;justify-content:center;flex-direction:column;font-weight:700;font-size:18px;z-index:99;padding:20px;text-align:center;transition:opacity var(--motion-base) var(--motion-ease),transform var(--motion-base) var(--motion-ease),visibility 0s linear var(--motion-base)}
+  .over.on{visibility:visible;opacity:1;transform:scale(1);pointer-events:auto;transition-delay:0s}
+  .dlg-mask{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;visibility:hidden;opacity:0;pointer-events:none;align-items:center;justify-content:center;z-index:100;padding:20px;transition:opacity var(--motion-base) var(--motion-ease),visibility 0s linear var(--motion-base)}
+  .dlg-mask.on{visibility:visible;opacity:1;pointer-events:auto;transition-delay:0s}
+  .dlg-box{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:24px;max-width:360px;width:100%;text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.42);opacity:0;transform:translateY(8px) scale(.98);transition:opacity var(--motion-base) var(--motion-ease),transform var(--motion-base) var(--motion-pop),background var(--motion-slow) var(--motion-ease),border-color var(--motion-slow) var(--motion-ease),color var(--motion-slow) var(--motion-ease)}
+  .dlg-mask.on .dlg-box{opacity:1;transform:translateY(0) scale(1)}
+  .dlg-title{font-size:15px;font-weight:600;margin-bottom:10px}
+  .dlg-body{color:var(--muted);font-size:13px;margin-bottom:18px;line-height:1.5}
+  .dlg-actions{display:flex;gap:8px;justify-content:center}
+  .policy-fab{position:fixed;left:max(14px,env(safe-area-inset-left));bottom:max(14px,env(safe-area-inset-bottom));width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.42);border-radius:50%;background:var(--red);color:#fff;cursor:pointer;z-index:90;box-shadow:0 8px 22px rgba(217,96,96,.34);transition:background var(--motion-fast) var(--motion-ease),box-shadow var(--motion-fast) var(--motion-ease),transform var(--motion-fast) var(--motion-ease)}
+  .policy-fab:hover{background:#e47d7d;box-shadow:0 10px 26px rgba(217,96,96,.46);transform:translateY(-2px) scale(1.04)}
+  .policy-fab:focus-visible{outline:2px solid var(--brand2);outline-offset:3px}
+  .policy-fab:active{transform:translateY(0) scale(.94)}
+  .policy-fab .ui-icon-slot{width:21px;height:21px;flex-basis:21px;animation:policyAttention 2.8s ease-in-out infinite;transform-origin:center}
+  .policy-tooltip{position:absolute;left:calc(100% + 10px);bottom:50%;width:max-content;max-width:min(220px,calc(100vw - 84px));padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--text);font-size:12px;font-weight:600;line-height:1.35;text-align:left;box-shadow:0 8px 22px rgba(0,0,0,.28);opacity:0;pointer-events:none;transform:translateY(50%) translateX(-6px) scale(.98);transform-origin:left center;animation:policyTooltipCycle 9s var(--motion-ease) infinite}
+  .policy-fab:hover .policy-tooltip,.policy-fab:focus-visible .policy-tooltip{opacity:1;transform:translateY(50%) translateX(0) scale(1);animation:none}
+  @keyframes policyAttention{0%,70%,100%{transform:rotate(0) scale(1)}74%{transform:rotate(-8deg) scale(1.04)}78%{transform:rotate(8deg) scale(1.04)}82%{transform:rotate(-5deg) scale(1.02)}86%{transform:rotate(4deg) scale(1.01)}90%{transform:rotate(0) scale(1)}}
+  @keyframes policyTooltipCycle{0%,56%,100%{opacity:0;transform:translateY(50%) translateX(-6px) scale(.98)}62%,78%{opacity:1;transform:translateY(50%) translateX(0) scale(1)}84%{opacity:0;transform:translateY(50%) translateX(0) scale(.98)}}
+  .policy-modal{z-index:101}
+  .policy-modal .policy-box{max-width:min(640px,96vw);max-height:min(82vh,760px);overflow-y:auto;text-align:left;padding:24px 28px;position:relative}
+  .policy-title{display:flex;align-items:center;gap:9px;margin:0 32px 8px 0;font-size:19px}
+  .policy-title .ui-icon-slot{color:var(--red);width:22px;height:22px;flex-basis:22px}
+  .policy-lead{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 16px}
+  .policy-section{padding:12px 0;border-top:1px solid var(--border)}
+  .policy-section h4{margin:0 0 5px;color:var(--text);font-size:13px}
+  .policy-section p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}
+  .policy-footer{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);color:var(--dim);font-size:11px;line-height:1.55}
+  .policy-actions{display:flex;justify-content:flex-end;margin-top:18px}
+  .wheel-sel{background:rgba(93,135,176,.10);border:1px solid rgba(93,135,176,.42)!important;font-weight:600}
+  .badge{display:inline-block;padding:2px 8px;background:var(--brand);color:#fff;border-radius:8px;font-size:11px;font-weight:600;margin-left:6px}
+  .tabs{display:flex;gap:4px;background:var(--bg2);border:1px solid var(--border);padding:4px;border-radius:8px;margin:12px 0;position:sticky;top:0;z-index:20;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  .tabs button{flex:1;background:transparent;border:none;color:var(--muted);padding:8px 9px;border-radius:6px;cursor:pointer;font:inherit;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:background var(--motion-fast) var(--motion-ease),color var(--motion-fast) var(--motion-ease),transform var(--motion-fast) var(--motion-ease),box-shadow var(--motion-fast) var(--motion-ease)}
+  .tabs button.on{background:var(--brand);color:#fff;box-shadow:0 3px 10px rgba(45,75,105,.18)}
+  .tabs button:active{transform:scale(.98)}
+  [data-p]:not([hidden]){animation:panelEnter var(--motion-base) var(--motion-ease) both}
+  .all-wheel-row{animation:listEnter var(--motion-base) var(--motion-ease) both}
+  @keyframes panelEnter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes listEnter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+  .motion-language-target{transition:opacity var(--motion-fast) var(--motion-ease),transform var(--motion-fast) var(--motion-ease)}
+  .motion-language-target.language-out{opacity:.58;transform:translateY(3px)}
+  .motion-language-target.language-in{opacity:1;transform:translateY(0)}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  .lang-picker{margin-left:auto;width:auto;min-width:58px;padding:5px 7px;font-size:11px;font-weight:600;letter-spacing:.4px;transition:background var(--motion-fast) var(--motion-ease),border-color var(--motion-fast) var(--motion-ease),color var(--motion-fast) var(--motion-ease),transform var(--motion-fast) var(--motion-ease)}
+  .lang-picker:hover{transform:translateY(-1px)}
+  .lang-picker:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  body.t-numbers [data-wheel-only]{display:none!important}
+  body.t-wheel [data-numbers-only]{display:none!important}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1><span class="ui-icon-slot" data-icon="settings-2" aria-hidden="true"></span> Control Panel <select class="lang-picker" id="languageSelect" title="Ngôn ngữ" aria-label="Ngôn ngữ"><option value="vi">VI</option><option value="en">EN</option></select></h1>
+<div class="warn" id="shareWarning"><span class="ui-icon-slot" data-icon="shield-alert" aria-hidden="true"></span> Không share cửa sổ này. Nếu phát hiện chia sẻ, panel sẽ tự đóng.</div>
+
+<div class="row"><label id="wheelLabel">Vòng quay</label>
+  <select id="wheelSel" class="wheel-sel"></select>
+</div>
+
+<div class="tabs">
+  <button class="on" data-t="single"><span class="ui-icon-slot" data-icon="target" aria-hidden="true"></span>Rig 1 lần</button>
+  <button data-t="sched"><span class="ui-icon-slot" data-icon="calendar-days" aria-hidden="true"></span>Kịch bản</button>
+  <button data-t="all"><span class="ui-icon-slot" data-icon="globe-2" aria-hidden="true"></span>Tất cả vòng</button>
+</div>
+
+<div data-p="single">
+  <div id="typeInfo" style="padding:10px 12px;background:rgba(93,135,176,.08);border:1px solid rgba(93,135,176,.20);border-radius:8px;font-size:12px;color:var(--muted);margin-bottom:12px"></div>
+  <div class="row"><label id="rigLabel">Trúng gì</label><select id="rigSel"><option value="">— Random —</option></select></div>
+  <label class="check" id="autoOffLabel"><input type="checkbox" id="autoOff" checked> Tự tắt sau 1 spin</label>
+  <label class="check" id="rmWinLabel" data-wheel-only><input type="checkbox" id="rmWin"> Xoá người thắng khỏi vòng</label>
+</div>
+
+<div data-p="sched" hidden>
+  <div id="scheduleTitle" style="font-weight:600;font-size:13px;margin-bottom:6px">Lượt # → tên trúng</div>
+  <div id="list"></div>
+  <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+    <button class="btn p" id="addBtn"><span class="ui-icon-slot" data-icon="plus" aria-hidden="true"></span>Thêm dòng</button>
+    <button class="btn" id="clrBtn"><span class="ui-icon-slot" data-icon="trash-2" aria-hidden="true"></span>Clear</button>
+    <span id="currentSpinLabel" style="flex:1;text-align:right;color:#a0a7c2;font-size:12px">Lượt hiện tại: <b id="cur">0</b></span>
+  </div>
+</div>
+
+<div data-p="all" hidden>
+  <div id="allDescription" style="font-size:12px;color:#a0a7c2;margin-bottom:8px">Rig cùng lúc cho TẤT CẢ vòng — dùng khi spin Together/Sequential:</div>
+  <div id="allList" style="max-height:300px;overflow:auto"></div>
+  <button class="btn p" id="applyAll" style="margin-top:8px;width:100%"><span class="ui-icon-slot" data-icon="check" aria-hidden="true"></span>Áp dụng cho tất cả</button>
+</div>
+
+<div class="foot">
+  <span id="priorityText"><b id="priorityLabel">Ưu tiên:</b> Rig 1-shot → Schedule → Random. Áp dụng riêng cho từng vòng.</span><br>
+  <span id="closeNowText"><b id="closeNowLabel">Đóng ngay:</b> <kbd>Esc</kbd></span>
+</div>
+
+<div class="over" id="over"><span class="ui-icon-slot" data-icon="screen-share-off" aria-hidden="true"></span><span id="shareDetectedText">PHÁT HIỆN CHIA SẺ</span><br><span id="shareCloseText" style="font-weight:400;font-size:14px;margin-top:8px">Đóng để bảo mật…</span></div>
+
+<div class="dlg-mask" id="dlgMask">
+  <div class="dlg-box">
+    <div class="dlg-title" id="dlgT"></div>
+    <div class="dlg-body" id="dlgB"></div>
+    <div class="dlg-actions" id="dlgA"></div>
+  </div>
+</div>
+
+<button class="policy-fab" id="policyFab" type="button" title="Đọc quy định sử dụng" aria-label="Đọc quy định sử dụng"><span class="ui-icon-slot" data-icon="triangle-alert" aria-hidden="true"></span><span class="policy-tooltip" data-i18n="policy.open" aria-hidden="true">Đọc quy định sử dụng</span></button>
+
+<div class="dlg-mask policy-modal" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="policyTitle" aria-describedby="policyLead">
+  <div class="dlg-box policy-box">
+    <button class="dlg-close" id="policyClose" type="button" aria-label="Đóng" title="Đóng"><span class="ui-icon-slot" data-icon="x" aria-hidden="true"></span></button>
+    <h3 class="policy-title" id="policyTitle"><span class="ui-icon-slot" data-icon="triangle-alert" aria-hidden="true"></span><span data-i18n="policy.title">Quy định sử dụng Fortuna</span></h3>
+    <p class="policy-lead" id="policyLead" data-i18n="policy.lead">Vui lòng đọc các nguyên tắc sử dụng dưới đây. Bạn vẫn có thể sử dụng web dù đồng ý hay không đồng ý với nội dung này.</p>
+    <div class="policy-section">
+      <h4 data-i18n="policy.purposeTitle">1. Mục đích sử dụng</h4>
+      <p data-i18n="policy.purposeText">Fortuna được cung cấp cho mục đích giải trí, random picker, bốc thăm, chia đội và các hoạt động hợp pháp.</p>
+    </div>
+    <div class="policy-section">
+      <h4 data-i18n="policy.prohibitedTitle">2. Hành vi không được phép</h4>
+      <p data-i18n="policy.prohibitedText">Không sử dụng web cho hành vi vi phạm pháp luật, cá cược, đặt cược ăn tiền, đổi thưởng, xổ số hoặc cờ bạc trá hình; không gian lận, lừa đảo hoặc giả mạo kết quả.</p>
+    </div>
+    <div class="policy-section">
+      <h4 data-i18n="policy.responsibilityTitle">3. Trách nhiệm của người dùng</h4>
+      <p data-i18n="policy.responsibilityText">Người dùng tự chịu trách nhiệm về mục đích sử dụng, nội dung nhập vào và quyền sử dụng tên, hình ảnh, âm thanh hoặc dữ liệu của bên thứ ba.</p>
+    </div>
+    <div class="policy-section">
+      <h4 data-i18n="policy.resultTitle">4. Kết quả và quyết định</h4>
+      <p data-i18n="policy.resultText">Kết quả ngẫu nhiên chỉ hỗ trợ giải trí và vận hành sự kiện. Hãy tự kiểm tra và chịu trách nhiệm trước khi dùng kết quả cho quyết định quan trọng.</p>
+    </div>
+    <div class="policy-section">
+      <h4 data-i18n="policy.ownerTitle">5. Quyền của chủ web</h4>
+      <p data-i18n="policy.ownerText">Chủ web có quyền thay đổi quy định, từ chối hỗ trợ, hạn chế hoặc ngừng quyền truy cập và gỡ nội dung có dấu hiệu vi phạm hoặc lạm dụng.</p>
+    </div>
+    <div class="policy-section">
+      <h4 data-i18n="policy.disclaimerTitle">6. Giới hạn trách nhiệm</h4>
+      <p data-i18n="policy.disclaimerText">Trong phạm vi pháp luật cho phép, chủ web không chịu trách nhiệm về việc sử dụng sai mục đích, tranh chấp giữa các bên, nội dung do người dùng nhập hoặc gián đoạn do thiết bị, trình duyệt, mạng và dịch vụ bên ngoài.</p>
+    </div>
+    <div class="policy-section">
+      <h4 data-i18n="policy.dataTitle">7. Dữ liệu trên trình duyệt</h4>
+      <p data-i18n="policy.dataText">Cấu hình và dữ liệu vận hành có thể được lưu cục bộ trong trình duyệt. Người dùng tự chịu trách nhiệm khi dùng thiết bị chung, xóa dữ liệu trình duyệt hoặc mất dữ liệu cục bộ.</p>
+    </div>
+    <div class="policy-section">
+      <h4 data-i18n="policy.updateTitle">8. Cập nhật quy định</h4>
+      <p data-i18n="policy.updateText">Quy định có thể được cập nhật khi cần. Nội dung mới sẽ được hiển thị tại popup này để người dùng tiện theo dõi.</p>
+    </div>
+    <div class="policy-footer" data-i18n="policy.footer">Quy định này là thông báo sử dụng trên giao diện và không thay thế việc rà soát pháp lý chuyên nghiệp.</div>
+    <div class="policy-actions"><button class="btn p" id="policyDone" type="button"><span class="ui-icon-slot" data-icon="check" aria-hidden="true"></span><span data-i18n="policy.close">Đã hiểu, đóng</span></button></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const KEY='fortuna-v1';
+  const ICON_PATHS = Object.freeze({
+    'settings-2':'<path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/>',
+    'shield-alert':'<path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3Z"/><path d="M12 8v4M12 16h.01"/>',
+    target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+    'calendar-days':'<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>',
+    'globe-2':'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+    'screen-share-off':'<path d="M13 3h5a2 2 0 0 1 2 2v10"/><path d="M2 5a2 2 0 0 1 2-2h2"/><path d="M2 15V5"/><path d="M2 15a2 2 0 0 0 2 2h5"/><path d="M20 15v2a2 2 0 0 1-2 2H7"/><path d="m2 2 20 20"/>',
+    plus:'<path d="M5 12h14"/><path d="M12 5v14"/>',
+    'trash-2':'<path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6v14H5V6"/><path d="M10 11v5M14 11v5"/>',
+    check:'<path d="m5 12 4 4L19 6"/>',
+    'triangle-alert':'<path d="m21.7 18-8-14a2 2 0 0 0-3.5 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
+    x:'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>'
+  });
+  const icon = (name,size=15) => `<svg class="ui-icon" width="${size}" height="${size}" style="width:${size}px;height:${size}px" viewBox="0 0 24 24" fill="none" aria-hidden="true">${ICON_PATHS[name]||ICON_PATHS['settings-2']}</svg>`;
+  const mountIcons = () => document.querySelectorAll('.ui-icon-slot[data-icon]').forEach(el=>{ el.innerHTML=icon(el.dataset.icon,el.dataset.size||15); });
+  const load=()=>{ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch{ return {}; } };
+  const save=(s)=>{ try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch{} };
+  let bc, bcShare;
+  try{ bc = new BroadcastChannel('fortuna-v1'); }catch{}
+  try{ bcShare = new BroadcastChannel('fortuna-share'); }catch{}
+  let s = load();
+  s.wheels = s.wheels || [];
+  s.cfg = s.cfg || {};
+  const I18N = {
+    vi: {
+      'meta.title':'Fortuna — Control Panel', 'language.label':'Ngôn ngữ', 'title':'Control Panel',
+      'warning':'Không share cửa sổ này. Nếu phát hiện chia sẻ, panel sẽ tự đóng.', 'wheel':'Vòng quay',
+      'policy.open':'Đọc quy định sử dụng', 'policy.title':'Quy định sử dụng Fortuna', 'policy.lead':'Vui lòng đọc các nguyên tắc sử dụng dưới đây. Bạn vẫn có thể sử dụng web dù đồng ý hay không đồng ý với nội dung này.', 'policy.purposeTitle':'1. Mục đích sử dụng', 'policy.purposeText':'Fortuna được cung cấp cho mục đích giải trí, random picker, bốc thăm, chia đội và các hoạt động hợp pháp.', 'policy.prohibitedTitle':'2. Hành vi không được phép', 'policy.prohibitedText':'Không sử dụng web cho hành vi vi phạm pháp luật, cá cược, đặt cược ăn tiền, đổi thưởng, xổ số hoặc cờ bạc trá hình; không gian lận, lừa đảo hoặc giả mạo kết quả.', 'policy.responsibilityTitle':'3. Trách nhiệm của người dùng', 'policy.responsibilityText':'Người dùng tự chịu trách nhiệm về mục đích sử dụng, nội dung nhập vào và quyền sử dụng tên, hình ảnh, âm thanh hoặc dữ liệu của bên thứ ba.', 'policy.resultTitle':'4. Kết quả và quyết định', 'policy.resultText':'Kết quả ngẫu nhiên chỉ hỗ trợ giải trí và vận hành sự kiện. Hãy tự kiểm tra và chịu trách nhiệm trước khi dùng kết quả cho quyết định quan trọng.', 'policy.ownerTitle':'5. Quyền của chủ web', 'policy.ownerText':'Chủ web có quyền thay đổi quy định, từ chối hỗ trợ, hạn chế hoặc ngừng quyền truy cập và gỡ nội dung có dấu hiệu vi phạm hoặc lạm dụng.', 'policy.disclaimerTitle':'6. Giới hạn trách nhiệm', 'policy.disclaimerText':'Trong phạm vi pháp luật cho phép, chủ web không chịu trách nhiệm về việc sử dụng sai mục đích, tranh chấp giữa các bên, nội dung do người dùng nhập hoặc gián đoạn do thiết bị, trình duyệt, mạng và dịch vụ bên ngoài.', 'policy.dataTitle':'7. Dữ liệu trên trình duyệt', 'policy.dataText':'Cấu hình và dữ liệu vận hành có thể được lưu cục bộ trong trình duyệt. Người dùng tự chịu trách nhiệm khi dùng thiết bị chung, xóa dữ liệu trình duyệt hoặc mất dữ liệu cục bộ.', 'policy.updateTitle':'8. Cập nhật quy định', 'policy.updateText':'Quy định có thể được cập nhật khi cần. Nội dung mới sẽ được hiển thị tại popup này để người dùng tiện theo dõi.', 'policy.footer':'Quy định này là thông báo sử dụng trên giao diện và không thay thế việc rà soát pháp lý chuyên nghiệp.', 'policy.close':'Đã hiểu, đóng',
+      'tabs.single':'Rig 1 lần', 'tabs.sched':'Kịch bản', 'tabs.all':'Tất cả vòng', 'rig.what':'Trúng gì',
+      'common.random':'Random', 'common.ok':'OK', 'common.cancel':'Huỷ', 'common.close':'Đóng', 'common.delete':'Xoá',
+      'single.autoOff':'Tự tắt sau 1 spin', 'single.removeWinner':'Xoá người thắng khỏi vòng',
+      'type.wheel':'Vòng quay', 'type.number':'Quay số', 'type.items':'{count} mục', 'type.digits':'{count} chữ số', 'type.digitsUnit':'chữ số', 'type.pool':' · {count} giá trị trong danh sách',
+      'rig.chooseList':'Chọn từ danh sách', 'rig.orType':'Hoặc gõ tay', 'rig.number':'Số trúng', 'rig.numberPlaceholder':'VD: 042 hoặc 042|123 nếu nhiều nhóm', 'rig.manualPlaceholder':'Gõ nguyên chuỗi (VD: NV001)',
+      'hint.pool':'Có danh sách → chọn dropdown nhanh hơn. Gõ tay để override.', 'hint.group':'Nhóm cách nhau bởi <b>|</b> hoặc dấu phẩy. Số chữ số sẽ tự pad.',
+      'schedule.title':'Lượt # → tên trúng', 'schedule.addRow':'Thêm dòng', 'schedule.clear':'Clear', 'schedule.current':'Lượt hiện tại:', 'schedule.deleteRow':'Xoá dòng', 'schedule.numberPlaceholder':'Số VD: 042|123',
+      'all.description':'Rig cùng lúc cho TẤT CẢ vòng — dùng khi spin Together/Sequential:', 'all.apply':'Áp dụng cho tất cả', 'empty.schedules':'Chưa có kịch bản', 'empty.wheels':'Chưa có vòng nào',
+      'foot.priorityLabel':'Ưu tiên:', 'foot.priorityText':' Rig 1-shot → Schedule → Random. Áp dụng riêng cho từng vòng.', 'foot.closeNowLabel':'Đóng ngay:',
+      'overlay.detected':'PHÁT HIỆN CHIA SẺ', 'overlay.close':'Đóng để bảo mật…', 'dialog.notice':'Thông báo', 'dialog.confirm':'Xác nhận', 'dialog.success':'Thành công',
+      'confirm.clearSchedule':'Xoá kịch bản của vòng này?', 'status.appliedAll':'Đã áp dụng cho tất cả vòng'
+    },
+    en: {
+      'meta.title':'Fortuna — Control Panel', 'language.label':'Language', 'title':'Control Panel',
+      'warning':'Do not share this window. If screen sharing is detected, the panel will close automatically.', 'wheel':'Wheel',
+      'policy.open':'Read usage rules', 'policy.title':'Fortuna usage rules', 'policy.lead':'Please read the principles below. You can continue using the website whether you agree or disagree with this content.', 'policy.purposeTitle':'1. Purpose of use', 'policy.purposeText':'Fortuna is provided for entertainment, random picker, drawing, team splitting and other lawful activities.', 'policy.prohibitedTitle':'2. Prohibited use', 'policy.prohibitedText':'Do not use the website for unlawful conduct, gambling, cash betting, prize exchange, disguised lottery or gambling; do not cheat, defraud or falsify results.', 'policy.responsibilityTitle':'3. User responsibility', 'policy.responsibilityText':'Users are responsible for their purpose of use, submitted content and the right to use names, images, audio or data belonging to third parties.', 'policy.resultTitle':'4. Results and decisions', 'policy.resultText':'Random results only support entertainment and event operations. Verify the result yourself and take responsibility before using it for an important decision.', 'policy.ownerTitle':'5. Website owner rights', 'policy.ownerText':'The website owner may change these rules, refuse support, restrict or stop access, and remove content that appears to violate the rules or abuse the service.', 'policy.disclaimerTitle':'6. Liability limits', 'policy.disclaimerText':'To the extent permitted by law, the website owner is not responsible for misuse, disputes between parties, user-submitted content, or interruptions caused by devices, browsers, networks or external services.', 'policy.dataTitle':'7. Browser data', 'policy.dataText':'Configuration and operational data may be stored locally in the browser. Users are responsible for shared devices, clearing browser data or losing local data.', 'policy.updateTitle':'8. Rule updates', 'policy.updateText':'These rules may be updated when needed. New content will be shown in this popup for users to review.', 'policy.footer':'These rules are an on-screen usage notice and do not replace professional legal review.', 'policy.close':'Understood, close',
+      'tabs.single':'Rig once', 'tabs.sched':'Schedule', 'tabs.all':'All wheels', 'rig.what':'Winner',
+      'common.random':'Random', 'common.ok':'OK', 'common.cancel':'Cancel', 'common.close':'Close', 'common.delete':'Delete',
+      'single.autoOff':'Disable after 1 spin', 'single.removeWinner':'Remove winner from wheel',
+      'type.wheel':'Wheel', 'type.number':'Number wheel', 'type.items':'{count} items', 'type.digits':'{count} digits', 'type.digitsUnit':'digits', 'type.pool':' · {count} values in list',
+      'rig.chooseList':'Choose from list', 'rig.orType':'Or type manually', 'rig.number':'Winning number', 'rig.numberPlaceholder':'e.g. 042 or 042|123 for multiple groups', 'rig.manualPlaceholder':'Type the full value (e.g. NV001)',
+      'hint.pool':'With a list → choose faster from the dropdown. Type manually to override.', 'hint.group':'Separate groups with <b>|</b> or commas. Digits are padded automatically.',
+      'schedule.title':'Spin # → winning value', 'schedule.addRow':'Add row', 'schedule.clear':'Clear', 'schedule.current':'Current spin:', 'schedule.deleteRow':'Delete row', 'schedule.numberPlaceholder':'Number, e.g. 042|123',
+      'all.description':'Rig ALL wheels at once — use with Together/Sequential spin:', 'all.apply':'Apply to all', 'empty.schedules':'No scenarios yet', 'empty.wheels':'No wheels yet',
+      'foot.priorityLabel':'Priority:', 'foot.priorityText':' Rig 1-shot → Schedule → Random. Applied per wheel.', 'foot.closeNowLabel':'Close now:',
+      'overlay.detected':'SCREEN SHARING DETECTED', 'overlay.close':'Close to protect privacy…', 'dialog.notice':'Notice', 'dialog.confirm':'Confirm', 'dialog.success':'Success',
+      'confirm.clearSchedule':'Clear this wheel\'s schedule?', 'status.appliedAll':'Applied to all wheels'
+    }
+  };
+  const getLanguage = () => s.cfg?.language === 'en' ? 'en' : 'vi';
+  const t = (key, vars={}) => String(I18N[getLanguage()]?.[key] ?? I18N.vi[key] ?? key).replace(/\{(\w+)\}/g,(_,name)=> vars[name] == null ? '' : String(vars[name]));
+  const setDirectText = (el, key) => {
+    if(!el) return;
+    const node = [...el.childNodes].find(n=>n.nodeType===Node.TEXT_NODE && n.nodeValue.trim());
+    if(node) node.nodeValue = t(key); else el.appendChild(document.createTextNode(t(key)));
+  };
+  const STATIC_I18N = Object.freeze({
+    'h1':'title', '#shareWarning':'warning', '#wheelLabel':'wheel', '[data-t="single"]':'tabs.single', '[data-t="sched"]':'tabs.sched', '[data-t="all"]':'tabs.all',
+    '#rigLabel':'rig.what', '#autoOffLabel':'single.autoOff', '#rmWinLabel':'single.removeWinner', '#scheduleTitle':'schedule.title', '#addBtn':'schedule.addRow', '#clrBtn':'schedule.clear', '#currentSpinLabel':'schedule.current', '#allDescription':'all.description', '#applyAll':'all.apply',
+    '#priorityLabel':'foot.priorityLabel', '#priorityText':'foot.priorityText', '#closeNowLabel':'foot.closeNowLabel', '#shareDetectedText':'overlay.detected', '#shareCloseText':'overlay.close'
+  });
+  const applyStaticLanguage = () => {
+    document.querySelectorAll('[data-i18n]').forEach(el=>setDirectText(el,el.dataset.i18n));
+    Object.entries(STATIC_I18N).forEach(([selector,key])=>setDirectText(document.querySelector(selector),key));
+    const select = $('languageSelect'); if(select){ select.value=getLanguage(); select.title=t('language.label'); select.setAttribute('aria-label',t('language.label')); }
+    const policyFab = $('policyFab'); if(policyFab){ policyFab.title=t('policy.open'); policyFab.setAttribute('aria-label',t('policy.open')); }
+    const policyClose = $('policyClose'); if(policyClose){ policyClose.title=t('common.close'); policyClose.setAttribute('aria-label',t('common.close')); }
+    document.documentElement.lang = getLanguage(); document.title = t('meta.title');
+    document.querySelectorAll('[data-rm]').forEach(el=>{ el.title=t('schedule.deleteRow'); el.setAttribute('aria-label',t('schedule.deleteRow')); });
+  };
+  const applyLanguage = () => {
+    const targets = [document.querySelector('h1'),document.querySelector('.tabs'),document.querySelector('[data-p="single"]'),document.querySelector('[data-p="sched"]'),document.querySelector('[data-p="all"]'),document.querySelector('.policy-modal.on')].filter(Boolean);
+    targets.forEach(el=>el.classList.add('motion-language-target','language-out'));
+    applyStaticLanguage(); renderPickers(); renderSingle(); renderSched(); if(!document.querySelector('[data-p="all"]').hidden) renderAll();
+    const raf = window.requestAnimationFrame || (fn=>setTimeout(fn,0));
+    raf(()=>{
+      targets.forEach(el=>el.classList.remove('language-out'));
+      targets.forEach(el=>el.classList.add('language-in'));
+      setTimeout(()=>targets.forEach(el=>el.classList.remove('motion-language-target','language-in')),360);
+    });
+  };
+  const setLanguage = lang => { s.cfg.language = lang === 'en' ? 'en' : 'vi'; save(s); applyLanguage(); };
+  let curWheelId = s.wheels[0]?.id || '';
+
+  const $ = id => document.getElementById(id);
+  const esc = t => String(t).replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const cur = () => s.wheels.find(w=>w.id===curWheelId);
+  const openPolicy = () => $('policyModal')?.classList.add('on');
+  const closePolicy = () => $('policyModal')?.classList.remove('on');
+  $('policyFab')?.addEventListener('click',openPolicy);
+  $('policyClose')?.addEventListener('click',closePolicy);
+  $('policyDone')?.addEventListener('click',closePolicy);
+  $('policyModal')?.addEventListener('click',e=>{ if(e.target===e.currentTarget) closePolicy(); });
+
+  // popup dialog thay alert/confirm
+  function dialog(title, body, buttons){
+    return new Promise(resolve=>{
+      $('dlgT').textContent = title;
+      $('dlgB').textContent = body;
+      const acts = $('dlgA'); acts.innerHTML = '';
+      buttons.forEach(b=>{
+        const btn = document.createElement('button');
+        btn.className = 'btn '+(b.p?'p':'');
+        btn.style.padding = '8px 16px';
+        btn.textContent = b.label;
+        btn.onclick = ()=>{ $('dlgMask').classList.remove('on'); resolve(b.value); };
+        acts.appendChild(btn);
+      });
+      $('dlgMask').classList.add('on');
+    });
+  }
+  const popAlert = (msg,title) => dialog(title||t('dialog.notice'),msg,[{label:t('common.ok'),value:true,p:true}]);
+  const popConfirm = (msg,title) => dialog(title||t('dialog.confirm'),msg,[{label:t('common.cancel'),value:false},{label:t('common.ok'),value:true,p:true}]);
+
+  function persist(){
+    const st = load();
+    st.wheels = st.wheels || [];
+    // merge trick fields per wheel
+    for(const w of s.wheels){
+      const t = st.wheels.find(x=>x.id===w.id); if(!t) continue;
+      t.rigOne = w.rigOne||''; t.schedule = w.schedule||[]; t.numRig = w.numRig||'';
+    }
+    st.cfg = st.cfg || {}; if('removeWin' in s.cfg) st.cfg.removeWin = s.cfg.removeWin;
+    save(st);
+    // notify main per wheel
+    try{
+      for(const w of s.wheels){ bc && bc.postMessage({type:'trick-update', data:{wheelId:w.id, rigOne:w.rigOne||'', schedule:w.schedule||[], numRig:w.numRig||''}}); }
+      if('removeWin' in s.cfg) bc && bc.postMessage({type:'trick-cfg', data:{removeWin:s.cfg.removeWin}});
+    }catch{}
+  }
+
+  function renderPickers(){
+    $('wheelSel').innerHTML = s.wheels.map(w=>{
+      const typeLabel = w.type==='numbers'?t('type.number'):t('type.wheel');
+      const size = w.type==='numbers'?`${w.count}×${w.digitCount} ${t('type.digitsUnit')}`:t('type.items',{count:w.entries?.length||0});
+      return `<option value="${w.id}" ${w.id===curWheelId?'selected':''}>${typeLabel} · ${esc(w.name)} (${size})</option>`;
+    }).join('') || `<option>${t('empty.wheels')}</option>`;
+  }
+  function renderSingle(){
+    const w = cur(); if(!w) return;
+    const container = document.querySelector('[data-p="single"]');
+    const isNum = w.type==='numbers';
+    // body class → ẩn/hiện data-wheel-only / data-numbers-only
+    document.body.classList.toggle('t-numbers', isNum);
+    document.body.classList.toggle('t-wheel', !isNum);
+    // type info banner
+    const info = $('typeInfo');
+    if(isNum){
+      const chars = w.digitSet || `${w.digitMin}-${w.digitMax}`;
+      const pool = w.numPool?.length ? t('type.pool',{count:`<b>${w.numPool.length}</b>`}) : '';
+      info.innerHTML = `${icon('settings-2',14)} <b>${t('type.number')}</b> · ${w.count}×${w.digitCount} · ${esc(chars)}${pool}`;
+    } else {
+      info.innerHTML = `${icon('target',14)} <b>${t('type.wheel')}</b> · ${t('type.items',{count:`<b>${w.entries?.length||0}</b>`})}`;
+    }
+    if(isNum){
+      // number rig UI
+      $('rigSel').parentElement.style.display='none';
+      let numBox = container.querySelector('.num-rig-box');
+      if(!numBox){
+        numBox = document.createElement('div');
+        numBox.className='num-rig-box';
+        numBox.dataset.numbersOnly = '1';
+        container.insertBefore(numBox, container.firstChild.nextSibling.nextSibling);
+      }
+      // build UI dynamic based on pool
+      if(w.numPool?.length){
+        numBox.innerHTML = `
+           <div class="row"><label>${t('rig.chooseList')}</label><select id="poolSel"><option value="">— ${t('common.random')} —</option>${w.numPool.map(v=>`<option value="${esc(v)}" ${w.numRig===v?'selected':''}>${esc(v)}</option>`).join('')}</select></div>
+           <div class="row"><label>${t('rig.orType')}</label><input type="text" id="numRigInput" placeholder="${t('rig.manualPlaceholder')}"></div>
+           <div style="font-size:11px;color:#6b7290;padding-left:110px">${t('hint.pool')}</div>
+        `;
+        numBox.querySelector('#poolSel').onchange = e => { w.numRig = e.target.value; numBox.querySelector('#numRigInput').value = e.target.value; persist(); };
+      } else {
+        numBox.innerHTML = `
+           <div class="row"><label>${t('rig.number')}</label><input type="text" id="numRigInput" placeholder="${t('rig.numberPlaceholder')}"></div>
+           <div style="font-size:11px;color:#6b7290;padding-left:110px">${t('hint.group')}</div>
+        `;
+      }
+      const inp = numBox.querySelector('#numRigInput');
+      inp.value = w.numRig||'';
+      inp.oninput = () => { w.numRig = inp.value; persist(); };
+      numBox.style.display='';
+    } else {
+      $('rigSel').parentElement.style.display='';
+      const numBox = container.querySelector('.num-rig-box'); if(numBox) numBox.style.display='none';
+      $('rigSel').innerHTML = `<option value="">— ${t('common.random')} —</option>` + (w.entries||[]).slice(0,3000).map(e=>`<option value="${e.id}" ${w.rigOne===e.id?'selected':''}>${esc(e.name)}</option>`).join('');
+    }
+    $('cur').textContent = w.spinNo||0;
+    $('rmWin').checked = !!s.cfg?.removeWin;
+  }
+  function renderSched(){
+    const w = cur(); if(!w) return;
+    const list = $('list');
+    list.innerHTML = (w.schedule||[]).map((row,i)=>{
+      if(w.type==='numbers'){
+        return `<div class="sched-row">
+          <input type="number" min="1" value="${row.spinIndex}" data-i="${i}" data-k="spinIndex">
+          <input type="text" value="${esc(row.number||'')}" placeholder="${t('schedule.numberPlaceholder')}" data-i="${i}" data-k="number">
+          <button data-rm="${i}" title="${t('schedule.deleteRow')}" aria-label="${t('schedule.deleteRow')}">${icon('trash-2',14)}</button>
+        </div>`;
+      }
+      return `<div class="sched-row">
+        <input type="number" min="1" value="${row.spinIndex}" data-i="${i}" data-k="spinIndex">
+        <select data-i="${i}" data-k="entryId">${(w.entries||[]).slice(0,2000).map(e=>`<option value="${e.id}" ${row.entryId===e.id?'selected':''}>${esc(e.name)}</option>`).join('')}</select>
+         <button data-rm="${i}" title="${t('schedule.deleteRow')}" aria-label="${t('schedule.deleteRow')}">${icon('trash-2',14)}</button>
+      </div>`;
+    }).join('') || `<div class="empty">${t('empty.schedules')}</div>`;
+  }
+  function renderAll(){
+    $('allList').innerHTML = s.wheels.map(w=>{
+      const isNum = w.type==='numbers';
+       const typeLabel = isNum?t('type.number'):t('type.wheel');
+       const meta = isNum ? `${w.count}×${w.digitCount}` : t('type.items',{count:w.entries?.length||0});
+      let inputHtml = '';
+      if(isNum){
+        if(w.numPool?.length){
+          inputHtml = `<select data-all-num="${w.id}" style="width:100%">
+             <option value="">— ${t('common.random')} —</option>
+            ${w.numPool.map(v=>`<option value="${esc(v)}" ${w.numRig===v?'selected':''}>${esc(v)}</option>`).join('')}
+          </select>`;
+        } else {
+           inputHtml = `<input type="text" data-all-num-txt="${w.id}" value="${esc(w.numRig||'')}" placeholder="${t('rig.numberPlaceholder')}" style="width:100%">`;
+        }
+      } else {
+        inputHtml = `<select data-all="${w.id}" style="width:100%">
+           <option value="">— ${t('common.random')} —</option>
+          ${(w.entries||[]).slice(0,2000).map(e=>`<option value="${e.id}" ${w.rigOne===e.id?'selected':''}>${esc(e.name)}</option>`).join('')}
+        </select>`;
+      }
+      return `<div class="all-wheel-row" style="padding:10px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:7px;margin-bottom:8px">
+        <div style="font-weight:600;font-size:12px;margin-bottom:7px">${typeLabel} · ${esc(w.name)} <span style="color:var(--muted);font-weight:400">(${meta})</span></div>
+        ${inputHtml}
+      </div>`;
+     }).join('') || `<div class="empty">${t('empty.wheels')}</div>`;
+  }
+
+  function selectWheel(id){ curWheelId = id; renderSingle(); renderSched(); }
+
+  $('languageSelect').onchange = e => setLanguage(e.target.value);
+  $('wheelSel').onchange = e => selectWheel(e.target.value);
+  $('rigSel').onchange = e => { const w=cur(); if(w){ w.rigOne=e.target.value; persist(); } };
+  $('addBtn').onclick = () => { const w=cur(); if(!w) return; w.schedule=w.schedule||[]; if(w.type==='numbers') w.schedule.push({spinIndex:(w.spinNo||0)+1, number:''}); else w.schedule.push({spinIndex:(w.spinNo||0)+1, entryId:w.entries?.[0]?.id||''}); persist(); renderSched(); };
+  $('clrBtn').onclick = async () => { const w=cur(); if(w && await popConfirm(t('confirm.clearSchedule'))){ w.schedule=[]; persist(); renderSched(); } };
+  $('rmWin').onchange = e => { s.cfg = s.cfg||{}; s.cfg.removeWin = e.target.checked; persist(); };
+  $('list').addEventListener('input', e => {
+    const t=e.target; const i=+t.dataset.i, k=t.dataset.k; if(isNaN(i)||!k) return;
+    const w=cur(); if(!w) return;
+    if(k==='spinIndex') w.schedule[i][k] = +t.value; else w.schedule[i][k] = t.value;
+    persist();
+  });
+  $('list').addEventListener('click', e => { const i=e.target.dataset.rm; if(i!=null){ const w=cur(); w.schedule.splice(+i,1); persist(); renderSched(); } });
+  $('allList').addEventListener('change', e => {
+    const t = e.target;
+    if(t.dataset.all){ const w=s.wheels.find(x=>x.id===t.dataset.all); if(w) w.rigOne=t.value; }
+    else if(t.dataset.allNum){ const w=s.wheels.find(x=>x.id===t.dataset.allNum); if(w) w.numRig=t.value; }
+  });
+  $('allList').addEventListener('input', e => {
+    const t = e.target;
+    if(t.dataset.allNumTxt){ const w=s.wheels.find(x=>x.id===t.dataset.allNumTxt); if(w) w.numRig=t.value; }
+  });
+  $('applyAll').onclick = () => { persist(); popAlert(t('status.appliedAll'),t('dialog.success')); };
+
+  // tabs
+  document.querySelectorAll('.tabs button').forEach(b=>{
+    b.onclick = () => {
+      document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on');
+      document.querySelectorAll('[data-p]').forEach(p=> p.hidden = p.dataset.p !== b.dataset.t);
+      if(b.dataset.t==='all') renderAll();
+    };
+  });
+
+  // sync from main
+  bc && (bc.onmessage = e => {
+    const {type,data} = e.data || {};
+    if(type==='sync'){
+      s = data;
+      s.cfg = s.cfg || {};
+      if(!s.wheels.find(w=>w.id===curWheelId)) curWheelId = s.wheels[0]?.id||'';
+      applyLanguage();
+    }
+  });
+  try{ bc && bc.postMessage({type:'trick-hello', data:{}}); }catch{}
+
+  // pull from storage periodically
+  setInterval(()=>{
+    const cur2 = load();
+    if(JSON.stringify(cur2.wheels?.map(w=>({id:w.id,n:w.entries?.length,s:w.spinNo}))) !== JSON.stringify(s.wheels?.map(w=>({id:w.id,n:w.entries?.length,s:w.spinNo})))){
+      s = cur2; s.cfg = s.cfg || {}; if(!s.wheels.find(w=>w.id===curWheelId)) curWheelId = s.wheels[0]?.id||'';
+      applyLanguage();
+    }
+  }, 2000);
+
+  function overlay(){ $('over').classList.add('on'); setTimeout(()=> window.close(), 1200); }
+  bcShare && (bcShare.onmessage = e => { if(e.data==='start') overlay(); });
+  window.addEventListener('keydown', e => { if(e.key==='Escape'){ if($('policyModal')?.classList.contains('on')){ e.preventDefault(); closePolicy(); return; } window.close(); } });
+  document.addEventListener('visibilitychange', () => { document.body.style.opacity = document.hidden ? '0':'1'; });
+
+  mountIcons();
+  applyLanguage();
+})();
+</script>
+</body>
+</html>
