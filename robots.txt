@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kintinz.github.io/lucky-wheel/sitemap.xml
+Sitemap: https://spinwin.io.vn/sitemap.xml

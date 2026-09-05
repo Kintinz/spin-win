@@ -1,6 +1,6 @@
 # Hướng dẫn SEO cho Spin & Win
 
-Tài liệu này mô tả trạng thái SEO hiện tại của repo và các bước cần làm khi đưa lên domain thật. URL deploy hiện tại là GitHub Pages `https://kintinz.github.io/lucky-wheel/`.
+Tài liệu này mô tả trạng thái SEO hiện tại của repo. URL deploy chính thức là `https://spinwin.io.vn/`.
 
 ## Đã triển khai trong repo
 
@@ -21,9 +21,9 @@ Tài liệu này mô tả trạng thái SEO hiện tại của repo và các bư
 
 ### `robots.txt` và `sitemap.xml`
 
-- `robots.txt` cho phép crawl và trỏ tới sitemap của GitHub Pages.
+- `robots.txt` cho phép crawl và trỏ tới sitemap của domain chính thức.
 - `sitemap.xml` chỉ liệt kê trang chính; các trang nội bộ không được liệt kê.
-- Khi đổi domain, phải thay URL trong cả hai file và trong `index.html`.
+- Các URL SEO trong `index.html`, `robots.txt` và `sitemap.xml` đều dùng domain chính thức.
 
 ## SEO Google thường và Google AI Search
 
@@ -40,9 +40,9 @@ Các nguyên tắc cần giữ:
 
 ## Việc cần làm trước khi deploy
 
-### 1. Khi đổi sang domain thật
+### 1. Kiểm tra domain chính thức
 
-Nếu chuyển sang domain riêng, thay `https://kintinz.github.io/lucky-wheel/` bằng domain thật tại:
+Domain chính thức của website là `https://spinwin.io.vn/`. Kiểm tra các URL SEO tại:
 
 - `index.html`: canonical, `og:url`, `og:image`, `twitter:image` và URL trong JSON-LD.
 - `robots.txt`: URL sitemap.
@@ -50,7 +50,7 @@ Nếu chuyển sang domain riêng, thay `https://kintinz.github.io/lucky-wheel/`
 
 ### 2. Kiểm tra ảnh chia sẻ
 
-Repo giữ `logo-web.jpg` làm ảnh nguồn, có `logo-web-removebg-preview.png` làm logo chính nền trong suốt kích thước 750×333 và `logo-mark.png` làm biểu tượng riêng cho favicon. Metadata Open Graph/Twitter Card đang trỏ tới `logo-web-removebg-preview.png`. Trước khi phát hành chính thức, kiểm tra ảnh trên các nền tảng chia sẻ thực tế; nếu cần ảnh chia sẻ theo tỉ lệ khác, xuất một bản riêng rồi cập nhật `og:image` và `twitter:image`.
+Repo giữ `logo-web.jpg` làm ảnh nguồn, có `logo-web-removebg-preview.png` làm logo wordmark nền trong suốt và `logo-mark.png` làm biểu tượng riêng kích thước 276×275. Metadata Open Graph/Twitter Card và trường `image` trong JSON-LD đang trỏ tới `logo-mark.png`. Trước khi phát hành chính thức, kiểm tra ảnh trên các nền tảng chia sẻ thực tế; nếu cần ảnh chia sẻ theo tỉ lệ khác, xuất một bản riêng rồi cập nhật các metadata ảnh.
 
 ### 3. Kiểm tra tài nguyên public
 
