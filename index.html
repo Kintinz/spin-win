@@ -31,6 +31,10 @@
 <meta name="theme-color" content="#5d87b0">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://spinwin.io.vn/">
+<link rel="alternate" hreflang="vi" href="https://spinwin.io.vn/">
+<link rel="alternate" hreflang="en" href="https://spinwin.io.vn/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://spinwin.io.vn/">
+<meta name="keywords" content="vòng quay may mắn, bốc thăm ngẫu nhiên, quay số ngẫu nhiên, chia đội tự động, random name picker, lucky wheel, spin the wheel, spin wheel online, vòng quay online, bốc thăm online">
 <script>
   const internalMode = new URLSearchParams(location.search);
   if (internalMode.get('admin') === '1' || internalMode.get('overlay') === '1' || internalMode.get('panel') === 'trick') {
@@ -44,15 +48,15 @@
 <meta property="og:title" content="Spin &amp; Win — Vòng Quay May Mắn Miễn Phí">
 <meta property="og:description" content="Vòng quay may mắn, bốc thăm ngẫu nhiên, quay số và chia đội cho các hoạt động giải trí, sự kiện và lớp học.">
 <meta property="og:url" content="https://spinwin.io.vn/">
+<meta property="og:image" content="https://spinwin.io.vn/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Spin &amp; Win — Vòng quay may mắn 4 múi màu">
 <meta property="og:image" content="https://spinwin.io.vn/og-image.svg">
 <meta property="og:image:type" content="image/svg+xml">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Spin &amp; Win — Vòng quay may mắn và bốc thăm ngẫu nhiên">
-<meta property="og:image" content="https://spinwin.io.vn/logo-mark.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="276">
-<meta property="og:image:height" content="275">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 
@@ -60,7 +64,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Spin &amp; Win — Vòng Quay May Mắn Miễn Phí">
 <meta name="twitter:description" content="Bốc thăm ngẫu nhiên, quay số và chia đội cho giải trí, sự kiện và lớp học.">
-<meta name="twitter:image" content="https://spinwin.io.vn/og-image.svg">
+<meta name="twitter:image" content="https://spinwin.io.vn/og-image.png">
 <meta name="twitter:image:alt" content="Spin &amp; Win — Vòng quay may mắn 4 múi màu">
 
 <!-- ===== STRUCTURED DATA (Schema.org JSON-LD) ===== -->
@@ -94,6 +98,56 @@
     "Sessions lưu kịch bản",
     "QR share",
     "Suspense drum roll"
+  ]
+}
+</script>
+
+<!-- ===== FAQ Schema (rich snippet) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Spin & Win là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spin & Win là công cụ vòng quay may mắn và bốc thăm ngẫu nhiên online miễn phí, dùng cho sự kiện, lớp học, livestream và các hoạt động giải trí."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Spin & Win có miễn phí không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Toàn bộ tính năng vòng quay tên, quay số, chia đội, TTS đọc tên, QR share đều miễn phí, không cần đăng ký tài khoản."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có thể thêm bao nhiêu tên hoặc số vào vòng quay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không giới hạn thực tế. Bạn có thể dán hàng trăm tên hoặc số vào một vòng quay, đồng thời chạy nhiều vòng quay cạnh nhau trên cùng màn hình."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Spin & Win có dùng cho stream OBS được không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Trang hỗ trợ chế độ overlay trong suốt để nhúng làm Browser Source trong OBS/Streamlabs, kèm âm thanh drum-roll và hiệu ứng winner-glow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có thể chia đội tự động không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Nhập danh sách tên và chọn số đội, Spin & Win sẽ chia đều ngẫu nhiên và hiển thị kết quả từng đội, có thể lưu lại kịch bản qua Sessions."
+      }
+    }
   ]
 }
 </script>
