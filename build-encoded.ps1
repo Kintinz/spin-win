@@ -51,7 +51,41 @@ $loader = @'
 $noscriptStyle = '<style>body.__ns{background:#0f1120;color:#f1f3f9;font-family:sans-serif;margin:0;padding:40px;text-align:center}</style>'
 $headWithStyle = $headPart -replace '</head>', "$noscriptStyle</head>"
 
-$result = "$warning`n$headWithStyle<body class=`"__ns`"><noscript>Please enable JavaScript.</noscript><script id=`"__e`" type=`"text/plain`">`n$b64Formatted`n</script>$loader</body></html>"
+# Plain-text SEO content block for crawlers without JS (Bing, Coc Coc, Zalo, Yandex)
+# Sits between <body> and the base64 blob. Hidden the moment JS runs.
+$seoBlock = @'
+<div id="seo-content" style="max-width:900px;margin:0 auto;padding:24px;font-family:sans-serif;line-height:1.7;color:#eef2f5">
+<h1>Spin &amp; Win — Vòng Quay May Mắn &amp; Bốc Thăm Ngẫu Nhiên Miễn Phí</h1>
+<p><strong>Spin &amp; Win</strong> (spinwin.io.vn) là công cụ vòng quay may mắn và bốc thăm ngẫu nhiên online miễn phí, dùng cho sự kiện, lớp học, livestream, chia đội và các hoạt động giải trí. Không cần đăng ký, không quảng cáo, hoạt động ngay trên trình duyệt.</p>
+<h2>Tính năng chính</h2>
+<ul>
+<li><strong>Vòng quay tên ngẫu nhiên</strong> — nhập danh sách tên, quay để chọn ngẫu nhiên người thắng.</li>
+<li><strong>Quay số ngẫu nhiên</strong> — chọn số trong khoảng bất kỳ, dùng cho xổ số nội bộ, bốc thăm giải thưởng.</li>
+<li><strong>Chia đội tự động</strong> — nhập danh sách và số đội, hệ thống chia đều ngẫu nhiên.</li>
+<li><strong>Nhiều vòng quay đồng thời</strong> — chạy 2–4 vòng cạnh nhau trên cùng màn hình.</li>
+<li><strong>Text-to-speech đọc tên</strong> — đọc to kết quả bằng tiếng Việt / tiếng Anh.</li>
+<li><strong>Overlay cho OBS streaming</strong> — nhúng làm Browser Source, nền trong suốt.</li>
+<li><strong>QR share</strong> — chia sẻ vòng quay qua mã QR.</li>
+<li><strong>Sessions</strong> — lưu và tải lại kịch bản vòng quay.</li>
+<li><strong>Suspense drum roll</strong> — hiệu ứng âm thanh hồi hộp khi quay.</li>
+</ul>
+<h2>Câu hỏi thường gặp</h2>
+<h3>Spin &amp; Win có miễn phí không?</h3>
+<p>Có. Toàn bộ tính năng đều miễn phí, không cần đăng ký, không quảng cáo.</p>
+<h3>Có thể thêm bao nhiêu tên hoặc số?</h3>
+<p>Không giới hạn thực tế. Bạn có thể dán hàng trăm tên hoặc số vào một vòng quay.</p>
+<h3>Có dùng cho stream OBS được không?</h3>
+<p>Có. Trang hỗ trợ overlay trong suốt để nhúng làm Browser Source trong OBS/Streamlabs.</p>
+<h3>Có thể chia đội tự động không?</h3>
+<p>Có. Nhập danh sách và chọn số đội, hệ thống chia đều ngẫu nhiên.</p>
+<h2>Dùng cho mục đích nào?</h2>
+<p>Vòng quay may mắn dùng cho tiệc công ty, team building, quiz học sinh, livestream giveaway, chọn người thắng cuộc, bốc thăm giải thưởng, phân công công việc, chia nhóm học tập, chọn nhà hàng ăn trưa và mọi quyết định ngẫu nhiên cần công bằng minh bạch.</p>
+<p><em>Lưu ý: Spin &amp; Win là công cụ giải trí, không dành cho cá cược.</em></p>
+</div>
+<script>(function(){var el=document.getElementById('seo-content');if(el)el.style.display='none';})();</script>
+'@
+
+$result = "$warning`n$headWithStyle<body class=`"__ns`">$seoBlock<noscript>Please enable JavaScript.</noscript><script id=`"__e`" type=`"text/plain`">`n$b64Formatted`n</script>$loader</body></html>"
 
 [System.IO.File]::WriteAllText($outputFile, $result, [System.Text.Encoding]::UTF8)
 

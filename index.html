@@ -632,6 +632,7 @@
 </style>
 </head>
 <body>
+
 <header>
   <div class="header-primary">
     <div class="logo">
@@ -4256,6 +4257,13 @@ app.init();
   try{
     var _q = new URLSearchParams(location.search);
     if(_q.get('dev') === '1') return;
+  }catch(_){}
+
+  // Bypass cho search engine bots (Google, Bing, Facebook, ...) — quan trọng cho SEO
+  try{
+    var _ua = (navigator.userAgent || '').toLowerCase();
+    var _botPattern = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandex|sogou|exabot|facebot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|telegrambot|zalobot|coccocbot|applebot|petalbot|semrushbot|ahrefsbot|mj12bot|dotbot|lighthouse|chrome-lighthouse|pagespeed|gtmetrix|headlesschrome/i;
+    if(_botPattern.test(_ua)) return;
   }catch(_){}
 
   // ---- 1) Chặn phím tắt xem source / DevTools / save ----
