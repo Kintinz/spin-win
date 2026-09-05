@@ -1,4 +1,4 @@
-# Hướng dẫn SEO cho Fortuna
+# Hướng dẫn SEO cho Spin & Win
 
 Tài liệu này mô tả trạng thái SEO hiện tại của repo và các bước cần làm khi đưa lên domain thật. URL deploy hiện tại là GitHub Pages `https://kintinz.github.io/lucky-wheel/`.
 
@@ -50,7 +50,7 @@ Nếu chuyển sang domain riêng, thay `https://kintinz.github.io/lucky-wheel/`
 
 ### 2. Kiểm tra ảnh chia sẻ
 
-Repo hiện có `og-image.svg` kích thước 1200×630 và metadata đang trỏ tới ảnh này. Trước khi phát hành chính thức, kiểm tra ảnh trên các nền tảng chia sẻ thực tế; nếu nền tảng yêu cầu PNG/JPG, xuất cùng thiết kế thành `og-image.png` rồi cập nhật `og:image` và `twitter:image`.
+Repo giữ `logo-web.jpg` làm ảnh nguồn, có `logo-web-removebg-preview.png` làm logo chính nền trong suốt kích thước 750×333 và `logo-mark.png` làm biểu tượng riêng cho favicon. Metadata Open Graph/Twitter Card đang trỏ tới `logo-web-removebg-preview.png`. Trước khi phát hành chính thức, kiểm tra ảnh trên các nền tảng chia sẻ thực tế; nếu cần ảnh chia sẻ theo tỉ lệ khác, xuất một bản riêng rồi cập nhật `og:image` và `twitter:image`.
 
 ### 3. Kiểm tra tài nguyên public
 
@@ -70,10 +70,10 @@ Chạy PageSpeed Insights hoặc Lighthouse trên bản deploy thật. Kết qu�
 ## Không làm
 
 - Không thêm `aggregateRating`, review hoặc số điểm nếu không có dữ liệu thật.
-- Không nhồi các từ khóa liên quan cá cược, cờ bạc, đổi thưởng hoặc dịch vụ mà Fortuna không cung cấp.
+- Không nhồi các từ khóa liên quan cá cược, cờ bạc, đổi thưởng hoặc dịch vụ mà Spin & Win không cung cấp.
 - Không dùng `robots.txt` để thay thế `noindex`.
 - Không khẳng định trang chắc chắn xuất hiện trong AI Search; Google không có cam kết hiển thị.
 
 ## Ghi chú pháp lý nội dung
 
-Nội dung giới thiệu và policy trên giao diện định vị Fortuna cho mục đích giải trí và hoạt động hợp pháp. Dòng cảnh báo không thay thế tư vấn pháp lý chuyên nghiệp; người vận hành cần rà soát lại theo domain, quốc gia, mô hình kinh doanh và cách sử dụng thực tế trước khi phát hành.
+Nội dung giới thiệu và policy trên giao diện định vị Spin & Win cho mục đích giải trí và hoạt động hợp pháp. Dòng cảnh báo không thay thế tư vấn pháp lý chuyên nghiệp; người vận hành cần rà soát lại theo domain, quốc gia, mô hình kinh doanh và cách sử dụng thực tế trước khi phát hành.

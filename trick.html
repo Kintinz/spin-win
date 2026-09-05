@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fortuna Control Panel — Internal Tool</title>
+<title>Spin &amp; Win Control Panel — Internal Tool</title>
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="googlebot" content="noindex, nofollow, noarchive">
 <style>
@@ -143,11 +143,11 @@
 <div class="dlg-mask policy-modal" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="policyTitle" aria-describedby="policyLead">
   <div class="dlg-box policy-box">
     <button class="dlg-close" id="policyClose" type="button" aria-label="Đóng" title="Đóng"><span class="ui-icon-slot" data-icon="x" aria-hidden="true"></span></button>
-    <h3 class="policy-title" id="policyTitle"><span class="ui-icon-slot" data-icon="triangle-alert" aria-hidden="true"></span><span data-i18n="policy.title">Quy định sử dụng Fortuna</span></h3>
+    <h3 class="policy-title" id="policyTitle"><span class="ui-icon-slot" data-icon="triangle-alert" aria-hidden="true"></span><span data-i18n="policy.title">Quy định sử dụng Spin &amp; Win</span></h3>
     <p class="policy-lead" id="policyLead" data-i18n="policy.lead">Vui lòng đọc các nguyên tắc sử dụng dưới đây. Bạn vẫn có thể sử dụng web dù đồng ý hay không đồng ý với nội dung này.</p>
     <div class="policy-section">
       <h4 data-i18n="policy.purposeTitle">1. Mục đích sử dụng</h4>
-      <p data-i18n="policy.purposeText">Fortuna được cung cấp cho mục đích giải trí, random picker, bốc thăm, chia đội và các hoạt động hợp pháp.</p>
+      <p data-i18n="policy.purposeText">Spin &amp; Win được cung cấp cho mục đích giải trí, random picker, bốc thăm, chia đội và các hoạt động hợp pháp.</p>
     </div>
     <div class="policy-section">
       <h4 data-i18n="policy.prohibitedTitle">2. Hành vi không được phép</h4>
@@ -243,7 +243,7 @@
     }
   };
   const getLanguage = () => s.cfg?.language === 'en' ? 'en' : 'vi';
-  const t = (key, vars={}) => String(I18N[getLanguage()]?.[key] ?? I18N.vi[key] ?? key).replace(/\{(\w+)\}/g,(_,name)=> vars[name] == null ? '' : String(vars[name]));
+  const t = (key, vars={}) => String(I18N[getLanguage()]?.[key] ?? I18N.vi[key] ?? key).replace(/Fortuna/g,'Spin & Win').replace(/\{(\w+)\}/g,(_,name)=> vars[name] == null ? '' : String(vars[name]));
   const setDirectText = (el, key) => {
     if(!el) return;
     const node = [...el.childNodes].find(n=>n.nodeType===Node.TEXT_NODE && n.nodeValue.trim());

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Fortuna — Vòng quay may mắn</title>
+  <title id="title">Spin &amp; Win — Vòng quay may mắn</title>
   <desc id="desc">Vòng quay may mắn và bốc thăm ngẫu nhiên miễn phí</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -25,7 +25,7 @@
     <circle cx="180" cy="180" r="12" fill="#fff"/>
     <path d="M180 32V12M328 180h20M180 328v20M32 180H12" stroke="#9fc2df" stroke-opacity=".4" stroke-width="5" stroke-linecap="round"/>
   </g>
-  <text x="430" y="265" fill="#eef2f5" font-family="Segoe UI,Arial,sans-serif" font-size="74" font-weight="700">Fortuna</text>
+  <text x="430" y="265" fill="#eef2f5" font-family="Segoe UI,Arial,sans-serif" font-size="74" font-weight="700">Spin &amp; Win</text>
   <text x="435" y="340" fill="#b9d0e3" font-family="Segoe UI,Arial,sans-serif" font-size="34">Vòng quay may mắn</text>
   <text x="435" y="394" fill="#aeb8c2" font-family="Segoe UI,Arial,sans-serif" font-size="25">Bốc thăm ngẫu nhiên · Chia đội · Quay số</text>
   <rect x="435" y="450" width="330" height="3" rx="1.5" fill="url(#brand)"/>

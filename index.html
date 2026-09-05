@@ -1,13 +1,31 @@
 <!doctype html>
+<!--
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║   ⛔  CẤM XEM MÃ NGUỒN — SOURCE CODE VIEWING PROHIBITED  ⛔        ║
+║                                                                      ║
+║   Fortuna © 2026 · All rights reserved                               ║
+║                                                                      ║
+║   Nội dung này được bảo vệ bản quyền.                                ║
+║   Việc sao chép / trích xuất / tái sử dụng mã nguồn KHÔNG được       ║
+║   phép mà không có sự đồng ý bằng văn bản của chủ sở hữu.            ║
+║                                                                      ║
+║   This content is copyrighted. Copying, extracting or reusing        ║
+║   the source code is NOT permitted without written consent.          ║
+║                                                                      ║
+║   Contact: datduongnvty@gmail.com                                    ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+-->
 <html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fortuna — Vòng Quay May Mắn &amp; Bốc Thăm Ngẫu Nhiên</title>
+<title>Spin &amp; Win — Vòng Quay May Mắn &amp; Bốc Thăm Ngẫu Nhiên</title>
 
 <!-- ===== SEO META TAGS ===== -->
-<meta name="description" content="Fortuna là vòng quay may mắn và công cụ bốc thăm ngẫu nhiên miễn phí: quay số, chia đội, đọc tên bằng TTS và chia sẻ cho sự kiện. Dùng cho giải trí, không dành cho cá cược.">
-<meta name="author" content="Fortuna">
+<meta name="description" content="Spin &amp; Win là vòng quay may mắn và công cụ bốc thăm ngẫu nhiên miễn phí: quay số, chia đội, đọc tên bằng TTS và chia sẻ cho sự kiện. Dùng cho giải trí, không dành cho cá cược.">
+<meta name="author" content="Spin &amp; Win">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <meta name="googlebot" content="index, follow">
 <meta name="theme-color" content="#5d87b0">
@@ -22,32 +40,32 @@
 
 <!-- ===== OPEN GRAPH (Facebook, Zalo, LinkedIn) ===== -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Fortuna">
-<meta property="og:title" content="Fortuna — Vòng Quay May Mắn Miễn Phí">
+<meta property="og:site_name" content="Spin &amp; Win">
+<meta property="og:title" content="Spin &amp; Win — Vòng Quay May Mắn Miễn Phí">
 <meta property="og:description" content="Vòng quay may mắn, bốc thăm ngẫu nhiên, quay số và chia đội cho các hoạt động giải trí, sự kiện và lớp học.">
 <meta property="og:url" content="https://kintinz.github.io/lucky-wheel/">
-<meta property="og:image" content="https://kintinz.github.io/lucky-wheel/og-image.svg">
-<meta property="og:image:type" content="image/svg+xml">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Fortuna — Vòng quay may mắn và bốc thăm ngẫu nhiên">
+<meta property="og:image" content="https://kintinz.github.io/lucky-wheel/logo-web-removebg-preview.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="750">
+<meta property="og:image:height" content="333">
+<meta property="og:image:alt" content="Spin &amp; Win — Vòng quay may mắn và bốc thăm ngẫu nhiên">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 
 <!-- ===== TWITTER CARD ===== -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fortuna — Vòng Quay May Mắn Miễn Phí">
+<meta name="twitter:title" content="Spin &amp; Win — Vòng Quay May Mắn Miễn Phí">
 <meta name="twitter:description" content="Bốc thăm ngẫu nhiên, quay số và chia đội cho giải trí, sự kiện và lớp học.">
-<meta name="twitter:image" content="https://kintinz.github.io/lucky-wheel/og-image.svg">
+<meta name="twitter:image" content="https://kintinz.github.io/lucky-wheel/logo-web-removebg-preview.png">
 
 <!-- ===== STRUCTURED DATA (Schema.org JSON-LD) ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Fortuna",
+  "name": "Spin & Win",
   "alternateName": "Vòng Quay May Mắn và Bốc Thăm Ngẫu Nhiên",
-  "description": "Công cụ vòng quay may mắn, bốc thăm ngẫu nhiên, quay số và chia đội miễn phí cho giải trí và các hoạt động hợp pháp.",
+  "description": "Spin & Win là công cụ vòng quay may mắn, bốc thăm ngẫu nhiên, quay số và chia đội miễn phí cho giải trí và các hoạt động hợp pháp.",
   "url": "https://kintinz.github.io/lucky-wheel/",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
@@ -74,8 +92,8 @@
 }
 </script>
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235d87b0'/%3E%3Cstop offset='1' stop-color='%2378a4c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3Cpath d='M32 8 L38 32 L32 28 L26 32 Z' fill='%23fff'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23fff'/%3E%3Ccircle cx='32' cy='32' r='3' fill='url(%23g)'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235d87b0'/%3E%3Cstop offset='1' stop-color='%2378a4c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3Cpath d='M32 8 L38 32 L32 28 L26 32 Z' fill='%23fff'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23fff'/%3E%3Ccircle cx='32' cy='32' r='3' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="icon" href="logo-mark.png">
+<link rel="apple-touch-icon" href="logo-mark.png">
 
 <style>
   :root{
@@ -113,15 +131,24 @@
   body{display:flex;flex-direction:column;min-height:100vh}
   ::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}::-webkit-scrollbar-thumb:hover{background:var(--muted)}
 
-  header{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;flex-wrap:wrap}
+  header{display:flex;align-items:center;gap:10px;padding:12px 20px;background:#59616b;border-bottom:1px solid rgba(255,255,255,.18);position:sticky;top:0;z-index:100;flex-wrap:wrap}
   .header-primary{display:flex;align-items:center;gap:10px;min-width:0}
   .header-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap;min-width:0;margin-left:auto}
   .header-tools,.header-utilities{display:contents}
-  .mobile-panel-trigger,.mobile-panel-close,.mobile-panel-backdrop{display:none}
+  .mobile-panel-trigger,.mobile-panel-close,.mobile-panel-backdrop{display:none!important}
   header,aside,.slot-container,.slot-group,.wheel-picker,#entriesText{transition:background var(--motion-slow) var(--motion-ease),color var(--motion-slow) var(--motion-ease),border-color var(--motion-slow) var(--motion-ease),box-shadow var(--motion-slow) var(--motion-ease)}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.2px}
-  .logo .brand{color:var(--brand);font-weight:800}
-  .logo svg{width:28px;height:28px;flex-shrink:0}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.2px;min-width:0}
+  .brand-mark{display:block;width:46px;height:46px;flex:0 0 46px;object-fit:contain;object-position:center}
+  .brand-name{display:inline-flex;align-items:baseline;white-space:nowrap;font-family:"Arial Rounded MT Bold","Trebuchet MS",Arial,sans-serif;font-size:22px;line-height:1;font-weight:700;letter-spacing:-.7px;text-shadow:0 1px 2px rgba(0,0,0,.24)}
+  .brand-letter{display:inline-block}
+  .brand-space{display:inline-block;width:.28em}
+  .brand-red{color:#ff5a5f}
+  .brand-orange{color:#ff9f43}
+  .brand-yellow{color:#ffd93d}
+  .brand-green{color:#45c486}
+  .brand-cyan{color:#33b5e5}
+  .brand-blue{color:#4d83ff}
+  .brand-purple{color:#a66cff}
   .grow{flex:1}
   .tbtn{background:transparent;border:none;color:var(--text);padding:8px 10px;border-radius:7px;cursor:pointer;font-size:13px;display:inline-flex;align-items:center;gap:7px;font-family:inherit;transition:background var(--motion-fast) var(--motion-ease),color var(--motion-fast) var(--motion-ease),transform var(--motion-fast) var(--motion-ease),box-shadow var(--motion-fast) var(--motion-ease)}
   .tbtn:hover{background:var(--panel2);transform:translateY(-1px)}
@@ -230,6 +257,64 @@
   .slot-config .color-list input[type=color]{width:22px;height:22px;padding:0;border:1px solid var(--border);border-radius:4px;cursor:pointer;background:none}
   .slot-result{text-align:center;font-size:18px;font-weight:800;color:var(--brand);margin-top:8px;letter-spacing:3px;min-height:26px;font-family:ui-monospace,SFMono-Regular,monospace;transition:color var(--motion-base) var(--motion-ease),text-shadow var(--motion-base) var(--motion-ease),transform var(--motion-base) var(--motion-ease)}
   .slot-column.spinning{animation:slotShake .1s ease-in-out infinite}
+
+  /* ==== SHARED FEATURE CONTROLS ==== */
+  .feature-config{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:10px;background:var(--panel2);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:12px;transition:background var(--motion-base) var(--motion-ease),border-color var(--motion-base) var(--motion-ease),opacity var(--motion-base) var(--motion-ease),transform var(--motion-base) var(--motion-ease)}
+  .feature-config label{color:var(--muted);display:flex;align-items:center;gap:5px;min-width:0}
+  .feature-config input[type=number],.feature-config select{background:var(--bg);border:1px solid var(--border);color:var(--text);border-radius:5px;padding:5px 7px;font:inherit;font-size:12px;outline:none;min-height:28px;transition:background var(--motion-fast) var(--motion-ease),border-color var(--motion-fast) var(--motion-ease),color var(--motion-fast) var(--motion-ease)}
+  .feature-config input[type=number]{width:76px;text-align:right}
+  .feature-config select{cursor:pointer}
+  .feature-config input[type=number]:focus,.feature-config select:focus{border-color:var(--brand);box-shadow:0 0 0 2px rgba(93,135,176,.14)}
+  .feature-config input[type=color]{width:28px;height:28px;padding:2px;border:1px solid var(--border);border-radius:5px;cursor:pointer;background:var(--bg)}
+  .feature-config .config-count{margin-left:auto;color:var(--muted);font-size:11px;white-space:nowrap}
+
+  /* ==== RANGE SPINNER — 1 số to duy nhất ==== */
+  .range-container{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:var(--slot-bg-color);border:1px solid var(--border);border-radius:10px;min-height:220px;position:relative;overflow:hidden;box-shadow:inset 0 0 28px rgba(0,0,0,.16);transition:background var(--motion-slow) var(--motion-ease),border-color var(--motion-slow) var(--motion-ease),box-shadow var(--motion-slow) var(--motion-ease)}
+  .range-container::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,var(--range-glow,rgba(79,109,245,.15)),transparent 70%);pointer-events:none;transition:opacity .3s;opacity:.6}
+  .range-container.spinning::before{opacity:1;animation:rangePulse 1s ease-in-out infinite}
+  @keyframes rangePulse{0%,100%{opacity:.6}50%{opacity:1}}
+  .range-display{font:900 clamp(64px,14vw,180px)/1 -apple-system,'SF Mono',ui-monospace,monospace;color:var(--range-color,#4f6df5);text-shadow:0 4px 20px var(--range-color-glow,rgba(79,109,245,.5));letter-spacing:-2px;font-variant-numeric:tabular-nums;position:relative;z-index:2;padding:8px 20px;transition:transform .1s}
+  .range-container.spinning .range-display{animation:rangeShake .08s ease-in-out infinite}
+  @keyframes rangeShake{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+  .range-meta{color:var(--muted);font-size:12px;margin-top:8px;letter-spacing:.5px;position:relative;z-index:2}
+  .range-config,.roller-config{align-items:stretch}
+
+  /* ==== ROLLER (horizontal/vertical strip picker) ==== */
+  .roller-container{position:relative;width:100%;padding:16px;background:var(--slot-bg-color);border:1px solid var(--border);border-radius:10px;box-shadow:inset 0 0 28px rgba(0,0,0,.16);overflow:hidden;transition:background var(--motion-slow) var(--motion-ease),border-color var(--motion-slow) var(--motion-ease),box-shadow var(--motion-slow) var(--motion-ease)}
+  .roller-viewport{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:8px;background:var(--bg);box-shadow:inset 0 2px 12px rgba(0,0,0,.24)}
+  .roller-viewport.horizontal{height:110px;width:100%}
+  .roller-viewport.vertical{width:100%;height:280px}
+  .roller-viewport::before,.roller-viewport::after{content:"";position:absolute;pointer-events:none;z-index:3}
+  .roller-viewport.horizontal::before{top:0;left:0;bottom:0;width:20%;background:linear-gradient(90deg,rgba(0,0,0,.75),transparent)}
+  .roller-viewport.horizontal::after{top:0;right:0;bottom:0;width:20%;background:linear-gradient(-90deg,rgba(0,0,0,.75),transparent)}
+  .roller-viewport.vertical::before{top:0;left:0;right:0;height:25%;background:linear-gradient(180deg,rgba(0,0,0,.75),transparent)}
+  .roller-viewport.vertical::after{bottom:0;left:0;right:0;height:25%;background:linear-gradient(0deg,rgba(0,0,0,.75),transparent)}
+  .roller-strip{display:flex;position:absolute;top:0;left:0;will-change:transform}
+  .roller-strip.horizontal{flex-direction:row;height:100%}
+  .roller-strip.vertical{flex-direction:column;width:100%}
+  .roller-item{flex-shrink:0;display:flex;align-items:center;justify-content:center;font:700 clamp(16px,2.4vw,26px)/1.1 -apple-system,sans-serif;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5);padding:0 18px;text-align:center;overflow:hidden;border-right:2px solid rgba(0,0,0,.15);letter-spacing:.3px}
+  .roller-item.roller-winner{font-size:clamp(24px,3.5vw,40px);font-weight:800;letter-spacing:.15px;text-shadow:0 2px 5px rgba(0,0,0,.62),0 0 12px rgba(255,255,255,.14)}
+  .roller-item.roller-winner span{max-width:calc(100% - 18px)}
+  .roller-strip.vertical .roller-item{border-right:none;border-bottom:2px solid rgba(0,0,0,.15)}
+  .roller-item span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .roller-pointer{position:absolute;z-index:5;pointer-events:none;filter:drop-shadow(0 3px 6px rgba(0,0,0,.6))}
+  /* Horizontal: 2 mũi tên trên+dưới chỉ vào cột giữa */
+  .roller-viewport.horizontal .roller-pointer{top:0;bottom:0;left:50%;width:0;transform:translateX(-50%)}
+  .roller-viewport.horizontal .roller-pointer::before,
+  .roller-viewport.horizontal .roller-pointer::after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent}
+  .roller-viewport.horizontal .roller-pointer::before{top:0;border-top:20px solid var(--roller-brand,var(--brand));filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+  .roller-viewport.horizontal .roller-pointer::after{bottom:0;border-bottom:20px solid var(--roller-brand,var(--brand));filter:drop-shadow(0 -2px 3px rgba(0,0,0,.5))}
+  /* Vertical: 2 mũi tên trái+phải chỉ vào hàng giữa */
+  .roller-viewport.vertical .roller-pointer{left:0;right:0;top:50%;height:0;transform:translateY(-50%)}
+  .roller-viewport.vertical .roller-pointer::before,
+  .roller-viewport.vertical .roller-pointer::after{content:"";position:absolute;top:50%;transform:translateY(-50%);width:0;height:0;border-top:14px solid transparent;border-bottom:14px solid transparent}
+  .roller-viewport.vertical .roller-pointer::before{left:0;border-left:20px solid var(--roller-brand,var(--brand));filter:drop-shadow(2px 0 3px rgba(0,0,0,.5))}
+  .roller-viewport.vertical .roller-pointer::after{right:0;border-right:20px solid var(--roller-brand,var(--brand));filter:drop-shadow(-2px 0 3px rgba(0,0,0,.5))}
+  /* Center highlight — khung vàng viền cột đang trúng */
+  .roller-center-line{position:absolute;z-index:2;pointer-events:none;border:3px solid var(--roller-brand,var(--brand));border-radius:8px;box-shadow:0 0 20px var(--roller-brand,var(--brand)),inset 0 0 12px rgba(255,255,255,.15);background:rgba(255,255,255,.05)}
+  .roller-viewport.horizontal .roller-center-line{top:4px;bottom:4px;left:33.33%;width:33.33%;transform:none}
+  .roller-viewport.vertical .roller-center-line{left:4px;right:4px;top:33.33%;height:33.33%;transform:none}
+  .roller-empty{width:100%;height:100%;min-height:58px;background:var(--panel2)!important;color:var(--muted)!important;border:none!important;text-shadow:none!important}
   @keyframes slotShake{0%,100%{transform:translateY(0)}50%{transform:translateY(-1px)}}
   .last-winner{
     position:absolute;top:12px;left:50%;transform:translateX(-50%);
@@ -239,6 +324,7 @@
     animation:winPop .5s cubic-bezier(.34,1.56,.64,1);max-width:80%;
     display:inline-flex;align-items:center;gap:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
   }
+  .last-winner .winner-cup-image{width:20px;height:20px;flex:0 0 20px;display:block;object-fit:contain;filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
   @keyframes winPop{from{transform:translateX(-50%) scale(.5) translateY(-10px);opacity:0}to{transform:translateX(-50%) scale(1) translateY(0);opacity:1}}
   /* combined results modal */
   .winners-list{display:flex;flex-direction:column;gap:12px;text-align:left;max-height:60vh;overflow:auto;margin:16px 0}
@@ -363,7 +449,21 @@
   .stealth-dot{position:fixed;bottom:6px;right:6px;width:6px;height:6px;border-radius:50%;background:var(--red);z-index:9999;pointer-events:none;box-shadow:0 0 6px var(--red);display:none}
   body.admin .stealth-dot.on{display:block}
 
-  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px) scale(.98);background:var(--panel);border:1px solid var(--border);padding:10px 16px;border-radius:8px;z-index:2000;opacity:0;transition:opacity var(--motion-base) var(--motion-ease),transform var(--motion-base) var(--motion-pop),background var(--motion-slow) var(--motion-ease),border-color var(--motion-slow) var(--motion-ease);box-shadow:var(--shadow);font-size:13px;pointer-events:none}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px) scale(.98);background:var(--panel);border:1px solid var(--border);padding:10px 16px;border-radius:8px;z-index:2000;opacity:0;transition:opacity var(--motion-base) var(--motion-ease),transform var(--motion-base) var(--motion-pop),background var(--motion-slow) var(--motion-ease),border-color var(--motion-slow) var(--motion-ease);box-shadow:var(--shadow);font-size:13px;pointer-events:none;display:inline-flex;align-items:center;gap:12px;max-width:calc(100vw - 40px)}
+  .toast.on{pointer-events:auto}
+  .toast .undo-btn{background:transparent;border:1px solid rgba(79,109,245,.5);color:var(--brand);padding:3px 12px;border-radius:12px;cursor:pointer;font:600 12px inherit;transition:all .12s;white-space:nowrap}
+  .toast .undo-btn:hover{background:var(--brand);color:#fff}
+  .save-indicator{position:fixed;top:12px;right:12px;padding:5px 12px;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.4);color:#22c55e;font-size:11px;font-weight:600;border-radius:14px;opacity:0;transform:translateY(-6px);transition:all .3s;z-index:80;pointer-events:none;display:flex;align-items:center;gap:6px}
+  .save-indicator.on{opacity:1;transform:translateY(0)}
+  .save-indicator::before{content:"";width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e}
+  .winner-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:8px auto 12px;display:block;border:4px solid var(--brand);box-shadow:0 8px 24px rgba(79,109,245,.4);animation:winnerPop .5s cubic-bezier(.34,1.56,.64,1)}
+  @keyframes winnerPop{from{transform:scale(0) rotate(-15deg)}to{transform:scale(1) rotate(0)}}
+  .empty-cta{text-align:center;padding:40px 20px;color:var(--muted)}
+  .empty-cta .icon{display:flex;align-items:center;justify-content:center;width:48px;height:48px;margin:0 auto 12px;color:var(--brand);opacity:.68}
+  .empty-cta .icon .ui-icon{width:30px;height:30px}
+  .empty-cta .title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px}
+  .empty-cta .desc{font-size:12px;margin-bottom:14px;line-height:1.6}
+  .empty-cta .actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
   .suspense-overlay{position:fixed;inset:0;background:rgba(0,0,0,.86);display:flex;visibility:hidden;opacity:0;pointer-events:none;align-items:center;justify-content:center;flex-direction:column;z-index:1500;padding:20px;text-align:center;transition:opacity var(--motion-base) var(--motion-ease),visibility 0s linear var(--motion-base)}
   .suspense-overlay.on{visibility:visible;opacity:1;pointer-events:auto;transition-delay:0s}
   .suspense-overlay .text{font-size:clamp(28px,5vw,60px);font-weight:900;color:var(--accent);animation:pulse-text 1s ease-in-out infinite;letter-spacing:2px}
@@ -382,15 +482,15 @@
     *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
   }
 
-  @media(max-width:960px){main{grid-template-columns:1fr;grid-template-rows:1fr auto}aside{border-left:none;border-top:1px solid var(--border);max-height:50vh}.logo span:not(.icon){display:none}.mode-sel button{padding:6px 8px;font-size:11px}}
+  @media(max-width:960px){main{grid-template-columns:1fr;grid-template-rows:1fr auto}aside{border-left:none;border-top:1px solid var(--border);max-height:50vh}.mode-sel button{padding:6px 8px;font-size:11px}}
   @media(max-width:700px){
     html,body{min-width:0;overflow-x:hidden}
     body.mobile-tools-open,body.mobile-config-open{overflow:hidden}
     header{display:block;padding:10px 12px;}
     .header-primary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
     .logo{min-width:0;gap:8px;font-size:16px}
-    .logo svg{width:26px;height:26px}
-    .logo span.brand{display:inline}
+    .brand-mark{width:40px;height:40px;flex-basis:40px}
+    .brand-name{font-size:18px;letter-spacing:-.4px}
     .mode-sel{grid-column:1/-1;width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px}
     .mode-sel button{min-height:40px;padding:8px 4px;font-size:11px;gap:4px;white-space:nowrap}
     .mode-sel button .ui-icon-slot{width:14px;height:14px;flex-basis:14px}
@@ -402,7 +502,7 @@
     .header-actions .tbtn{flex:0 0 auto;min-height:42px;padding:8px 10px;white-space:nowrap}
     .header-utilities .tbtn{min-width:42px;justify-content:center;padding:8px}
     .header-actions .lang-picker{flex:0 0 auto;min-height:42px}
-    .mobile-panel-trigger{display:inline-flex}
+    .mobile-panel-trigger{display:inline-flex!important}
     .header-tools{display:none}
     .mobile-panel-backdrop{position:fixed;inset:0;border:0;background:rgba(0,0,0,.62);z-index:90;cursor:pointer}
     body.mobile-tools-open .mobile-panel-backdrop,body.mobile-config-open .mobile-panel-backdrop{display:block}
@@ -423,6 +523,15 @@
     .wheel-info{width:100%;text-align:center;white-space:normal}
     .slot-container{padding:12px;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden}
     .slot-group{flex:0 0 auto}
+    .feature-config{gap:6px;padding:8px}
+    .feature-config label{flex:1 1 calc(50% - 6px);justify-content:space-between}
+    .feature-config input[type=number],.feature-config select{flex:1;min-width:0;width:auto}
+    .feature-config .config-count{width:100%;margin-left:0;text-align:right}
+    .range-container{min-height:180px;padding:16px}
+    .range-display{font-size:clamp(56px,20vw,112px);padding:6px 10px}
+    .roller-container{padding:12px}
+    .roller-viewport.vertical{height:220px}
+    .roller-item.roller-winner{font-size:clamp(21px,7vw,34px)}
 
     aside{display:none;max-height:none;min-height:0}
     body.mobile-config-open main{position:relative;z-index:101}
@@ -430,7 +539,7 @@
     .aside-header{padding:10px 12px}
     .wheel-picker{min-height:42px;font-size:14px}
     .aside-header .sbtn{min-width:44px;min-height:42px}
-    .mobile-panel-close{display:inline-flex;flex:0 0 auto;justify-content:center;padding:8px}
+    .mobile-panel-close{display:inline-flex!important;flex:0 0 auto;justify-content:center;padding:8px}
     .tab-bar button{min-height:46px;font-size:13px}
     .toolbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px 12px}
     .toolbar .sbtn{width:100%;min-height:44px;justify-content:center;padding:10px 8px}
@@ -463,14 +572,10 @@
 <header>
   <div class="header-primary">
     <div class="logo">
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <defs><linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5d87b0"/><stop offset="1" stop-color="#78a4c7"/></linearGradient></defs>
-        <circle cx="32" cy="32" r="28" fill="url(#logoG)"/>
-        <path d="M32 8 L38 32 L32 28 L26 32 Z" fill="#fff"/>
-        <circle cx="32" cy="32" r="6" fill="#fff"/>
-        <circle cx="32" cy="32" r="3" fill="url(#logoG)"/>
-      </svg>
-      <span class="brand">Fortuna</span>
+      <img class="brand-mark" src="logo-mark.png" alt="">
+      <span class="brand-name" aria-label="Spin &amp; Win">
+        <span class="brand-letter brand-red">S</span><span class="brand-letter brand-orange">p</span><span class="brand-letter brand-yellow">i</span><span class="brand-letter brand-green">n</span><span class="brand-space" aria-hidden="true"> </span><span class="brand-letter brand-cyan">&amp;</span><span class="brand-space" aria-hidden="true"> </span><span class="brand-letter brand-blue">W</span><span class="brand-letter brand-purple">i</span><span class="brand-letter brand-red">n</span>
+      </span>
     </div>
 
     <div class="mode-sel" id="modeSel">
@@ -485,6 +590,8 @@
     <div class="header-tools">
       <button class="tbtn" onclick="app.addWheel()"><span class="ic ui-icon-slot" data-icon="plus" aria-hidden="true"></span>Vòng quay</button>
       <button class="tbtn" onclick="app.addNumWheel()"><span class="ic ui-icon-slot" data-icon="hash" aria-hidden="true"></span>Quay số</button>
+      <button class="tbtn" onclick="app.addRangeWheel()"><span class="ic ui-icon-slot" data-icon="target" aria-hidden="true"></span>Quay dải</button>
+      <button class="tbtn" onclick="app.addRollerWheel()"><span class="ic ui-icon-slot" data-icon="slot-machine" aria-hidden="true"></span>Con lăn</button>
       <button class="tbtn" onclick="app.openTemplates()"><span class="ic ui-icon-slot" data-icon="library" aria-hidden="true"></span>Mẫu</button>
       <button class="tbtn" onclick="app.openTeamSplit()"><span class="ic ui-icon-slot" data-icon="users-round" aria-hidden="true"></span>Chia đội</button>
       <button class="tbtn" onclick="app.openSessions()"><span class="ic ui-icon-slot" data-icon="archive" aria-hidden="true"></span>Sessions</button>
@@ -500,6 +607,7 @@
       </select>
       <button class="tbtn" id="themeButton" onclick="app.toggleTheme()" title="Sáng / Tối" aria-label="Sáng / Tối"><span class="ic ui-icon-slot" id="themeIcon" data-icon="moon" aria-hidden="true"></span></button>
       <button class="tbtn" id="fullscreenButton" onclick="app.toggleFullscreen()" title="Toàn màn hình" aria-label="Toàn màn hình"><span class="ic ui-icon-slot" data-icon="maximize" aria-hidden="true"></span></button>
+      <button class="tbtn" onclick="app.openClientInfo()" title="Thông tin máy" aria-label="Thông tin máy"><span class="ic">ℹ️</span></button>
       <button class="tbtn" id="muteButton" onclick="app.toggleMute()" title="Âm thanh" aria-label="Âm thanh"><span class="ic ui-icon-slot" id="muteIcon" data-icon="volume-2" aria-hidden="true"></span></button>
     </div>
   </div>
@@ -514,12 +622,12 @@
         <span class="ui-icon-slot" data-icon="sparkles" aria-hidden="true"></span>
         <div>
           <h1 id="seoTitle" data-i18n="seo.title">Vòng quay may mắn và bốc thăm ngẫu nhiên miễn phí</h1>
-          <p class="seo-summary-lead" data-i18n="seo.lead">Fortuna là công cụ trực tuyến giúp bạn tạo vòng quay từ danh sách tên hoặc lựa chọn, quay số ngẫu nhiên, chia đội và đọc tên bằng TTS. Không cần đăng ký, phù hợp cho giải trí, lớp học, team building và các sự kiện hợp pháp.</p>
+          <p class="seo-summary-lead" data-i18n="seo.lead">Spin &amp; Win là công cụ trực tuyến giúp bạn tạo vòng quay từ danh sách tên hoặc lựa chọn, quay số ngẫu nhiên, chia đội và đọc tên bằng TTS. Không cần đăng ký, phù hợp cho giải trí, lớp học, team building và các sự kiện hợp pháp.</p>
         </div>
       </div>
       <div class="seo-summary-grid">
         <div>
-          <h2 data-i18n="seo.whatTitle">Bạn có thể làm gì với Fortuna?</h2>
+          <h2 data-i18n="seo.whatTitle">Bạn có thể làm gì với Spin &amp; Win?</h2>
           <p data-i18n="seo.whatText">Tạo nhiều vòng quay, nhập dữ liệu nhanh, xáo trộn danh sách, lưu kịch bản, chia sẻ bằng QR và mở overlay riêng cho trình chiếu hoặc OBS.</p>
         </div>
         <div>
@@ -532,7 +640,7 @@
           </ul>
         </div>
       </div>
-      <p class="seo-summary-note" data-i18n="seo.note">Fortuna chỉ là công cụ hỗ trợ giải trí và tổ chức hoạt động hợp pháp. Không sử dụng cho cá cược, cờ bạc, đổi thưởng, gian lận hoặc mục đích vi phạm pháp luật.</p>
+      <p class="seo-summary-note" data-i18n="seo.note">Spin &amp; Win chỉ là công cụ hỗ trợ giải trí và tổ chức hoạt động hợp pháp. Không sử dụng cho cá cược, cờ bạc, đổi thưởng, gian lận hoặc mục đích vi phạm pháp luật.</p>
     </section>
   </section>
 
@@ -582,11 +690,11 @@
 <div class="modal policy-modal" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="policyTitle" aria-describedby="policyLead">
   <div class="box policy-box">
     <button class="dlg-close" id="policyClose" type="button" onclick="app.closePolicy()" aria-label="Đóng"><span class="ui-icon-slot" data-icon="x" aria-hidden="true"></span></button>
-    <h3 class="policy-title" id="policyTitle"><span class="ui-icon-slot" data-icon="triangle-alert" aria-hidden="true"></span><span data-i18n="policy.title">Quy định sử dụng Fortuna</span></h3>
+    <h3 class="policy-title" id="policyTitle"><span class="ui-icon-slot" data-icon="triangle-alert" aria-hidden="true"></span><span data-i18n="policy.title">Quy định sử dụng Spin &amp; Win</span></h3>
     <p class="policy-lead" id="policyLead" data-i18n="policy.lead">Vui lòng đọc các nguyên tắc sử dụng dưới đây. Bạn vẫn có thể sử dụng web dù đồng ý hay không đồng ý với nội dung này.</p>
     <div class="policy-section">
       <h4 data-i18n="policy.purposeTitle">1. Mục đích sử dụng</h4>
-      <p data-i18n="policy.purposeText">Fortuna được cung cấp cho mục đích giải trí, random picker, bốc thăm, chia đội và các hoạt động hợp pháp.</p>
+      <p data-i18n="policy.purposeText">Spin &amp; Win được cung cấp cho mục đích giải trí, random picker, bốc thăm, chia đội và các hoạt động hợp pháp.</p>
     </div>
     <div class="policy-section">
       <h4 data-i18n="policy.prohibitedTitle">2. Hành vi không được phép</h4>
@@ -883,7 +991,22 @@
   <div class="text" id="suspenseText">Người thắng là...</div>
   <div class="dots"><span></span><span></span><span></span></div>
 </div>
+<div class="modal" id="clientInfoModal">
+  <div class="box dlg" style="position:relative">
+    <button class="dlg-close" onclick="app.closeClientInfo()" aria-label="Đóng">✕</button>
+    <h3>ℹ️ Thông tin máy & Khả năng chịu tải</h3>
+    <p style="color:var(--muted);font-size:13px;margin:0 0 16px">Web chạy hoàn toàn ở client (không có server DB). Khả năng chịu tải phụ thuộc RAM, CPU, và trình duyệt của bạn.</p>
+    <div id="clientInfoBody"></div>
+    <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap">
+      <button class="mbtn primary" onclick="app.runBenchmark()">🚀 Chạy benchmark</button>
+      <button class="mbtn ghost" onclick="app.openClientInfo()">🔄 Refresh</button>
+      <button class="mbtn ghost" onclick="app.closeClientInfo()">Đóng</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
+<div class="save-indicator" id="saveIndicator">Đã lưu</div>
 
 <script>
 const $ = s => document.querySelector(s);
@@ -1054,6 +1177,24 @@ const TEMPLATE_ENTRIES = [
   {vi:['Châu Á','Châu Âu','Châu Phi','Bắc Mỹ','Nam Mỹ','Châu Đại Dương','Nam Cực'],en:['Asia','Europe','Africa','North America','South America','Oceania','Antarctica']},
   null, null, null
 ];
+const makeRollerWheel = (name='Con lăn 1') => ({
+  id: uid(), name, type:'roller',
+  entries: DEFAULT_NAMES.map(n=>({id:uid(),name:n,image:null})),
+  palette:'google',
+  rollerDir:'horizontal', // 'horizontal' | 'vertical'
+  results:[], spinNo:0,
+  rigOne:'', schedule:[],
+});
+const makeRangeWheel = (name='Quay dải 1') => ({
+  id: uid(), name, type:'range',
+  rangeMin:0, rangeMax:100, rangeStep:1,
+  rangeDecimals:0, // số chữ số thập phân
+  rangePrefix:'', rangeSuffix:'',
+  rangeColor:'#4f6df5',
+  rangePool:[], // nếu có → chỉ pick từ list
+  results:[], spinNo:0,
+  rangeRig:'', schedule:[],
+});
 const makeNumWheel = (name='Quay số 1') => ({
   id: uid(), name, type:'numbers',
   digitCount:3, count:1, digitMin:0, digitMax:9,
@@ -1074,7 +1215,7 @@ const I18N = {
     'meta.title':'Fortuna — Vòng Quay May Mắn & Bốc Thăm Ngẫu Nhiên',
     'language.label':'Ngôn ngữ',
     'mode.manual':'Thủ công', 'mode.together':'Cùng lúc', 'mode.sequential':'Lần lượt', 'mode.spinAll':'Quay tất cả', 'mode.manualTitle':'Từng vòng bấm SPIN riêng', 'mode.togetherTitle':'Quay tất cả cùng lúc', 'mode.sequentialTitle':'Quay lần lượt, chờ vòng trước xong',
-    'nav.wheel':'Vòng quay', 'nav.number':'Quay số', 'nav.templates':'Mẫu', 'nav.teams':'Chia đội', 'nav.sessions':'Sessions', 'nav.qr':'QR', 'nav.customize':'Tùy chỉnh', 'nav.mobileTools':'Công cụ', 'nav.mobileConfig':'Cấu hình',
+    'nav.wheel':'Vòng quay', 'nav.number':'Quay số', 'nav.range':'Quay dải', 'nav.roller':'Con lăn', 'nav.templates':'Mẫu', 'nav.teams':'Chia đội', 'nav.sessions':'Sessions', 'nav.qr':'QR', 'nav.customize':'Tùy chỉnh', 'nav.mobileTools':'Công cụ', 'nav.mobileConfig':'Cấu hình',
     'nav.theme':'Sáng / Tối', 'nav.fullscreen':'Toàn màn hình', 'nav.sound':'Âm thanh', 'aside.currentWheel':'Vòng đang chỉnh sửa', 'aside.rename':'Đổi tên',
     'tabs.entries':'Mục', 'tabs.results':'Kết quả', 'toolbar.shuffle':'Xáo trộn', 'toolbar.sort':'Sắp xếp', 'toolbar.open':'Mở', 'toolbar.save':'Lưu', 'toolbar.clear':'Xoá',
     'num.configure':'Cấu hình chi tiết', 'entries.placeholder':'Nhập tên vào đây, mỗi dòng một tên...\n\nThêm ảnh:  Tên | https://link-anh.png',
@@ -1101,19 +1242,22 @@ const I18N = {
     'qr.title':'QR Share', 'qr.description':'Quét bằng điện thoại để mở vòng quay trên thiết bị khác',
     'teams.title':'Chia đội tự động', 'teams.description':'Dán danh sách người → chọn cách chia → nhận kết quả ngẫu nhiên cân bằng.', 'teams.names':'Danh sách', 'teams.namesPlaceholder':'Mỗi dòng 1 tên...', 'teams.method':'Cách chia', 'teams.fixed':'Số đội cố định', 'teams.perTeam':'Số người / đội', 'teams.count':'Số đội', 'teams.people':'Số người / đội', 'teams.teamNames':'Tên đội', 'teams.teamNamesPlaceholder':'VD: Đội A, Đội B, Đội C (để trống → tự đặt)', 'teams.randomize':'Chia ngẫu nhiên', 'teams.copy':'Copy kết quả',
     'templates.title':'Mẫu vòng quay có sẵn', 'templates.description':'Click 1 mẫu để tạo vòng quay mới.', 'stats.title':'Thống kê người thắng', 'number.configTitle':'Cấu hình chi tiết vòng quay số',
-    'wheel.type':'Vòng quay', 'wheel.nameType':'Vòng quay tên', 'wheel.items':'mục', 'wheel.spins':'lượt', 'wheel.spin':'SPIN', 'wheel.clickToSpin':'Click để quay', 'wheel.duplicate':'Nhân bản', 'wheel.delete':'Xoá', 'wheel.itemsCount':'{count} mục', 'wheel.addNames':'Thêm tên', 'number.columnTitle':'Cột {count}',
+    'wheel.type':'Vòng quay', 'wheel.nameType':'Vòng quay tên', 'wheel.typeRange':'Dải số', 'wheel.typeRoller':'Con lăn', 'wheel.items':'mục', 'wheel.spins':'lượt', 'wheel.spin':'SPIN', 'wheel.clickToSpin':'Click để quay', 'wheel.duplicate':'Nhân bản', 'wheel.delete':'Xoá', 'wheel.itemsCount':'{count} mục', 'wheel.addNames':'Thêm tên', 'number.columnTitle':'Cột {count}',
+    'range.type':'Dải số', 'range.name':'Quay dải', 'range.configure':'Cấu hình dải', 'range.from':'Từ', 'range.to':'Đến', 'range.step':'Bước', 'range.color':'Màu', 'range.meta':'Dải: {min} → {max} · bước {step}', 'range.summary':'[Quay dải số]\n\nDải: {min} → {max}\nBước: {step}\nĐịnh dạng: {decimals} số thập phân\nPrefix/Suffix: "{prefix}" ... "{suffix}"\n\n→ Bấm Cấu hình dải để cấu hình nâng cao\n→ Chỉnh dải, bước, màu trực tiếp trên card', 'range.decimalsPrompt':'Số chữ số thập phân (0 = số nguyên):', 'range.prefixPrompt':'Tiền tố (VD: "$" hoặc để trống):', 'range.suffixPrompt':'Hậu tố (VD: "đ" hoặc để trống):',
+    'roller.type':'Con lăn', 'roller.name':'Con lăn', 'roller.direction':'Hướng', 'roller.horizontal':'Ngang', 'roller.vertical':'Dọc', 'roller.palette':'Bảng màu', 'roller.empty':'Chưa có mục',
     'number.digits':'chữ số', 'number.columns':'Số chữ số / cột', 'number.groups':'Số nhóm (nhân)', 'number.chooseList':'Chọn từ danh sách', 'number.orType':'Hoặc gõ tay', 'number.manual':'Số trúng', 'number.manualPlaceholder':'Gõ nguyên chuỗi (VD: NV001)', 'number.listPlaceholder':'Số VD: 042|123', 'number.randomPlaceholder':'VD: 042 hoặc 042|123 nếu nhiều nhóm', 'number.poolHeading':'Danh sách kết quả cố định', 'number.poolDescription':'Dán danh sách mã/tên (1 dòng 1 giá trị). Slot chỉ dừng ở 1 trong các giá trị này. Hỗ trợ cả số + chữ + ký hiệu.', 'number.poolCount':'Đang dùng {count} giá trị', 'number.noPool':'Chưa dùng (đang random tự do)', 'number.autoDigits':'Tự động theo danh sách', 'number.advanced':'Để cấu hình nâng cao', 'number.randomHeading':'Random tự do (khi không dùng danh sách):', 'number.disabledHeading':'Vô hiệu khi dùng danh sách:', 'number.digitMin':'Digit min', 'number.digitMax':'Digit max', 'number.charset':'Bộ ký tự', 'number.charsetPlaceholder':'Để trống dùng min-max. VD: 0123456789 hoặc ABCDEF hoặc XO', 'number.zeroToNine':'Số 0-9', 'number.hex':'Hex', 'number.binary':'Nhị phân', 'number.alphabet':'A-Z', 'number.dice':'Xúc xắc', 'number.cards':'Bài', 'number.slot':'Slot', 'number.separator':'Dấu phân cách', 'number.prefix':'Tiền tố', 'number.suffix':'Hậu tố', 'number.prefixSuffix':'Tiền tố / Hậu tố', 'number.bgColor':'Màu nền slot', 'number.columnColors':'Màu từng cột', 'number.durationMultiplier':'Tốc độ quay ×', 'number.spinStyle':'Kiểu quay', 'number.stagger':'Lệch nhịp', 'number.staggerDefault':'Lệch nhịp (mặc định)', 'number.together':'Cùng lúc', 'number.sequential':'Từng số một', 'number.staggerDescription':'các số dừng lệch nhau chút', 'number.togetherDescription':'tất cả số dừng đúng cùng thời điểm', 'number.sequentialDescription':'số 1 dừng xong mới đến số 2, rồi số 3...', 'number.showResult':'Hiển thị text kết quả dưới slot', 'number.preview':'Preview kết quả', 'number.allowDup':'Cho phép trùng số', 'number.padChar':'Ký tự đệm', 'number.applyList':'Áp dụng', 'number.clearList':'Bỏ danh sách',
     'status.light':'☀️ Chế độ sáng', 'status.dark':'🌙 Chế độ tối', 'status.shareClosed':'🔴 Đã đóng panel', 'status.needOneWheel':'⚠️ Phải có ít nhất 1 vòng', 'status.needTwoPeople':'⚠️ Cần ≥ 2 người', 'status.noResult':'Chưa có kết quả', 'status.noUndo':'Không có gì để undo', 'status.copied':'📋 Đã copy', 'status.saved':'💾 Đã lưu', 'status.loaded':'📂 Đã load', 'status.imported':'✅ Đã import', 'status.applied':'✅ Đã áp dụng', 'status.created':'✅ Đã tạo', 'status.downloaded':'📥 Đã tải xuống', 'status.cleared':'🗑 Đã xoá', 'status.wrongPassword':'❌ Sai password', 'status.shareActive':'🔴 Đang share', 'status.popupBlocked':'⚠️ Popup bị chặn', 'status.public':'👁 Public', 'status.admin':'🔓 Admin', 'status.clearAll':'🚨 CLEAR', 'status.emptyList':'⚠️ Danh sách trống', 'status.invalidChars':'⚠️ Bộ ký tự không hợp lệ', 'status.onlyNameWheel':'⚠️ Chỉ hỗ trợ Vòng quay tên', 'status.invalidFile':'File không hợp lệ: {error}', 'status.fileTooLarge':'File quá lớn (>5MB). Chọn ảnh nhỏ hơn hoặc nén trước.', 'status.customAudioRequired':'⚠️ Upload file / dán URL trước', 'status.noStats':'Chưa có kết quả nào', 'status.applyValues':'✅ Đã áp dụng {count} giá trị ({maxLen} ký tự)', 'status.removedValues':'🗑 Đã bỏ danh sách — về random tự do', 'status.uploadedTick':'🎵 Đã upload âm quay: {name}', 'status.setTickUrl':'🎵 Đã set URL âm quay', 'status.uploadedWin':'🎉 Đã upload âm thắng: {name}', 'status.setWinUrl':'🎉 Đã set URL âm thắng', 'status.createdTemplate':'✅ Đã tạo: {name}', 'status.undo':'↺ Undo: {name}', 'status.closedShare':'🔴 Đã đóng panel',
     'stats.totalSpins':'Tổng số lần quay', 'stats.times':'lần', 'empty.results':'Chưa có kết quả', 'empty.schedules':'Chưa có kịch bản', 'empty.wheels':'Chưa có vòng nào', 'empty.sessions':'Chưa có session nào lưu', 'auto.voice':'Auto (tiếng Việt nếu có)', 'auto.voiceEn':'Auto (English if available)',
-    'teams.peopleCount':'{count} người', 'teams.teamNameDefault':'Đội {letter}', 'qr.error':'Không tải được QR (offline?). Copy URL:',
+    'teams.peopleCount':'{count} người', 'teams.teamNameDefault':'Đội {letter}', 'empty.resultHint':'Bấm SPIN để bắt đầu quay và xem lịch sử kết quả tại đây.', 'empty.spinNow':'Quay ngay', 'qr.error':'Không tải được QR (offline?). Copy URL:',
     'dialog.notice':'Thông báo', 'dialog.confirm':'Xác nhận', 'dialog.success':'Thành công', 'dialog.adminAuth':'Xác thực',
+    'confirm.switchToRange':'Đang có loại vòng khác.\n\nChỉ có thể dùng 1 loại vòng cùng lúc. Xoá tất cả vòng hiện có và tạo Quay dải mới?', 'confirm.switchToRoller':'Đang có loại vòng khác.\n\nChỉ có thể dùng 1 loại vòng cùng lúc. Xoá tất cả vòng hiện có và tạo Con lăn mới?',
     'status.sessionNameRequired':'⚠️ Nhập tên session', 'status.importedNames':'✅ Đã nhập {count} tên', 'status.wheelEmpty':'⚠️ Vòng {name} chưa có tên', 'status.appliedImage':'✅ Đã áp dụng ảnh', 'status.copyImageUnsupported':'⚠️ Trình duyệt không hỗ trợ copy ảnh: {error}', 'status.error':'❌ Lỗi: {error}', 'status.passwordSet':'🔒 Đã đặt mật khẩu', 'status.passwordRemoved':'🔓 Đã bỏ khoá', 'status.clearedAudio':'🗑 Đã xoá âm {kind}', 'status.copiedWithValue':'📋 Đã copy: {value}', 'status.openedOverlay':'📺 Đã mở tab overlay', 'status.copiedQr':'📋 Đã copy', 'status.copiedOverlay':'📋 Đã copy URL cho OBS Browser Source', 'status.downloadedImage':'📥 Đã tải xuống', 'status.largeFile':'File {size}MB khá lớn, có thể chậm. Tiếp tục?', 'status.godMode':'🎮 God', 'status.panic':'🚨 CLEAR',
     'confirm.switchToNumber':'Đang có "Vòng quay tên".\n\nChỉ có thể dùng 1 loại vòng cùng lúc. Xoá tất cả vòng quay tên hiện có và tạo Vòng quay số mới?', 'confirm.switchToWheel':'Đang có vòng loại "Quay số".\n\nChỉ có thể dùng 1 loại vòng cùng lúc. Xoá tất cả vòng quay số hiện có và tạo Vòng quay mới?', 'confirm.deleteWheel':'Xoá vòng "{name}"?', 'confirm.clearEntries':'Xoá tất cả tên trong vòng này?', 'confirm.clearResults':'Xoá lịch sử kết quả của TẤT CẢ vòng?', 'confirm.clearStorage':'Xoá SẠCH localStorage và reload?', 'confirm.templateType':'Mẫu này là loại "{type}".\n\nĐang có vòng loại khác. Xoá tất cả và tạo mẫu mới?', 'confirm.loadSession':'Load session "{name}"? Sẽ ghi đè config hiện tại.', 'confirm.deleteSession':'Xoá session "{name}"?', 'confirm.importSession':'Import {count} vòng từ file? Sẽ ghi đè hiện tại?', 'prompt.rename':'Nhập tên vòng quay:', 'prompt.renameTitle':'Đổi tên vòng'
   },
   en: {
     'meta.title':'Fortuna — Free Lucky Wheel and Random Picker', 'language.label':'Language',
     'mode.manual':'Manual', 'mode.together':'Together', 'mode.sequential':'Sequential', 'mode.spinAll':'Spin all', 'mode.manualTitle':'Spin each wheel separately', 'mode.togetherTitle':'Spin all wheels together', 'mode.sequentialTitle':'Spin in sequence, waiting for the previous wheel',
-    'nav.wheel':'Wheel', 'nav.number':'Number', 'nav.templates':'Templates', 'nav.teams':'Team split', 'nav.sessions':'Sessions', 'nav.qr':'QR', 'nav.customize':'Customize', 'nav.mobileTools':'Tools', 'nav.mobileConfig':'Configure',
+    'nav.wheel':'Wheel', 'nav.number':'Number', 'nav.range':'Range', 'nav.roller':'Roller', 'nav.templates':'Templates', 'nav.teams':'Team split', 'nav.sessions':'Sessions', 'nav.qr':'QR', 'nav.customize':'Customize', 'nav.mobileTools':'Tools', 'nav.mobileConfig':'Configure',
     'nav.theme':'Light / Dark', 'nav.fullscreen':'Fullscreen', 'nav.sound':'Sound', 'aside.currentWheel':'Wheel being edited', 'aside.rename':'Rename',
     'tabs.entries':'Entries', 'tabs.results':'Results', 'toolbar.shuffle':'Shuffle', 'toolbar.sort':'Sort', 'toolbar.open':'Open', 'toolbar.save':'Save', 'toolbar.clear':'Clear',
     'num.configure':'Detailed settings', 'entries.placeholder':'Enter names here, one name per line...\n\nAdd an image:  Name | https://image-link.png',
@@ -1140,12 +1284,15 @@ const I18N = {
     'qr.title':'QR Share', 'qr.description':'Scan with your phone to open the wheel on another device',
     'teams.title':'Automatic team split', 'teams.description':'Paste a list of people → choose a split method → get balanced random teams.', 'teams.names':'Names', 'teams.namesPlaceholder':'One name per line...', 'teams.method':'Split method', 'teams.fixed':'Fixed number of teams', 'teams.perTeam':'People per team', 'teams.count':'Teams', 'teams.people':'People / team', 'teams.teamNames':'Team names', 'teams.teamNamesPlaceholder':'e.g. Team A, Team B, Team C (leave empty to auto-name)', 'teams.randomize':'Split randomly', 'teams.copy':'Copy result',
     'templates.title':'Ready-made wheel templates', 'templates.description':'Click a template to create a new wheel.', 'stats.title':'Winner statistics', 'number.configTitle':'Detailed number wheel settings',
-    'wheel.type':'Wheel', 'wheel.nameType':'Name wheel', 'wheel.items':'items', 'wheel.spins':'spins', 'wheel.spin':'SPIN', 'wheel.clickToSpin':'Click to spin', 'wheel.duplicate':'Duplicate', 'wheel.delete':'Delete', 'wheel.itemsCount':'{count} items', 'wheel.addNames':'Add names', 'number.columnTitle':'Column {count}',
+    'wheel.type':'Wheel', 'wheel.nameType':'Name wheel', 'wheel.typeRange':'Number range', 'wheel.typeRoller':'Roller', 'wheel.items':'items', 'wheel.spins':'spins', 'wheel.spin':'SPIN', 'wheel.clickToSpin':'Click to spin', 'wheel.duplicate':'Duplicate', 'wheel.delete':'Delete', 'wheel.itemsCount':'{count} items', 'wheel.addNames':'Add names', 'number.columnTitle':'Column {count}',
+    'range.type':'Number range', 'range.name':'Range', 'range.configure':'Range settings', 'range.from':'From', 'range.to':'To', 'range.step':'Step', 'range.color':'Color', 'range.meta':'Range: {min} → {max} · step {step}', 'range.summary':'[Number range]\n\nRange: {min} → {max}\nStep: {step}\nDecimals: {decimals}\nPrefix/Suffix: "{prefix}" ... "{suffix}"\n\n→ Open Range settings for advanced options\n→ Edit range, step and color directly on the card', 'range.decimalsPrompt':'Decimal places (0 = integer):', 'range.prefixPrompt':'Prefix (e.g. "$" or leave empty):', 'range.suffixPrompt':'Suffix (e.g. "đ" or leave empty):',
+    'roller.type':'Roller', 'roller.name':'Roller', 'roller.direction':'Direction', 'roller.horizontal':'Horizontal', 'roller.vertical':'Vertical', 'roller.palette':'Palette', 'roller.empty':'No entries yet',
     'number.digits':'digits', 'number.columns':'Digits / column', 'number.groups':'Number of groups', 'number.chooseList':'Choose from list', 'number.orType':'Or type manually', 'number.manual':'Winning number', 'number.manualPlaceholder':'Type the full value (e.g. NV001)', 'number.listPlaceholder':'Number, e.g. 042|123', 'number.randomPlaceholder':'e.g. 042 or 042|123 for multiple groups', 'number.poolHeading':'Fixed result list', 'number.poolDescription':'Paste codes or names, one value per line. The slot will stop at one of these values. Numbers, letters and symbols are supported.', 'number.poolCount':'Using {count} values', 'number.noPool':'Not used (free random)', 'number.autoDigits':'Automatic from list', 'number.advanced':'for advanced settings', 'number.randomHeading':'Free random (when no list is used):', 'number.disabledHeading':'Disabled when using a list:', 'number.digitMin':'Digit min', 'number.digitMax':'Digit max', 'number.charset':'Character set', 'number.charsetPlaceholder':'Leave empty for min-max. E.g. 0123456789 or ABCDEF or XO', 'number.zeroToNine':'0-9', 'number.hex':'Hex', 'number.binary':'Binary', 'number.alphabet':'A-Z', 'number.dice':'Dice', 'number.cards':'Cards', 'number.slot':'Slot', 'number.separator':'Separator', 'number.prefix':'Prefix', 'number.suffix':'Suffix', 'number.prefixSuffix':'Prefix / Suffix', 'number.bgColor':'Slot background', 'number.columnColors':'Column colors', 'number.durationMultiplier':'Spin speed ×', 'number.spinStyle':'Spin style', 'number.stagger':'Staggered', 'number.staggerDefault':'Staggered (default)', 'number.together':'Together', 'number.sequential':'One by one', 'number.staggerDescription':'numbers stop slightly apart', 'number.togetherDescription':'all numbers stop at the same time', 'number.sequentialDescription':'number 1 stops before number 2, then number 3...', 'number.showResult':'Show result text below slot', 'number.preview':'Result preview', 'number.allowDup':'Allow duplicate numbers', 'number.padChar':'Padding character', 'number.applyList':'Apply', 'number.clearList':'Clear list',
     'status.light':'☀️ Light mode', 'status.dark':'🌙 Dark mode', 'status.shareClosed':'🔴 Panel closed', 'status.needOneWheel':'⚠️ At least one wheel is required', 'status.needTwoPeople':'⚠️ At least 2 people are required', 'status.noResult':'No result yet', 'status.noUndo':'Nothing to undo', 'status.copied':'📋 Copied', 'status.saved':'💾 Saved', 'status.loaded':'📂 Loaded', 'status.imported':'✅ Imported', 'status.applied':'✅ Applied', 'status.created':'✅ Created', 'status.downloaded':'📥 Downloaded', 'status.cleared':'🗑 Cleared', 'status.wrongPassword':'❌ Wrong password', 'status.shareActive':'🔴 Sharing detected', 'status.popupBlocked':'⚠️ Popup blocked', 'status.public':'👁 Public', 'status.admin':'🔓 Admin', 'status.clearAll':'🚨 CLEAR', 'status.emptyList':'⚠️ List is empty', 'status.invalidChars':'⚠️ Invalid character set', 'status.onlyNameWheel':'⚠️ Only supported for name wheels', 'status.invalidFile':'Invalid file: {error}', 'status.fileTooLarge':'File is too large (>5MB). Choose a smaller file or compress it first.', 'status.customAudioRequired':'⚠️ Upload a file or paste a URL first', 'status.noStats':'No results yet', 'status.applyValues':'✅ Applied {count} values ({maxLen} characters)', 'status.removedValues':'🗑 List removed — back to free random', 'status.uploadedTick':'🎵 Spin sound uploaded: {name}', 'status.setTickUrl':'🎵 Spin sound URL set', 'status.uploadedWin':'🎉 Winning sound uploaded: {name}', 'status.setWinUrl':'🎉 Winning sound URL set', 'status.createdTemplate':'✅ Created: {name}', 'status.undo':'↺ Undo: {name}', 'status.closedShare':'🔴 Panel closed',
     'stats.totalSpins':'Total spins', 'stats.times':'times', 'empty.results':'No results yet', 'empty.schedules':'No scenarios yet', 'empty.wheels':'No wheels yet', 'empty.sessions':'No saved sessions yet', 'auto.voice':'Auto (Vietnamese if available)', 'auto.voiceEn':'Auto (English if available)',
-    'teams.peopleCount':'{count} people', 'teams.teamNameDefault':'Team {letter}', 'qr.error':'Could not load the QR (offline?). Copy the URL:',
+    'teams.peopleCount':'{count} people', 'teams.teamNameDefault':'Team {letter}', 'empty.resultHint':'Press SPIN to start and view the result history here.', 'empty.spinNow':'Spin now', 'qr.error':'Could not load the QR (offline?). Copy the URL:',
     'dialog.notice':'Notice', 'dialog.confirm':'Confirm', 'dialog.success':'Success', 'dialog.adminAuth':'Authentication',
+    'confirm.switchToRange':'Another wheel type already exists.\n\nOnly one wheel type can be used at a time. Remove all current wheels and create a range?', 'confirm.switchToRoller':'Another wheel type already exists.\n\nOnly one wheel type can be used at a time. Remove all current wheels and create a roller?',
     'status.sessionNameRequired':'⚠️ Enter a session name', 'status.importedNames':'✅ Imported {count} names', 'status.wheelEmpty':'⚠️ Wheel {name} has no names', 'status.appliedImage':'✅ Image applied', 'status.copyImageUnsupported':'⚠️ This browser cannot copy images: {error}', 'status.error':'❌ Error: {error}', 'status.passwordSet':'🔒 Password set', 'status.passwordRemoved':'🔓 Lock removed', 'status.clearedAudio':'🗑 {kind} sound cleared', 'status.copiedWithValue':'📋 Copied: {value}', 'status.openedOverlay':'📺 Overlay tab opened', 'status.copiedQr':'📋 Copied', 'status.copiedOverlay':'📋 OBS Browser Source URL copied', 'status.downloadedImage':'📥 Downloaded', 'status.largeFile':'This file is {size}MB and may be slow. Continue?', 'status.godMode':'🎮 God', 'status.panic':'🚨 CLEAR',
     'confirm.switchToNumber':'A name wheel already exists.\n\nOnly one wheel type can be used at a time. Remove all name wheels and create a number wheel?', 'confirm.switchToWheel':'A number wheel already exists.\n\nOnly one wheel type can be used at a time. Remove all number wheels and create a new wheel?', 'confirm.deleteWheel':'Delete wheel "{name}"?', 'confirm.clearEntries':'Remove all names from this wheel?', 'confirm.clearResults':'Clear result history for ALL wheels?', 'confirm.clearStorage':'Clear ALL localStorage and reload?', 'confirm.templateType':'This template is a "{type}" wheel.\n\nAnother wheel type already exists. Remove all and create this template?', 'confirm.loadSession':'Load session "{name}"? Current settings will be overwritten.', 'confirm.deleteSession':'Delete session "{name}"?', 'confirm.importSession':'Import {count} wheels from this file? Current data will be overwritten.', 'prompt.rename':'Enter wheel name:', 'prompt.renameTitle':'Rename wheel'
   }
@@ -1153,7 +1300,7 @@ const I18N = {
 
 const STATIC_I18N = Object.freeze({
   '#modeSel [data-mode="manual"]':'mode.manual', '#modeSel [data-mode="together"]':'mode.together', '#modeSel [data-mode="sequential"]':'mode.sequential', '#spinAllBtn':'mode.spinAll',
-  'header button[onclick="app.addWheel()"]':'nav.wheel', 'header button[onclick="app.addNumWheel()"]':'nav.number', 'header button[onclick="app.openTemplates()"]':'nav.templates', 'header button[onclick="app.openTeamSplit()"]':'nav.teams', 'header button[onclick="app.openSessions()"]':'nav.sessions', 'header button[onclick="app.openQR()"]':'nav.qr', 'header button[onclick="app.openCustomize()"]':'nav.customize',
+  'header button[onclick="app.addWheel()"]':'nav.wheel', 'header button[onclick="app.addNumWheel()"]':'nav.number', 'header button[onclick="app.addRangeWheel()"]':'nav.range', 'header button[onclick="app.addRollerWheel()"]':'nav.roller', 'header button[onclick="app.openTemplates()"]':'nav.templates', 'header button[onclick="app.openTeamSplit()"]':'nav.teams', 'header button[onclick="app.openSessions()"]':'nav.sessions', 'header button[onclick="app.openQR()"]':'nav.qr', 'header button[onclick="app.openCustomize()"]':'nav.customize',
   '.tab-bar button[data-tab="entries"]':'tabs.entries', '.tab-bar button[data-tab="results"]':'tabs.results',
   '#wheelToolbar button:nth-child(1)':'toolbar.shuffle', '#wheelToolbar button:nth-child(2)':'toolbar.sort', '#wheelToolbar button:nth-child(3)':'toolbar.open', '#wheelToolbar button:nth-child(4)':'toolbar.save', '#wheelToolbar button:nth-child(5)':'toolbar.clear', '#numToolbar button':'num.configure',
   '.panel-body[data-tab-content="results"] .toolbar button:nth-child(1)':'results.undo', '.panel-body[data-tab-content="results"] .toolbar button:nth-child(2)':'results.stats', '.panel-body[data-tab-content="results"] .toolbar button:nth-child(3)':'results.clear', '.panel-body[data-tab-content="results"] .toolbar button:nth-child(4)':'results.export',
@@ -1228,7 +1375,7 @@ const app = {
   t(key, vars={}){
     const lang = this.getLanguage();
     let text = I18N[lang]?.[key] ?? I18N.vi[key] ?? key;
-    return String(text).replace(/\{(\w+)\}/g, (_, name)=> vars[name] == null ? '' : String(vars[name]));
+    return String(text).replace(/Fortuna/g,'Spin & Win').replace(/\{(\w+)\}/g, (_, name)=> vars[name] == null ? '' : String(vars[name]));
   },
   templateText(template, field){
     const labels = TEMPLATE_LABELS[TEMPLATES.indexOf(template)];
@@ -1439,26 +1586,61 @@ const app = {
 
   loadState(){ try{ Object.assign(this.state, JSON.parse(localStorage.getItem('fortuna-v1')||'{}')); }catch{} },
   save(){
-    try{ localStorage.setItem('fortuna-v1', JSON.stringify(this.state)); }catch(e){}
+    try{
+      localStorage.setItem('fortuna-v1', JSON.stringify(this.state));
+      this.showSaveIndicator();
+    }catch(e){
+      this.toast('⚠️ Lưu thất bại: '+e.message);
+    }
     this.broadcast('sync', this.state);
+  },
+  showSaveIndicator(){
+    const el = $('#saveIndicator'); if(!el) return;
+    clearTimeout(this._siT);
+    el.classList.add('on');
+    this._siT = setTimeout(()=>el.classList.remove('on'), 1200);
   },
 
   // ---- wheels
   async addWheel(){
-    if(this.state.wheels.some(w=>w.type==='numbers')){
+    if(this.state.wheels.some(w=>w.type && w.type!=='wheel')){
       if(!await this.confirm(this.t('confirm.switchToWheel'))) return;
-      this.state.wheels = this.state.wheels.filter(w=>w.type!=='numbers');
+      this.state.wheels = this.state.wheels.filter(w=>!w.type || w.type==='wheel');
     }
     const n = this.state.wheels.length+1;
     const w = makeWheel((this.getLanguage()==='en'?'Wheel ':'Vòng ')+n);
     this.state.wheels.push(w); this.state.activeWheelId = w.id;
     this.renderAll(true); this.save();
   },
+  async addRollerWheel(){
+    const hasOther = this.state.wheels.some(w => w.type!=='roller');
+    if(hasOther){
+      if(!await this.confirm(this.t('confirm.switchToRoller'))) return;
+      this.state.wheels = this.state.wheels.filter(w=>w.type==='roller');
+    }
+    const n = this.state.wheels.length+1;
+    const w = makeRollerWheel(this.t('roller.name')+' '+n);
+    this.state.wheels.push(w); this.state.activeWheelId = w.id;
+    this.renderAll(); this.save();
+  },
+  async addRangeWheel(){
+    // enforce single type
+    const hasOther = this.state.wheels.some(w => w.type!=='range');
+    if(hasOther){
+      if(!await this.confirm(this.t('confirm.switchToRange'))) return;
+      this.state.wheels = this.state.wheels.filter(w=>w.type==='range');
+    }
+    const n = this.state.wheels.length+1;
+    const w = makeRangeWheel(this.t('range.name')+' '+n);
+    this.state.wheels.push(w); this.state.activeWheelId = w.id;
+    this.renderAll(); this.save();
+  },
   async addNumWheel(){
     if(this.state.wheels.some(w=>w.type!=='numbers')){
       if(!await this.confirm(this.t('confirm.switchToNumber'))) return;
       this.state.wheels = this.state.wheels.filter(w=>w.type==='numbers');
     }
+    // trigger fresh — else block below
     const n = this.state.wheels.filter(w=>w.type==='numbers').length+1;
     const w = makeNumWheel((this.getLanguage()==='en'?'Number wheel ':'Quay số ')+n);
     this.state.wheels.push(w); this.state.activeWheelId = w.id;
@@ -1578,7 +1760,7 @@ const app = {
     ta.oninput = ()=>{
       clearTimeout(t);
       t = setTimeout(()=>{
-        const w = this.activeWheel(); if(!w || w.type==='numbers') return;
+        const w = this.activeWheel(); if(!w || w.type==='numbers' || w.type==='range') return;
         const lines = ta.value.split('\n').map(s=>s.trim());
         const oldByName = new Map((w.entries||[]).map(e=>[e.name,e]));
         w.entries = lines.filter(Boolean).map(line=>{
@@ -1587,7 +1769,10 @@ const app = {
           const prev = oldByName.get(name);
           return {id:prev?.id||uid(), name, image:image||prev?.image||null};
         });
-        this.updateCounts(); this.renderWheel(w); this.save();
+        this.updateCounts();
+        if(w.type==='roller') this.renderRollerStrip(w);
+        else this.renderWheel(w);
+        this.save();
       },200);
     };
   },
@@ -1595,10 +1780,20 @@ const app = {
     const w = this.activeWheel(); if(!w) return;
     const ta = $('#entriesText');
     const isNum = w.type==='numbers';
+    const isRange = w.type==='range';
+    const isSpecial = isNum || isRange;
     // toggle toolbars
     const wt = $('#wheelToolbar'), nt = $('#numToolbar');
-    if(wt) wt.hidden = isNum;
-    if(nt) nt.hidden = !isNum;
+    if(wt) wt.hidden = isSpecial;
+    if(nt) nt.hidden = !isSpecial;
+    if(isRange){
+      ta.value = this.t('range.summary',{min:w.rangeMin,max:w.rangeMax,step:w.rangeStep,decimals:w.rangeDecimals||0,prefix:w.rangePrefix||'',suffix:w.rangeSuffix||''});
+      ta.disabled = true;
+      ta.style.opacity = '.6';
+      this.updateCounts();
+      this.applyWheelTypeVisibility();
+      return;
+    }
     if(isNum){
       const chars = w.digitSet || `${w.digitMin}-${w.digitMax}`;
       const pool = w.numPool?.length ? `\n${this.t('number.poolCount',{count:w.numPool.length})}` : '';
@@ -1607,9 +1802,18 @@ const app = {
       ta.disabled = true;
       ta.style.opacity = '.6';
     } else {
-      ta.disabled = false;
-      ta.style.opacity = '1';
-      ta.value = (w.entries||[]).map(e=>e.image?`${e.name} | ${e.image}`:e.name).join('\n');
+      const nEntries = w.entries?.length || 0;
+      // Performance: nếu quá lớn, không đổ ra textarea (tránh treo browser)
+      if(nEntries > 5000){
+        ta.disabled = true;
+        ta.style.opacity = '.7';
+        const preview = w.entries.slice(0,10).map(e=>e.image?`${e.name} | ${e.image}`:e.name).join('\n');
+        ta.value = `[${nEntries.toLocaleString()} mục — quá lớn để hiển thị]\n\nPreview 10 mục đầu:\n${preview}\n...\n\n→ Bấm 📂 Mở để import từ file\n→ Bấm 🗑 Xoá để reset\n→ Xoá bớt xuống dưới 5000 mục để edit`;
+      } else {
+        ta.disabled = false;
+        ta.style.opacity = '1';
+        ta.value = (w.entries||[]).map(e=>e.image?`${e.name} | ${e.image}`:e.name).join('\n');
+      }
     }
     this.updateCounts();
     this.applyWheelTypeVisibility();
@@ -1761,7 +1965,7 @@ const app = {
   exportSession(){
     const data = {wheels:this.state.wheels, cfg:this.state.cfg, spinMode:this.state.spinMode, exportedAt:Date.now()};
     const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
-    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`fortuna-session-${Date.now()}.json`; a.click();
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`spin-win-session-${Date.now()}.json`; a.click();
   },
   importSession(){
     const inp = document.createElement('input'); inp.type='file'; inp.accept='.json';
@@ -1801,6 +2005,264 @@ const app = {
     if(!w || w.type==='numbers') return location.origin+location.pathname;
     const arr = w.entries.map(e=>e.name);
     return location.origin+location.pathname+'?d='+btoa(encodeURIComponent(JSON.stringify(arr)).replace(/%([0-9A-F]{2})/g,(m,p)=>String.fromCharCode('0x'+p)));
+  },
+
+  // ==== DevTools detection heuristic ====
+  _startDevToolsDetection(){
+    // Heuristic 1: outerHeight - innerHeight > threshold → DevTools mở docked
+    // Heuristic 2: performance timing of debugger statement (nếu DevTools mở, pause lâu hơn)
+    const check = () => {
+      const wDiff = window.outerWidth - window.innerWidth;
+      const hDiff = window.outerHeight - window.innerHeight;
+      // threshold ~160px là chuẩn khi devtools docked
+      const opened = wDiff > 200 || hDiff > 200;
+      if(opened && !this._devToolsShown){
+        this._devToolsShown = true;
+        this.showDevToolsWarning();
+      } else if(!opened && this._devToolsShown){
+        this._devToolsShown = false;
+        this.hideDevToolsWarning();
+      }
+    };
+    setInterval(check, 1200);
+    check();
+  },
+  showDevToolsWarning(){
+    if(document.getElementById('devToolsBlock')) return;
+    const el = document.createElement('div');
+    el.id = 'devToolsBlock';
+    el.style.cssText = `position:fixed;inset:0;background:linear-gradient(135deg,#7a0000,#1a0000);
+      z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      color:#fff;font-family:-apple-system,sans-serif;padding:40px;text-align:center;backdrop-filter:blur(10px)`;
+    el.innerHTML = `
+      <div style="font-size:100px;margin-bottom:20px;animation:cd .6s ease-out">⛔</div>
+      <div style="font-size:32px;font-weight:900;margin-bottom:12px;letter-spacing:1px">CẤM XEM MÃ NGUỒN</div>
+      <div style="font-size:16px;opacity:.9;max-width:520px;line-height:1.6;margin-bottom:8px">
+        Nội dung web này được bảo vệ bản quyền.<br>
+        Việc kiểm tra / trích xuất mã nguồn không được phép.
+      </div>
+      <div style="font-size:13px;opacity:.7;max-width:520px;line-height:1.6;margin-bottom:24px">
+        Please close Developer Tools to continue using this application.<br>
+        Vui lòng đóng công cụ nhà phát triển để tiếp tục sử dụng.
+      </div>
+      <div style="font-size:12px;opacity:.5">Fortuna © ${new Date().getFullYear()}</div>
+    `;
+    document.body.appendChild(el);
+    try{ document.body.style.overflow='hidden'; }catch{}
+  },
+  hideDevToolsWarning(){
+    const el = document.getElementById('devToolsBlock'); if(el) el.remove();
+    try{ document.body.style.overflow=''; }catch{}
+  },
+
+  // ==== Client Info & Benchmark ====
+  getClientInfo(){
+    const nav = navigator;
+    const ua = nav.userAgent;
+    const browser = /Firefox\/(\d+)/.exec(ua)?.[0] || /Edg\/(\d+)/.exec(ua)?.[0] || /Chrome\/(\d+)/.exec(ua)?.[0] || /Safari\/(\d+)/.exec(ua)?.[0] || 'Unknown';
+    const os = /Windows NT ([\d.]+)/.exec(ua)?.[0] || /Mac OS X ([\d_.]+)/.exec(ua)?.[0] || /Android (\d+)/.exec(ua)?.[0] || /iPhone OS ([\d_]+)/.exec(ua)?.[0] || 'Unknown';
+    // Storage estimate
+    let storageUsed = 0;
+    try{
+      for(let i=0;i<localStorage.length;i++){
+        const k = localStorage.key(i);
+        storageUsed += (k.length + (localStorage.getItem(k)?.length||0)) * 2; // UTF-16
+      }
+    }catch{}
+    // Heuristic: browser localStorage cap ~5MB (Chrome/Edge/FF), 10MB (Safari desktop)
+    const storageMax = /Safari/.test(ua) && !/Chrome/.test(ua) ? 10*1024*1024 : 5*1024*1024;
+    // Current wheels usage
+    const wheelStats = this.state.wheels.map(w=>{
+      const size = JSON.stringify(w).length * 2;
+      let items = 0;
+      if(w.type==='numbers') items = w.count * w.digitCount;
+      else if(w.type==='range') items = Math.abs(w.rangeMax - w.rangeMin)/Math.abs(w.rangeStep||1) + 1;
+      else items = w.entries?.length || 0;
+      return {name:w.name, type:w.type||'wheel', items, sizeKB:(size/1024).toFixed(1)};
+    });
+    return {
+      ram: nav.deviceMemory || null,
+      cores: nav.hardwareConcurrency || null,
+      browser, os,
+      language: nav.language,
+      platform: nav.platform,
+      online: nav.onLine,
+      storageUsed, storageMax,
+      wheelStats,
+      // performance.memory (Chrome only)
+      jsHeap: performance.memory ? {
+        used: performance.memory.usedJSHeapSize,
+        total: performance.memory.totalJSHeapSize,
+        limit: performance.memory.jsHeapSizeLimit
+      } : null,
+    };
+  },
+  formatBytes(b){
+    if(!b) return '0 B';
+    if(b < 1024) return b+' B';
+    if(b < 1024*1024) return (b/1024).toFixed(1)+' KB';
+    if(b < 1024*1024*1024) return (b/1024/1024).toFixed(2)+' MB';
+    return (b/1024/1024/1024).toFixed(2)+' GB';
+  },
+  recommendMax(info){
+    // RAM ước tính (GB) — mặc định 4 nếu không lấy được
+    const ram = info.ram || 4;
+    const cores = info.cores || 2;
+    // Base: 100k items/GB RAM cho wheel type (canvas downsample nên chịu tốt)
+    const wheelMax = Math.floor(ram * 250000); // downsample lên đến 500 slices, N tùy ý
+    const rollerMax = Math.floor(ram * 200000); // strip 60 items cố định
+    const numberMax = 11; // digitCount max cố định
+    const rangeMax = ram * 1000000; // range 0-N chỉ dùng random, không lưu N items
+    return {wheel: wheelMax, roller: rollerMax, number: numberMax, range: rangeMax};
+  },
+  openClientInfo(){
+    const info = this.getClientInfo();
+    const rec = this.recommendMax(info);
+    const storagePct = (info.storageUsed / info.storageMax * 100).toFixed(1);
+    const storageColor = storagePct > 80 ? '#EA4335' : storagePct > 50 ? '#f59e0b' : '#22c55e';
+    let html = `
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+        <div style="background:var(--panel2);padding:12px;border-radius:8px">
+          <div style="color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">RAM (ước tính)</div>
+          <div style="font-size:24px;font-weight:700;color:var(--brand)">${info.ram ? info.ram+' GB' : '≥ 4 GB (không đo được)'}</div>
+        </div>
+        <div style="background:var(--panel2);padding:12px;border-radius:8px">
+          <div style="color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">CPU cores</div>
+          <div style="font-size:24px;font-weight:700;color:var(--brand)">${info.cores || 'N/A'}</div>
+        </div>
+      </div>
+      <div style="background:var(--panel2);padding:12px;border-radius:8px;margin-bottom:12px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px">
+          <span style="color:var(--muted)">💾 localStorage: ${this.formatBytes(info.storageUsed)} / ${this.formatBytes(info.storageMax)}</span>
+          <span style="color:${storageColor};font-weight:600">${storagePct}%</span>
+        </div>
+        <div style="height:6px;background:var(--bg);border-radius:3px;overflow:hidden">
+          <div style="height:100%;width:${Math.min(100,storagePct)}%;background:${storageColor};transition:width .3s"></div>
+        </div>
+      </div>`;
+    if(info.jsHeap){
+      const heapPct = (info.jsHeap.used / info.jsHeap.limit * 100).toFixed(1);
+      html += `<div style="background:var(--panel2);padding:12px;border-radius:8px;margin-bottom:12px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px">
+          <span style="color:var(--muted)">🧠 JS Heap: ${this.formatBytes(info.jsHeap.used)} / ${this.formatBytes(info.jsHeap.limit)}</span>
+          <span style="color:${heapPct>70?'#EA4335':'#22c55e'};font-weight:600">${heapPct}%</span>
+        </div>
+        <div style="height:6px;background:var(--bg);border-radius:3px;overflow:hidden">
+          <div style="height:100%;width:${Math.min(100,heapPct)}%;background:${heapPct>70?'#EA4335':'#22c55e'}"></div>
+        </div>
+      </div>`;
+    }
+    html += `
+      <details style="background:var(--panel2);padding:10px 14px;border-radius:8px;margin-bottom:12px">
+        <summary style="cursor:pointer;font-size:12px;color:var(--muted)">🖥️ Chi tiết môi trường</summary>
+        <div style="font-size:12px;line-height:1.8;margin-top:8px;color:var(--muted)">
+          <div>Trình duyệt: <b style="color:var(--text)">${this.esc(info.browser)}</b></div>
+          <div>OS: <b style="color:var(--text)">${this.esc(info.os)}</b></div>
+          <div>Ngôn ngữ: <b style="color:var(--text)">${this.esc(info.language)}</b></div>
+          <div>Platform: <b style="color:var(--text)">${this.esc(info.platform)}</b></div>
+          <div>Trạng thái mạng: <b style="color:${info.online?'#22c55e':'#EA4335'}">${info.online?'🟢 Online':'🔴 Offline'}</b></div>
+        </div>
+      </details>
+
+      <h4 style="margin:16px 0 8px;font-size:14px">🎯 Khuyến nghị số lượng mục tối đa / 1 lượt quay</h4>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:12px">
+        <div style="background:linear-gradient(135deg,rgba(66,133,244,.15),rgba(66,133,244,.05));padding:12px;border-radius:8px;border:1px solid rgba(66,133,244,.3)">
+          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">🎡 Vòng quay</div>
+          <div style="font-size:18px;font-weight:700;color:#4285F4">${rec.wheel.toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px">mục</div>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(234,67,53,.15),rgba(234,67,53,.05));padding:12px;border-radius:8px;border:1px solid rgba(234,67,53,.3)">
+          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">🎰 Con lăn</div>
+          <div style="font-size:18px;font-weight:700;color:#EA4335">${rec.roller.toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px">mục</div>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(251,188,4,.15),rgba(251,188,4,.05));padding:12px;border-radius:8px;border:1px solid rgba(251,188,4,.3)">
+          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">🔢 Quay số</div>
+          <div style="font-size:18px;font-weight:700;color:#FBBC04">${rec.number}</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px">chữ số/cột</div>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(52,168,83,.15),rgba(52,168,83,.05));padding:12px;border-radius:8px;border:1px solid rgba(52,168,83,.3)">
+          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">🎯 Quay dải</div>
+          <div style="font-size:18px;font-weight:700;color:#34A853">∞</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px">bounded ${rec.range.toLocaleString()}</div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--muted);line-height:1.6;padding:8px 10px;background:rgba(0,0,0,.15);border-radius:6px;margin-bottom:12px">
+        💡 Số này chỉ là khuyến nghị an toàn. Wheel canvas dùng downsample nên hiển thị vẫn OK với triệu mục nhưng localStorage cap ~5MB — nếu vượt sẽ không save được. Range không lưu items nên gần như vô hạn.
+      </div>`;
+
+    if(info.wheelStats.length){
+      html += `<h4 style="margin:16px 0 8px;font-size:14px">📊 Vòng quay hiện tại</h4>
+        <div style="background:var(--panel2);border-radius:8px;overflow:hidden;font-size:12px">
+        <div style="display:grid;grid-template-columns:1fr 60px 80px 70px;padding:8px 12px;background:rgba(0,0,0,.2);font-weight:600;color:var(--muted)">
+          <span>Tên</span><span>Loại</span><span style="text-align:right">Items</span><span style="text-align:right">Size</span>
+        </div>`;
+      info.wheelStats.forEach(w=>{
+        const icon = w.type==='numbers'?'🔢':w.type==='range'?'🎯':w.type==='roller'?'🎰':'🎡';
+        html += `<div style="display:grid;grid-template-columns:1fr 60px 80px 70px;padding:6px 12px;border-top:1px solid var(--border)">
+          <span>${this.esc(w.name)}</span>
+          <span>${icon}</span>
+          <span style="text-align:right;font-weight:600">${w.items.toLocaleString()}</span>
+          <span style="text-align:right;color:var(--muted)">${w.sizeKB} KB</span>
+        </div>`;
+      });
+      html += '</div>';
+    }
+
+    html += '<div id="benchmarkResult" style="margin-top:12px"></div>';
+    $('#clientInfoBody').innerHTML = html;
+    $('#clientInfoModal').classList.add('on');
+  },
+  closeClientInfo(){ $('#clientInfoModal').classList.remove('on'); },
+  async runBenchmark(){
+    const res = $('#benchmarkResult');
+    res.innerHTML = '<div style="padding:12px;background:rgba(79,109,245,.1);border-radius:8px;text-align:center">⏳ Đang chạy benchmark...</div>';
+    await new Promise(r=>setTimeout(r,50));
+    const sizes = [1000, 10000, 100000, 1000000];
+    const results = [];
+    for(const n of sizes){
+      // Test 1: create array + winner pick
+      const t0 = performance.now();
+      const arr = new Array(n);
+      for(let i=0;i<n;i++) arr[i] = {id:i, name:'Item '+i};
+      const t1 = performance.now();
+      // Test 2: random pick 100 times
+      for(let i=0;i<100;i++) Math.floor(Math.random()*n);
+      const t2 = performance.now();
+      // Test 3: JSON stringify + parse
+      let jsonMs = 0;
+      try{
+        const j0 = performance.now();
+        const s = JSON.stringify(arr);
+        JSON.parse(s);
+        jsonMs = performance.now() - j0;
+      }catch(e){ jsonMs = -1; }
+      results.push({n, createMs:t1-t0, pickMs:t2-t1, jsonMs, jsonKB:JSON.stringify(arr[0]).length*n/1024});
+      await new Promise(r=>setTimeout(r,10));
+    }
+    // render
+    let html = '<h4 style="margin:0 0 8px;font-size:14px">🚀 Kết quả benchmark</h4>';
+    html += '<div style="background:var(--panel2);border-radius:8px;overflow:hidden;font-size:12px">';
+    html += '<div style="display:grid;grid-template-columns:80px 1fr 1fr 1fr;padding:8px 12px;background:rgba(0,0,0,.2);font-weight:600;color:var(--muted)"><span>N items</span><span style="text-align:right">Create</span><span style="text-align:right">100 picks</span><span style="text-align:right">JSON r/w</span></div>';
+    results.forEach(r=>{
+      const goodCreate = r.createMs<100?'#22c55e':r.createMs<500?'#f59e0b':'#EA4335';
+      const goodJson = r.jsonMs<0?'#EA4335':r.jsonMs<200?'#22c55e':r.jsonMs<1000?'#f59e0b':'#EA4335';
+      html += `<div style="display:grid;grid-template-columns:80px 1fr 1fr 1fr;padding:6px 12px;border-top:1px solid var(--border)">
+        <span style="font-weight:600">${r.n.toLocaleString()}</span>
+        <span style="text-align:right;color:${goodCreate}">${r.createMs.toFixed(0)}ms</span>
+        <span style="text-align:right;color:#22c55e">${r.pickMs.toFixed(1)}ms</span>
+        <span style="text-align:right;color:${goodJson}">${r.jsonMs<0?'❌ overflow':r.jsonMs.toFixed(0)+'ms'}</span>
+      </div>`;
+    });
+    html += '</div>';
+    // recommendation
+    const best = results.filter(r=>r.createMs<500 && r.jsonMs<1000 && r.jsonMs>0).slice(-1)[0];
+    if(best){
+      html += `<div style="margin-top:10px;padding:10px 12px;background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(34,197,94,.05));border:1px solid rgba(34,197,94,.35);border-radius:8px;font-size:12px;color:#22c55e"><b>✅ Máy này chạy tốt tới ${best.n.toLocaleString()} items</b> — spin và save đều <1s.</div>`;
+    } else {
+      html += `<div style="margin-top:10px;padding:10px 12px;background:rgba(234,67,53,.1);border:1px solid rgba(234,67,53,.35);border-radius:8px;font-size:12px;color:#EA4335"><b>⚠️ Chỉ nên dùng <100k items</b> — máy hạn chế bộ nhớ.</div>`;
+    }
+    res.innerHTML = html;
   },
 
   // ==== Overlay mode ====
@@ -1863,9 +2325,22 @@ const app = {
     this.syncEntriesText(); this.renderWheel(w); this.save();
   },
   async clearEntries(){
-    if(!await this.confirm(this.t('confirm.clearEntries'))) return;
-    const w = this.activeWheel(); w.entries = [];
-    this.syncEntriesText(); this.renderWheel(w); this.save();
+    const w = this.activeWheel(); if(!w) return;
+    const backup = JSON.parse(JSON.stringify(w.entries||[]));
+    if(backup.length===0){ this.toast('Chưa có mục để xoá'); return; }
+    w.entries = [];
+    this.syncEntriesText();
+    if(w.type==='roller') this.renderRollerStrip(w); else this.renderWheel(w);
+    this.save();
+    this.toast(`🗑 Đã xoá ${backup.length} mục`, {
+      undo: () => {
+        w.entries = backup;
+        this.syncEntriesText();
+        if(w.type==='roller') this.renderRollerStrip(w); else this.renderWheel(w);
+        this.save();
+        this.toast('↺ Đã khôi phục');
+      }
+    });
   },
   importFile(){
     const inp = document.createElement('input'); inp.type='file'; inp.accept='.txt,.csv,.json';
@@ -1889,9 +2364,18 @@ const app = {
     const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`${w.name}.txt`; a.click();
   },
   async clearResults(){
-    if(!await this.confirm(this.t('confirm.clearResults'))) return;
+    const backup = this.state.wheels.map(w=>({id:w.id, results:JSON.parse(JSON.stringify(w.results||[])), spinNo:w.spinNo}));
+    const total = backup.reduce((s,b)=>s+b.results.length,0);
+    if(total===0){ this.toast('Chưa có lịch sử'); return; }
     this.state.wheels.forEach(w=> w.results=[]);
     this.renderResults(); this.save();
+    this.toast(`🗑 Đã xoá ${total} kết quả`, {
+      undo: () => {
+        backup.forEach(b => { const w = this.findWheel(b.id); if(w){ w.results = b.results; } });
+        this.renderResults(); this.save();
+        this.toast('↺ Đã khôi phục');
+      }
+    });
   },
   exportResults(){
     let csv = 'wheel,spin,name,time\n';
@@ -1916,6 +2400,8 @@ const app = {
     if(!w) return;
     if(this.spinning.has(w.id) || document.body.classList.contains('display')) return;
     if(w.type==='numbers') return this.spinNumbers(w);
+    if(w.type==='range') return this.spinRange(w);
+    if(w.type==='roller') return this.spinRoller(w);
     if(!w.entries.length){ this.toast(this.t('status.wheelEmpty',{name:w.name})); return; }
     if(this.state.cfg.countdown && this.spinning.size===0) await this.countdown();
     const idx = this.pickWinnerIdx(w); if(idx<0) return;
@@ -1946,6 +2432,87 @@ const app = {
     this.broadcast('result',{name:winner.name, wheelName:w.name});
     this.save();
   },
+  // ---- range spin (dải số 0-N)
+  async spinRange(w){
+    if(this.spinning.has(w.id)) return;
+    this.spinning.add(w.id);
+    try{ await this._doSpinRange(w); }
+    catch(e){ console.error('[spinRange]', e); this.toast('⚠️ '+e.message); }
+    finally{ this.spinning.delete(w.id); }
+  },
+  async _doSpinRange(w){
+    // decide target
+    const step = Math.abs(w.rangeStep)||1;
+    const min = Math.min(w.rangeMin, w.rangeMax), max = Math.max(w.rangeMin, w.rangeMax);
+    const stepCount = Math.floor((max-min)/step) + 1;
+    const randomTarget = () => {
+      const idx = Math.floor(Math.random()*stepCount);
+      return +(min + idx*step).toFixed(w.rangeDecimals||10);
+    };
+    let target = null;
+    if(w.rangeRig !== '' && w.rangeRig != null){
+      target = +w.rangeRig;
+      w.rangeRig = '';
+    } else if(w.schedule?.length){
+      const hit = w.schedule.find(x => x.spinIndex === w.spinNo+1);
+      if(hit && hit.number !== undefined) target = +hit.number;
+    }
+    if(target==null || isNaN(target)) target = randomTarget();
+    // clamp to range
+    target = Math.max(min, Math.min(max, target));
+
+    const dur = this.state.cfg.dur || 6;
+    const cont = document.querySelector(`[data-range="${w.id}"]`);
+    const disp = document.querySelector(`[data-rangenum="${w.id}"]`);
+    if(!disp){ return; }
+    cont?.classList.add('spinning');
+    if(this.state.cfg.tick && !this.state.cfg.mute) this.playTick(dur);
+
+    // Animate: rapid shuffle → slow → land target
+    const start = performance.now();
+    let lastFlash = 0;
+    let lastValue = min + Math.random()*(max-min);
+    await new Promise(resolve => {
+      const frame = (now) => {
+        const t = Math.min(1, (now-start)/(dur*1000));
+        if(t >= 1){
+          disp.textContent = this.formatRangeValue(w, target);
+          resolve();
+          return;
+        }
+        // Phase 1 (0-70%): rapid random flash — interval increases exponentially (slows down)
+        if(t < 0.72){
+          // interval từ 30ms → 400ms
+          const interval = 30 + Math.pow(t/0.72, 2)*370;
+          if(now - lastFlash > interval){
+            lastValue = min + Math.random()*(max-min);
+            disp.textContent = this.formatRangeValue(w, lastValue);
+            lastFlash = now;
+          }
+        } else {
+          // Phase 2 (70-100%): smooth converge from lastValue → target with ease-out
+          const p = (t-0.72)/0.28;
+          const eased = 1 - Math.pow(1-p, 3);
+          const v = lastValue + (target - lastValue)*eased;
+          disp.textContent = this.formatRangeValue(w, v);
+        }
+        requestAnimationFrame(frame);
+      };
+      requestAnimationFrame(frame);
+    });
+    cont?.classList.remove('spinning');
+
+    w.spinNo++;
+    const displayStr = this.formatRangeValue(w, target);
+    w.results.unshift({name:displayStr, value:target, t:Date.now(), spin:w.spinNo});
+    if(w.results.length>500) w.results.length=500;
+    this.renderResults();
+    this.showWinnerBadge(w.id, displayStr);
+    if(this._batchMode){ this._batchWinners.push({name:displayStr, wheelName:w.name}); }
+    else if(this.state.cfg.popup) this.showResult(displayStr, w.name);
+    this.save();
+  },
+
   // ---- number spin
   async spinNumbers(w){
     if(this.spinning.has(w.id)) return;
@@ -2089,7 +2656,7 @@ const app = {
     const old = card.querySelector('.last-winner'); if(old) old.remove();
     const el = document.createElement('div');
     el.className = 'last-winner';
-    el.innerHTML = this.icon('trophy',14);
+    el.innerHTML = '<img class="winner-cup-image" src="cup.png" alt="" aria-hidden="true">';
     el.append(document.createTextNode(' '+name));
     card.querySelector('.wheel-stage').appendChild(el);
     // Winner glow spotlight
@@ -2395,7 +2962,12 @@ const app = {
     const grid = $('#wheelGrid');
     const wheels = this.state.wheels;
     grid.dataset.n = Math.min(9, wheels.length);
-    grid.innerHTML = wheels.map(w=> w.type==='numbers' ? this.renderNumCard(w) : this.renderWheelCard(w)).join('');
+    grid.innerHTML = wheels.map(w=>{
+      if(w.type==='numbers') return this.renderNumCard(w);
+      if(w.type==='range') return this.renderRangeCard(w);
+      if(w.type==='roller') return this.renderRollerCard(w);
+      return this.renderWheelCard(w);
+    }).join('');
     if(animate){
       const raf = window.requestAnimationFrame || (fn=>setTimeout(fn,0));
       raf(()=>{
@@ -2406,13 +2978,21 @@ const app = {
         });
       });
     }
-    wheels.forEach(w=>{ if(w.type==='numbers') this.renderNumSlots(w); else this.renderWheel(w); });
+    wheels.forEach(w=>{
+      if(w.type==='numbers') this.renderNumSlots(w);
+      else if(w.type==='range') this.renderRangeDisplay(w);
+      else if(w.type==='roller') this.renderRollerStrip(w);
+      else this.renderWheel(w);
+    });
     // observe resize to re-fit slot sizes
     if(!this._resizeBound){
       this._resizeBound = true;
       window.addEventListener('resize', ()=>{
         clearTimeout(this._rt);
-        this._rt = setTimeout(()=>{ this.state.wheels.forEach(w=>{ if(w.type==='numbers') this.fitSlotSize(w); }); }, 100);
+        this._rt = setTimeout(()=>{ this.state.wheels.forEach(w=>{
+          if(w.type==='numbers') this.fitSlotSize(w);
+          else if(w.type==='roller') this.renderRollerStrip(w);
+        }); }, 100);
       });
     }
   },
@@ -2438,6 +3018,245 @@ const app = {
       </div>
     </div>`;
   },
+  renderRollerCard(w){
+    const dir = w.rollerDir || 'horizontal';
+    return `<div class="wheel-card ${w.id===this.state.activeWheelId?'active':''}" data-w="${w.id}" onclick="app.selectWheel('${w.id}')">
+      <div class="wheel-card-header">
+        <input class="wheel-card-title" value="${this.esc(w.name)}" data-w="${w.id}" onclick="event.stopPropagation()" onchange="app.setWheelName('${w.id}',this.value)">
+        <div class="wheel-card-actions" onclick="event.stopPropagation()">
+          <button class="wc-btn" onclick="app.duplicateWheel('${w.id}')" title="${this.t('wheel.duplicate')}" aria-label="${this.t('wheel.duplicate')}">${this.icon('copy',15)}</button>
+          <button class="wc-btn danger" onclick="app.removeWheel('${w.id}')" title="${this.t('wheel.delete')}" aria-label="${this.t('wheel.delete')}">${this.icon('trash-2',15)}</button>
+        </div>
+      </div>
+      <div class="roller-config feature-config" onclick="event.stopPropagation()">
+        <label>${this.t('roller.direction')}:
+          <select class="feature-select" onchange="app.setRollerCfg('${w.id}','rollerDir',this.value)">
+            <option value="horizontal" ${dir==='horizontal'?'selected':''}>${this.t('roller.horizontal')}</option>
+            <option value="vertical" ${dir==='vertical'?'selected':''}>${this.t('roller.vertical')}</option>
+          </select>
+        </label>
+        <label>${this.t('roller.palette')}:
+          <select class="feature-select" onchange="app.setRollerCfg('${w.id}','palette',this.value)">
+            ${['google','rainbow','pastel','neon','mono','brand'].map(p=>`<option value="${p}" ${w.palette===p?'selected':''}>${this.t('look.'+p)}</option>`).join('')}
+          </select>
+        </label>
+        <span class="config-count">${this.t('wheel.itemsCount',{count:w.entries?.length||0})}</span>
+      </div>
+      <div class="wheel-stage" onclick="event.stopPropagation();app.selectWheel('${w.id}');app.spin('${w.id}')" title="${this.t('wheel.clickToSpin')}">
+        <div class="roller-container" data-roller="${w.id}" style="--roller-brand:${(PALETTES[w.palette]||PALETTES.google)[0]}">
+          <div class="roller-viewport ${dir}">
+            <div class="roller-strip ${dir}" data-rollerstrip="${w.id}"></div>
+            <div class="roller-center-line"></div>
+            <div class="roller-pointer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="wheel-card-footer">
+        <button class="spin-btn" onclick="event.stopPropagation();app.spin('${w.id}')">${this.t('wheel.spin')}</button>
+        <span class="wheel-info">${w.spinNo} ${this.t('wheel.spins')}</span>
+      </div>
+    </div>`;
+  },
+  setRollerCfg(id, key, val){
+    const w = this.findWheel(id); if(!w) return;
+    w[key] = val; this.renderGrid(); this.save();
+  },
+  renderRollerStrip(w){
+    const strip = document.querySelector(`[data-rollerstrip="${w.id}"]`);
+    const cont = document.querySelector(`[data-roller="${w.id}"]`);
+    if(!strip || !cont) return;
+    const dir = w.rollerDir || 'horizontal';
+    const n = w.entries?.length || 0;
+    if(!n){ strip.innerHTML = `<div class="roller-item roller-empty">${this.t('roller.empty')}</div>`; return; }
+    const vp = cont.querySelector('.roller-viewport');
+    const vpSize = dir==='horizontal' ? vp.clientWidth : vp.clientHeight;
+    const visibleCount = 3;
+    const itemSize = Math.floor(vpSize / visibleCount);
+    strip._itemSize = itemSize;
+    strip._vpSize = vpSize;
+    strip._dir = dir;
+    // Initial display: 3 items (or last winner if exists)
+    const last = w.results?.[0];
+    let centerIdx = 0;
+    if(last && last.id){
+      const i = w.entries.findIndex(e=>e.id===last.id);
+      if(i>=0) centerIdx = i;
+    }
+    this._buildRollerStrip(w, strip, centerIdx, 0);
+  },
+  // Xây strip 60 items (30 trước + target + 29 sau) — không phụ thuộc N
+  _buildRollerStrip(w, strip, targetIdx, cyclesBefore){
+    const palette = PALETTES[w.palette] || PALETTES.google;
+    const n = w.entries.length;
+    const dir = strip._dir || 'horizontal';
+    const itemSize = strip._itemSize;
+    const before = 30 + cyclesBefore * 30; // items trước target
+    const after = 30; // items sau target (cho padding)
+    // Sample: [random_before]...target...[random_after]
+    // Với N nhỏ, cycle qua entries; N lớn → random
+    let html = '';
+    const total = before + 1 + after;
+    for(let i=0;i<total;i++){
+      let entryIdx;
+      if(i === before){ entryIdx = targetIdx; }
+      else {
+        // pseudo-random for smooth scroll feel, cycle for small N
+        if(n <= 100) entryIdx = ((targetIdx - before + i) % n + n) % n;
+        else entryIdx = Math.floor(Math.random()*n);
+      }
+      const e = w.entries[entryIdx];
+      const color = e.color || palette[entryIdx % palette.length];
+      const winnerClass = i === before ? ' roller-winner' : '';
+      const style = dir==='horizontal'
+        ? `width:${itemSize}px;height:100%;background:${color}`
+        : `height:${itemSize}px;width:100%;background:${color}`;
+      html += `<div class="roller-item${winnerClass}" style="${style}"><span>${this.esc(e.name)}</span></div>`;
+    }
+    strip.innerHTML = html;
+    strip._targetSlot = before; // index của target trong strip
+    strip._total = total;
+  },
+  _setRollerPos(strip, dir, pxOffset, vpSize, itemSize, animate){
+    const translate = -(pxOffset + itemSize/2 - vpSize/2);
+    if(!animate) strip.style.transition = 'none';
+    strip.style.transform = dir==='horizontal' ? `translateX(${translate}px)` : `translateY(${translate}px)`;
+  },
+  async spinRoller(w){
+    if(this.spinning.has(w.id)) return;
+    this.spinning.add(w.id);
+    try{ await this._doSpinRoller(w); }
+    catch(e){ console.error('[spinRoller]', e); this.toast('⚠️ '+e.message); }
+    finally{ this.spinning.delete(w.id); }
+  },
+  async _doSpinRoller(w){
+    if(!w.entries?.length){ this.toast(this.t('status.emptyList')); return; }
+    // pick winner
+    let idx = -1;
+    if(w.rigOne){ idx = w.entries.findIndex(e=>e.id===w.rigOne); if(idx>=0) w.rigOne=''; }
+    if(idx<0 && w.schedule?.length){
+      const hit = w.schedule.find(x=>x.spinIndex===w.spinNo+1);
+      if(hit){ idx = w.entries.findIndex(e=>e.id===hit.entryId); }
+    }
+    if(idx<0) idx = Math.floor(Math.random()*w.entries.length);
+    const winner = w.entries[idx];
+
+    const dir = w.rollerDir || 'horizontal';
+    const strip = document.querySelector(`[data-rollerstrip="${w.id}"]`);
+    const cont = document.querySelector(`[data-roller="${w.id}"]`);
+    if(!strip || !cont) return;
+    const vp = cont.querySelector('.roller-viewport');
+    const vpSize = dir==='horizontal' ? vp.clientWidth : vp.clientHeight;
+    const itemSize = strip._itemSize || Math.floor(vpSize/3);
+
+    // Build strip finite: [random x N + target + random x M] — độc lập kích thước entries
+    const cyclesBefore = 2 + Math.floor(Math.random()*2); // 2-3 để scroll dài hơn
+    this._buildRollerStrip(w, strip, idx, cyclesBefore);
+    const targetSlot = strip._targetSlot;
+    // Vị trí đầu strip = slot 0, cuối = _total - 1
+    // Đặt strip sao cho lúc đầu SHOW slot 0-2 (đầu strip) rồi trượt về targetSlot ở center
+    const startPx = 0;
+    const jitter = (Math.random()-0.5) * itemSize * 0.3;
+    const targetPx = targetSlot * itemSize + jitter;
+
+    const dur = this.state.cfg.dur || 6;
+    if(this.state.cfg.tick && !this.state.cfg.mute) this.playTick(dur);
+    // Set startPx với transition=none
+    strip.style.transition = 'none';
+    this._setRollerPos(strip, dir, startPx, vpSize, itemSize, false);
+    strip.offsetHeight;
+    // Animate về targetPx
+    requestAnimationFrame(()=>{
+      strip.style.transition = `transform ${dur}s cubic-bezier(.15,.65,.2,1)`;
+      requestAnimationFrame(()=>{
+        this._setRollerPos(strip, dir, targetPx, vpSize, itemSize, true);
+      });
+    });
+    await new Promise(r=>setTimeout(r, dur*1000+300));
+    // snap chính xác không jitter
+    strip.style.transition = 'none';
+    this._setRollerPos(strip, dir, targetSlot*itemSize, vpSize, itemSize, false);
+    strip.offsetHeight;
+
+    w.spinNo++;
+    w.results.unshift({name:winner.name, id:winner.id, t:Date.now(), spin:w.spinNo});
+    if(w.results.length>500) w.results.length=500;
+    this.renderResults();
+    this.showWinnerBadge(w.id, winner.name);
+    if(this._batchMode){ this._batchWinners.push({name:winner.name, wheelName:w.name}); }
+    else if(this.state.cfg.popup) this.showResult(winner.name, w.name);
+    this.save();
+  },
+
+  renderRangeCard(w){
+    const color = w.rangeColor || '#4f6df5';
+    const glowRGB = this.hexToRGB(color);
+    return `<div class="wheel-card ${w.id===this.state.activeWheelId?'active':''}" data-w="${w.id}" onclick="app.selectWheel('${w.id}')">
+      <div class="wheel-card-header">
+        <input class="wheel-card-title" value="${this.esc(w.name)}" data-w="${w.id}" onclick="event.stopPropagation()" onchange="app.setWheelName('${w.id}',this.value)">
+        <div class="wheel-card-actions" onclick="event.stopPropagation()">
+          <button class="wc-btn" onclick="app.openRangeConfig('${w.id}')" title="${this.t('range.configure')}" aria-label="${this.t('range.configure')}">${this.icon('settings-2',15)}</button>
+          <button class="wc-btn" onclick="app.duplicateWheel('${w.id}')" title="${this.t('wheel.duplicate')}" aria-label="${this.t('wheel.duplicate')}">${this.icon('copy',15)}</button>
+          <button class="wc-btn danger" onclick="app.removeWheel('${w.id}')" title="${this.t('wheel.delete')}" aria-label="${this.t('wheel.delete')}">${this.icon('trash-2',15)}</button>
+        </div>
+      </div>
+      <div class="range-config feature-config" onclick="event.stopPropagation()">
+        <label>${this.t('range.from')} <input type="number" value="${w.rangeMin}" onchange="app.setRangeCfg('${w.id}','rangeMin',+this.value)"></label>
+        <label>${this.t('range.to')} <input type="number" value="${w.rangeMax}" onchange="app.setRangeCfg('${w.id}','rangeMax',+this.value)"></label>
+        <label>${this.t('range.step')} <input type="number" step="any" value="${w.rangeStep}" onchange="app.setRangeCfg('${w.id}','rangeStep',+this.value)"></label>
+        <label>${this.t('range.color')} <input type="color" value="${color}" aria-label="${this.t('range.color')}" onchange="app.setRangeCfg('${w.id}','rangeColor',this.value)"></label>
+      </div>
+      <div class="wheel-stage" onclick="event.stopPropagation();app.selectWheel('${w.id}');app.spin('${w.id}')" title="${this.t('wheel.clickToSpin')}">
+        <div class="range-container" data-range="${w.id}" style="--range-color:${color};--range-color-glow:rgba(${glowRGB},.5);--range-glow:rgba(${glowRGB},.15)">
+          <div class="range-display" data-rangenum="${w.id}">${this.formatRangeValue(w, w.results?.[0]?.value ?? w.rangeMin)}</div>
+          <div class="range-meta">${this.t('range.meta',{min:w.rangeMin,max:w.rangeMax,step:w.rangeStep})}</div>
+        </div>
+      </div>
+      <div class="wheel-card-footer">
+        <button class="spin-btn" onclick="event.stopPropagation();app.spin('${w.id}')">${this.t('wheel.spin')}</button>
+        <span class="wheel-info">${w.spinNo} ${this.t('wheel.spins')}</span>
+      </div>
+    </div>`;
+  },
+  renderRangeDisplay(w){
+    const el = document.querySelector(`[data-rangenum="${w.id}"]`);
+    if(el){ el.textContent = this.formatRangeValue(w, w.results?.[0]?.value ?? w.rangeMin); }
+  },
+  formatRangeValue(w, v){
+    if(v==null || isNaN(v)) v = w.rangeMin;
+    const dec = w.rangeDecimals||0;
+    const num = Number(v).toFixed(dec);
+    return (w.rangePrefix||'') + num + (w.rangeSuffix||'');
+  },
+  hexToRGB(hex){
+    try{
+      const n = parseInt(hex.slice(1),16);
+      return `${(n>>16)&255},${(n>>8)&255},${n&255}`;
+    }catch{ return '79,109,245'; }
+  },
+  setRangeCfg(id, key, val){
+    const w = this.findWheel(id); if(!w) return;
+    w[key] = val;
+    if(key==='rangeMin' && w.rangeMin>w.rangeMax) w.rangeMax = w.rangeMin;
+    if(key==='rangeMax' && w.rangeMax<w.rangeMin) w.rangeMin = w.rangeMax;
+    this.renderGrid(); this.save();
+  },
+  openRangeConfig(id){
+    // simple prompt for advanced options
+    const w = this.findWheel(id); if(!w) return;
+    // TODO: full modal — for now use prompt
+    this.prompt(this.t('range.decimalsPrompt'), String(w.rangeDecimals||0), this.t('range.configure')).then(v=>{
+      if(v==null) return;
+      w.rangeDecimals = Math.max(0, Math.min(10, parseInt(v)||0));
+      this.prompt(this.t('range.prefixPrompt'), w.rangePrefix||'', this.t('range.configure')).then(p=>{
+        if(p!==null) w.rangePrefix = p;
+        this.prompt(this.t('range.suffixPrompt'), w.rangeSuffix||'', this.t('range.configure')).then(s=>{
+          if(s!==null) w.rangeSuffix = s;
+          this.renderGrid(); this.save();
+        });
+      });
+    });
+  },
+
   renderNumCard(w){
     return `<div class="wheel-card ${w.id===this.state.activeWheelId?'active':''}" data-w="${w.id}" onclick="app.selectWheel('${w.id}')">
       <div class="wheel-card-header">
@@ -2791,23 +3610,32 @@ const app = {
       return;
     }
     const p = PALETTES[w.palette]||PALETTES.google;
-    const arc = Math.PI*2/n, cfg = this.state.cfg, heavy = n>100;
-    for(let i=0;i<n;i++){
-      const e = w.entries[i];
+    const cfg = this.state.cfg;
+    // Perf: nếu N cực lớn → downsample display xuống MAX_SLICES, giữ nguyên winner logic
+    const MAX_SLICES = 500;
+    const displayN = Math.min(n, MAX_SLICES);
+    const arc = Math.PI*2/displayN;
+    const heavy = n>200;
+    const superHeavy = n>5000;
+    for(let i=0;i<displayN;i++){
+      // Với heavy, không lấy entry cụ thể (bỏ label/image), chỉ tô màu
       const start = i*arc - Math.PI/2, end = start+arc;
       ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,r,start,end); ctx.closePath();
       ctx.fillStyle = p[i%p.length]; ctx.fill();
       if(cfg.showBorder && !heavy){ ctx.lineWidth=2; ctx.strokeStyle='rgba(255,255,255,.9)'; ctx.stroke(); }
-      if(arc>.04){
+      if(!superHeavy && arc>.04){
+        // Với display downsample, ánh xạ i → entry gốc
+        const entryIdx = Math.floor(i * n / displayN);
+        const e = w.entries[entryIdx];
         const mid = start+arc/2;
         ctx.save(); ctx.translate(cx,cy); ctx.rotate(mid);
-        const img = e.image ? this.loadImg(e.image, w) : null;
+        const img = (!heavy && e.image) ? this.loadImg(e.image, w) : null;
         const imgSize = Math.min(50, r*arc*.5, r*.22);
         if(img){ try{ ctx.save(); ctx.translate(r*.55,0); ctx.rotate(Math.PI/2); ctx.beginPath(); ctx.arc(0,0,imgSize/2,0,Math.PI*2); ctx.clip(); ctx.drawImage(img,-imgSize/2,-imgSize/2,imgSize,imgSize); ctx.restore(); }catch{} }
-        if(cfg.showLabel){
-          ctx.fillStyle='#fff'; ctx.font=`bold ${Math.max(9,Math.min(20,350/n+7))}px -apple-system,sans-serif`; ctx.textAlign='right'; ctx.textBaseline='middle';
+        if(cfg.showLabel && !heavy){
+          ctx.fillStyle='#fff'; ctx.font=`bold ${Math.max(9,Math.min(20,350/displayN+7))}px -apple-system,sans-serif`; ctx.textAlign='right'; ctx.textBaseline='middle';
           ctx.shadowColor='rgba(0,0,0,.5)'; ctx.shadowBlur=2;
-          const maxCh = Math.max(3, Math.floor(28-n/5));
+          const maxCh = Math.max(3, Math.floor(28-displayN/5));
           const label = e.name.length>maxCh ? e.name.slice(0,maxCh-1)+'…' : e.name;
           const xOff = img ? r-imgSize-24 : r-16;
           ctx.fillText(label, xOff, 0);
@@ -2816,6 +3644,15 @@ const app = {
       }
     }
     ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.lineWidth=5; ctx.strokeStyle='rgba(0,0,0,.15)'; ctx.stroke();
+    // Overlay text hiển thị số lượng khi downsample
+    if(n > MAX_SLICES){
+      ctx.fillStyle='rgba(255,255,255,.9)';
+      ctx.font=`bold 14px -apple-system,sans-serif`;
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.shadowColor='rgba(0,0,0,.7)'; ctx.shadowBlur=4;
+      ctx.fillText(`${n.toLocaleString()} mục`, cx, cy + r*.5);
+      ctx.shadowBlur=0;
+    }
   },
   loadImg(url,w){
     if(!url) return null;
@@ -2828,8 +3665,11 @@ const app = {
   renderPicker(){
     const sel = $('#wheelPicker');
     sel.innerHTML = this.state.wheels.map(w=>{
-      const info = w.type==='numbers' ? `${w.count}×${w.digitCount}` : `${w.entries?.length||0}`;
-      const typeLabel = w.type==='numbers' ? this.t('numbers.type') : this.t('wheel.type');
+      let info, typeLabel;
+      if(w.type==='numbers'){ info = `${w.count}×${w.digitCount}`; typeLabel = this.t('numbers.type'); }
+      else if(w.type==='range'){ info = `${w.rangeMin}-${w.rangeMax}`; typeLabel = this.t('range.type'); }
+      else if(w.type==='roller'){ info = this.t('wheel.itemsCount',{count:w.entries?.length||0}); typeLabel = this.t('roller.type'); }
+      else { info = this.t('wheel.itemsCount',{count:w.entries?.length||0}); typeLabel = this.t('wheel.type'); }
       return `<option value="${w.id}" ${w.id===this.state.activeWheelId?'selected':''}>${typeLabel} · ${this.esc(w.name)} (${info})</option>`;
     }).join('');
     sel.onchange = e => this.selectWheel(e.target.value);
@@ -2837,7 +3677,17 @@ const app = {
   renderResults(){
     const el = $('#resultsList');
     const wheels = this.state.wheels.filter(w=>w.results?.length);
-    if(!wheels.length){ el.innerHTML=`<div class="empty">${this.t('empty.results')}</div>`; this.updateCounts(); return; }
+    if(!wheels.length){
+      el.innerHTML = `<div class="empty-cta">
+        <div class="icon">${this.icon('target',30)}</div>
+        <div class="title">${this.t('empty.results')}</div>
+        <div class="desc">${this.t('empty.resultHint')}</div>
+        <div class="actions">
+          <button class="sbtn primary" onclick="app.spin()">${this.icon('play',14)}${this.t('empty.spinNow')}</button>
+        </div>
+      </div>`;
+      this.updateCounts(); return;
+    }
     el.innerHTML = wheels.map(w=>`
       <div class="res-group">
         <div class="res-group-title">${this.esc(w.name)} <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0"> · ${this.t('results.count',{count:w.results.length})}</span></div>
@@ -2946,8 +3796,19 @@ const app = {
       $('#suspenseOverlay').classList.remove('on');
     }
     const box = $('#resultModal .box');
+    // Tìm entry có tên khớp để lấy image (photo winner)
+    let photoHtml = '';
+    for(const wh of this.state.wheels){
+      if(wh.type==='numbers' || wh.type==='range') continue;
+      const found = wh.entries?.find(e => e.name === name);
+      if(found?.image){
+        photoHtml = `<img class="winner-photo" src="${found.image}" alt="${this.esc(name)}" onerror="this.remove()">`;
+        break;
+      }
+    }
     box.innerHTML = `
       <div class="msg">${this.esc(this.state.cfg.msg||this.t('result.title'))}${wheelName?' — '+this.esc(wheelName):''}</div>
+      ${photoHtml}
       <div class="winner">${this.esc(name)}</div>
       <div class="actions">
         <button class="mbtn primary" onclick="app.closeResult()">${this.t('common.ok')}</button>
@@ -3127,7 +3988,20 @@ const app = {
 
   toggleFullscreen(){ if(!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); },
   toggleMute(){ this.state.cfg.mute=!this.state.cfg.mute; $('#muteIcon').innerHTML=this.icon(this.state.cfg.mute?'volume-x':'volume-2'); this.save(); },
-  toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('on'); clearTimeout(this._tt); this._tt=setTimeout(()=>t.classList.remove('on'),1800); },
+  toast(msg, opts){
+    const t=$('#toast');
+    t.innerHTML = '';
+    const span = document.createElement('span'); span.textContent = msg; t.appendChild(span);
+    if(opts?.undo){
+      const btn = document.createElement('button');
+      btn.className = 'undo-btn'; btn.textContent = opts.undoLabel || this.t('results.undo');
+      btn.onclick = () => { opts.undo(); t.classList.remove('on'); };
+      t.appendChild(btn);
+    }
+    t.classList.add('on');
+    clearTimeout(this._tt);
+    this._tt=setTimeout(()=>t.classList.remove('on'), opts?.duration || (opts?.undo ? 4500 : 1800));
+  },
 
   confetti(){
     const c=document.createElement('canvas'); c.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:1500'; c.width=innerWidth; c.height=innerHeight; document.body.appendChild(c);
@@ -3150,6 +4024,28 @@ const app = {
   bindKeys(){
     let esc=0, konami=[], seq=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
     let buf='';
+    // ==== Chặn DevTools & View Source ====
+    // Chuột phải: cho phép hoàn toàn (user có thể paste/back/copy)
+    // View Source (Ctrl+U + browser menu): browser xử lý riêng, JS không bắt được click menu
+    //   → dùng DevTools-detection heuristic + HTML comment warning ở đầu file
+    this._startDevToolsDetection();
+    window.addEventListener('keydown', e => {
+      // F12
+      if(e.key === 'F12'){ e.preventDefault(); this.stealthFlash('#EA4335'); return; }
+      // Ctrl+U (view source)
+      if(e.ctrlKey && !e.shiftKey && !e.altKey && (e.key === 'u' || e.key === 'U')){ e.preventDefault(); this.stealthFlash('#EA4335'); return; }
+      // Ctrl+Shift+I / J / C (DevTools shortcuts)
+      if(e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')){
+        // KHÔNG chặn Ctrl+Shift+A (admin) hoặc các phím khác của app
+        e.preventDefault(); this.stealthFlash('#EA4335'); return;
+      }
+      // Ctrl+S (save page)
+      if(e.ctrlKey && !e.shiftKey && !e.altKey && (e.key === 's' || e.key === 'S')){
+        const inField = ['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName);
+        if(!inField){ e.preventDefault(); return; }
+      }
+    }, true); // capture phase để chặn trước
+
     window.addEventListener('keydown', e=>{
       const inField = ['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName);
       konami.push(e.key); if(konami.length>seq.length) konami.shift();
