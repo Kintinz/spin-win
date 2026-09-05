@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Spin &amp; Win — Vòng quay may mắn</title>
-  <desc id="desc">Vòng quay may mắn và bốc thăm ngẫu nhiên miễn phí</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="ogtitle ogdesc">
+  <title id="ogtitle">Spin &amp; Win — Vòng quay may mắn</title>
+  <desc id="ogdesc">Vòng quay may mắn và bốc thăm ngẫu nhiên miễn phí</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#171b21"/>
@@ -11,22 +11,52 @@
       <stop offset="1" stop-color="#78a4c7"/>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#78a4c7" stop-opacity=".24"/>
+      <stop offset="0" stop-color="#78a4c7" stop-opacity=".28"/>
       <stop offset="1" stop-color="#78a4c7" stop-opacity="0"/>
     </radialGradient>
+    <filter id="wheelShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".45"/>
+    </filter>
   </defs>
+
+  <!-- Background -->
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1040" cy="80" r="300" fill="url(#glow)"/>
-  <circle cx="930" cy="450" r="260" fill="url(#glow)" opacity=".55"/>
-  <g transform="translate(90 135)">
-    <circle cx="180" cy="180" r="148" fill="none" stroke="#9fc2df" stroke-opacity=".22" stroke-width="2"/>
-    <path d="M180 50L211 180L180 162L149 180Z" fill="#fff"/>
-    <circle cx="180" cy="180" r="42" fill="url(#brand)" stroke="#fff" stroke-opacity=".8" stroke-width="4"/>
-    <circle cx="180" cy="180" r="12" fill="#fff"/>
-    <path d="M180 32V12M328 180h20M180 328v20M32 180H12" stroke="#9fc2df" stroke-opacity=".4" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="1060" cy="90"  r="320" fill="url(#glow)"/>
+  <circle cx="180"  cy="560" r="260" fill="url(#glow)" opacity=".5"/>
+
+  <!-- ===== 4-segment wheel (Việt Nam / Thái Lan / Lào / Campuchia) ===== -->
+  <g transform="translate(315 315)" filter="url(#wheelShadow)">
+    <!-- 4 slices: top-right blue, top-left green, bottom-right red, bottom-left yellow -->
+    <path d="M0 0 L260 0 A260 260 0 0 1 0 260 Z" fill="#4d83ff"/>
+    <path d="M0 0 L0 260 A260 260 0 0 1 -260 0 Z" fill="#e63946" transform="rotate(180)"/>
+    <path d="M0 0 L0 -260 A260 260 0 0 1 260 0 Z" fill="#45c486" transform="rotate(180)"/>
+    <path d="M0 0 L-260 0 A260 260 0 0 1 0 -260 Z" fill="#ffc93c" transform="rotate(180)"/>
+    <!-- outer ring -->
+    <circle r="260" fill="none" stroke="#ffffff" stroke-opacity=".15" stroke-width="4"/>
+
+    <!-- labels -->
+    <g font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="34" fill="#fff" text-anchor="middle">
+      <text transform="rotate(-45) translate(150 8)">Việt Nam</text>
+      <text transform="rotate(45)  translate(150 8)">Lào</text>
+      <text transform="rotate(135) translate(150 8)">Campuchia</text>
+      <text transform="rotate(-135) translate(150 8)">Thái Lan</text>
+    </g>
+
+    <!-- hub -->
+    <circle r="46" fill="#ffffff"/>
+    <circle r="34" fill="url(#brand)"/>
+    <path d="M0 -22 L8 6 L0 0 L-8 6 Z" fill="#ffffff"/>
+
+    <!-- pointer on right -->
+    <path d="M268 -22 L302 0 L268 22 Z" fill="#e63946" stroke="#ffffff" stroke-width="3"/>
   </g>
-  <text x="430" y="265" fill="#eef2f5" font-family="Segoe UI,Arial,sans-serif" font-size="74" font-weight="700">Spin &amp; Win</text>
-  <text x="435" y="340" fill="#b9d0e3" font-family="Segoe UI,Arial,sans-serif" font-size="34">Vòng quay may mắn</text>
-  <text x="435" y="394" fill="#aeb8c2" font-family="Segoe UI,Arial,sans-serif" font-size="25">Bốc thăm ngẫu nhiên · Chia đội · Quay số</text>
-  <rect x="435" y="450" width="330" height="3" rx="1.5" fill="url(#brand)"/>
+
+  <!-- ===== Text block ===== -->
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="700" y="235" fill="#eef2f5" font-size="82" font-weight="800" letter-spacing="-1">Spin &amp; Win</text>
+    <text x="700" y="298" fill="#b9d0e3" font-size="34" font-weight="600">Vòng quay may mắn miễn phí</text>
+    <text x="700" y="352" fill="#aeb8c2" font-size="24">Bốc thăm ngẫu nhiên · Chia đội · Quay số</text>
+    <rect x="700" y="388" width="360" height="4" rx="2" fill="url(#brand)"/>
+    <text x="700" y="452" fill="#8aafd0" font-size="22" font-weight="600">spinwin.io.vn</text>
+  </g>
 </svg>

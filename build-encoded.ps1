@@ -1,26 +1,23 @@
-# Build script: encode index.html thành index-encoded.html
-# Sau khi build, thay index.html bằng index-encoded.html để deploy
-# View-source sẽ chỉ thấy loader + base64 blob thay vì code thật
+# Build script: encode index.html -> index-encoded.html
+# Keeps the full <head> (SEO meta, OG, Twitter, JSON-LD) intact so crawlers see it.
+# Only the <body> is base64-encoded to discourage casual source viewing.
 
 $sourceFile = "$PSScriptRoot\index.html"
 $outputFile = "$PSScriptRoot\index-encoded.html"
 
-Write-Host "📦 Reading $sourceFile ..."
+Write-Host "Reading $sourceFile ..."
 $content = [System.IO.File]::ReadAllText($sourceFile, [System.Text.Encoding]::UTF8)
 
-# Tách phần <!doctype html>...<html...> + <head> đầu (giữ SEO meta tags để Google/social crawl)
-# và phần còn lại (body + script) sẽ encode
 $headEndIdx = $content.IndexOf("</head>")
-if($headEndIdx -lt 0){ Write-Error "Khong tim thay closing head tag"; exit 1 }
+if($headEndIdx -lt 0){ Write-Error "closing head tag not found"; exit 1 }
 
-$headPart = $content.Substring(0, $headEndIdx + 7) # bao gom head end
-$bodyPart = $content.Substring($headEndIdx + 7)    # tu body tro di
+$headPart = $content.Substring(0, $headEndIdx + 7)
+$bodyPart = $content.Substring($headEndIdx + 7)
 
-Write-Host "🔒 Encoding body part ($($bodyPart.Length) chars) ..."
+Write-Host "Encoding body part ($($bodyPart.Length) chars) ..."
 $bytes = [System.Text.Encoding]::UTF8.GetBytes($bodyPart)
 $b64 = [Convert]::ToBase64String($bytes)
 
-# Chia base64 thành nhiều dòng ngắn để khó copy toàn bộ (còn nữa: obfuscate)
 $chunks = @()
 for($i=0; $i -lt $b64.Length; $i += 76){
   $len = [Math]::Min(76, $b64.Length - $i)
@@ -28,36 +25,12 @@ for($i=0; $i -lt $b64.Length; $i += 76){
 }
 $b64Formatted = ($chunks -join "`n")
 
-# Tạo file output với warning + loader
 $warning = @"
 <!doctype html>
 <!--
-
-  ██████╗    █████╗    ███╗   ███╗
-  ██╔════╝  ██╔══██╗   ████╗ ████║
-  ██║       ███████║   ██╔████╔██║
-  ██║       ██╔══██║   ██║╚██╔╝██║
-  ╚██████╗  ██║  ██║██╗██║ ╚═╝ ██║
-   ╚═════╝  ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝
-
-  ⛔ CẤM XEM MÃ NGUỒN — SOURCE CODE VIEWING PROHIBITED ⛔
-
-  Fortuna © 2026 · All rights reserved
-
-  Việc trích xuất / sao chép / tái sử dụng mã nguồn KHÔNG được phép
-  mà không có sự đồng ý bằng văn bản của chủ sở hữu.
-
-  This content is protected by copyright.
-  Extracting, copying or reusing the source code is NOT permitted
-  without written consent.
-
+  CAM XEM MA NGUON - SOURCE CODE VIEWING PROHIBITED
+  Fortuna (c) 2026 - All rights reserved
   Contact: datduongnvty@gmail.com
-  Legal notice: Violators may be subject to legal action under
-  copyright law of Vietnam and international treaties (Berne Convention).
-
-  ⚠️  Attempts to decode, deobfuscate, or reverse-engineer this content
-      may constitute a violation of applicable law.
-
 -->
 "@
 
@@ -74,25 +47,17 @@ $loader = @'
 </script>
 '@
 
-# Extract chỉ <head> tối thiểu (title, meta charset, viewport, description) cho crawler
-$minimalHead = @'
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Fortuna - Vòng quay may mắn online miễn phí">
-<title>Fortuna — Vòng Quay May Mắn</title>
-<style>body{background:#0f1120;color:#f1f3f9;font-family:sans-serif;margin:0;padding:40px;text-align:center}</style>
-'@
+# Insert tiny noscript style right before </head>, keep full SEO head intact
+$noscriptStyle = '<style>body.__ns{background:#0f1120;color:#f1f3f9;font-family:sans-serif;margin:0;padding:40px;text-align:center}</style>'
+$headWithStyle = $headPart -replace '</head>', "$noscriptStyle</head>"
 
-# Bọc chỉ với minimal head, encoded body
-$result = "$warning`n<html lang=`"vi`"><head>$minimalHead</head><body><noscript>Vui lòng bật JavaScript / Please enable JavaScript.</noscript><script id=`"__e`" type=`"text/plain`">`n$b64Formatted`n</script>$loader</body></html>"
+$result = "$warning`n$headWithStyle<body class=`"__ns`"><noscript>Please enable JavaScript.</noscript><script id=`"__e`" type=`"text/plain`">`n$b64Formatted`n</script>$loader</body></html>"
 
 [System.IO.File]::WriteAllText($outputFile, $result, [System.Text.Encoding]::UTF8)
 
 $origSize = (Get-Item $sourceFile).Length
 $newSize = (Get-Item $outputFile).Length
 Write-Host ""
-Write-Host "✅ Build xong: $outputFile"
-Write-Host "   Original: $($origSize.ToString('N0')) bytes"
-Write-Host "   Encoded:  $($newSize.ToString('N0')) bytes (~+33%)"
-Write-Host ""
-Write-Host "Deploy: copy index-encoded.html → index.html (backup gốc trước!)"
+Write-Host "Build OK: $outputFile"
+Write-Host "  Original: $($origSize.ToString('N0')) bytes"
+Write-Host "  Encoded:  $($newSize.ToString('N0')) bytes"
