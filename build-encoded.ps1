@@ -2,8 +2,8 @@
 # Keeps the full <head> (SEO meta, OG, Twitter, JSON-LD) intact so crawlers see it.
 # Only the <body> is base64-encoded to discourage casual source viewing.
 
-$sourceFile = "$PSScriptRoot\index.html"
-$outputFile = "$PSScriptRoot\index-encoded.html"
+$sourceFile = Join-Path $PSScriptRoot 'index.html'
+$outputFile = Join-Path $PSScriptRoot 'index-encoded.html'
 
 Write-Host "Reading $sourceFile ..."
 $content = [System.IO.File]::ReadAllText($sourceFile, [System.Text.Encoding]::UTF8)
