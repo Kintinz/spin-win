@@ -20,17 +20,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build encoded index (preserve full SEO <head>)
-        shell: pwsh
-        run: ./build-encoded.ps1
-
       - name: Prepare site directory
         run: |
-          mkdir -p _site
-          # deploy encoded version as index.html
-          cp index-encoded.html _site/index.html
-          # copy all static assets
-          cp -v CNAME robots.txt sitemap.xml *.png *.jpg *.svg _site/ 2>/dev/null || true
+          mkdir -p _site/assets/img _site/assets/css _site/assets/js
+          # HTML pages (landing hub + 5 mode pages)
+          cp -v index.html spin.html number.html range.html roller.html duck.html trick.html _site/ 2>/dev/null || true
+          # Static assets
+          cp -v assets/img/*.png assets/img/*.jpg assets/img/*.svg _site/assets/img/ 2>/dev/null || true
+          cp -v assets/css/*.css _site/assets/css/ 2>/dev/null || true
+          cp -v assets/js/*.js _site/assets/js/ 2>/dev/null || true
+          # Root-level SEO / verification files
+          cp -v CNAME robots.txt sitemap.xml _site/ 2>/dev/null || true
           cp -v google*.html _site/ 2>/dev/null || true
 
       - uses: actions/configure-pages@v5

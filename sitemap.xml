@@ -1,10 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://spinwin.io.vn/</loc>
-    <lastmod>2026-09-04T00:00:00+07:00</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://spinwin.io.vn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinwin.io.vn/"/>
+    <image:image>
+      <image:loc>https://spinwin.io.vn/assets/img/og-image.png</image:loc>
+      <image:title>Spin &amp; Win — Vòng quay may mắn</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://spinwin.io.vn/spin.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://spinwin.io.vn/spin.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinwin.io.vn/spin.html"/>
+  </url>
+  <url>
+    <loc>https://spinwin.io.vn/number.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://spinwin.io.vn/number.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinwin.io.vn/number.html"/>
+  </url>
+  <url>
+    <loc>https://spinwin.io.vn/range.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://spinwin.io.vn/range.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinwin.io.vn/range.html"/>
+  </url>
+  <url>
+    <loc>https://spinwin.io.vn/roller.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://spinwin.io.vn/roller.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinwin.io.vn/roller.html"/>
+  </url>
+  <url>
+    <loc>https://spinwin.io.vn/duck.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://spinwin.io.vn/duck.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spinwin.io.vn/duck.html"/>
+    <image:image>
+      <image:loc>https://spinwin.io.vn/assets/img/duck-photo.png</image:loc>
+      <image:title>Đường Đua — Race Track</image:title>
+    </image:image>
   </url>
 </urlset>

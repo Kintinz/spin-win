@@ -1,2 +1,16 @@
+# Secrets & dev-only docs
+docs/DEV_SECRETS.md
 DEV_SECRETS.md
+
+# Build artifacts (legacy — build script is no longer part of the deploy pipeline;
+# kept in /build for reference if someone still wants to obfuscate a page manually)
+build/*-encoded.html
 index-encoded.html
+
+# Local dev config (Live Server / preview_start)
+.claude/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log

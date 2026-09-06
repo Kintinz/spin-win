@@ -2,7 +2,9 @@
 # Keeps the full <head> (SEO meta, OG, Twitter, JSON-LD) intact so crawlers see it.
 # Only the <body> is base64-encoded to discourage casual source viewing.
 
-$sourceFile = Join-Path $PSScriptRoot 'index.html'
+# Script lives in /build; source HTML is at repo root.
+$repoRoot   = Split-Path -Parent $PSScriptRoot
+$sourceFile = Join-Path $repoRoot 'index.html'
 $outputFile = Join-Path $PSScriptRoot 'index-encoded.html'
 
 Write-Host "Reading $sourceFile ..."

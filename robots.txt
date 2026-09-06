@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# Cho phép crawler đọc CSS/JS/ảnh — quan trọng để Google render trang chuẩn
+Allow: /assets/
+
+# Chặn thư mục source-code build không dành cho public
+Disallow: /build/
+Disallow: /docs/
+
 Sitemap: https://spinwin.io.vn/sitemap.xml
