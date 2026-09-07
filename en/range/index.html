@@ -57,10 +57,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Spin &amp; Win — Vòng quay may mắn 4 múi màu">
-<meta property="og:image" content="https://spinwin.io.vn/assets/img/og-image.svg">
-<meta property="og:image:type" content="image/svg+xml">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 
@@ -189,7 +185,7 @@
       <button class="tbtn" onclick="app.addRollerWheel()"><span class="ic ui-icon-slot" data-icon="slot-machine" aria-hidden="true"></span>Con lăn</button>
       <button class="tbtn" onclick="app.openTemplates()"><span class="ic ui-icon-slot" data-icon="library" aria-hidden="true"></span>Mẫu</button>
       <button class="tbtn" onclick="app.openTeamSplit()"><span class="ic ui-icon-slot" data-icon="users-round" aria-hidden="true"></span>Chia đội</button>
-      <a class="tbtn" href="/duck/" title="Đua vịt ngẫu nhiên"><span class="ic" aria-hidden="true">🦆</span>Đua vịt</a>
+      <a class="tbtn" href="/duck/" title="Đua vịt ngẫu nhiên"><span class="ic ui-icon-slot" data-icon="bird" aria-hidden="true"></span>Đua vịt</a>
       <button class="tbtn" onclick="app.openSessions()"><span class="ic ui-icon-slot" data-icon="archive" aria-hidden="true"></span>Sessions</button>
     </div>
     <div class="header-utilities">
@@ -203,7 +199,7 @@
       </select>
       <button class="tbtn" id="themeButton" onclick="app.toggleTheme()" title="Sáng / Tối" aria-label="Sáng / Tối"><span class="ic ui-icon-slot" id="themeIcon" data-icon="moon" aria-hidden="true"></span></button>
       <button class="tbtn" id="fullscreenButton" onclick="app.toggleFullscreen()" title="Toàn màn hình" aria-label="Toàn màn hình"><span class="ic ui-icon-slot" data-icon="maximize" aria-hidden="true"></span></button>
-      <button class="tbtn" onclick="app.openClientInfo()" title="Thông tin máy" aria-label="Thông tin máy"><span class="ic">ℹ️</span></button>
+      <button class="tbtn" onclick="app.openClientInfo()" title="Thông tin máy" aria-label="Thông tin máy"><span class="ic ui-icon-slot" data-icon="info" aria-hidden="true"></span></button>
       <button class="tbtn" id="muteButton" onclick="app.toggleMute()" title="Âm thanh" aria-label="Âm thanh"><span class="ic ui-icon-slot" id="muteIcon" data-icon="volume-2" aria-hidden="true"></span></button>
     </div>
   </div>
@@ -589,13 +585,13 @@
 </div>
 <div class="modal" id="clientInfoModal">
   <div class="box dlg" style="position:relative">
-    <button class="dlg-close" onclick="app.closeClientInfo()" aria-label="Đóng">✕</button>
-    <h3>ℹ️ Thông tin máy & Khả năng chịu tải</h3>
+    <button class="dlg-close" onclick="app.closeClientInfo()" aria-label="Đóng"><span class="ui-icon-slot" data-icon="x" aria-hidden="true"></span></button>
+    <h3><span class="ui-icon-slot" data-icon="info" aria-hidden="true"></span>Thông tin máy & Khả năng chịu tải</h3>
     <p style="color:var(--muted);font-size:13px;margin:0 0 16px">Web chạy hoàn toàn ở client (không có server DB). Khả năng chịu tải phụ thuộc RAM, CPU, và trình duyệt của bạn.</p>
     <div id="clientInfoBody"></div>
     <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap">
-      <button class="mbtn primary" onclick="app.runBenchmark()">🚀 Chạy benchmark</button>
-      <button class="mbtn ghost" onclick="app.openClientInfo()">🔄 Refresh</button>
+      <button class="mbtn primary" onclick="app.runBenchmark()"><span class="ui-icon-slot" data-icon="rocket" aria-hidden="true"></span>Chạy benchmark</button>
+      <button class="mbtn ghost" onclick="app.openClientInfo()"><span class="ui-icon-slot" data-icon="rotate-ccw" aria-hidden="true"></span>Refresh</button>
       <button class="mbtn ghost" onclick="app.closeClientInfo()">Đóng</button>
     </div>
   </div>

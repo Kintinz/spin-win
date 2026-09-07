@@ -2,46 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>window.__initialLang="en";try{const k="spinwinHome:v1";const cur=JSON.parse(localStorage.getItem(k)||"{}");if(cur.lang!=="en"){cur.lang="en";localStorage.setItem(k,JSON.stringify(cur));}}catch(_){}</script>
+<script>window.__initialLang="en";try{const k="spinwin-home-preferences-v1";const cur=JSON.parse(localStorage.getItem(k)||"{}");if(cur.language!=="en"){cur.language="en";localStorage.setItem(k,JSON.stringify(cur));}}catch(_){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Spin & Win - Free Random Wheel, Number Picker and Race Track</title>
+<title>Spin &amp; Win — Free Lucky Wheel &amp; Random Picker Suite</title>
 
-<meta name="description" content="Free random tool suite: name wheel, number picker, range picker, slot roller and a random race track. No signup, works in the browser, VI/EN.">
+<meta name="description" content="Free online random toolset: name wheel, number picker, range picker, slot roller and random race track. No signup required, 100% free.">
 <meta name="keywords" content="random name picker, wheel of names, random number generator, random range picker, slot machine picker, random race track, spin the wheel, free random tools">
 <meta name="author" content="Spin &amp; Win">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="theme-color" content="#5d87b0">
+<meta name="theme-color" content="#2273b5">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://spinwin.io.vn/en/">
 <link rel="alternate" hreflang="vi" href="https://spinwin.io.vn/">
 <link rel="alternate" hreflang="en" href="https://spinwin.io.vn/en/">
 <link rel="alternate" hreflang="x-default" href="https://spinwin.io.vn/">
-<link rel="icon" href="assets/img/logo-mark.png">
-<link rel="apple-touch-icon" href="assets/img/logo-mark.png">
+<link rel="icon" href="../assets/img/logo-mark.png">
+<link rel="apple-touch-icon" href="../assets/img/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <meta property="og:site_name" content="Spin &amp; Win">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Spin & Win - Free Random Tools Suite">
-<meta property="og:description" content="Free random tools: name wheel, number picker, range picker, roller and race track. No signup.">
+<meta property="og:title" content="Spin &amp; Win — Free Lucky Wheel &amp; Random Picker Suite">
+<meta property="og:description" content="Free online random toolset: name wheel, number picker, range picker, slot roller and random race track. No signup required.">
 <meta property="og:url" content="https://spinwin.io.vn/en/">
 <meta property="og:image" content="https://spinwin.io.vn/assets/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Spin &amp; Win — Bộ công cụ vòng quay ngẫu nhiên miễn phí">
+<meta property="og:image:alt" content="Spin &amp; Win — Free Lucky Wheel Suite">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Spin & Win - Free Random Tools Suite">
-<meta name="twitter:description" content="Free random tools: name wheel, number picker, range picker, roller and race track. No signup.">
+<meta name="twitter:title" content="Spin &amp; Win — Free Lucky Wheel &amp; Random Picker Suite">
+<meta name="twitter:description" content="Free online random toolset: name wheel, number picker, range picker, slot roller and random race track.">
 <meta name="twitter:image" content="https://spinwin.io.vn/assets/img/og-image.png">
-<meta name="twitter:image:alt" content="Spin &amp; Win — Bộ công cụ vòng quay ngẫu nhiên miễn phí">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Spin & Win","url":"https://spinwin.io.vn/","inLanguage":["vi","en"],"description":"Free random tool suite: name wheel, number picker, range picker, roller and race track."}
+{"@context":"https://schema.org","@type":"WebSite","name":"Spin & Win","url":"https://spinwin.io.vn/en/","inLanguage":["vi","en"],"description":"Free online random toolset: name wheel, number picker, range picker, slot roller and random race track."}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ItemList","itemListElement":[
@@ -52,390 +51,1377 @@
 {"@type":"ListItem","position":5,"url":"https://spinwin.io.vn/duck/","name":"Race track"}
 ]}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is Spin & Win free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All tools are free, with no signup and no ads."}},
-{"@type":"Question","name":"Can I use it on OBS livestream?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every tool supports a transparent overlay mode to embed as an OBS/Streamlabs Browser Source."}},
-{"@type":"Question","name":"Is there a participant limit?","acceptedAnswer":{"@type":"Answer","text":"No practical limit for the wheels. The Race Track supports up to 3,000 racers."}},
-{"@type":"Question","name":"Are the results fair and random?","acceptedAnswer":{"@type":"Answer","text":"Yes. It uses the browser Math.random, unbiased and un-riggable."}},
-{"@type":"Question","name":"Is my data stored on your servers?","acceptedAnswer":{"@type":"Answer","text":"No. Your lists and settings are stored only in your browser via localStorage; Spin & Win never uploads."}}
-]}
-</script>
 
 <style>
-  :root{
-    --paper:#f7f4ec;
-    --paper-deep:#eee9dd;
-    --surface:#fffdf8;
-    --ink:#173247;
-    --ink-soft:#315065;
-    --muted:#657887;
-    --line:#d9e0df;
-    --blue:#2877b3;
-    --blue-dark:#163c56;
-    --yellow:#f7c843;
-    --coral:#e95d53;
-    --green:#44b97c;
-    --shadow:0 18px 44px rgba(33,57,72,.10);
-    --shadow-small:0 9px 24px rgba(33,57,72,.09);
-    --control-bg:rgba(255,253,248,.82);
-    --control-border:rgba(217,224,223,.95);
-    --radius-lg:28px;
-    --radius-md:18px;
-    --ease:cubic-bezier(.22,.61,.36,1);
+  :root {
+    --paper: #f8f6f0;
+    --paper-deep: #eee7da;
+    --surface: rgba(255, 255, 255, 0.88);
+    --surface-solid: #ffffff;
+    --ink: #0f2333;
+    --ink-soft: #274257;
+    --muted: #5b7284;
+    --line: rgba(200, 214, 222, 0.75);
+    --blue: #2273b5;
+    --blue-dark: #123046;
+    --blue-glow: rgba(34, 115, 181, 0.22);
+    --coral: #e85549;
+    --coral-glow: rgba(232, 85, 73, 0.2);
+    --yellow: #f5bc2c;
+    --green: #3ab070;
+    --purple: #8b5cf6;
+    --teal: #0d9488;
+    --shadow-sm: 0 4px 14px rgba(15, 35, 51, 0.05);
+    --shadow-md: 0 12px 32px rgba(15, 35, 51, 0.08);
+    --shadow-lg: 0 24px 56px rgba(15, 35, 51, 0.12);
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 10px;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  *,*::before,*::after{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  html,body{margin:0;padding:0}
-  body{
-    min-height:100vh;
-    color:var(--ink);
-    background:var(--paper);
-    font:400 15px/1.6 "Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
-    font-kerning:normal;
-    -webkit-font-smoothing:antialiased;
+  html[data-theme="dark"] {
+    --paper: #091017;
+    --paper-deep: #0e1823;
+    --surface: rgba(18, 30, 42, 0.84);
+    --surface-solid: #121e2a;
+    --ink: #f0f6fa;
+    --ink-soft: #b8ccda;
+    --muted: #7f99ab;
+    --line: rgba(180, 205, 220, 0.14);
+    --blue: #388ee6;
+    --blue-dark: #0a1622;
+    --blue-glow: rgba(56, 142, 230, 0.28);
+    --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 24px 56px rgba(0, 0, 0, 0.5);
   }
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(#cad4d2 .7px,transparent .7px);background-size:24px 24px;mask-image:linear-gradient(to bottom,black,transparent 54%);z-index:-1}
-  a{color:inherit;text-decoration:none}
-  img{display:block;max-width:100%}
-  button,summary{font:inherit}
-  :focus-visible{outline:3px solid rgba(40,119,179,.38);outline-offset:4px}
 
-  .page-shell{max-width:1220px;margin:0 auto;padding:24px 28px 56px}
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    color: var(--ink);
+    background: var(--paper);
+    font: 400 15px/1.6 "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Ambient Mesh Background */
+  .ambient-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.65;
+    animation: orbFloat 16s ease-in-out infinite alternate;
+  }
+  .ambient-orb-1 {
+    top: -100px;
+    right: -50px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(34, 115, 181, 0.22) 0%, rgba(232, 85, 73, 0.1) 60%, transparent 80%);
+  }
+  .ambient-orb-2 {
+    bottom: 10%;
+    left: -100px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(245, 188, 44, 0.18) 0%, rgba(58, 176, 112, 0.1) 60%, transparent 80%);
+    animation-duration: 22s;
+    animation-direction: alternate-reverse;
+  }
+  html[data-theme="dark"] .ambient-orb-1 {
+    background: radial-gradient(circle, rgba(56, 142, 230, 0.25) 0%, rgba(139, 92, 246, 0.15) 60%, transparent 80%);
+  }
+  html[data-theme="dark"] .ambient-orb-2 {
+    background: radial-gradient(circle, rgba(232, 85, 73, 0.18) 0%, rgba(58, 176, 112, 0.12) 60%, transparent 80%);
+  }
+  @keyframes orbFloat {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(35px, 25px) scale(1.06); }
+    100% { transform: translate(-25px, 40px) scale(0.94); }
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.25;
+    background-image: radial-gradient(#9cb0be 0.75px, transparent 0.75px);
+    background-size: 24px 24px;
+    mask-image: linear-gradient(to bottom, black 20%, transparent 85%);
+    z-index: -1;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  button, select { font: inherit; }
+  :focus-visible { outline: 3px solid var(--blue-glow); outline-offset: 4px; }
+
+  .page-shell { max-width: 1220px; margin: 0 auto; padding: 20px 24px 60px; }
 
   /* Header */
-  .site-header{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:2px 0 20px;border-bottom:1px solid var(--line)}
-  .brand{display:inline-flex;align-items:center;flex:0 0 auto}
-  .brand img{width:174px;height:auto;object-fit:contain}
-  .site-header-right{display:flex;align-items:center;justify-content:flex-end;gap:20px;min-width:0}
-  .nav{display:flex;align-items:center;justify-content:flex-end;gap:22px;min-width:0;white-space:nowrap}
-  .nav a{position:relative;color:var(--muted);font-size:13px;font-weight:600;letter-spacing:-.1px;transition:color .18s var(--ease)}
-  .nav a:not(.nav-cta)::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--coral);transform:scaleX(0);transform-origin:left;transition:transform .18s var(--ease)}
-  .nav a:not(.nav-cta):hover{color:var(--ink)}
-  .nav a:not(.nav-cta):hover::after{transform:scaleX(1)}
-  .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border-radius:999px;background:var(--ink);color:#fff!important;box-shadow:0 5px 14px rgba(23,50,71,.16);transition:transform .18s var(--ease),background .18s var(--ease),box-shadow .18s var(--ease)}
-  .nav-cta:hover{background:var(--blue);transform:translateY(-2px);box-shadow:0 8px 18px rgba(40,119,179,.22)}
-  .nav-cta svg{width:14px;height:14px}
-  .home-controls{display:flex;align-items:center;gap:8px;flex:0 0 auto}
-  .home-language-select,.home-theme-toggle{min-height:38px;border:1px solid var(--control-border);border-radius:999px;background:var(--control-bg);color:var(--ink);font:600 12px/1 "Be Vietnam Pro",sans-serif;transition:background .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease),transform .18s var(--ease)}
-  .home-language-select{padding:0 10px;cursor:pointer;outline:none}
-  .home-language-select:hover,.home-theme-toggle:hover{border-color:var(--blue);transform:translateY(-1px)}
-  .home-theme-toggle{display:inline-flex;align-items:center;gap:7px;padding:0 12px;cursor:pointer}
-  .home-theme-toggle svg{width:16px;height:16px;flex:0 0 16px}
-  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-  html[data-theme="dark"]{
-    --paper:#101a22;
-    --paper-deep:#182833;
-    --surface:#182b38;
-    --ink:#f2f7f8;
-    --ink-soft:#c1d0d7;
-    --muted:#9db0bb;
-    --line:rgba(190,211,220,.18);
-    --control-bg:rgba(24,43,56,.92);
-    --control-border:rgba(190,211,220,.2);
-    --shadow:0 18px 44px rgba(0,0,0,.28);
-    --shadow-small:0 9px 24px rgba(0,0,0,.2);
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
   }
-  html[data-theme="dark"] body::before{opacity:.15;background-image:radial-gradient(#6d8794 .7px,transparent .7px)}
-  html[data-theme="dark"] .brand img{filter:brightness(1.35) saturate(.9)}
-  html[data-theme="dark"] .nav-cta{background:var(--blue);color:#fff!important}
-  html[data-theme="dark"] .nav-cta:hover{background:#3d91cf}
-  html[data-theme="dark"] .button-secondary{background:rgba(24,43,56,.82);color:var(--ink);border-color:var(--line)}
-  html[data-theme="dark"] .module-close:hover{background:#213b4c}
-  html[data-theme="dark"] .module-grid .tool-card:hover{background:#213b4c}
-  html[data-theme="dark"] .faq details{background:rgba(24,43,56,.76)}
-  html[data-theme="dark"] .faq details[open]{background:var(--surface)}
+  .brand { display: inline-flex; align-items: center; flex: 0 0 auto; }
+  .brand img { width: 156px; height: auto; object-fit: contain; }
+  .site-header-right { display: flex; align-items: center; gap: 18px; }
+  .nav { display: flex; align-items: center; gap: 18px; white-space: nowrap; }
+  .nav a {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 999px;
+    transition: all 0.2s var(--ease);
+  }
+  .nav a:hover:not(.nav-cta) { color: var(--ink); background: rgba(34, 115, 181, 0.08); }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px !important;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--blue), #1a5e95);
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px var(--blue-glow);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease) !important;
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px var(--blue-glow); }
+  .nav-cta svg { width: 14px; height: 14px; }
+
+  .home-controls { display: flex; align-items: center; gap: 8px; }
+  .home-language-select, .home-theme-toggle {
+    height: 36px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface-solid);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 12px;
+    transition: all 0.2s var(--ease);
+  }
+  .home-language-select { padding: 0 10px; cursor: pointer; }
+  .home-language-select:hover, .home-theme-toggle:hover { border-color: var(--blue); transform: translateY(-1px); }
+  .home-theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 36px; padding: 0; cursor: pointer; }
+  .home-theme-toggle svg { width: 16px; height: 16px; }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
   /* Hero */
-  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,.92fr);gap:72px;align-items:center;padding:76px 0 88px}
-  .hero-copy{max-width:600px}
-  .eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0 0 18px;color:var(--blue);font-size:11px;line-height:1;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}
-  .eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 5px rgba(233,93,83,.13)}
-  .hero h1{max-width:620px;margin:0 0 22px;color:var(--ink);font-size:clamp(42px,5.9vw,78px);line-height:1.01;font-weight:800;letter-spacing:-3px}
-  .hero h1 em{display:block;color:var(--coral);font-style:normal;letter-spacing:-3.2px}
-  .hero-copy>p{max-width:550px;margin:0;color:var(--ink-soft);font-size:clamp(16px,1.6vw,19px);line-height:1.65;font-weight:400;letter-spacing:-.12px}
-  .hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:30px 0 22px}
-  .button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 18px;border:1px solid transparent;border-radius:999px;font-size:13px;font-weight:800;transition:transform .18s var(--ease),background .18s var(--ease),border-color .18s var(--ease),box-shadow .18s var(--ease)}
-  .button svg{width:16px;height:16px}
-  .button-primary{background:var(--blue);color:#fff;box-shadow:0 9px 18px rgba(40,119,179,.2)}
-  .button-primary:hover{background:var(--ink);transform:translateY(-2px);box-shadow:0 12px 22px rgba(23,50,71,.18)}
-  .button-secondary{border-color:var(--line);background:rgba(255,253,248,.55);color:var(--ink)}
-  .button-secondary:hover{border-color:var(--blue);background:var(--surface);transform:translateY(-2px)}
-  .hero-note{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px}
-  .hero-note strong{color:var(--ink);font-weight:700}
-  .hero-note-separator{width:4px;height:4px;border-radius:50%;background:var(--yellow)}
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+    align-items: center;
+    padding: 48px 0 64px;
+  }
+  .hero-copy { max-width: 580px; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid rgba(34, 115, 181, 0.25);
+    border-radius: 999px;
+    background: rgba(34, 115, 181, 0.08);
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-  /* Hero preview */
-  .hero-visual{position:relative;min-width:0;padding:18px 0 18px 18px}
-  .hero-visual::before{content:"";position:absolute;right:-12px;top:-16px;width:130px;height:130px;border:1px solid rgba(40,119,179,.23);border-radius:50%;z-index:-1}
-  .hero-visual::after{content:"";position:absolute;left:-20px;bottom:-8px;width:86px;height:86px;background:var(--yellow);border-radius:50%;opacity:.85;z-index:-1}
-  .preview-card{position:relative;overflow:hidden;padding:20px;border-radius:var(--radius-lg);background:var(--blue-dark);color:#fff;box-shadow:var(--shadow)}
-  .preview-card::before{content:"";position:absolute;right:-120px;top:-160px;width:360px;height:360px;border:1px solid rgba(255,255,255,.10);border-radius:50%;box-shadow:0 0 0 30px rgba(255,255,255,.025),0 0 0 60px rgba(255,255,255,.018)}
-  .preview-top,.preview-label,.preview-footer,.preview-result{position:relative;z-index:1}
-  .preview-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:34px;color:rgba(255,255,255,.66);font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
-  .preview-label{display:inline-flex;align-items:center;gap:7px}
-  .preview-label::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(68,185,124,.13)}
-  .preview-menu{display:inline-flex;gap:4px}.preview-menu i{display:block;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.5)}
-  .preview-stage{position:relative;display:grid;place-items:center;min-height:242px}
-  .preview-wheel{position:relative;width:min(248px,72vw);aspect-ratio:1;border:7px solid rgba(255,255,255,.82);border-radius:50%;background:conic-gradient(from -22deg,var(--coral) 0 24%,var(--yellow) 24% 48%,var(--green) 48% 73%,#3488d4 73% 100%);box-shadow:0 18px 30px rgba(0,0,0,.24),inset 0 0 0 2px rgba(23,50,71,.2);transform:rotate(-10deg)}
-  .preview-wheel::before{content:"";position:absolute;inset:12px;border:1px dashed rgba(255,255,255,.43);border-radius:50%}
-  .preview-pointer{position:absolute;top:-19px;left:50%;width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-top:28px solid #fff;filter:drop-shadow(0 3px 3px rgba(0,0,0,.25));z-index:2;transform:translateX(-50%)}
-  .preview-hub{position:absolute;top:50%;left:50%;display:grid;place-items:center;width:64px;height:64px;border:7px solid #fff;border-radius:50%;background:var(--blue);transform:translate(-50%,-50%);box-shadow:0 6px 12px rgba(0,0,0,.18);z-index:1}
-  .preview-hub img{width:37px;height:37px;object-fit:contain;filter:brightness(1.1)}
-  .preview-result{position:absolute;right:5%;bottom:12px;display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border:1px solid rgba(255,255,255,.16);border-radius:9px;background:rgba(11,32,46,.58);font-size:11px;color:rgba(255,255,255,.84)}
-  .preview-result strong{color:#fff}.preview-result svg{width:14px;height:14px;color:var(--yellow)}
-  .preview-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:27px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14)}
-  .preview-footer small{display:block;color:rgba(255,255,255,.57);font-size:11px}.preview-footer strong{display:block;margin-top:2px;font-size:14px}
-  .preview-link{display:inline-flex;align-items:center;gap:7px;color:var(--yellow);font-size:12px;font-weight:800}.preview-link svg{width:15px;height:15px;transition:transform .18s var(--ease)}.preview-link:hover svg{transform:translateX(3px)}
-  .preview-chip{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:7px;padding:10px 13px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow-small);font-size:11px;font-weight:800;white-space:nowrap}
-  .preview-chip svg{width:15px;height:15px;color:var(--coral)}
-  .preview-chip--top{right:-18px;top:37px}.preview-chip--bottom{left:-14px;bottom:30px}.preview-chip--bottom svg{color:var(--green)}
+  .hero h1 {
+    margin: 0 0 20px;
+    color: var(--ink);
+    font-size: clamp(40px, 5.4vw, 68px);
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -2px;
+  }
+  .hero-gradient-text {
+    background: linear-gradient(135deg, var(--coral) 0%, #f77f00 50%, var(--yellow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  .hero-copy > p {
+    margin: 0 0 28px;
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.65;
+    font-weight: 400;
+  }
 
-  /* Tool section */
-  .tool-section{padding:10px 0 92px}
-  .section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:26px}
-  .section-heading h2{max-width:520px;margin:0;color:var(--ink);font-size:clamp(28px,3.6vw,43px);line-height:1.04;font-weight:800;letter-spacing:-1.7px}
-  .section-kicker{margin:0 0 10px;color:var(--coral);font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
-  .text-link{display:inline-flex;align-items:center;gap:7px;color:var(--blue);font-size:13px;font-weight:800;white-space:nowrap}.text-link svg{width:15px;height:15px;transition:transform .18s var(--ease)}.text-link:hover svg{transform:translateX(3px)}
-  .tool-grid{display:grid;grid-template-columns:1.18fr .91fr .91fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:16px}
-  .tool-card{position:relative;display:flex;flex-direction:column;min-height:226px;overflow:hidden;padding:24px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface);transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
-  .tool-card:hover{border-color:rgba(40,119,179,.4);box-shadow:var(--shadow-small);transform:translateY(-4px)}
-  .tool-card--featured{grid-row:span 2;min-height:468px;padding:28px;background:var(--ink);border-color:var(--ink);color:#fff}
-  .tool-card--featured::after{content:"";position:absolute;right:-120px;bottom:-150px;width:330px;height:330px;border:1px solid rgba(255,255,255,.12);border-radius:50%;box-shadow:0 0 0 28px rgba(255,255,255,.025),0 0 0 56px rgba(255,255,255,.018)}
-  .tool-card--featured .card-number{color:var(--yellow)}
-  .card-number{display:block;margin-bottom:24px;color:var(--muted);font:800 11px/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1px}
-  .tool-card-heading{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px}
-  .tool-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#edf4f6;color:var(--blue)}
-  .tool-icon svg{width:21px;height:21px}.tool-card--featured .tool-icon{background:rgba(255,255,255,.14);color:var(--yellow)}
-  .card-label{color:var(--blue);font-size:10px;font-weight:800;letter-spacing:1.25px;text-transform:uppercase}.tool-card--featured .card-label{color:rgba(255,255,255,.6)}
-  .tool-card h3{position:relative;z-index:1;margin:0 0 9px;color:var(--ink);font-size:22px;line-height:1.1;font-weight:800;letter-spacing:-.55px}.tool-card--featured h3{max-width:300px;color:#fff;font-size:34px;letter-spacing:-1.1px}
-  .tool-card p{position:relative;z-index:1;max-width:340px;margin:0;color:var(--muted);font-size:13px;line-height:1.65;font-weight:400;letter-spacing:-.08px}.tool-card--featured p{max-width:330px;color:rgba(255,255,255,.7);font-size:14px}
-  .card-link{position:relative;z-index:1;display:inline-flex;align-items:center;gap:7px;margin-top:auto;padding-top:23px;color:var(--blue);font-size:12px;font-weight:700;letter-spacing:-.08px}.card-link svg{width:15px;height:15px;transition:transform .18s var(--ease)}.tool-card:hover .card-link svg{transform:translateX(3px)}.tool-card--featured .card-link{color:var(--yellow)}
-  .featured-wheel{position:absolute;right:26px;bottom:23px;width:145px;height:145px;border:5px solid rgba(255,255,255,.78);border-radius:50%;background:conic-gradient(var(--coral) 0 26%,var(--yellow) 26% 51%,var(--green) 51% 76%,#3488d4 76%);opacity:.88;transform:rotate(18deg);box-shadow:0 12px 24px rgba(0,0,0,.22)}
-  .featured-wheel::before{content:"";position:absolute;inset:12px;border:1px dashed rgba(255,255,255,.5);border-radius:50%}.featured-wheel::after{content:"";position:absolute;top:-14px;left:50%;border-left:9px solid transparent;border-right:9px solid transparent;border-top:19px solid var(--yellow);transform:translateX(-50%)}
-  .featured-wheel-hub{position:absolute;top:50%;left:50%;width:33px;height:33px;border:4px solid #fff;border-radius:50%;background:var(--blue);transform:translate(-50%,-50%)}
-  .tool-card[data-c=number] .tool-icon{color:#8b62c9;background:#f2edfb}.tool-card[data-c=range] .tool-icon{color:#238b9e;background:#e7f5f4}.tool-card[data-c=roller] .tool-icon{color:#d47d27;background:#fff1df}.tool-card[data-c=duck] .tool-icon{color:#be8d08;background:#fff7d9}
+  .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 28px; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 24px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s var(--ease);
+  }
+  .button svg { width: 16px; height: 16px; }
+  .button-primary {
+    background: linear-gradient(135deg, var(--blue), #185c92);
+    color: #ffffff;
+    box-shadow: 0 8px 24px var(--blue-glow);
+  }
+  .button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(34, 115, 181, 0.35);
+    background: linear-gradient(135deg, #2680c8, #1c6ba9);
+  }
+  .button-secondary {
+    border-color: var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    backdrop-filter: blur(8px);
+  }
+  .button-secondary:hover {
+    border-color: var(--blue);
+    background: var(--surface-solid);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
 
-  /* Compact module picker */
-  .module-launcher{display:flex;align-items:center;justify-content:space-between;gap:28px;margin:10px 0 92px;padding:24px 26px;border:1px solid var(--line);border-radius:20px;background:var(--surface);box-shadow:var(--shadow-small)}
-  .module-launcher h2{margin:0;color:var(--ink);font-size:clamp(22px,2.8vw,31px);line-height:1.1;font-weight:800;letter-spacing:-1px}.module-launcher p:not(.section-kicker){max-width:560px;margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.6}.module-launcher .button{flex:0 0 auto}
-  .module-modal[hidden]{display:none}.module-modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px}.module-backdrop{position:absolute;inset:0;background:rgba(23,50,71,.34);backdrop-filter:blur(8px);animation:moduleFade .18s ease both}.module-panel{position:relative;z-index:1;width:min(700px,100%);max-height:min(720px,calc(100vh - 40px));overflow:auto;padding:26px;border:1px solid rgba(217,224,223,.95);border-radius:22px;background:var(--surface);box-shadow:0 28px 90px rgba(23,50,71,.22);animation:modulePop .24s var(--ease) both}.module-panel-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.module-kicker{margin:0 0 7px;color:var(--blue);font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.module-panel h2{margin:0;color:var(--ink);font-size:24px;line-height:1.1;font-weight:800;letter-spacing:-.8px}.module-panel-subtitle{margin:7px 0 0;color:var(--muted);font-size:13px}.module-close{display:grid;place-items:center;width:38px;height:38px;flex:0 0 38px;padding:0;border:1px solid var(--line);border-radius:11px;background:var(--surface);color:var(--muted);cursor:pointer;transition:color .18s var(--ease),border-color .18s var(--ease),background .18s var(--ease),transform .18s var(--ease)}.module-close svg{width:18px;height:18px}.module-close:hover{border-color:var(--blue);background:#f1f6f7;color:var(--blue);transform:translateY(-1px)}.module-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}.module-grid .tool-card,.module-grid .tool-card--featured{grid-row:auto;grid-column:auto;align-items:center;justify-content:center;min-height:118px;padding:18px 14px;border-radius:13px;background:var(--surface);border-color:var(--line);color:var(--ink);text-align:center;box-shadow:none}.module-grid .tool-card:hover{border-color:rgba(40,119,179,.4);background:#fbfcfa;box-shadow:var(--shadow-small);transform:translateY(-2px)}.module-grid .tool-card--featured::after,.module-grid .featured-wheel{display:none}.module-grid .card-number,.module-grid .card-label,.module-grid .tool-card p,.module-grid .card-link{display:none}.module-grid .tool-card-heading{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;margin:0}.module-grid .tool-card h3,.module-grid .tool-card--featured h3{max-width:none;margin:0;color:var(--ink);font-size:13px;line-height:1.3;font-weight:700;letter-spacing:-.15px}.module-grid .tool-card--featured .tool-icon{background:#edf4f6;color:var(--blue)}.module-grid .tool-card[data-c=number] .tool-icon{background:#f2edfb}.module-grid .tool-card[data-c=range] .tool-icon{background:#e7f5f4}.module-grid .tool-card[data-c=roller] .tool-icon{background:#fff1df}.module-grid .tool-card[data-c=duck] .tool-icon{background:#fff7d9}
-  body.modal-open{overflow:hidden}@keyframes moduleFade{from{opacity:0}to{opacity:1}}@keyframes modulePop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .hero-badges { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .hero-badge-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .hero-badge-item svg { width: 15px; height: 15px; color: var(--green); }
 
-  /* Trust and benefits */
-  .trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:23px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .trust-item{display:flex;align-items:center;gap:11px;min-width:0}.trust-item svg{width:20px;height:20px;flex:0 0 20px;color:var(--coral)}.trust-item:nth-child(2) svg{color:var(--blue)}.trust-item:nth-child(3) svg{color:var(--green)}.trust-item:nth-child(4) svg{color:#bb8d11}.trust-item strong{display:block;color:var(--ink);font-size:13px}.trust-item span{display:block;margin-top:1px;color:var(--muted);font-size:11px}
-  .benefits{display:grid;grid-template-columns:minmax(230px,.72fr) minmax(0,1.28fr);gap:70px;padding:92px 0;border-bottom:1px solid var(--line)}
-  .benefits h2,.faq h2{margin:0;color:var(--ink);font-size:clamp(28px,3.4vw,42px);line-height:1.05;font-weight:800;letter-spacing:-1.6px}.benefits-lead p{max-width:280px;margin:17px 0 0;color:var(--muted);font-size:14px;line-height:1.7;font-weight:400}
-  .benefits-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;row-gap:0}.benefit{display:grid;grid-template-columns:31px 1fr;gap:11px;padding:0 0 22px;margin-bottom:22px;border-bottom:1px solid var(--line)}.benefit-icon{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:var(--surface);color:var(--blue)}.benefit-icon svg{width:16px;height:16px}.benefit h3{margin:0 0 3px;color:var(--ink);font-size:14px}.benefit p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
+  /* Interactive Hero Playground Card */
+  .hero-playground-wrapper { position: relative; }
+  .playground-card {
+    position: relative;
+    overflow: hidden;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-lg);
+    transition: border-color 0.3s var(--ease);
+  }
+  .playground-card:hover { border-color: rgba(34, 115, 181, 0.4); }
 
-  /* FAQ */
-  .faq{display:grid;grid-template-columns:minmax(230px,.72fr) minmax(0,1.28fr);gap:70px;padding:92px 0 76px}.faq-lead p{max-width:280px;margin:17px 0 0;color:var(--muted);font-size:14px;line-height:1.7}.faq-list{display:grid;gap:9px}.faq details{padding:0 18px;border:1px solid var(--line);border-radius:13px;background:rgba(255,253,248,.58);transition:border-color .18s var(--ease),background .18s var(--ease)}.faq details[open]{border-color:rgba(40,119,179,.34);background:var(--surface)}.faq summary{position:relative;display:flex;align-items:center;min-height:54px;padding:2px 28px 2px 0;cursor:pointer;list-style:none;color:var(--ink);font-size:14px;font-weight:700;letter-spacing:-.1px}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";position:absolute;right:0;top:50%;color:var(--blue);font-size:21px;font-weight:400;line-height:1;transform:translateY(-50%);transition:transform .18s var(--ease)}.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}.faq p{margin:0;padding:0 0 17px;color:var(--muted);font-size:13px;line-height:1.65;font-weight:400}
+  .playground-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .playground-title-box { display: flex; align-items: center; gap: 8px; }
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(232, 85, 73, 0.12);
+    color: var(--coral);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+  }
+  .live-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); animation: pulse 1.5s infinite; }
+  .playground-title-text { color: var(--ink); font-size: 13px; font-weight: 800; }
+
+  /* Demo Tabs */
+  .playground-tabs { display: flex; gap: 4px; background: rgba(15, 35, 51, 0.05); padding: 3px; border-radius: 10px; }
+  html[data-theme="dark"] .playground-tabs { background: rgba(255, 255, 255, 0.06); }
+  .playground-tab {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s var(--ease);
+  }
+  .playground-tab.active {
+    background: var(--surface-solid);
+    color: var(--ink);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  /* Playground Views */
+  .playground-body { min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+  .playground-view { width: 100%; display: none; flex-direction: column; align-items: center; text-align: center; }
+  .playground-view.active { display: flex; }
+
+  /* View 1: Wheel */
+  .wheel-stage { position: relative; width: 200px; height: 200px; margin: 10px 0 16px; }
+  #heroWheelCanvas { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: transform 3s cubic-bezier(0.15, 0.9, 0.2, 1); }
+  .wheel-pointer {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 22px solid var(--coral);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    z-index: 3;
+  }
+  .wheel-spin-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.15s var(--ease);
+    z-index: 4;
+    display: grid;
+    place-items: center;
+  }
+  .wheel-spin-hub:hover { transform: translate(-50%, -50%) scale(1.08); }
+  .wheel-spin-hub:active { transform: translate(-50%, -50%) scale(0.94); }
+
+  /* View 2: Number */
+  .number-stage { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 20px 0; }
+  .number-range-badge { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+  .number-display {
+    display: flex;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: var(--radius-md);
+    background: var(--surface-solid);
+    border: 1px solid var(--line);
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.06);
+  }
+  .number-display .digit {
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--blue);
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    width: 32px;
+    text-align: center;
+  }
+
+  /* View 3: Slot */
+  .slot-stage { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 15px 0; }
+  .slot-reels { display: flex; gap: 12px; }
+  .slot-reel {
+    width: 68px;
+    height: 78px;
+    display: grid;
+    place-items: center;
+    font-size: 34px;
+    background: var(--surface-solid);
+    border: 2px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.1s var(--ease);
+  }
+
+  /* View 4: Duck Race */
+  .duck-stage { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 10px 0; }
+  .duck-track { width: 100%; display: flex; flex-direction: column; gap: 8px; background: rgba(0,0,0,0.04); padding: 12px; border-radius: 14px; position: relative; }
+  html[data-theme="dark"] .duck-track { background: rgba(255,255,255,0.04); }
+  .duck-lane { display: flex; align-items: center; gap: 10px; position: relative; background: var(--surface-solid); padding: 6px 10px; border-radius: 8px; overflow: hidden; }
+  .duck-avatar { font-size: 22px; transition: transform 2.5s cubic-bezier(0.25, 1, 0.5, 1); }
+  .duck-name { font-size: 11px; font-weight: 700; color: var(--muted); }
+  .finish-line { position: absolute; right: 8px; top: 0; bottom: 0; width: 4px; background: repeating-linear-gradient(to bottom, #000, #000 6px, #fff 6px, #fff 12px); border-radius: 2px; }
+
+  /* Demo Action Button & Result Bar */
+  .demo-action-btn { min-height: 40px; padding: 0 18px; font-size: 12px; }
+  .demo-result-bar {
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: rgba(34, 115, 181, 0.08);
+    border: 1px dashed rgba(34, 115, 181, 0.25);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .demo-result-bar strong { color: var(--coral); }
+
+  .confetti-canvas { position: absolute; inset: 0; pointer-events: none; z-index: 10; width: 100%; height: 100%; }
+
+  /* Custom Rich Icon Badges */
+  .icon-badge {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    flex-shrink: 0;
+  }
+  .icon-badge:hover { transform: scale(1.08) rotate(3deg); }
+
+  .trust-badge-ready {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 18px -4px rgba(2, 132, 199, 0.4);
+  }
+  .trust-badge-private {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 18px -4px rgba(16, 185, 129, 0.4);
+  }
+  .trust-badge-free {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 18px -4px rgba(245, 158, 11, 0.4);
+  }
+  .trust-badge-obs {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 18px -4px rgba(139, 92, 246, 0.4);
+  }
+
+  .tool-illustration-badge {
+    width: 54px; height: 54px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 10px 22px -4px rgba(0,0,0,0.18);
+    transition: transform 0.3s var(--ease);
+  }
+  .tool-card:hover .tool-illustration-badge { transform: scale(1.1) rotate(-4deg); }
+
+  .tool-badge-wheel { background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%); color: #ffffff; }
+  .tool-badge-number { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: #ffffff; }
+  .tool-badge-range { background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); color: #ffffff; }
+  .tool-badge-slot { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #ffffff; }
+  .tool-badge-duck { background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); color: #ffffff; }
+
+  .feature-badge-tts { width: 44px; height: 44px; background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%); color: #ffffff; box-shadow: 0 6px 16px -4px rgba(99, 102, 241, 0.35); }
+  .feature-badge-obs { width: 44px; height: 44px; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: #ffffff; box-shadow: 0 6px 16px -4px rgba(139, 92, 246, 0.35); }
+  .feature-badge-sessions { width: 44px; height: 44px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; box-shadow: 0 6px 16px -4px rgba(2, 132, 199, 0.35); }
+  .feature-badge-palette { width: 44px; height: 44px; background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); color: #ffffff; box-shadow: 0 6px 16px -4px rgba(236, 72, 153, 0.35); }
+  .feature-badge-qr { width: 44px; height: 44px; background: linear-gradient(135deg, #10b981 0%, #047857 100%); color: #ffffff; box-shadow: 0 6px 16px -4px rgba(16, 185, 129, 0.35); }
+  .feature-badge-theme { width: 44px; height: 44px; background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%); color: #ffffff; box-shadow: 0 6px 16px -4px rgba(245, 158, 11, 0.35); }
+
+  /* Trust Strip */
+  .trust-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 32px 0 64px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
+  }
+  .trust-card { display: flex; align-items: center; gap: 16px; }
+  .trust-info strong { display: block; color: var(--ink); font-size: 14px; font-weight: 800; }
+  .trust-info span { display: block; color: var(--muted); font-size: 12px; }
+
+  /* Core Tools Section */
+  .tools-section { margin-bottom: 72px; }
+  .section-header { text-align: center; max-width: 600px; margin: 0 auto 40px; }
+  .section-kicker {
+    display: inline-block;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    margin: 0 0 12px;
+    color: var(--ink);
+    font-size: clamp(28px, 3.6vw, 42px);
+    font-weight: 900;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+  }
+  .section-desc { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .tool-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    transition: all 0.25s var(--ease);
+  }
+  .tool-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(34, 115, 181, 0.35);
+  }
+  .tool-card-featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--blue-dark) 0%, #163650 100%);
+    color: #ffffff;
+    border-color: transparent;
+  }
+  html[data-theme="dark"] .tool-card-featured { background: linear-gradient(135deg, #0d1a26 0%, #172a3c 100%); }
+
+  .tool-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .tool-tag {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    background: rgba(34, 115, 181, 0.1);
+    color: var(--blue);
+  }
+  .tool-card-featured .tool-tag { background: rgba(245, 188, 44, 0.2); color: var(--yellow); }
+
+  .tool-card h3 { margin: 0 0 10px; font-size: 22px; font-weight: 800; color: var(--ink); }
+  .tool-card-featured h3 { color: #ffffff; font-size: 28px; }
+  .tool-card p { margin: 0 0 20px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+  .tool-card-featured p { color: rgba(255,255,255,0.75); font-size: 14px; }
+
+  .tool-card-cta {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+    transition: gap 0.2s var(--ease);
+  }
+  .tool-card-featured .tool-card-cta { color: var(--yellow); }
+  .tool-card:hover .tool-card-cta { gap: 10px; }
+  .tool-card-cta svg { width: 14px; height: 14px; }
+
+  /* Feature Matrix Section */
+  .features-section {
+    padding: 64px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 64px;
+  }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+  .feature-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    border: 1px solid var(--line);
+  }
+  .feature-content h4 { margin: 0 0 4px; font-size: 15px; font-weight: 800; color: var(--ink); }
+  .feature-content p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* FAQ Accordion */
+  .faq-section { margin-bottom: 72px; }
+  .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 800px; margin: 0 auto; }
+  .faq-item {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    overflow: hidden;
+    transition: border-color 0.2s var(--ease);
+  }
+  .faq-item[open] { border-color: var(--blue); }
+  .faq-summary {
+    padding: 18px 22px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .faq-summary::-webkit-details-marker { display: none; }
+  .faq-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--blue);
+    transition: transform 0.2s var(--ease);
+  }
+  .faq-item[open] .faq-icon { transform: rotate(180deg); }
+  .faq-answer { padding: 0 22px 20px; color: var(--muted); font-size: 13.5px; line-height: 1.65; }
+
+  /* Public usage policy */
+  .policy-public-section { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .policy-public-card {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-md);
+  }
+  .policy-public-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .policy-public-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--surface-solid);
+  }
+  .policy-public-number {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--blue-glow);
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+  .policy-public-item h3 { margin: 1px 0 6px; color: var(--ink); font-size: 14px; line-height: 1.35; }
+  .policy-public-item p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.65; }
+  .policy-public-footer { margin: 24px 0 0; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12.5px; line-height: 1.65; }
 
   /* Footer */
-  footer{display:flex;align-items:flex-start;justify-content:space-between;gap:28px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}footer p{margin:0 0 5px}footer p:last-child{margin-bottom:0}footer a{color:var(--ink-soft);font-weight:600}footer a:hover{color:var(--blue)}
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12px;
+  }
+  footer a { color: var(--ink-soft); font-weight: 600; }
+  footer a:hover { color: var(--blue); }
 
-  @media (max-width:960px){
-    .page-shell{padding-inline:22px}.hero{grid-template-columns:1fr;gap:42px;padding:62px 0 74px}.hero-copy{max-width:700px}.hero-visual{max-width:640px;width:100%;margin:0 auto;padding-left:12px}.hero h1{font-size:clamp(44px,8vw,70px)}.module-launcher{margin-bottom:72px}.benefits,.faq{grid-template-columns:1fr;gap:28px;padding:72px 0}.benefits-lead p,.faq-lead p{max-width:560px;margin-top:12px}.benefits-grid{max-width:760px}}
-
-  @media (max-width:700px){
-    .page-shell{padding:17px 16px 38px}.site-header{flex-direction:column;align-items:flex-start;gap:17px;padding-bottom:16px}.brand img{width:153px}.site-header-right{width:100%;display:flex;flex-wrap:wrap;gap:12px}.home-controls{order:1;margin-left:auto}.nav{order:2;flex:1 1 100%;width:100%;justify-content:flex-start;gap:19px;overflow-x:auto;padding:2px 0 5px;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav a{font-size:12px}.nav-cta{padding:8px 12px}.home-language-select,.home-theme-toggle{min-height:36px}.home-theme-label{display:none}.hero{gap:30px;padding:49px 0 58px}.hero h1{margin-bottom:18px;font-size:clamp(40px,12vw,58px);letter-spacing:-2.5px}.hero h1 em{letter-spacing:-2.7px}.hero-copy>p{font-size:15px}.hero-actions{margin-top:24px}.button{width:100%}.hero-note{flex-wrap:wrap;row-gap:5px}.hero-visual{padding:10px 8px 15px 0}.preview-card{padding:16px;border-radius:22px}.preview-top{margin-bottom:20px}.preview-stage{min-height:210px}.preview-wheel{width:min(218px,68vw)}.preview-chip{padding:8px 10px;font-size:10px}.preview-chip--top{right:-8px;top:26px}.preview-chip--bottom{left:-7px;bottom:21px}.preview-footer{margin-top:21px}.module-launcher{display:block;margin-bottom:60px;padding:20px}.module-launcher .button{width:100%;margin-top:18px}.module-panel{padding:20px;border-radius:18px}.module-panel h2{font-size:22px}.module-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}.module-grid .tool-card,.module-grid .tool-card--featured{min-height:105px;padding:14px 9px}.trust-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px;padding:20px 0}.trust-item{align-items:flex-start}.trust-item strong{font-size:12px}.trust-item span{font-size:10px}.benefits,.faq{padding:60px 0}.benefits h2,.faq h2{font-size:33px}.benefits-grid{grid-template-columns:1fr}.benefit{padding-bottom:16px;margin-bottom:16px}.faq{gap:25px}.faq details{padding-inline:15px}footer{display:block;font-size:11px}footer p:last-child{margin-top:13px;line-height:1.8}}
-
-  @media (max-width:420px){.module-grid{grid-template-columns:1fr}.module-grid .tool-card,.module-grid .tool-card--featured{min-height:76px}.module-grid .tool-card-heading{flex-direction:row;justify-content:flex-start;text-align:left}.module-grid .tool-icon{width:36px;height:36px}.module-grid .tool-card h3,.module-grid .tool-card--featured h3{font-size:13px}}
-
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav a,.button,.tool-card,.card-link svg,.preview-link svg,.faq details,.faq summary::after,.module-backdrop,.module-panel{transition:none;animation:none}}
+  /* Responsive */
+  @media (max-width: 992px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .hero-copy { max-width: 100%; margin: 0 auto; }
+    .hero-actions { justify-content: center; }
+    .hero-badges { justify-content: center; }
+    .trust-strip { grid-template-columns: repeat(2, 1fr); }
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    .tool-card-featured { grid-column: span 2; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .page-shell { padding-inline: 16px; }
+    .site-header { flex-direction: column; border-radius: 20px; padding: 12px 16px; }
+    .site-header-right { width: 100%; justify-content: space-between; }
+    .nav { overflow-x: auto; max-width: 220px; }
+    .hero h1 { font-size: 36px; }
+    .trust-strip { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .tool-card-featured { grid-column: span 1; }
+    .features-grid { grid-template-columns: 1fr; }
+    .policy-public-card { padding: 24px 18px; }
+    .policy-public-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+  }
 </style>
 </head>
 <body>
+
+<div class="ambient-bg" aria-hidden="true">
+  <div class="ambient-orb ambient-orb-1"></div>
+  <div class="ambient-orb ambient-orb-2"></div>
+</div>
+
 <div class="page-shell">
 
+  <!-- Header -->
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Spin &amp; Win — trang chủ">
-      <img src="assets/img/logo-wordmark.png" alt="Spin &amp; Win">
+    <a class="brand" href="/en/" aria-label="Spin &amp; Win — Home">
+      <img src="../assets/img/logo-wordmark.png" alt="Spin &amp; Win Logo">
     </a>
     <div class="site-header-right">
-      <nav class="nav" aria-label="Menu chính" data-i18n-attr="aria-label:nav.label">
-        <a href="/spin/" data-i18n="nav.wheel">Vòng quay tên</a>
-        <a href="/number/" data-i18n="nav.number">Quay số</a>
-        <a href="/range/" data-i18n="nav.range">Chọn số</a>
-        <a href="/roller/" data-i18n="nav.roller">Con lăn</a>
-        <a href="/duck/" data-i18n="nav.duck">Đường đua</a>
-        <a class="nav-cta" href="/spin/"><span data-i18n="nav.cta">Thử ngay</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></a>
+      <nav class="nav" aria-label="Main menu">
+        <a href="/spin/" data-i18n="nav.wheel">Name wheel</a>
+        <a href="/number/" data-i18n="nav.number">Number picker</a>
+        <a href="/range/" data-i18n="nav.range">Range picker</a>
+        <a href="/roller/" data-i18n="nav.roller">Slot roller</a>
+        <a href="/duck/" data-i18n="nav.duck">Race track</a>
+        <a class="nav-cta" href="/spin/"><span data-i18n="nav.cta">Try now</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></a>
       </nav>
-      <div class="home-controls" aria-label="Cài đặt trang chủ" data-i18n-attr="aria-label:controls.label">
-        <label class="sr-only" for="homeLanguage" data-i18n="language.label">Ngôn ngữ</label>
-        <select class="home-language-select" id="homeLanguage" title="Ngôn ngữ" aria-label="Ngôn ngữ">
-          <option value="vi">VI</option>
+      <div class="home-controls" aria-label="Settings">
+        <select class="home-language-select" id="homeLanguage" aria-label="Language">
           <option value="en">EN</option>
+          <option value="vi">VI</option>
         </select>
-        <button class="home-theme-toggle" id="homeThemeToggle" type="button" title="Sáng / Tối" aria-label="Sáng / Tối">
-          <svg id="homeThemeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
+        <button class="home-theme-toggle" id="homeThemeToggle" type="button" aria-label="Toggle theme">
+          <svg id="homeThemeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
         </button>
       </div>
     </div>
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">Bộ công cụ ngẫu nhiên online</span></p>
-        <h1 id="hero-title"><span data-i18n="hero.title">Bộ công cụ</span><br><em data-i18n="hero.titleAccent">ngẫu nhiên miễn phí.</em></h1>
-        <p data-i18n="hero.description">Vòng quay may mắn, bốc thăm, chọn số, con lăn và đường đua — tất cả trong một nơi. Không cần đăng ký, không quảng cáo, mở lên là dùng.</p>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span data-i18n="hero.eyebrow">Free Online Random Suite</span>
+        </div>
+        <h1 id="hero-title">
+          <span data-i18n="hero.title">Random Tools</span><br>
+          <span class="hero-gradient-text" data-i18n="hero.titleAccent">free for everyone</span>
+        </h1>
+        <p data-i18n="hero.description">
+          Name wheel, number picker, slot machine roller and race track — all in one sleek interface. No ads, no signup.
+        </p>
+
         <div class="hero-actions">
-          <a class="button button-primary" href="/spin/"><span data-i18n="hero.primary">Mở vòng quay tên</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></a>
-          <button class="button button-secondary" type="button" data-module-open aria-haspopup="dialog" aria-controls="moduleDialog" aria-expanded="false"><span data-i18n="hero.secondary">Xem tất cả công cụ</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></button>
+          <a class="button button-primary" href="/spin/">
+            <span data-i18n="hero.primary">Open name wheel</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
+          </a>
+          <a class="button button-secondary" href="#tools">
+            <span data-i18n="hero.secondary">View all tools</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg>
+          </a>
         </div>
-        <div class="hero-note"><strong data-i18n="hero.free">Miễn phí trọn đời</strong><span class="hero-note-separator" aria-hidden="true"></span><span data-i18n="hero.private">Dữ liệu nằm trên máy của bạn</span></div>
+
+        <div class="hero-badges">
+          <span class="hero-badge-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span data-i18n="hero.free">100% Free forever</span>
+          </span>
+          <span class="hero-badge-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span data-i18n="hero.private">100% Private local data</span>
+          </span>
+          <span class="hero-badge-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span> Zero ads</span>
+          </span>
+        </div>
       </div>
 
-      <div class="hero-visual" aria-label="Xem trước vòng quay tên" data-i18n-attr="aria-label:hero.previewLabel">
-        <span class="preview-chip preview-chip--top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.1 4.3 4.8.7-3.5 3.4.8 4.8-4.2-2.3-4.2 2.3.8-4.8-3.5-3.4 4.8-.7L12 3Z"/></svg><span data-i18n="preview.noAccount">Không cần đăng ký</span></span>
-        <span class="preview-chip preview-chip--bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.6M20 4v4.6h-4.6M20 12a8 8 0 0 1-13.7 5.7L4 15.4M4 20v-4.6h4.6"/></svg><span data-i18n="preview.resultReady">Quay là có kết quả</span></span>
-        <div class="preview-card">
-          <div class="preview-top"><span class="preview-label" data-i18n="preview.live">Live preview</span><span class="preview-menu" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="preview-stage">
-            <div class="preview-wheel" aria-hidden="true">
-              <span class="preview-pointer"></span>
-              <span class="preview-hub"><img src="assets/img/logo-mark.png" alt=""></span>
+      <!-- Hero Interactive Playground Widget -->
+      <div class="hero-playground-wrapper">
+        <div class="playground-card">
+          <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+          <div class="playground-header">
+            <div class="playground-title-box">
+              <span class="live-badge"><span class="live-badge-dot"></span>LIVE</span>
+              <span class="playground-title-text" data-i18n="preview.live">Interactive Live Demo</span>
             </div>
-            <span class="preview-result"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 2 1.7 3.4 3.8.6-2.8 2.7.7 3.8L8 10.7l-3.4 1.8.7-3.8-2.8-2.7 3.8-.6L8 2Z"/></svg><span><span data-i18n="preview.resultPrefix">Kết quả:</span> <strong data-i18n="preview.resultName">Minh Anh</strong></span></span>
+
+            <div class="playground-tabs" role="tablist">
+              <button class="playground-tab active" data-tab="wheel" type="button">Wheel</button>
+              <button class="playground-tab" data-tab="number" type="button">Number</button>
+              <button class="playground-tab" data-tab="slot" type="button">Slot</button>
+              <button class="playground-tab" data-tab="duck" type="button">Race</button>
+            </div>
           </div>
-          <div class="preview-footer"><div><small data-i18n="preview.status">Đang sẵn sàng</small><strong data-i18n="preview.title">Vòng quay tên</strong></div><a class="preview-link" href="/spin/"><span data-i18n="preview.start">Bắt đầu</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></a></div>
+
+          <div class="playground-body">
+            <!-- Tab 1: Wheel -->
+            <div class="playground-view active" id="demoViewWheel">
+              <div class="wheel-stage">
+                <div class="wheel-pointer"></div>
+                <canvas id="heroWheelCanvas" width="200" height="200"></canvas>
+                <button class="wheel-spin-hub" id="heroSpinBtn" type="button">SPIN</button>
+              </div>
+              <div class="demo-result-bar" id="wheelResultBar">
+                Click <strong>SPIN</strong> to test your luck!
+              </div>
+            </div>
+
+            <!-- Tab 2: Number -->
+            <div class="playground-view" id="demoViewNumber">
+              <div class="number-stage">
+                <div class="number-range-badge">RANGE: 001 — 999</div>
+                <div class="number-display">
+                  <span class="digit" id="d1">0</span>
+                  <span class="digit" id="d2">8</span>
+                  <span class="digit" id="d3">5</span>
+                </div>
+                <button class="button button-primary demo-action-btn" id="heroNumberBtn" type="button">Roll Number</button>
+              </div>
+              <div class="demo-result-bar" id="numberResultBar">
+                100% Fair Random Generator
+              </div>
+            </div>
+
+            <!-- Tab 3: Slot -->
+            <div class="playground-view" id="demoViewSlot">
+              <div class="slot-stage">
+                <div class="slot-reels">
+                  <div class="slot-reel" id="s1">💎</div>
+                  <div class="slot-reel" id="s2">🌟</div>
+                  <div class="slot-reel" id="s3">🔥</div>
+                </div>
+                <button class="button button-primary demo-action-btn" id="heroSlotBtn" type="button">Roll Slot Machine</button>
+              </div>
+              <div class="demo-result-bar" id="slotResultBar">
+                Casino-style slot roller suspense
+              </div>
+            </div>
+
+            <!-- Tab 4: Duck -->
+            <div class="playground-view" id="demoViewDuck">
+              <div class="duck-stage">
+                <div class="duck-track">
+                  <div class="finish-line"></div>
+                  <div class="duck-lane"><span class="duck-avatar" id="duck1">🦆</span><span class="duck-name">Yellow Duck</span></div>
+                  <div class="duck-lane"><span class="duck-avatar" id="duck2">🐥</span><span class="duck-name">Green Duck</span></div>
+                  <div class="duck-lane"><span class="duck-avatar" id="duck3">🦤</span><span class="duck-name">Pink Duck</span></div>
+                </div>
+                <button class="button button-primary demo-action-btn" id="heroDuckBtn" type="button">Start Race</button>
+              </div>
+              <div class="demo-result-bar" id="duckResultBar">
+                Online race track supporting up to 3,000 racers
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="module-launcher" id="tools" aria-labelledby="tools-title">
-      <div><p class="section-kicker" data-i18n="tools.kicker">Chọn công cụ</p><h2 id="tools-title"><span data-i18n="tools.title">Mỗi tình huống,</span><br><span data-i18n="tools.titleAccent">một cách quay.</span></h2><p data-i18n="tools.description">Gom các module vào một bảng chọn gọn để bạn mở đúng công cụ chỉ trong một lần bấm.</p></div>
-      <button class="button button-primary module-open-button" id="moduleOpenButton" type="button" data-module-open aria-haspopup="dialog" aria-controls="moduleDialog" aria-expanded="false"><span data-i18n="tools.button">Chọn công cụ</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></button>
-    </section>
-
-    <div class="module-modal" id="moduleDialog" hidden aria-hidden="true">
-      <div class="module-backdrop" data-module-close></div>
-      <section class="module-panel" role="dialog" aria-modal="true" aria-labelledby="moduleDialogTitle" aria-describedby="moduleDialogSubtitle">
-        <div class="module-panel-header">
-          <div><p class="module-kicker" data-i18n="modal.kicker">Chọn module</p><h2 id="moduleDialogTitle" data-i18n="modal.title">Mở nhanh công cụ</h2><p class="module-panel-subtitle" id="moduleDialogSubtitle" data-i18n="modal.subtitle">Đi thẳng đến công cụ bạn đang cần.</p></div>
-          <button class="module-close" id="moduleCloseButton" type="button" aria-label="Đóng" data-i18n-attr="aria-label:common.close" data-module-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <!-- Trust Strip -->
+    <section class="trust-strip" aria-label="Highlights">
+      <div class="trust-card">
+        <div class="icon-badge trust-badge-ready">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
         </div>
-      <div class="module-grid">
-        <a class="tool-card tool-card--featured" data-c="spin" href="/spin/">
-          <span class="card-number">01 / 05</span>
-          <div class="tool-card-heading"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v3M20.5 12h-3M12 20.5v-3M3.5 12h3M12 12l4.2-4.2"/><circle cx="12" cy="12" r="1.7"/></svg></span><span class="card-label" data-i18n="card.spin.label">Phổ biến nhất</span></div>
-          <h3 data-i18n="card.spin.title">Vòng quay tên</h3>
-          <p data-i18n="card.spin.description">Nhập danh sách, bấm quay và để may mắn chọn người thắng. Hợp cho lớp học, sự kiện, giveaway và livestream.</p>
-          <span class="card-link"><span data-i18n="card.spin.link">Mở vòng quay</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></span>
-          <span class="featured-wheel" aria-hidden="true"><span class="featured-wheel-hub"></span></span>
-        </a>
-        <a class="tool-card" data-c="number" href="/number/">
-          <span class="card-number">02 / 05</span><div class="tool-card-heading"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 6 21M18 3l-2 18M3 9h18M2 15h18"/></svg></span><span class="card-label" data-i18n="card.number.label">Nhanh gọn</span></div><h3 data-i18n="card.number.title">Quay số ngẫu nhiên</h3><p data-i18n="card.number.description">Xổ số nội bộ, bốc thăm giải thưởng, chọn số may mắn — tuỳ chỉnh theo ý bạn.</p><span class="card-link"><span data-i18n="card.number.link">Mở quay số</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></span>
-        </a>
-        <a class="tool-card" data-c="range" href="/range/">
-          <span class="card-number">03 / 05</span><div class="tool-card-heading"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/><circle cx="8" cy="7" r="1.5"/><circle cx="16" cy="12" r="1.5"/><circle cx="10" cy="17" r="1.5"/></svg></span><span class="card-label" data-i18n="card.range.label">Tuỳ khoảng</span></div><h3 data-i18n="card.range.title">Chọn số trong khoảng</h3><p data-i18n="card.range.description">Chọn một số ngẫu nhiên trong khoảng bất kỳ, từ 1–100 đến 1–1000.</p><span class="card-link"><span data-i18n="card.range.link">Mở chọn số</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></span>
-        </a>
-        <a class="tool-card" data-c="roller" href="/roller/">
-          <span class="card-number">04 / 05</span><div class="tool-card-heading"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="4.5" height="14" rx="1"/><rect x="9.75" y="5" width="4.5" height="14" rx="1"/><rect x="15.5" y="5" width="4.5" height="14" rx="1"/><path d="M6.25 9h.01M12 15h.01M17.75 11h.01"/></svg></span><span class="card-label" data-i18n="card.roller.label">Hồi hộp</span></div><h3 data-i18n="card.roller.title">Con lăn slot machine</h3><p data-i18n="card.roller.description">Cuộn nhiều cột song song kiểu slot machine, tạo nhịp hồi hộp cho mỗi lượt chọn.</p><span class="card-link"><span data-i18n="card.roller.link">Mở con lăn</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></span>
-        </a>
-        <a class="tool-card" data-c="duck" href="/duck/">
-          <span class="card-number">05 / 05</span><div class="tool-card-heading"><span class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 14.5c0-2.5 1.8-4.3 4.4-4.3 1.1 0 2.1.3 2.9.9.6-1.4 1.8-2.3 3.5-2.3 2.2 0 3.7 1.4 3.7 3.5 0 1.1-.4 2-.9 2.7h1.9c.8 0 1.5.6 1.5 1.4s-.7 1.4-1.5 1.4H8.3C6.4 17.8 5 16.4 5 14.5Z"/><circle cx="16" cy="11.8" r=".7" fill="currentColor" stroke="none"/><path d="M8 18.2v1.4M16 18.2v1.4"/></svg></span><span class="card-label" data-i18n="card.duck.label">Cho sự kiện</span></div><h3 data-i18n="card.duck.title">Đường đua</h3><p data-i18n="card.duck.description">Đua online cho tối đa 3.000 người — vui, trực quan và dễ dùng trong sự kiện.</p><span class="card-link"><span data-i18n="card.duck.link">Mở đường đua</span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></span>
-        </a>
+        <div class="trust-info">
+          <strong data-i18n="trust.ready">Instant Use</strong>
+          <span data-i18n="trust.readyText">No account needed</span>
+        </div>
       </div>
-      </section>
-    </div>
 
-    <section class="trust-strip" aria-label="Điểm nổi bật" data-i18n-attr="aria-label:trust.label">
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong data-i18n="trust.ready">Dùng ngay</strong><span data-i18n="trust.readyText">Không cần tạo tài khoản</span></div></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 2.9 8.3 7 10 4.1-1.7 7-5.6 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg><div><strong data-i18n="trust.private">Riêng tư</strong><span data-i18n="trust.privateText">Dữ liệu lưu trên máy bạn</span></div></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M8 11h8M8 15h5"/></svg><div><strong data-i18n="trust.free">Miễn phí</strong><span data-i18n="trust.freeText">Không quảng cáo chen ngang</span></div></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m8 10 3 2-3 2M13 14h3"/></svg><div><strong data-i18n="trust.obs">Sẵn sàng cho OBS</strong><span data-i18n="trust.obsText">Chia sẻ dễ dàng qua QR</span></div></div>
+      <div class="trust-card">
+        <div class="icon-badge trust-badge-private">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="trust-info">
+          <strong data-i18n="trust.private">100% Private</strong>
+          <span data-i18n="trust.privateText">Data stays on your device</span>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <div class="icon-badge trust-badge-free">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <div class="trust-info">
+          <strong data-i18n="trust.free">Free Forever</strong>
+          <span data-i18n="trust.freeText">Zero interrupting ads</span>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <div class="icon-badge trust-badge-obs">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="3"/>
+            <path d="M8 21h8M12 17v4"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="trust-info">
+          <strong data-i18n="trust.obs">OBS Stream Ready</strong>
+          <span data-i18n="trust.obsText">1-click transparent overlay</span>
+        </div>
+      </div>
     </section>
 
-    <section class="benefits" aria-labelledby="benefits-title">
-      <div class="benefits-lead"><p class="section-kicker" data-i18n="benefits.kicker">Được thiết kế để dùng thật</p><h2 id="benefits-title"><span data-i18n="benefits.title">Ít thao tác.</span><br><span data-i18n="benefits.titleAccent">Nhiều niềm vui.</span></h2><p data-i18n="benefits.description">Tập trung vào khoảnh khắc cần kết quả — từ một lượt chọn nhanh đến cả chương trình livestream.</p></div>
-      <div class="benefits-grid">
-        <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.6M20 4v4.6h-4.6M20 12a8 8 0 0 1-13.7 5.7L4 15.4M4 20v-4.6h4.6"/></svg></span><div><h3 data-i18n="benefit.tts.title">Đọc tên bằng TTS</h3><p data-i18n="benefit.tts.description">Đọc to kết quả bằng giọng tiếng Việt hoặc tiếng Anh.</p></div></div>
-        <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m8 10 3 2-3 2M13 14h3"/></svg></span><div><h3 data-i18n="benefit.obs.title">Overlay OBS</h3><p data-i18n="benefit.obs.description">Nền trong suốt, nhúng làm Browser Source cho livestream.</p></div></div>
-        <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h5M8 16h6"/></svg></span><div><h3 data-i18n="benefit.sessions.title">Lưu sessions</h3><p data-i18n="benefit.sessions.description">Ghi và tải lại kịch bản vòng quay cho lần sau.</p></div></div>
-        <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 14 9l6 2-6 2-2 6-2-6-6-2 6-2 2-6Z"/></svg></span><div><h3 data-i18n="benefit.palette.title">Nhiều bảng màu</h3><p data-i18n="benefit.palette.description">Google, pastel, neon, monochrome — tuỳ chọn theo mood.</p></div></div>
-        <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 12h8M8 17h4"/></svg></span><div><h3 data-i18n="benefit.qr.title">Chia sẻ bằng QR</h3><p data-i18n="benefit.qr.description">Tạo mã QR để người xem mở vòng quay chỉ bằng một lần quét.</p></div></div>
-        <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><div><h3 data-i18n="benefit.theme.title">Sáng / Tối</h3><p data-i18n="benefit.theme.description">Chuyển chế độ sáng tối để phù hợp không gian sử dụng.</p></div></div>
+    <!-- Core Tools Section -->
+    <section class="tools-section" id="tools" aria-labelledby="tools-title">
+      <div class="section-header">
+        <span class="section-kicker" data-i18n="tools.kicker">TOOL SUITE</span>
+        <h2 class="section-title" id="tools-title">
+          <span data-i18n="tools.title">One situation,</span><br>
+          <span data-i18n="tools.titleAccent">one professional way to spin.</span>
+        </h2>
+        <p class="section-desc" data-i18n="tools.description">Choose the exact tool you need to create excitement and guarantee fair results.</p>
+      </div>
+
+      <div class="tools-grid">
+        <!-- Tool 1: Wheel -->
+        <a class="tool-card tool-card-featured" href="/spin/">
+          <div class="tool-card-top">
+            <div class="tool-illustration-badge tool-badge-wheel">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/>
+                <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="tool-tag" data-i18n="card.spin.label">MOST POPULAR</span>
+          </div>
+          <h3 data-i18n="card.spin.title">Random Name Wheel</h3>
+          <p data-i18n="card.spin.description">Enter names, spin the wheel and pick a winner. Perfect for classrooms, giveaways, events and streams.</p>
+          <div class="tool-card-cta">
+            <span data-i18n="card.spin.link">Open name wheel</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
+          </div>
+        </a>
+
+        <!-- Tool 2: Number -->
+        <a class="tool-card" href="/number/">
+          <div class="tool-card-top">
+            <div class="tool-illustration-badge tool-badge-number">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="4"/>
+                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                <circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"/>
+                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                <circle cx="8.5" cy="15.5" r="1.5" fill="currentColor"/>
+                <circle cx="15.5" cy="15.5" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="tool-tag" style="background: rgba(139, 92, 246, 0.1); color: var(--purple);" data-i18n="card.number.label">QUICK PICK</span>
+          </div>
+          <h3 data-i18n="card.number.title">Random Number Picker</h3>
+          <p data-i18n="card.number.description">Internal raffles, lucky draw numbers — customizable digit lengths and non-repeating picks.</p>
+          <div class="tool-card-cta">
+            <span data-i18n="card.number.link">Open number picker</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
+          </div>
+        </a>
+
+        <!-- Tool 3: Range -->
+        <a class="tool-card" href="/range/">
+          <div class="tool-card-top">
+            <div class="tool-illustration-badge tool-badge-range">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 12h16M4 6h16M4 18h16"/>
+                <circle cx="8" cy="6" r="2.5" fill="currentColor"/>
+                <circle cx="16" cy="12" r="2.5" fill="currentColor"/>
+                <circle cx="10" cy="18" r="2.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="tool-tag" style="background: rgba(13, 148, 136, 0.1); color: var(--teal);" data-i18n="card.range.label">ANY RANGE</span>
+          </div>
+          <h3 data-i18n="card.range.title">Pick from a Range</h3>
+          <p data-i18n="card.range.description">Draw a random number from any Min to Max range (e.g., 1–100 or 1–1000).</p>
+          <div class="tool-card-cta">
+            <span data-i18n="card.range.link">Open range picker</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
+          </div>
+        </a>
+
+        <!-- Tool 4: Roller -->
+        <a class="tool-card" href="/roller/">
+          <div class="tool-card-top">
+            <div class="tool-illustration-badge tool-badge-slot">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="3"/>
+                <line x1="8" y1="4" x2="8" y2="20"/>
+                <line x1="16" y1="4" x2="16" y2="20"/>
+                <path d="M4.5 12h3.5M12.5 12h3.5M16.5 12h3.5"/>
+              </svg>
+            </div>
+            <span class="tool-tag" style="background: rgba(245, 188, 44, 0.15); color: #d99b00;" data-i18n="card.roller.label">SUSPENSE</span>
+          </div>
+          <h3 data-i18n="card.roller.title">Slot Machine Roller</h3>
+          <p data-i18n="card.roller.description">Roll parallel columns casino-style to build suspense for every result.</p>
+          <div class="tool-card-cta">
+            <span data-i18n="card.roller.link">Open slot roller</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
+          </div>
+        </a>
+
+        <!-- Tool 5: Duck Race -->
+        <a class="tool-card" href="/duck/">
+          <div class="tool-card-top">
+            <div class="tool-illustration-badge tool-badge-duck">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1M4 19s1-1 4-1 5 2 8 2 4-1 4-1"/>
+                <path d="M10 10c0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.5-.8 2.8-2 3.5"/>
+                <circle cx="16" cy="8" r="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="tool-tag" style="background: rgba(232, 85, 73, 0.1); color: var(--coral);" data-i18n="card.duck.label">FOR EVENTS</span>
+          </div>
+          <h3 data-i18n="card.duck.title">Random Duck Race</h3>
+          <p data-i18n="card.duck.description">An exciting online race supporting up to 3,000 racers. Great for corporate events.</p>
+          <div class="tool-card-cta">
+            <span data-i18n="card.duck.link">Open race track</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
+          </div>
+        </a>
       </div>
     </section>
 
-    <section class="faq" aria-labelledby="faq-title">
-      <div class="faq-lead"><p class="section-kicker" data-i18n="faq.kicker">Câu hỏi thường gặp</p><h2 id="faq-title"><span data-i18n="faq.title">Bạn hỏi,</span><br><span data-i18n="faq.titleAccent">chúng tôi trả lời.</span></h2><p data-i18n="faq.description">Vẫn còn phân vân? Những điều quan trọng nhất đều ở đây.</p></div>
+    <!-- Features Matrix -->
+    <section class="features-section" aria-labelledby="benefits-title">
+      <div class="section-header">
+        <span class="section-kicker" data-i18n="benefits.kicker">PRO FEATURES</span>
+        <h2 class="section-title" id="benefits-title">
+          <span data-i18n="benefits.title">Built for real users.</span><br>
+          <span style="color: var(--blue);" data-i18n="benefits.titleAccent">Fast, smooth &amp; versatile.</span>
+        </h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="icon-badge feature-badge-tts">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              <line x1="12" y1="19" x2="12" y2="22"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 data-i18n="benefit.tts.title">TTS Voice Reader</h4>
+            <p data-i18n="benefit.tts.description">Automatically reads winning names aloud in clear natural voice.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon-badge feature-badge-obs">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="3"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 data-i18n="benefit.obs.title">OBS Overlay Mode</h4>
+            <p data-i18n="benefit.obs.description">Transparent backgrounds ready to embed as OBS Browser Source.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon-badge feature-badge-sessions">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+              <polyline points="7 3 7 8 15 8"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 data-i18n="benefit.sessions.title">Save &amp; Load Preset Lists</h4>
+            <p data-i18n="benefit.sessions.description">Save class rosters and event names for quick re-use anytime.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon-badge feature-badge-palette">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.7-.75 1.7-1.7 0-.42-.16-.82-.44-1.12-.27-.29-.44-.7-.44-1.14 0-.93.75-1.69 1.69-1.69H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9z"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 data-i18n="benefit.palette.title">Rich Color Themes</h4>
+            <p data-i18n="benefit.palette.description">Google, Pastel, Neon and Casino Gold color themes for your mood.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon-badge feature-badge-qr">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 data-i18n="benefit.qr.title">Share via QR Code</h4>
+            <p data-i18n="benefit.qr.description">Generate instant QR codes so viewers can join on their smartphones.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="icon-badge feature-badge-theme">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4 data-i18n="benefit.theme.title">Light &amp; Dark Themes</h4>
+            <p data-i18n="benefit.theme.description">Eye-friendly dark theme tailored for night streams and low light.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="section-header">
+        <span class="section-kicker" data-i18n="faq.kicker">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="section-title" id="faq-title">
+          <span data-i18n="faq.title">Have questions?</span><br>
+          <span data-i18n="faq.titleAccent">We have answers.</span>
+        </h2>
+      </div>
+
       <div class="faq-list">
-        <details><summary data-i18n="faq.free.question">Spin &amp; Win có miễn phí không?</summary><p data-i18n="faq.free.answer">Có. Tất cả công cụ đều miễn phí, không cần đăng ký tài khoản, không quảng cáo, không giới hạn số lần sử dụng.</p></details>
-        <details><summary data-i18n="faq.obs.question">Có thể dùng cho livestream OBS / Streamlabs không?</summary><p data-i18n="faq.obs.answer">Có. Mỗi trang đều hỗ trợ chế độ overlay nền trong suốt. Thêm URL vào Browser Source của OBS/Streamlabs là dùng được ngay.</p></details>
-        <details><summary data-i18n="faq.limit.question">Is there a participant limit?</summary><p data-i18n="faq.limit.answer">Vòng quay tên và các mode khác không giới hạn thực tế. Riêng chế độ Đường Đua hỗ trợ tối đa 3.000 người cùng lúc.</p></details>
-        <details><summary data-i18n="faq.random.question">Kết quả có ngẫu nhiên công bằng không?</summary><p data-i18n="faq.random.answer">Có. Chúng tôi dùng thuật toán Math.random của trình duyệt — cùng nguyên lý với hầu hết công cụ ngẫu nhiên online. Không có gian lận, không thiên vị người tạo.</p></details>
-        <details><summary data-i18n="faq.data.question">Is my data stored on your servers?</summary><p data-i18n="faq.data.answer">Không. Toàn bộ danh sách và cấu hình đều lưu trong trình duyệt của bạn (localStorage). Chúng tôi không gửi dữ liệu lên server, không thu thập thông tin cá nhân.</p></details>
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span data-i18n="faq.free.question">Is Spin &amp; Win completely free?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer" data-i18n="faq.free.answer">
+            Yes! All 5 toolsets on Spin &amp; Win are 100% free with no registration and no ads.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span data-i18n="faq.obs.question">Can I use it on OBS / Streamlabs livestreams?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer" data-i18n="faq.obs.answer">
+            Yes! Every tool includes a transparent overlay toggle button. Copy the URL into your OBS Browser Source.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span data-i18n="faq.limit.question">Is there a participant limit?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer" data-i18n="faq.limit.answer">
+            Name wheels have no practical limit. Race track supports up to 3,000 racers simultaneously.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span data-i18n="faq.random.question">Are results truly random and fair?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer" data-i18n="faq.random.answer">
+            Yes! We use standard browser Math.random. There is no hidden bias or rigging.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span data-i18n="faq.data.question">Is my wheel data stored on a server?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer" data-i18n="faq.data.answer">
+            No. All lists and settings stay inside your local browser storage (localStorage). Privacy guaranteed.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Public Usage Policy -->
+    <section class="policy-public-section" id="usage-policy" aria-labelledby="usage-policy-title">
+      <div class="section-header">
+        <span class="section-kicker" data-i18n="policy.kicker">USAGE RULES</span>
+        <h2 class="section-title" id="usage-policy-title" data-i18n="policy.title">Spin &amp; Win usage rules</h2>
+        <p class="section-desc" data-i18n="policy.lead">Please read the principles below. You can continue using the website whether you agree or disagree with this content.</p>
+      </div>
+
+      <div class="policy-public-card">
+        <div class="policy-public-grid">
+          <article class="policy-public-item">
+            <span class="policy-public-number" aria-hidden="true">01</span>
+            <div><h3 data-i18n="policy.purposeTitle">1. Purpose of use</h3><p data-i18n="policy.purposeText">Spin &amp; Win is provided for entertainment, random picker, drawing, team splitting and other lawful activities.</p></div>
+          </article>
+          <article class="policy-public-item">
+            <span class="policy-public-number" aria-hidden="true">02</span>
+            <div><h3 data-i18n="policy.prohibitedTitle">2. Prohibited use</h3><p data-i18n="policy.prohibitedText">Do not use the website for unlawful conduct, gambling, cash betting, prize exchange, disguised lottery or gambling; do not cheat, defraud or falsify results.</p></div>
+          </article>
+          <article class="policy-public-item">
+            <span class="policy-public-number" aria-hidden="true">03</span>
+            <div><h3 data-i18n="policy.responsibilityTitle">3. User responsibility</h3><p data-i18n="policy.responsibilityText">Users are responsible for their purpose of use, submitted content and the right to use names, images, audio or data belonging to third parties.</p></div>
+          </article>
+          <article class="policy-public-item">
+            <span class="policy-public-number" aria-hidden="true">04</span>
+            <div><h3 data-i18n="policy.resultTitle">4. Results and decisions</h3><p data-i18n="policy.resultText">Random results only support entertainment and event operations. Verify the result yourself and take responsibility before using it for an important decision.</p></div>
+          </article>
+          <article class="policy-public-item">
+            <span class="policy-public-number" aria-hidden="true">05</span>
+            <div><h3 data-i18n="policy.ownerTitle">5. Website owner rights</h3><p data-i18n="policy.ownerText">The website owner may change these rules, refuse support, restrict or stop access, and remove content that appears to violate the rules or abuse the service.</p></div>
+          </article>
+          <article class="policy-public-item">
+            <span class="policy-public-number" aria-hidden="true">06</span>
+            <div><h3 data-i18n="policy.disclaimerTitle">6. Liability limits</h3><p data-i18n="policy.disclaimerText">To the extent permitted by law, the website owner is not responsible for misuse, disputes between parties, user-submitted content, or interruptions caused by devices, browsers, networks or external services.</p></div>
+          </article>
+          <article class="policy-public-item">
+            <span class="policy-public-number" aria-hidden="true">07</span>
+            <div><h3 data-i18n="policy.dataTitle">7. Browser data</h3><p data-i18n="policy.dataText">Configuration and operational data may be stored locally in the browser. Users are responsible for shared devices, clearing browser data or losing local data.</p></div>
+          </article>
+          <article class="policy-public-item">
+            <span class="policy-public-number" aria-hidden="true">08</span>
+            <div><h3 data-i18n="policy.updateTitle">8. Rule updates</h3><p data-i18n="policy.updateText">These rules may be updated when needed. New content will be shown in this section for users to review.</p></div>
+          </article>
+        </div>
+        <p class="policy-public-footer" data-i18n="policy.footer">These rules are an on-screen usage notice and do not replace professional legal review.</p>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <div><p data-i18n="footer.disclaimer">© 2026 Spin &amp; Win — Công cụ giải trí, không dành cho cá cược.</p><p data-i18n="footer.tagline">Quay một vòng. Chọn một điều vui.</p></div>
-    <p><a href="/spin/" data-i18n="nav.wheel">Vòng quay tên</a> · <a href="/number/" data-i18n="nav.number">Quay số</a> · <a href="/range/" data-i18n="nav.range">Chọn số</a> · <a href="/roller/" data-i18n="nav.roller">Con lăn</a> · <a href="/duck/" data-i18n="nav.duck">Đường đua</a></p>
+    <div>
+      <p data-i18n="footer.disclaimer">© 2026 Spin &amp; Win — Free random &amp; entertainment tools.</p>
+      <p data-i18n="footer.tagline" style="margin-top: 4px; opacity: 0.8;">Spin once. Choose something fun.</p>
+    </div>
+    <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+      <a href="/spin/" data-i18n="nav.wheel">Name wheel</a>
+      <a href="/number/" data-i18n="nav.number">Number picker</a>
+      <a href="/range/" data-i18n="nav.range">Range picker</a>
+      <a href="/roller/" data-i18n="nav.roller">Slot roller</a>
+      <a href="/duck/" data-i18n="nav.duck">Race track</a>
+      <a href="#usage-policy" data-i18n="footer.policy">Usage rules</a>
+    </div>
   </footer>
 
 </div>
+
+<!-- Scripts -->
 <script>
   (() => {
+    // 1. Language & Theme Engine
     const HOME_PREFS_KEY = 'spinwin-home-preferences-v1';
     const HOME_I18N = {
+      en: {
+        'meta.title':'Spin & Win — Free Lucky Wheel & Random Picker Suite',
+        'meta.description':'Free online random toolset: name wheel, number picker, range picker, slot roller and random race track.',
+        'nav.wheel':'Name wheel', 'nav.number':'Number picker', 'nav.range':'Range picker', 'nav.roller':'Slot roller', 'nav.duck':'Race track', 'nav.cta':'Try now',
+        'hero.eyebrow':'Free Online Random Suite', 'hero.title':'Random Tools', 'hero.titleAccent':'free for everyone',
+        'hero.description':'Name wheel, number picker, slot machine roller and race track — all in one sleek interface. No ads, no signup.',
+        'hero.primary':'Open name wheel', 'hero.secondary':'View all tools', 'hero.free':'100% Free forever', 'hero.private':'100% Private local data',
+        'preview.live':'Interactive Live Demo',
+        'tools.kicker':'TOOL SUITE', 'tools.title':'One situation,', 'tools.titleAccent':'one professional way to spin.', 'tools.description':'Choose the exact tool you need to create excitement and guarantee fair results.',
+        'card.spin.label':'MOST POPULAR', 'card.spin.title':'Random Name Wheel', 'card.spin.description':'Enter names, spin the wheel and pick a winner. Perfect for classrooms, giveaways, events and streams.', 'card.spin.link':'Open name wheel',
+        'card.number.label':'QUICK PICK', 'card.number.title':'Random Number Picker', 'card.number.description':'Internal raffles, lucky draw numbers — customizable digit lengths and non-repeating picks.', 'card.number.link':'Open number picker',
+        'card.range.label':'ANY RANGE', 'card.range.title':'Pick from a Range', 'card.range.description':'Draw a random number from any Min to Max range (e.g., 1–100 or 1–1000).', 'card.range.link':'Open range picker',
+        'card.roller.label':'SUSPENSE', 'card.roller.title':'Slot Machine Roller', 'card.roller.description':'Roll parallel columns casino-style to build suspense for every result.', 'card.roller.link':'Open slot roller',
+        'card.duck.label':'FOR EVENTS', 'card.duck.title':'Random Duck Race', 'card.duck.description':'An exciting online race supporting up to 3,000 racers. Great for corporate events.', 'card.duck.link':'Open race track',
+        'trust.ready':'Instant Use', 'trust.readyText':'No account needed', 'trust.private':'100% Private', 'trust.privateText':'Data stays on your device', 'trust.free':'Free Forever', 'trust.freeText':'Zero interrupting ads', 'trust.obs':'OBS Stream Ready', 'trust.obsText':'1-click transparent overlay',
+        'benefits.kicker':'PRO FEATURES', 'benefits.title':'Built for real users.', 'benefits.titleAccent':'Fast, smooth & versatile.',
+        'benefit.tts.title':'TTS Voice Reader', 'benefit.tts.description':'Automatically reads winning names aloud in clear natural voice.',
+        'benefit.obs.title':'OBS Overlay Mode', 'benefit.obs.description':'Transparent backgrounds ready to embed as OBS Browser Source.',
+        'benefit.sessions.title':'Save & Load Preset Lists', 'benefit.sessions.description':'Save class rosters and event names for quick re-use anytime.',
+        'benefit.palette.title':'Rich Color Themes', 'benefit.palette.description':'Google, Pastel, Neon and Casino Gold color themes for your mood.',
+        'benefit.qr.title':'Share via QR Code', 'benefit.qr.description':'Generate instant QR codes so viewers can join on their smartphones.',
+        'benefit.theme.title':'Light & Dark Themes', 'benefit.theme.description':'Eye-friendly dark theme tailored for night streams and low light.',
+        'faq.kicker':'FREQUENTLY ASKED QUESTIONS', 'faq.title':'Have questions?', 'faq.titleAccent':'We have answers.',
+        'faq.free.question':'Is Spin & Win completely free?', 'faq.free.answer':'Yes! All 5 toolsets on Spin & Win are 100% free with no registration and no ads.',
+        'faq.obs.question':'Can I use it on OBS / Streamlabs livestreams?', 'faq.obs.answer':'Yes! Every tool includes a transparent overlay toggle button. Copy the URL into your OBS Browser Source.',
+        'faq.limit.question':'Is there a participant limit?', 'faq.limit.answer':'Name wheels have no practical limit. Race track supports up to 3,000 racers simultaneously.',
+        'faq.random.question':'Are results truly random and fair?', 'faq.random.answer':'Yes! We use standard browser Math.random. There is no hidden bias or rigging.',
+        'faq.data.question':'Is my wheel data stored on a server?', 'faq.data.answer':'No. All lists and settings stay inside your local browser storage (localStorage). Privacy guaranteed.',
+        'policy.kicker':'USAGE RULES', 'policy.title':'Spin & Win usage rules', 'policy.lead':'Please read the principles below. You can continue using the website whether you agree or disagree with this content.', 'policy.purposeTitle':'1. Purpose of use', 'policy.purposeText':'Spin & Win is provided for entertainment, random picker, drawing, team splitting and other lawful activities.', 'policy.prohibitedTitle':'2. Prohibited use', 'policy.prohibitedText':'Do not use the website for unlawful conduct, gambling, cash betting, prize exchange, disguised lottery or gambling; do not cheat, defraud or falsify results.', 'policy.responsibilityTitle':'3. User responsibility', 'policy.responsibilityText':'Users are responsible for their purpose of use, submitted content and the right to use names, images, audio or data belonging to third parties.', 'policy.resultTitle':'4. Results and decisions', 'policy.resultText':'Random results only support entertainment and event operations. Verify the result yourself and take responsibility before using it for an important decision.', 'policy.ownerTitle':'5. Website owner rights', 'policy.ownerText':'The website owner may change these rules, refuse support, restrict or stop access, and remove content that appears to violate the rules or abuse the service.', 'policy.disclaimerTitle':'6. Liability limits', 'policy.disclaimerText':'To the extent permitted by law, the website owner is not responsible for misuse, disputes between parties, user-submitted content, or interruptions caused by devices, browsers, networks or external services.', 'policy.dataTitle':'7. Browser data', 'policy.dataText':'Configuration and operational data may be stored locally in the browser. Users are responsible for shared devices, clearing browser data or losing local data.', 'policy.updateTitle':'8. Rule updates', 'policy.updateText':'These rules may be updated when needed. New content will be shown in this section for users to review.', 'policy.footer':'These rules are an on-screen usage notice and do not replace professional legal review.',
+        'footer.disclaimer':'© 2026 Spin & Win — Free random & entertainment tools.', 'footer.tagline':'Spin once. Choose something fun.', 'footer.policy':'Usage rules'
+      },
       vi: {
         'meta.title':'Spin & Win — Vòng Quay May Mắn & Bốc Thăm Ngẫu Nhiên Miễn Phí',
-        'meta.description':'Spin & Win — bộ công cụ vòng quay may mắn miễn phí online: vòng quay tên, quay số ngẫu nhiên, chọn 1 số trong khoảng, con lăn slot machine và đường đua. Không cần đăng ký, dùng ngay trên trình duyệt.',
-        'meta.ogTitle':'Spin & Win — Vòng Quay May Mắn & Bốc Thăm Ngẫu Nhiên Miễn Phí',
-        'meta.ogDescription':'Bộ công cụ ngẫu nhiên miễn phí: vòng quay tên, quay số, con lăn slot, đường đua. Không cần đăng ký.',
-        'language.label':'Ngôn ngữ', 'nav.label':'Menu chính', 'controls.label':'Cài đặt trang chủ',
+        'meta.description':'Bộ công cụ ngẫu nhiên miễn phí: vòng quay tên, quay số ngẫu nhiên, chọn số trong khoảng, con lăn slot machine và đường đua ngẫu nhiên.',
         'nav.wheel':'Vòng quay tên', 'nav.number':'Quay số', 'nav.range':'Chọn số', 'nav.roller':'Con lăn', 'nav.duck':'Đường đua', 'nav.cta':'Thử ngay',
-        'theme.label':'Sáng / Tối', 'theme.toLight':'Chuyển sang giao diện sáng', 'theme.toDark':'Chuyển sang giao diện tối', 'common.close':'Đóng',
-        'hero.eyebrow':'Bộ công cụ ngẫu nhiên online', 'hero.title':'Bộ công cụ', 'hero.titleAccent':'ngẫu nhiên miễn phí.',
-        'hero.description':'Vòng quay may mắn, bốc thăm, chọn số, con lăn và đường đua — tất cả trong một nơi. Không cần đăng ký, không quảng cáo, mở lên là dùng.',
-        'hero.primary':'Mở vòng quay tên', 'hero.secondary':'Xem tất cả công cụ', 'hero.free':'Miễn phí trọn đời', 'hero.private':'Dữ liệu nằm trên máy của bạn', 'hero.previewLabel':'Xem trước vòng quay tên',
-        'preview.noAccount':'Không cần đăng ký', 'preview.resultReady':'Quay là có kết quả', 'preview.live':'Live preview', 'preview.resultPrefix':'Kết quả:', 'preview.resultName':'Minh Anh', 'preview.status':'Đang sẵn sàng', 'preview.title':'Vòng quay tên', 'preview.start':'Bắt đầu',
-        'tools.kicker':'Chọn công cụ', 'tools.title':'Mỗi tình huống,', 'tools.titleAccent':'một cách quay.', 'tools.description':'Gom các module vào một bảng chọn gọn để bạn mở đúng công cụ chỉ trong một lần bấm.', 'tools.button':'Chọn công cụ',
-        'modal.kicker':'Chọn module', 'modal.title':'Mở nhanh công cụ', 'modal.subtitle':'Đi thẳng đến công cụ bạn đang cần.',
-        'card.spin.label':'Phổ biến nhất', 'card.spin.title':'Vòng quay tên', 'card.spin.description':'Nhập danh sách, bấm quay và để may mắn chọn người thắng. Hợp cho lớp học, sự kiện, giveaway và livestream.', 'card.spin.link':'Mở vòng quay',
-        'card.number.label':'Nhanh gọn', 'card.number.title':'Quay số ngẫu nhiên', 'card.number.description':'Xổ số nội bộ, bốc thăm giải thưởng, chọn số may mắn — tuỳ chỉnh theo ý bạn.', 'card.number.link':'Mở quay số',
-        'card.range.label':'Tuỳ khoảng', 'card.range.title':'Chọn số trong khoảng', 'card.range.description':'Chọn một số ngẫu nhiên trong khoảng bất kỳ, từ 1–100 đến 1–1000.', 'card.range.link':'Mở chọn số',
-        'card.roller.label':'Hồi hộp', 'card.roller.title':'Con lăn slot machine', 'card.roller.description':'Cuộn nhiều cột song song kiểu slot machine, tạo nhịp hồi hộp cho mỗi lượt chọn.', 'card.roller.link':'Mở con lăn',
-        'card.duck.label':'Cho sự kiện', 'card.duck.title':'Đường đua', 'card.duck.description':'Đua online cho tối đa 3.000 người — vui, trực quan và dễ dùng trong sự kiện.', 'card.duck.link':'Mở đường đua',
-        'trust.label':'Điểm nổi bật', 'trust.ready':'Dùng ngay', 'trust.readyText':'Không cần tạo tài khoản', 'trust.private':'Riêng tư', 'trust.privateText':'Dữ liệu lưu trên máy bạn', 'trust.free':'Miễn phí', 'trust.freeText':'Không quảng cáo chen ngang', 'trust.obs':'Sẵn sàng cho OBS', 'trust.obsText':'Chia sẻ dễ dàng qua QR',
-        'benefits.kicker':'Được thiết kế để dùng thật', 'benefits.title':'Ít thao tác.', 'benefits.titleAccent':'Nhiều niềm vui.', 'benefits.description':'Tập trung vào khoảnh khắc cần kết quả — từ một lượt chọn nhanh đến cả chương trình livestream.',
-        'benefit.tts.title':'Đọc tên bằng TTS', 'benefit.tts.description':'Đọc to kết quả bằng giọng tiếng Việt hoặc tiếng Anh.', 'benefit.obs.title':'Overlay OBS', 'benefit.obs.description':'Nền trong suốt, nhúng làm Browser Source cho livestream.', 'benefit.sessions.title':'Lưu sessions', 'benefit.sessions.description':'Ghi và tải lại kịch bản vòng quay cho lần sau.', 'benefit.palette.title':'Nhiều bảng màu', 'benefit.palette.description':'Google, pastel, neon, monochrome — tuỳ chọn theo mood.', 'benefit.qr.title':'Chia sẻ bằng QR', 'benefit.qr.description':'Tạo mã QR để người xem mở vòng quay chỉ bằng một lần quét.', 'benefit.theme.title':'Sáng / Tối', 'benefit.theme.description':'Chuyển chế độ sáng tối để phù hợp không gian sử dụng.',
-        'faq.kicker':'Câu hỏi thường gặp', 'faq.title':'Bạn hỏi,', 'faq.titleAccent':'chúng tôi trả lời.', 'faq.description':'Vẫn còn phân vân? Những điều quan trọng nhất đều ở đây.',
-        'faq.free.question':'Is Spin & Win free?', 'faq.free.answer':'Có. Tất cả công cụ đều miễn phí, không cần đăng ký tài khoản, không quảng cáo, không giới hạn số lần sử dụng.', 'faq.obs.question':'Có thể dùng cho livestream OBS / Streamlabs không?', 'faq.obs.answer':'Có. Mỗi trang đều hỗ trợ chế độ overlay nền trong suốt. Thêm URL vào Browser Source của OBS/Streamlabs là dùng được ngay.', 'faq.limit.question':'Is there a participant limit?', 'faq.limit.answer':'Vòng quay tên và các mode khác không giới hạn thực tế. Riêng chế độ Đường Đua hỗ trợ tối đa 3.000 người cùng lúc.', 'faq.random.question':'Kết quả có ngẫu nhiên công bằng không?', 'faq.random.answer':'Có. Chúng tôi dùng thuật toán Math.random của trình duyệt — cùng nguyên lý với hầu hết công cụ ngẫu nhiên online. Không có gian lận, không thiên vị người tạo.', 'faq.data.question':'Is my data stored on your servers?', 'faq.data.answer':'Không. Toàn bộ danh sách và cấu hình đều lưu trong trình duyệt của bạn (localStorage). Chúng tôi không gửi dữ liệu lên server, không thu thập thông tin cá nhân.',
-        'footer.disclaimer':'© 2026 Spin & Win — Công cụ giải trí, không dành cho cá cược.', 'footer.tagline':'Quay một vòng. Chọn một điều vui.'
-      },
-      en: {
-        'meta.title':'Spin & Win — Free Lucky Wheel & Random Picker',
-        'meta.description':'Spin & Win is a free online random toolset: name wheel, number picker, range picker, slot machine roller and race track. No registration required.',
-        'meta.ogTitle':'Spin & Win — Free Lucky Wheel & Random Picker',
-        'meta.ogDescription':'Free random tools: name wheel, number picker, slot roller and race track. No registration required.',
-        'language.label':'Language', 'nav.label':'Main menu', 'controls.label':'Homepage settings',
-        'nav.wheel':'Name wheel', 'nav.number':'Number picker', 'nav.range':'Range picker', 'nav.roller':'Roller', 'nav.duck':'Duck race', 'nav.cta':'Try now',
-        'theme.label':'Light / Dark', 'theme.toLight':'Switch to light theme', 'theme.toDark':'Switch to dark theme', 'common.close':'Close',
-        'hero.eyebrow':'Free online random tools', 'hero.title':'Random tools', 'hero.titleAccent':'for every moment.',
-        'hero.description':'Lucky wheels, drawings, number picks, slot rollers and race tracks — all in one place. No signup, no ads, just open and use it.',
-        'hero.primary':'Open name wheel', 'hero.secondary':'View all tools', 'hero.free':'Free forever', 'hero.private':'Your data stays on your device', 'hero.previewLabel':'Name wheel preview',
-        'preview.noAccount':'No signup required', 'preview.resultReady':'Spin and get a result', 'preview.live':'Live preview', 'preview.resultPrefix':'Result:', 'preview.resultName':'Minh Anh', 'preview.status':'Ready to spin', 'preview.title':'Name wheel', 'preview.start':'Start',
-        'tools.kicker':'Choose a tool', 'tools.title':'One situation,', 'tools.titleAccent':'one way to spin.', 'tools.description':'Open the right tool from one compact picker with a single click.', 'tools.button':'Choose a tool',
-        'modal.kicker':'Choose a module', 'modal.title':'Open a tool', 'modal.subtitle':'Go straight to the tool you need.',
-        'card.spin.label':'Most popular', 'card.spin.title':'Name wheel', 'card.spin.description':'Enter a list, spin the wheel and let luck choose a winner. Great for classes, events, giveaways and livestreams.', 'card.spin.link':'Open wheel',
-        'card.number.label':'Quick pick', 'card.number.title':'Random number picker', 'card.number.description':'For internal drawings, prizes and lucky numbers — configure it your way.', 'card.number.link':'Open picker',
-        'card.range.label':'Any range', 'card.range.title':'Pick from a range', 'card.range.description':'Choose a random number from any range, from 1–100 to 1–1000.', 'card.range.link':'Open range',
-        'card.roller.label':'Suspense', 'card.roller.title':'Slot machine roller', 'card.roller.description':'Roll multiple columns like a slot machine and add suspense to every pick.', 'card.roller.link':'Open roller',
-        'card.duck.label':'For events', 'card.duck.title':'Duck race', 'card.duck.description':'An online race for up to 3,000 participants — fun, visual and event-ready.', 'card.duck.link':'Open race',
-        'trust.label':'Highlights', 'trust.ready':'Ready to use', 'trust.readyText':'No account required', 'trust.private':'Private', 'trust.privateText':'Data stays on your device', 'trust.free':'Free', 'trust.freeText':'No interrupting ads', 'trust.obs':'OBS-ready', 'trust.obsText':'Easy QR sharing',
-        'benefits.kicker':'Designed for real use', 'benefits.title':'Fewer steps.', 'benefits.titleAccent':'More fun.', 'benefits.description':'Stay focused on the moment that needs a result — from a quick pick to a full livestream.',
-        'benefit.tts.title':'Text-to-speech', 'benefit.tts.description':'Read results aloud in Vietnamese or English.', 'benefit.obs.title':'OBS overlay', 'benefit.obs.description':'Transparent background for OBS or Streamlabs Browser Source.', 'benefit.sessions.title':'Save sessions', 'benefit.sessions.description':'Save and reload a wheel scenario whenever you need it.', 'benefit.palette.title':'Multiple palettes', 'benefit.palette.description':'Google, pastel, neon and monochrome looks for your mood.', 'benefit.qr.title':'Share by QR', 'benefit.qr.description':'Create a QR code so viewers can open the wheel in one scan.', 'benefit.theme.title':'Light / Dark', 'benefit.theme.description':'Switch themes to fit your space and moment.',
-        'faq.kicker':'Frequently asked questions', 'faq.title':'You ask,', 'faq.titleAccent':'we answer.', 'faq.description':'Still deciding? The important details are here.',
-        'faq.free.question':'Is Spin & Win free?', 'faq.free.answer':'Yes. Every tool is free, requires no account, has no ads and has no usage limit.', 'faq.obs.question':'Can I use it for OBS / Streamlabs livestreams?', 'faq.obs.answer':'Yes. Every tool supports a transparent overlay mode. Add the URL as an OBS or Streamlabs Browser Source.', 'faq.limit.question':'Is there a participant limit?', 'faq.limit.answer':'Name wheels and other modes have no practical limit. Race Track supports up to 3,000 participants.', 'faq.random.question':'Are the results fairly random?', 'faq.random.answer':'Yes. We use the browser Math.random algorithm, the same principle used by most online random tools. There is no cheating or bias.', 'faq.data.question':'Is wheel data stored on a server?', 'faq.data.answer':'No. Lists and settings stay in your browser localStorage. We do not send them to a server or collect personal data.',
-        'footer.disclaimer':'© 2026 Spin & Win — An entertainment tool, not for betting or gambling.', 'footer.tagline':'Spin once. Choose something fun.'
+        'hero.eyebrow':'Bộ công cụ ngẫu nhiên online', 'hero.title':'Bộ công cụ', 'hero.titleAccent':'ngẫu nhiên miễn phí',
+        'hero.description':'Vòng quay tên, quay số, con lăn slot machine và đường đua ngẫu nhiên — tất cả trong một giao diện mượt mà, không quảng cáo, mở lên là quay.',
+        'hero.primary':'Mở vòng quay tên', 'hero.secondary':'Xem tất cả công cụ', 'hero.free':'Miễn phí 100%', 'hero.private':'Bảo mật trên máy bạn',
+        'preview.live':'Trải nghiệm trực tiếp',
+        'tools.kicker':'DANH SÁCH CÔNG CỤ', 'tools.title':'Mỗi tình huống,', 'tools.titleAccent':'một cách quay chuyên nghiệp.', 'tools.description':'Chọn đúng công cụ bạn đang cần để tạo bầu không khí hồi hộp, công bằng nhất.',
+        'card.spin.label':'PHỔ BIẾN NHẤT', 'card.spin.title':'Vòng quay tên ngẫu nhiên', 'card.spin.description':'Nhập danh sách tên, bấm quay và để may mắn chọn người chiến thắng. Hoàn hảo cho lớp học, giveaway, sự kiện và livestream.', 'card.spin.link':'Mở vòng quay tên',
+        'card.number.label':'NHANH GỌN', 'card.number.title':'Quay số ngẫu nhiên', 'card.number.description':'Xổ số nội bộ, bốc thăm giải thưởng số may mắn — tùy chỉnh số lượng chữ số và loại bỏ số đã trúng.', 'card.number.link':'Mở quay số',
+        'card.range.label':'TÙY KHỎANG', 'card.range.title':'Chọn số trong khoảng', 'card.range.description':'Rút 1 số ngẫu nhiên trong khoảng bất kỳ từ Min tới Max (ví dụ từ 1–100 hoặc 1–1000).', 'card.range.link':'Mở chọn số trong khoảng',
+        'card.roller.label':'HỒI HỘP', 'card.roller.title':'Con lăn Slot Machine', 'card.roller.description':'Cuộn các cột danh sách song song phong cách slot machine casino, tạo nhịp theo dõi đầy hào hứng.', 'card.roller.link':'Mở con lăn slot',
+        'card.duck.label':'CHO SỰ KIỆN', 'card.duck.title':'Đường đua Vịt ngẫu nhiên', 'card.duck.description':'Giải đua online sôi động hỗ trợ tới 3.000 người tham gia cùng lúc. Phù hợp cho event công ty, trường học.', 'card.duck.link':'Mở đường đua vịt',
+        'trust.ready':'Dùng ngay tức thì', 'trust.readyText':'Không cần tạo tài khoản', 'trust.private':'Bảo mật tuyệt đối', 'trust.privateText':'Dữ liệu nằm trên máy bạn', 'trust.free':'Miễn phí 100%', 'trust.freeText':'Không có quảng cáo chen ngang', 'trust.obs':'Hỗ trợ Streamer & OBS', 'trust.obsText':'Background trong suốt 1-click',
+        'benefits.kicker':'TÍNH NĂNG CHUYÊN NGHIỆP', 'benefits.title':'Tối ưu cho người dùng thật.', 'benefits.titleAccent':'Dễ dùng, mượt mà & linh hoạt.',
+        'benefit.tts.title':'Đọc kết quả TTS', 'benefit.tts.description':'Tự động xướng tên người thắng bằng giọng đọc tiếng Việt / tiếng Anh truyền cảm.',
+        'benefit.obs.title':'Overlay OBS / Streamlabs', 'benefit.obs.description':'Nền transparent tách nền, sẵn sàng chèn làm Browser Source cho streamer.',
+        'benefit.sessions.title':'Lưu & Phôi danh sách', 'benefit.sessions.description':'Lưu sẵn danh sách học sinh, nhân viên để mở ra dùng lại bất kỳ lúc nào.',
+        'benefit.palette.title':'Bảng màu phong phú', 'benefit.palette.description':'Chủ đề màu Google, Pastel, Neon, Casino Gold — tùy chỉnh theo phong cách cá nhân.',
+        'benefit.qr.title':'Chia sẻ mã QR', 'benefit.qr.description':'Tạo mã QR tức thì để người xem quét điện thoại tự mở vòng quay tham gia.',
+        'benefit.theme.title':'Giao diện Sáng / Tối', 'benefit.theme.description':'Chế độ tối dịu mắt cho không gian thiếu sáng hoặc livestream ban đêm.',
+        'faq.kicker':'CÂU HỎI THƯỜNG GẶP', 'faq.title':'Bạn thắc mắc?', 'faq.titleAccent':'Chúng tôi trả lời.',
+        'faq.free.question':'Spin & Win có hoàn toàn miễn phí không?', 'faq.free.answer':'Có! Tất cả 5 bộ công cụ trên Spin & Win đều miễn phí 100%, không bắt đăng ký tài khoản và hoàn toàn không chèn quảng cáo gây phiền nhiễu.',
+        'faq.obs.question':'Có dùng cho livestream OBS / Streamlabs được không?', 'faq.obs.answer':'Rất tốt! Tất cả trang công cụ đều trang bị nút bật chế độ Overlay nền trong suốt. Bạn chỉ cần copy link đưa vào Browser Source của OBS/Streamlabs là dùng được ngay.',
+        'faq.limit.question':'Có giới hạn số lượng người tham gia không?', 'faq.limit.answer':'Vòng quay tên và các mode quay số không giới hạn thực tế. Riêng công cụ Đường đua Vịt hỗ trợ quy mô cực lớn tới 3.000 người tham gia cùng lúc.',
+        'faq.random.question':'Kết quả quay có công bằng ngẫu nhiên không?', 'faq.random.answer':'Có! Spin & Win sử dụng thuật toán ngẫu nhiên Math.random chuẩn của trình duyệt. Không hề có mã ẩn gian lận hay thiên vị người dùng.',
+        'faq.data.question':'Dữ liệu vòng quay có bị lưu trên máy chủ không?', 'faq.data.answer':'Không. Toàn bộ danh sách tên và cài đặt của bạn chỉ lưu trực tiếp trong trình duyệt máy cá nhân (localStorage). Dữ liệu của bạn được bảo mật tuyệt đối.',
+        'policy.kicker':'QUY ĐỊNH SỬ DỤNG', 'policy.title':'Quy định sử dụng Spin & Win', 'policy.lead':'Vui lòng đọc các nguyên tắc sử dụng dưới đây. Bạn vẫn có thể sử dụng web dù đồng ý hay không đồng ý với nội dung này.', 'policy.purposeTitle':'1. Mục đích sử dụng', 'policy.purposeText':'Spin & Win được cung cấp cho mục đích giải trí, random picker, bốc thăm, chia đội và các hoạt động hợp pháp.', 'policy.prohibitedTitle':'2. Hành vi không được phép', 'policy.prohibitedText':'Không sử dụng web cho hành vi vi phạm pháp luật, cá cược, đặt cược ăn tiền, đổi thưởng, xổ số hoặc cờ bạc trá hình; không gian lận, lừa đảo hoặc giả mạo kết quả.', 'policy.responsibilityTitle':'3. Trách nhiệm của người dùng', 'policy.responsibilityText':'Người dùng tự chịu trách nhiệm về mục đích sử dụng, nội dung nhập vào và quyền sử dụng tên, hình ảnh, âm thanh hoặc dữ liệu của bên thứ ba.', 'policy.resultTitle':'4. Kết quả và quyết định', 'policy.resultText':'Kết quả ngẫu nhiên chỉ hỗ trợ giải trí và vận hành sự kiện. Hãy tự kiểm tra và chịu trách nhiệm trước khi dùng kết quả cho quyết định quan trọng.', 'policy.ownerTitle':'5. Quyền của chủ web', 'policy.ownerText':'Chủ web có quyền thay đổi quy định, từ chối hỗ trợ, hạn chế hoặc ngừng quyền truy cập và gỡ nội dung có dấu hiệu vi phạm hoặc lạm dụng.', 'policy.disclaimerTitle':'6. Giới hạn trách nhiệm', 'policy.disclaimerText':'Trong phạm vi pháp luật cho phép, chủ web không chịu trách nhiệm về việc sử dụng sai mục đích, tranh chấp giữa các bên, nội dung do người dùng nhập hoặc gián đoạn do thiết bị, trình duyệt, mạng và dịch vụ bên ngoài.', 'policy.dataTitle':'7. Dữ liệu trên trình duyệt', 'policy.dataText':'Cấu hình và dữ liệu vận hành có thể được lưu cục bộ trong trình duyệt. Người dùng tự chịu trách nhiệm khi dùng thiết bị chung, xóa dữ liệu trình duyệt hoặc mất dữ liệu cục bộ.', 'policy.updateTitle':'8. Cập nhật quy định', 'policy.updateText':'Quy định có thể được cập nhật khi cần. Nội dung mới sẽ được hiển thị tại khu vực này để người dùng tiện theo dõi.', 'policy.footer':'Quy định này là thông báo sử dụng trên giao diện và không thay thế việc rà soát pháp lý chuyên nghiệp.',
+        'footer.disclaimer':'© 2026 Spin & Win — Bộ công cụ ngẫu nhiên & giải trí miễn phí.', 'footer.tagline':'Quay một vòng. Chọn một niềm vui.', 'footer.policy':'Quy định sử dụng'
       }
     };
 
@@ -443,100 +1429,224 @@
     const themeToggle = document.getElementById('homeThemeToggle');
     const themeIcon = document.getElementById('homeThemeIcon');
     const themePaths = {
-      moon:'<path d="M20.4 14.8A8.5 8.5 0 0 1 9.2 3.6 8.5 8.5 0 1 0 20.4 14.8Z"/>',
-      sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'
+      moon: '<path d="M20.4 14.8A8.5 8.5 0 0 1 9.2 3.6 8.5 8.5 0 1 0 20.4 14.8Z"/>',
+      sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'
     };
-    let language = 'vi';
+    let language = 'en';
     let theme = 'light';
 
-    const readPrefs = () => {
-      try { return JSON.parse(localStorage.getItem(HOME_PREFS_KEY) || '{}'); } catch { return {}; }
-    };
-    const savePrefs = () => {
-      try { localStorage.setItem(HOME_PREFS_KEY, JSON.stringify({language, theme})); } catch {}
-    };
-    const copy = () => HOME_I18N[language] || HOME_I18N.vi;
-    const applyAttributes = () => {
-      document.querySelectorAll('[data-i18n-attr]').forEach((element) => {
-        String(element.dataset.i18nAttr || '').split('|').forEach((entry) => {
-          const [attribute, key] = entry.split(':');
-          if (attribute && key && copy()[key]) element.setAttribute(attribute, copy()[key]);
-        });
-      });
-    };
+    const readPrefs = () => { try { return JSON.parse(localStorage.getItem(HOME_PREFS_KEY) || '{}'); } catch { return {}; } };
+    const savePrefs = () => { try { localStorage.setItem(HOME_PREFS_KEY, JSON.stringify({language, theme})); } catch {} };
+    const copy = () => HOME_I18N[language] || HOME_I18N.en;
+
     const applyLanguage = () => {
       const strings = copy();
       document.documentElement.lang = language;
-      document.querySelectorAll('[data-i18n]').forEach((element) => {
-        if (strings[element.dataset.i18n] != null) element.textContent = strings[element.dataset.i18n];
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        if (strings[el.dataset.i18n] != null) el.textContent = strings[el.dataset.i18n];
       });
-      applyAttributes();
       document.title = strings['meta.title'];
-      document.querySelector('meta[name="description"]')?.setAttribute('content', strings['meta.description']);
-      document.querySelector('meta[property="og:title"]')?.setAttribute('content', strings['meta.ogTitle']);
-      document.querySelector('meta[property="og:description"]')?.setAttribute('content', strings['meta.ogDescription']);
-      document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', strings['meta.title']);
-      document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', strings['meta.ogDescription']);
-      document.querySelector('meta[property="og:locale"]')?.setAttribute('content', language === 'en' ? 'en_US' : 'vi_VN');
-      const canonical = document.querySelector('link[rel="canonical"]');
-      const currentUrl = new URL(location.href);
-      if (language === 'en') currentUrl.searchParams.set('lang', 'en');
-      else currentUrl.searchParams.delete('lang');
-      canonical?.setAttribute('href', currentUrl.href);
       languageSelect.value = language;
-      languageSelect.title = strings['language.label'];
-      languageSelect.setAttribute('aria-label', strings['language.label']);
-      themeToggle.title = strings[theme === 'dark' ? 'theme.toLight' : 'theme.toDark'];
-      themeToggle.setAttribute('aria-label', themeToggle.title);
     };
+
     const applyTheme = () => {
       document.documentElement.dataset.theme = theme;
       themeIcon.innerHTML = themePaths[theme === 'dark' ? 'sun' : 'moon'];
-      applyLanguage();
     };
 
     const prefs = readPrefs();
-    const queryLanguage = new URLSearchParams(location.search).get('lang');
-    language = queryLanguage === 'en' || queryLanguage === 'vi' ? queryLanguage : (prefs.language === 'en' ? 'en' : 'vi');
+    const queryLang = new URLSearchParams(location.search).get('lang');
+    language = queryLang === 'vi' ? 'vi' : 'en';
     theme = prefs.theme === 'dark' ? 'dark' : 'light';
     applyTheme();
-    languageSelect.addEventListener('change', () => {
-      language = languageSelect.value === 'en' ? 'en' : 'vi';
-      applyLanguage();
-      savePrefs();
-    });
+    applyLanguage();
+
+    languageSelect.addEventListener('change', () => { language = languageSelect.value; applyLanguage(); savePrefs(); });
     themeToggle.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(); savePrefs(); });
-  })();
 
-  (() => {
-    const modal = document.getElementById('moduleDialog');
-    const openButtons = [...document.querySelectorAll('[data-module-open]')];
-    const closeButton = document.getElementById('moduleCloseButton');
-    if (!modal || !openButtons.length || !closeButton) return;
+    // 2. Interactive Hero Playground Engine
+    const tabs = document.querySelectorAll('.playground-tab');
+    const views = document.querySelectorAll('.playground-view');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => t.classList.remove('active'));
+        views.forEach((v) => v.classList.remove('active'));
+        tab.classList.add('active');
+        const targetView = document.getElementById(`demoView${tab.dataset.tab.charAt(0).toUpperCase() + tab.dataset.tab.slice(1)}`);
+        if (targetView) targetView.classList.add('active');
+      });
+    });
 
-    let lastFocusedElement = null;
+    // Confetti Engine
+    const confettiCanvas = document.getElementById('confettiCanvas');
+    const ctx = confettiCanvas.getContext('2d');
+    let particles = [];
+    const colors = ['#e85549', '#f5bc2c', '#3ab070', '#2273b5', '#8b5cf6', '#ffffff'];
 
-    const setModalState = (isOpen) => {
-      modal.hidden = !isOpen;
-      modal.setAttribute('aria-hidden', String(!isOpen));
-      openButtons.forEach((button) => button.setAttribute('aria-expanded', String(isOpen)));
-      document.body.classList.toggle('modal-open', isOpen);
-      if (isOpen) {
-        lastFocusedElement = document.activeElement;
-        closeButton.focus();
-      } else if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-        lastFocusedElement.focus();
-        lastFocusedElement = null;
+    const resizeConfetti = () => {
+      confettiCanvas.width = confettiCanvas.offsetWidth;
+      confettiCanvas.height = confettiCanvas.offsetHeight;
+    };
+    resizeConfetti();
+    window.addEventListener('resize', resizeConfetti);
+
+    const burstConfetti = () => {
+      resizeConfetti();
+      particles = [];
+      const cx = confettiCanvas.width / 2;
+      const cy = confettiCanvas.height / 2;
+      for (let i = 0; i < 45; i++) {
+        particles.push({
+          x: cx,
+          y: cy,
+          vx: (Math.random() - 0.5) * 10,
+          vy: (Math.random() - 0.8) * 10,
+          size: Math.random() * 6 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: 1,
+          decay: Math.random() * 0.02 + 0.015
+        });
       }
     };
 
-    openButtons.forEach((button) => button.addEventListener('click', () => setModalState(true)));
-    modal.addEventListener('click', (event) => {
-      if (event.target.closest('[data-module-close]')) setModalState(false);
+    const renderConfetti = () => {
+      ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      particles.forEach((p, idx) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.25;
+        p.alpha -= p.decay;
+        if (p.alpha <= 0) { particles.splice(idx, 1); return; }
+        ctx.globalAlpha = p.alpha;
+        ctx.fillStyle = p.color;
+        ctx.fillRect(p.x, p.y, p.size, p.size);
+      });
+      requestAnimationFrame(renderConfetti);
+    };
+    renderConfetti();
+
+    // Wheel Canvas Drawing & Spin Logic
+    const wheelCanvas = document.getElementById('heroWheelCanvas');
+    const wCtx = wheelCanvas.getContext('2d');
+    const wheelNames = ['Alex', 'Sarah', 'Michael', 'Emma', 'David', 'Olivia'];
+    const sliceColors = ['#e85549', '#f5bc2c', '#3ab070', '#2273b5', '#8b5cf6', '#0d9488'];
+    let currentAngle = 0;
+    let isSpinning = false;
+
+    const drawWheel = () => {
+      const numSlices = wheelNames.length;
+      const arc = (Math.PI * 2) / numSlices;
+      const radius = wheelCanvas.width / 2;
+
+      wCtx.clearRect(0, 0, wheelCanvas.width, wheelCanvas.height);
+
+      for (let i = 0; i < numSlices; i++) {
+        const angle = currentAngle + i * arc;
+        wCtx.beginPath();
+        wCtx.fillStyle = sliceColors[i];
+        wCtx.moveTo(radius, radius);
+        wCtx.arc(radius, radius, radius, angle, angle + arc);
+        wCtx.fill();
+
+        wCtx.save();
+        wCtx.translate(radius, radius);
+        wCtx.rotate(angle + arc / 2);
+        wCtx.textAlign = "right";
+        wCtx.fillStyle = "#ffffff";
+        wCtx.font = "bold 11px 'Be Vietnam Pro', sans-serif";
+        wCtx.fillText(wheelNames[i], radius - 14, 4);
+        wCtx.restore();
+      }
+    };
+    drawWheel();
+
+    document.getElementById('heroSpinBtn').addEventListener('click', () => {
+      if (isSpinning) return;
+      isSpinning = true;
+      const spinTime = 2500;
+      const startTime = performance.now();
+      const targetRotation = Math.PI * 2 * (6 + Math.random() * 3);
+      const startAngle = currentAngle;
+
+      const animateSpin = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / spinTime, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+
+        currentAngle = startAngle + targetRotation * easeOut;
+        drawWheel();
+
+        if (progress < 1) {
+          requestAnimationFrame(animateSpin);
+        } else {
+          isSpinning = false;
+          const numSlices = wheelNames.length;
+          const arc = (Math.PI * 2) / numSlices;
+          const normalizedAngle = (Math.PI * 2 - (currentAngle % (Math.PI * 2)) - Math.PI / 2 + Math.PI * 4) % (Math.PI * 2);
+          const winnerIndex = Math.floor(normalizedAngle / arc) % numSlices;
+          document.getElementById('wheelResultBar').innerHTML = `🎉 Winner: <strong>${wheelNames[winnerIndex]}</strong>!`;
+          burstConfetti();
+        }
+      };
+      requestAnimationFrame(animateSpin);
     });
-    document.addEventListener('keydown', (event) => {
-      if (!modal.hidden && event.key === 'Escape') setModalState(false);
+
+    // Demo Number Spin
+    document.getElementById('heroNumberBtn').addEventListener('click', () => {
+      let ticks = 0;
+      const interval = setInterval(() => {
+        document.getElementById('d1').textContent = Math.floor(Math.random() * 10);
+        document.getElementById('d2').textContent = Math.floor(Math.random() * 10);
+        document.getElementById('d3').textContent = Math.floor(Math.random() * 10);
+        ticks++;
+        if (ticks > 14) {
+          clearInterval(interval);
+          const winnerNum = `${document.getElementById('d1').textContent}${document.getElementById('d2').textContent}${document.getElementById('d3').textContent}`;
+          document.getElementById('numberResultBar').innerHTML = `🎉 Winning Number: <strong>#${winnerNum}</strong>!`;
+          burstConfetti();
+        }
+      }, 70);
     });
+
+    // Demo Slot Spin
+    const slotSymbols = ['💎', '🌟', '🔥', '🍀', '🎁', '⚡'];
+    document.getElementById('heroSlotBtn').addEventListener('click', () => {
+      let ticks = 0;
+      const interval = setInterval(() => {
+        document.getElementById('s1').textContent = slotSymbols[Math.floor(Math.random() * slotSymbols.length)];
+        document.getElementById('s2').textContent = slotSymbols[Math.floor(Math.random() * slotSymbols.length)];
+        document.getElementById('s3').textContent = slotSymbols[Math.floor(Math.random() * slotSymbols.length)];
+        ticks++;
+        if (ticks > 12) {
+          clearInterval(interval);
+          document.getElementById('s1').textContent = '💎';
+          document.getElementById('s2').textContent = '💎';
+          document.getElementById('s3').textContent = '💎';
+          document.getElementById('slotResultBar').innerHTML = `🎉 JACKPOT: <strong>💎 💎 💎</strong>!`;
+          burstConfetti();
+        }
+      }, 80);
+    });
+
+    // Demo Duck Race
+    document.getElementById('heroDuckBtn').addEventListener('click', () => {
+      const ducks = [document.getElementById('duck1'), document.getElementById('duck2'), document.getElementById('duck3')];
+      ducks.forEach(d => d.style.transform = 'translateX(0)');
+
+      setTimeout(() => {
+        const winnerIdx = Math.floor(Math.random() * 3);
+        ducks.forEach((d, idx) => {
+          const dist = idx === winnerIdx ? 160 : Math.floor(80 + Math.random() * 60);
+          d.style.transform = `translateX(${dist}px)`;
+        });
+        setTimeout(() => {
+          const winnerNames = ['Yellow Duck', 'Green Duck', 'Pink Duck'];
+          document.getElementById('duckResultBar').innerHTML = `🏆 Champion: <strong>${winnerNames[winnerIdx]}</strong>!`;
+          burstConfetti();
+        }, 2500);
+      }, 100);
+    });
+
   })();
 </script>
 </body>

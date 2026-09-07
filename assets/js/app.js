@@ -13,6 +13,8 @@ document.documentElement.dataset.pageMode = PAGE_MODE || 'all';
 // Lucide-inspired inline SVG paths: no CDN/dependency is required at runtime.
 const ICON_PATHS = Object.freeze({
   hand:'<path d="M18 11V6a2 2 0 0 0-4 0v4"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 0 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-5.4-1.4-7-3.7L2.7 14a2 2 0 0 1 3.4-2.1L8 14"/>',
+  bird:'<path d="M3.5 6.5c1.7 0 3.2 1.1 3.8 2.7A7.5 7.5 0 0 0 12 7c1.2 0 2.4.3 3.4.8L21 5l-2.5 5.2A7 7 0 0 1 12 17H8.5a4.5 4.5 0 0 1-4.5-4.5c0-.5.1-1 .2-1.5"/><path d="M12 17v4M9 21h6M16 7h.01"/>',
+  info:'<circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/>',
   zap:'<path d="M4 14a1 1 0 0 1-.8-1.6l9.9-12.6a.5.5 0 0 1 .9.4l-1.7 6.6A1 1 0 0 0 13.3 8H20a1 1 0 0 1 .8 1.6l-9.9 12.6a.5.5 0 0 1-.9-.4l1.7-6.6A1 1 0 0 0 10.7 14Z"/>',
   'list-ordered':'<line x1="10" x2="21" y1="6" y2="6"/><line x1="10" x2="21" y1="12" y2="12"/><line x1="10" x2="21" y1="18" y2="18"/><path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-1 2-2s-2-2-2-2"/>',
   play:'<polygon points="6 3 20 12 6 21 6 3"/>',
@@ -69,6 +71,15 @@ const ICON_PATHS = Object.freeze({
   paintbrush:'<path d="m14 6 4 4"/><path d="M4 20c2.5.5 4.5-.5 5.5-2.5L20 7a2.8 2.8 0 0 0-4-4L5.5 14.5C3.5 15.5 3.5 18 4 20Z"/><path d="M4 20c2.5.5 4.5-.5 5.5-2.5"/>',
   'rotate-ccw':'<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>',
   'circle-check':'<circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/>',
+  'circle-x':'<circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/>',
+  clipboard:'<rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>',
+  'hard-drive':'<rect width="20" height="8" x="2" y="4" rx="2"/><rect width="20" height="8" x="2" y="12" rx="2"/><path d="M6 8h.01M6 16h.01"/>',
+  cpu:'<rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>',
+  monitor:'<rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8M12 17v4"/>',
+  eye:'<path d="M2.1 12s3.5-6 9.9-6 9.9 6 9.9 6-3.5 6-9.9 6-9.9-6-9.9-6Z"/><circle cx="12" cy="12" r="2.5"/>',
+  lock:'<rect width="16" height="11" x="4" y="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
+  unlock:'<rect width="16" height="11" x="4" y="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.5-2"/>',
+  'gamepad-2':'<line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="14" x2="14.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><path d="M6.5 7h11a4.5 4.5 0 0 1 4.4 5.5l-1.3 5a3 3 0 0 1-5.7.4l-.4-1H9.5l-.4 1a3 3 0 0 1-5.7-.4l-1.3-5A4.5 4.5 0 0 1 6.5 7Z"/>',
   'help-circle':'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.3 1.7c-.9.8-1.8 1.2-1.8 2.3"/><path d="M12 16h.01"/>',
   'dice-5':'<rect width="16" height="16" x="4" y="4" rx="2"/><circle cx="8" cy="8" r=".8"/><circle cx="16" cy="8" r=".8"/><circle cx="12" cy="12" r=".8"/><circle cx="8" cy="16" r=".8"/><circle cx="16" cy="16" r=".8"/>',
   'calendar-days':'<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>',
@@ -675,6 +686,7 @@ const app = {
   applyTheme(){
     const t = this.state.cfg.theme || 'dark';
     document.body.classList.toggle('light', t==='light');
+    document.documentElement.setAttribute('data-theme', t);
     const ic = $('#themeIcon'); if(ic) ic.innerHTML = this.icon(t==='light' ? 'sun' : 'moon');
     const mute = $('#muteIcon'); if(mute) mute.innerHTML = this.icon(this.state.cfg.mute ? 'volume-x' : 'volume-2');
   },
@@ -1009,7 +1021,7 @@ const app = {
         ta.disabled = true;
         ta.style.opacity = '.7';
         const preview = w.entries.slice(0,10).map(e=>e.image?`${e.name} | ${e.image}`:e.name).join('\n');
-        ta.value = `[${nEntries.toLocaleString()} mục — quá lớn để hiển thị]\n\nPreview 10 mục đầu:\n${preview}\n...\n\n→ Bấm 📂 Mở để import từ file\n→ Bấm 🗑 Xoá để reset\n→ Xoá bớt xuống dưới 5000 mục để edit`;
+        ta.value = `[${nEntries.toLocaleString()} mục — quá lớn để hiển thị]\n\nPreview 10 mục đầu:\n${preview}\n...\n\n→ Bấm Mở để import từ file\n→ Bấm Xoá để reset\n→ Xoá bớt xuống dưới 5000 mục để edit`;
       } else {
         ta.disabled = false;
         ta.style.opacity = '1';
@@ -1236,7 +1248,7 @@ const app = {
       z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;
       color:#fff;font-family:-apple-system,sans-serif;padding:40px;text-align:center;backdrop-filter:blur(10px)`;
     el.innerHTML = `
-      <div style="font-size:100px;margin-bottom:20px;animation:cd .6s ease-out">⛔</div>
+      <div style="font-size:100px;margin-bottom:20px;animation:cd .6s ease-out">${this.icon('triangle-alert',100)}</div>
       <div style="font-size:32px;font-weight:900;margin-bottom:12px;letter-spacing:1px">CẤM XEM MÃ NGUỒN</div>
       <div style="font-size:16px;opacity:.9;max-width:520px;line-height:1.6;margin-bottom:8px">
         Nội dung web này được bảo vệ bản quyền.<br>
@@ -1334,7 +1346,7 @@ const app = {
       </div>
       <div style="background:var(--panel2);padding:12px;border-radius:8px;margin-bottom:12px">
         <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px">
-          <span style="color:var(--muted)">💾 localStorage: ${this.formatBytes(info.storageUsed)} / ${this.formatBytes(info.storageMax)}</span>
+          <span style="color:var(--muted)">${this.icon('hard-drive',14)} localStorage: ${this.formatBytes(info.storageUsed)} / ${this.formatBytes(info.storageMax)}</span>
           <span style="color:${storageColor};font-weight:600">${storagePct}%</span>
         </div>
         <div style="height:6px;background:var(--bg);border-radius:3px;overflow:hidden">
@@ -1345,7 +1357,7 @@ const app = {
       const heapPct = (info.jsHeap.used / info.jsHeap.limit * 100).toFixed(1);
       html += `<div style="background:var(--panel2);padding:12px;border-radius:8px;margin-bottom:12px">
         <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px">
-          <span style="color:var(--muted)">🧠 JS Heap: ${this.formatBytes(info.jsHeap.used)} / ${this.formatBytes(info.jsHeap.limit)}</span>
+          <span style="color:var(--muted)">${this.icon('cpu',14)} JS Heap: ${this.formatBytes(info.jsHeap.used)} / ${this.formatBytes(info.jsHeap.limit)}</span>
           <span style="color:${heapPct>70?'#EA4335':'#22c55e'};font-weight:600">${heapPct}%</span>
         </div>
         <div style="height:6px;background:var(--bg);border-radius:3px;overflow:hidden">
@@ -1355,51 +1367,51 @@ const app = {
     }
     html += `
       <details style="background:var(--panel2);padding:10px 14px;border-radius:8px;margin-bottom:12px">
-        <summary style="cursor:pointer;font-size:12px;color:var(--muted)">🖥️ Chi tiết môi trường</summary>
+        <summary style="cursor:pointer;font-size:12px;color:var(--muted)">${this.icon('monitor',14)} Chi tiết môi trường</summary>
         <div style="font-size:12px;line-height:1.8;margin-top:8px;color:var(--muted)">
           <div>Trình duyệt: <b style="color:var(--text)">${this.esc(info.browser)}</b></div>
           <div>OS: <b style="color:var(--text)">${this.esc(info.os)}</b></div>
           <div>Ngôn ngữ: <b style="color:var(--text)">${this.esc(info.language)}</b></div>
           <div>Platform: <b style="color:var(--text)">${this.esc(info.platform)}</b></div>
-          <div>Trạng thái mạng: <b style="color:${info.online?'#22c55e':'#EA4335'}">${info.online?'🟢 Online':'🔴 Offline'}</b></div>
+          <div>Trạng thái mạng: <b style="color:${info.online?'#22c55e':'#EA4335'}">${info.online?this.icon('circle-check',13):this.icon('circle-x',13)} ${info.online?'Online':'Offline'}</b></div>
         </div>
       </details>
 
-      <h4 style="margin:16px 0 8px;font-size:14px">🎯 Khuyến nghị số lượng mục tối đa / 1 lượt quay</h4>
+      <h4 style="margin:16px 0 8px;font-size:14px">${this.icon('target',16)} Khuyến nghị số lượng mục tối đa / 1 lượt quay</h4>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:12px">
         <div style="background:linear-gradient(135deg,rgba(66,133,244,.15),rgba(66,133,244,.05));padding:12px;border-radius:8px;border:1px solid rgba(66,133,244,.3)">
-          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">🎡 Vòng quay</div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">${this.icon('circle-dashed',13)} Vòng quay</div>
           <div style="font-size:18px;font-weight:700;color:#4285F4">${rec.wheel.toLocaleString()}</div>
           <div style="font-size:10px;color:var(--muted);margin-top:2px">mục</div>
         </div>
         <div style="background:linear-gradient(135deg,rgba(234,67,53,.15),rgba(234,67,53,.05));padding:12px;border-radius:8px;border:1px solid rgba(234,67,53,.3)">
-          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">🎰 Con lăn</div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">${this.icon('slot-machine',13)} Con lăn</div>
           <div style="font-size:18px;font-weight:700;color:#EA4335">${rec.roller.toLocaleString()}</div>
           <div style="font-size:10px;color:var(--muted);margin-top:2px">mục</div>
         </div>
         <div style="background:linear-gradient(135deg,rgba(251,188,4,.15),rgba(251,188,4,.05));padding:12px;border-radius:8px;border:1px solid rgba(251,188,4,.3)">
-          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">🔢 Quay số</div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">${this.icon('hash',13)} Quay số</div>
           <div style="font-size:18px;font-weight:700;color:#FBBC04">${rec.number}</div>
           <div style="font-size:10px;color:var(--muted);margin-top:2px">chữ số/cột</div>
         </div>
         <div style="background:linear-gradient(135deg,rgba(52,168,83,.15),rgba(52,168,83,.05));padding:12px;border-radius:8px;border:1px solid rgba(52,168,83,.3)">
-          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">🎯 Quay dải</div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:2px">${this.icon('target',13)} Quay dải</div>
           <div style="font-size:18px;font-weight:700;color:#34A853">∞</div>
           <div style="font-size:10px;color:var(--muted);margin-top:2px">bounded ${rec.range.toLocaleString()}</div>
         </div>
       </div>
       <div style="font-size:11px;color:var(--muted);line-height:1.6;padding:8px 10px;background:rgba(0,0,0,.15);border-radius:6px;margin-bottom:12px">
-        💡 Số này chỉ là khuyến nghị an toàn. Wheel canvas dùng downsample nên hiển thị vẫn OK với triệu mục nhưng localStorage cap ~5MB — nếu vượt sẽ không save được. Range không lưu items nên gần như vô hạn.
+        ${this.icon('lightbulb',14)} Số này chỉ là khuyến nghị an toàn. Wheel canvas dùng downsample nên hiển thị vẫn OK với triệu mục nhưng localStorage cap ~5MB — nếu vượt sẽ không save được. Range không lưu items nên gần như vô hạn.
       </div>`;
 
     if(info.wheelStats.length){
-      html += `<h4 style="margin:16px 0 8px;font-size:14px">📊 Vòng quay hiện tại</h4>
+      html += `<h4 style="margin:16px 0 8px;font-size:14px">${this.icon('bar-chart-3',16)} Vòng quay hiện tại</h4>
         <div style="background:var(--panel2);border-radius:8px;overflow:hidden;font-size:12px">
         <div style="display:grid;grid-template-columns:1fr 60px 80px 70px;padding:8px 12px;background:rgba(0,0,0,.2);font-weight:600;color:var(--muted)">
           <span>Tên</span><span>Loại</span><span style="text-align:right">Items</span><span style="text-align:right">Size</span>
         </div>`;
       info.wheelStats.forEach(w=>{
-        const icon = w.type==='numbers'?'🔢':w.type==='range'?'🎯':w.type==='roller'?'🎰':'🎡';
+        const icon = this.icon(w.type==='numbers'?'hash':w.type==='range'?'target':w.type==='roller'?'slot-machine':'circle-dashed',13);
         html += `<div style="display:grid;grid-template-columns:1fr 60px 80px 70px;padding:6px 12px;border-top:1px solid var(--border)">
           <span>${this.esc(w.name)}</span>
           <span>${icon}</span>
@@ -1417,7 +1429,7 @@ const app = {
   closeClientInfo(){ $('#clientInfoModal').classList.remove('on'); },
   async runBenchmark(){
     const res = $('#benchmarkResult');
-    res.innerHTML = '<div style="padding:12px;background:rgba(79,109,245,.1);border-radius:8px;text-align:center">⏳ Đang chạy benchmark...</div>';
+    res.innerHTML = `<div style="padding:12px;background:rgba(79,109,245,.1);border-radius:8px;text-align:center">${this.icon('timer',15)} Đang chạy benchmark...</div>`;
     await new Promise(r=>setTimeout(r,50));
     const sizes = [1000, 10000, 100000, 1000000];
     const results = [];
@@ -1442,7 +1454,7 @@ const app = {
       await new Promise(r=>setTimeout(r,10));
     }
     // render
-    let html = '<h4 style="margin:0 0 8px;font-size:14px">🚀 Kết quả benchmark</h4>';
+    let html = `<h4 style="margin:0 0 8px;font-size:14px">${this.icon('rocket',16)} Kết quả benchmark</h4>`;
     html += '<div style="background:var(--panel2);border-radius:8px;overflow:hidden;font-size:12px">';
     html += '<div style="display:grid;grid-template-columns:80px 1fr 1fr 1fr;padding:8px 12px;background:rgba(0,0,0,.2);font-weight:600;color:var(--muted)"><span>N items</span><span style="text-align:right">Create</span><span style="text-align:right">100 picks</span><span style="text-align:right">JSON r/w</span></div>';
     results.forEach(r=>{
@@ -1452,16 +1464,16 @@ const app = {
         <span style="font-weight:600">${r.n.toLocaleString()}</span>
         <span style="text-align:right;color:${goodCreate}">${r.createMs.toFixed(0)}ms</span>
         <span style="text-align:right;color:#22c55e">${r.pickMs.toFixed(1)}ms</span>
-        <span style="text-align:right;color:${goodJson}">${r.jsonMs<0?'❌ overflow':r.jsonMs.toFixed(0)+'ms'}</span>
+        <span style="text-align:right;color:${goodJson}">${r.jsonMs<0?this.icon('circle-x',13)+' overflow':r.jsonMs.toFixed(0)+'ms'}</span>
       </div>`;
     });
     html += '</div>';
     // recommendation
     const best = results.filter(r=>r.createMs<500 && r.jsonMs<1000 && r.jsonMs>0).slice(-1)[0];
     if(best){
-      html += `<div style="margin-top:10px;padding:10px 12px;background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(34,197,94,.05));border:1px solid rgba(34,197,94,.35);border-radius:8px;font-size:12px;color:#22c55e"><b>✅ Máy này chạy tốt tới ${best.n.toLocaleString()} items</b> — spin và save đều <1s.</div>`;
+      html += `<div style="margin-top:10px;padding:10px 12px;background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(34,197,94,.05));border:1px solid rgba(34,197,94,.35);border-radius:8px;font-size:12px;color:#22c55e"><b>${this.icon('circle-check',13)} Máy này chạy tốt tới ${best.n.toLocaleString()} items</b> — spin và save đều <1s.</div>`;
     } else {
-      html += `<div style="margin-top:10px;padding:10px 12px;background:rgba(234,67,53,.1);border:1px solid rgba(234,67,53,.35);border-radius:8px;font-size:12px;color:#EA4335"><b>⚠️ Chỉ nên dùng <100k items</b> — máy hạn chế bộ nhớ.</div>`;
+      html += `<div style="margin-top:10px;padding:10px 12px;background:rgba(234,67,53,.1);border:1px solid rgba(234,67,53,.35);border-radius:8px;font-size:12px;color:#EA4335"><b>${this.icon('triangle-alert',13)} Chỉ nên dùng <100k items</b> — máy hạn chế bộ nhớ.</div>`;
     }
     res.innerHTML = html;
   },
@@ -1509,7 +1521,7 @@ const app = {
     const pwd = this.state.cfg?.adminPwd;
     if(!pwd) return true; // không khoá
     if(this._adminUnlocked) return true; // đã unlock trong session này
-    const entered = await this.prompt(this.t('admin.password'), '', '🔒 '+this.t('dialog.adminAuth'));
+    const entered = await this.prompt(this.t('admin.password'), '', this.t('dialog.adminAuth'));
     if(entered === pwd){ this._adminUnlocked = true; return true; }
     if(entered !== null) this.toast(this.t('status.wrongPassword'));
     return false;
@@ -2517,7 +2529,7 @@ const app = {
     w.digitColors = w.digitColors || [];
     while(w.digitColors.length < w.digitCount) w.digitColors.push(DIGIT_COLORS[w.digitColors.length%DIGIT_COLORS.length]);
     const chars = this.numChars(w);
-    if(!chars || !chars.length){ cont.innerHTML='<div style="color:var(--red);font-size:12px">⚠️ Bộ ký tự trống hoặc Min > Max</div>'; return; }
+    if(!chars || !chars.length){ cont.innerHTML=`<div style="color:var(--red);font-size:12px">${this.icon('triangle-alert',14)} Bộ ký tự trống hoặc Min &gt; Max</div>`; return; }
     const sepChar = (w.separator||' × ').trim() || '·';
     const groups = [];
     for(let g=0; g<w.count; g++){
@@ -2653,7 +2665,7 @@ const app = {
       <div class="dlg-sep"></div>
 
       <div style="opacity:${w.numPool?.length?.5:1}">
-      <div style="font-weight:600;font-size:12px;margin-bottom:6px;color:var(--muted)">${w.numPool?'⛔ '+this.t('number.disabledHeading'):this.t('number.randomHeading')}</div>
+      <div style="font-weight:600;font-size:12px;margin-bottom:6px;color:var(--muted)">${w.numPool?this.icon('triangle-alert',14)+' '+this.t('number.disabledHeading'):this.t('number.randomHeading')}</div>
       <div class="dlg-row"><label>${this.t('number.digitMin')}</label><input type="number" min="0" max="9" value="${w.digitMin}" data-nc="digitMin" ${w.digitSet?'disabled':''}></div>
       <div class="dlg-row"><label>${this.t('number.digitMax')}</label><input type="number" min="0" max="9" value="${w.digitMax}" data-nc="digitMax" ${w.digitSet?'disabled':''}></div>
       <div class="dlg-row"><label>${this.t('number.charset')}</label>
@@ -3192,7 +3204,25 @@ const app = {
   toast(msg, opts){
     const t=$('#toast');
     t.innerHTML = '';
-    const span = document.createElement('span'); span.textContent = msg; t.appendChild(span);
+    const toastIcons = [
+      ['⚠️','triangle-alert'], ['⚠','triangle-alert'], ['❌','circle-x'], ['✅','circle-check'],
+      ['🗑','trash-2'], ['📋','clipboard'], ['📂','folder-open'], ['📥','file-down'],
+      ['💾','hard-drive'], ['🧠','cpu'], ['🖥️','monitor'], ['🔴','circle'],
+      ['👁','eye'], ['🔓','unlock'], ['🔒','lock'], ['🚨','triangle-alert'],
+      ['🎮','gamepad-2'], ['🎵','music-2'], ['🎉','sparkles'], ['🎨','palette'],
+      ['🎩','sparkles'], ['🚀','rocket'], ['📺','monitor-up'], ['💡','lightbulb'],
+      ['☀️','sun'], ['🌙','moon'], ['⛔','triangle-alert'], ['↺','undo-2'], ['⎘','copy']
+    ];
+    let message = String(msg ?? ''), iconName = opts?.icon || '';
+    if(!iconName){
+      const match = toastIcons.find(([prefix])=>message.startsWith(prefix));
+      if(match){ iconName=match[1]; message=message.slice(match[0].length).trimStart(); }
+    }
+    if(iconName){
+      const icon = document.createElement('span');
+      icon.className = 'toast-icon'; icon.innerHTML = this.icon(iconName,15); t.appendChild(icon);
+    }
+    const span = document.createElement('span'); span.textContent = message; t.appendChild(span);
     if(opts?.undo){
       const btn = document.createElement('button');
       btn.className = 'undo-btn'; btn.textContent = opts.undoLabel || this.t('results.undo');
