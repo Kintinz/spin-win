@@ -1159,9 +1159,58 @@
   }
 
   let ac=null;
+  // Cache the browser's voice list. It's populated asynchronously on some browsers
+  // (Chrome), so we listen for the voiceschanged event and refresh the cache.
+  let _voices = [];
+  function _refreshVoices(){
+    try{ _voices = speechSynthesis.getVoices() || []; }catch{ _voices = []; }
+  }
+  if('speechSynthesis' in window){
+    _refreshVoices();
+    speechSynthesis.onvoiceschanged = _refreshVoices;
+  }
+  function _pickVoice(langPrefix){
+    // Prefer an exact-language voice, then any that starts with the language code
+    // (e.g. "vi" covers "vi-VN", "en" covers "en-US"/"en-GB"). Google voices sound
+    // most natural on Chrome, so bias toward them when several match.
+    const matches = _voices.filter(v => (v.lang||'').toLowerCase().startsWith(langPrefix));
+    if(!matches.length) return null;
+    // Sort: Google > Microsoft > local default > others
+    matches.sort((a,b) => {
+      const score = v => (/google/i.test(v.name) ? 3 : /microsoft/i.test(v.name) ? 2 : v.default ? 1 : 0);
+      return score(b) - score(a);
+    });
+    return matches[0];
+  }
+  let _speakWarnedNoVi = false;
   function speak(t){
     if(!state.tts||state.mute) return;
-    try{ const u=new SpeechSynthesisUtterance(t); u.lang=state.lang==='vi'?'vi-VN':'en-US'; u.rate=1; speechSynthesis.cancel(); speechSynthesis.speak(u); }catch{}
+    try{
+      const u = new SpeechSynthesisUtterance(t);
+      const isVi = state.lang === 'vi';
+      let voice = _pickVoice(isVi ? 'vi' : 'en');
+      if(voice){
+        u.voice = voice;
+        u.lang = voice.lang;
+      } else if(isVi){
+        // No Vietnamese voice installed on this system — read the text with an
+        // English voice as a fallback (pronounces VN names phonetically) and warn
+        // the user once so they can install a Vietnamese voice pack if they want.
+        const en = _pickVoice('en');
+        if(en){ u.voice = en; u.lang = en.lang; }
+        else u.lang = 'en-US';
+        if(!_speakWarnedNoVi){
+          _speakWarnedNoVi = true;
+          toast(tr('Trình duyệt không có giọng tiếng Việt. Vào Windows/macOS Settings → Speech để thêm.',
+                   'No Vietnamese voice on this device. Add one from your OS speech settings.'));
+        }
+      } else {
+        u.lang = 'en-US';
+      }
+      u.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(u);
+    }catch{}
   }
   function beep(f,d,t='sine',v=.05){
     if(!state.sound||state.mute) return;
