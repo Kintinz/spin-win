@@ -22,7 +22,7 @@ jobs:
 
       - name: Prepare site directory
         run: |
-          mkdir -p _site/assets/img _site/assets/css _site/assets/js
+          mkdir -p _site/assets/img _site/assets/css _site/assets/js _site/assets/mp3
           # Landing hub + trick page + legacy .html redirects (spin.html, etc → /spin/)
           cp -v index.html trick.html spin.html number.html range.html roller.html duck.html _site/ 2>/dev/null || true
           # Per-mode pages served at clean URLs: /spin/, /number/, /range/, /roller/, /duck/
@@ -34,6 +34,7 @@ jobs:
           cp -v assets/img/*.png assets/img/*.jpg assets/img/*.svg _site/assets/img/ 2>/dev/null || true
           cp -v assets/css/*.css _site/assets/css/ 2>/dev/null || true
           cp -v assets/js/*.js _site/assets/js/ 2>/dev/null || true
+          cp -v assets/mp3/*.mp3 _site/assets/mp3/ 2>/dev/null || true
           # Root-level SEO / verification files
           cp -v CNAME robots.txt sitemap.xml _site/ 2>/dev/null || true
           cp -v google*.html _site/ 2>/dev/null || true
