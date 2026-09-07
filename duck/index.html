@@ -786,6 +786,12 @@
 
     <label class="toggle-row"><span class="toggle-label"><span class="ui-icon" data-icon="volume"></span>Đọc tên winner</span><input type="checkbox" id="ttsCk" checked></label>
     <label class="toggle-row"><span class="toggle-label"><span class="ui-icon" data-icon="music"></span>Âm thanh cuộc đua</span><input type="checkbox" id="soundCk" checked></label>
+    <div class="field" id="musicPickerField">
+      <label for="musicPicker">🎵 Nhạc nền</label>
+      <select id="musicPicker" aria-label="Chọn nhạc nền cuộc đua">
+        <!-- options được inject bởi JS từ mảng RACE_MUSIC -->
+      </select>
+    </div>
     <label class="toggle-row"><span class="toggle-label"><span class="ui-icon" data-icon="sparkles"></span>Confetti</span><input type="checkbox" id="confCk" checked></label>
     <label class="toggle-row"><span class="toggle-label"><span class="ui-icon" data-icon="message"></span>Hiện tên trên đầu</span><input type="checkbox" id="labelCk" checked></label>
       </div>
@@ -1103,7 +1109,7 @@
   const state = {
     names:['Aaron','George','Rory','Ilia','Rozalyn'],
     skin:'duck', chaos:.6, len:14, topN:1,
-    tts:true, sound:true, conf:true, showLabels:true, mute:false,
+    tts:true, sound:true, conf:true, showLabels:true, mute:false, musicTrack:'nhacdua',
     lang:'vi', theme:'dark', lastResults:[]
   };
   const own = (obj,key)=>Object.prototype.hasOwnProperty.call(obj,key);
@@ -1123,6 +1129,7 @@
     if(validInt(saved.len,1,3600)) state.len=saved.len;
     if(validInt(saved.topN,1,MAX_RACERS)) state.topN=saved.topN;
     for(const key of ['tts','sound','conf','showLabels','mute']) if(typeof saved[key]==='boolean') state[key]=saved[key];
+    if(typeof saved.musicTrack==='string' && saved.musicTrack.length<=32) state.musicTrack=saved.musicTrack;
     if(['vi','en'].includes(saved.lang)) state.lang=saved.lang;
     const queryLang=new URL(location.href).searchParams.get('lang');
     if(['vi','en'].includes(queryLang)) state.lang=queryLang;
@@ -1221,10 +1228,28 @@
   }
   // Race BGM helpers. Respects the same sound/mute toggles as beep() and TTS.
   // Autoplay is user-initiated (the Start button), so the browser policy allows it.
+  // Add a new track: drop the mp3 into assets/mp3/ and append an entry here.
+  // The file/label is the ONLY thing to change; the picker + audio switching
+  // wire up automatically.
+  const RACE_MUSIC = [
+    {id:'nhacdua',   label:'🥁 Nhạc đua (mặc định)', file:'assets/mp3/nhacdua.mp3'},
+    // {id:'racing',  label:'🏁 Racing beat',           file:'assets/mp3/racing.mp3'},
+    // {id:'suspense',label:'😱 Suspense',              file:'assets/mp3/suspense.mp3'},
+    // {id:'epic',    label:'🎬 Epic race',             file:'assets/mp3/epic.mp3'},
+    {id:'off',       label:'🔇 Không nhạc',           file:''},
+  ];
   const raceMusic = $('#raceMusic');
+  function _currentMusicFile(){
+    const track = RACE_MUSIC.find(m => m.id === state.musicTrack) || RACE_MUSIC[0];
+    return track.file;
+  }
   function playMusic(){
     if(!raceMusic || !state.sound || state.mute) return;
+    const file = _currentMusicFile();
+    if(!file){ try{ raceMusic.pause(); }catch{} return; }
     try{
+      // Swap the source if the user picked a different track since last play.
+      if(!raceMusic.src.endsWith(file)) raceMusic.src = file;
       raceMusic.volume = .35;
       raceMusic.currentTime = 0;
       const p = raceMusic.play();
@@ -1851,6 +1876,18 @@
       save();
     };
   }
+  // Music picker — populate from RACE_MUSIC, honour saved state, swap track mid-race.
+  (function initMusicPicker(){
+    const sel = $('#musicPicker'); if(!sel) return;
+    sel.innerHTML = RACE_MUSIC.map(m => `<option value="${m.id}">${m.label}</option>`).join('');
+    sel.value = RACE_MUSIC.some(m=>m.id===state.musicTrack) ? state.musicTrack : RACE_MUSIC[0].id;
+    sel.onchange = e => {
+      state.musicTrack = e.target.value;
+      save();
+      // Swap track mid-race — stop the current one, start the new one from 0.
+      if(phase==='running'){ stopMusic(false); playMusic(); }
+    };
+  })();
   $('#langSel').onchange=e=>{
     state.lang=e.target.value;
     const nextUrl=new URL(location.href);
