@@ -30,6 +30,13 @@ jobs:
             mkdir -p "_site/$m"
             cp -v "$m/index.html" "_site/$m/index.html"
           done
+          # English mirror: /en/ hub + /en/<mode>/ for every mode page.
+          mkdir -p _site/en
+          cp -v en/index.html _site/en/index.html
+          for m in spin number range roller duck; do
+            mkdir -p "_site/en/$m"
+            cp -v "en/$m/index.html" "_site/en/$m/index.html"
+          done
           # Static assets
           cp -v assets/img/*.png assets/img/*.jpg assets/img/*.svg _site/assets/img/ 2>/dev/null || true
           cp -v assets/css/*.css _site/assets/css/ 2>/dev/null || true
