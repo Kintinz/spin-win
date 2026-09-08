@@ -64,6 +64,14 @@
   function _trap(){ (function(){}).constructor('debugger')(); }
   setInterval(_trap, 1500);
 
+  // Bỏ qua heuristic size trên thiết bị cảm ứng: bàn phím ảo, address bar
+  // collapse, split view... đều làm innerHeight co lại và gây báo động giả.
+  var _isTouch = false;
+  try{
+    _isTouch = (window.matchMedia && window.matchMedia('(pointer: coarse)').matches)
+      || (navigator.maxTouchPoints > 0);
+  }catch(_){}
+
   function _detect(){
     var wDiff = window.outerWidth - window.innerWidth;
     var hDiff = window.outerHeight - window.innerHeight;
@@ -84,7 +92,7 @@
       }
     }
   }
-  setInterval(_detect, 800);
+  if(!_isTouch) setInterval(_detect, 800);
 
   // ---- 5) Xoá console methods ----
   try{
