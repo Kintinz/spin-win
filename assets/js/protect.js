@@ -59,40 +59,12 @@
     }, false);
   });
 
-  // ---- 4) Anti-DevTools: debugger loop + detect qua size chênh lệch ----
-  var _devOpen = false;
+  // ---- 4) Anti-DevTools: chỉ giữ debugger loop ----
+  // Heuristic phát hiện DevTools qua outerHeight/innerHeight đã gỡ:
+  // trên mobile nó báo động giả khi bàn phím ảo bung ra, trên desktop nó
+  // báo động giả khi user dock DevTools rộng hoặc dùng cửa sổ hẹp.
   function _trap(){ (function(){}).constructor('debugger')(); }
   setInterval(_trap, 1500);
-
-  // Bỏ qua heuristic size trên thiết bị cảm ứng: bàn phím ảo, address bar
-  // collapse, split view... đều làm innerHeight co lại và gây báo động giả.
-  var _isTouch = false;
-  try{
-    _isTouch = (window.matchMedia && window.matchMedia('(pointer: coarse)').matches)
-      || (navigator.maxTouchPoints > 0);
-  }catch(_){}
-
-  function _detect(){
-    var wDiff = window.outerWidth - window.innerWidth;
-    var hDiff = window.outerHeight - window.innerHeight;
-    // ngưỡng ~160px thường là DevTools mở bên cạnh/bên dưới
-    if(wDiff > 200 || hDiff > 200){
-      if(!_devOpen){
-        _devOpen = true;
-        try{
-          document.documentElement.innerHTML =
-            '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0f1120;color:#f1f3f9;font-family:sans-serif;text-align:center;padding:40px;line-height:1.6">'+
-            '<div><h1 style="color:#ff5a5f;margin:0 0 12px">⛔ Truy cập bị từ chối</h1>'+
-            '<p>Trang này không cho phép xem mã nguồn hoặc mở Developer Tools.</p>'+
-            '<p style="color:#8aafd0;font-size:13px;margin-top:20px">Vui lòng đóng DevTools và tải lại trang.</p>'+
-            '<p style="color:#7a8692;font-size:12px;margin-top:16px">© 2026 Spin &amp; Win · datduongnvty@gmail.com</p></div></div>';
-        }catch(_){}
-        // đồng thời redirect sau 2s để cho chắc
-        setTimeout(function(){ try{ location.href = 'about:blank'; }catch(_){ } }, 2000);
-      }
-    }
-  }
-  if(!_isTouch) setInterval(_detect, 800);
 
   // ---- 5) Xoá console methods ----
   try{
