@@ -3265,8 +3265,15 @@ const app = {
     // View Source (Ctrl+U + browser menu): browser xử lý riêng, JS không bắt được click menu
     //   → dùng DevTools-detection heuristic + HTML comment warning ở đầu file
     // Skip DevTools detection on localhost/dev to avoid false positives.
+    // Also skip on touch devices: virtual keyboard shrinks innerHeight và
+    // trigger nhầm màn hình "CẤM XEM MÃ NGUỒN" ngay khi user gõ ký tự đầu.
     const _isLocalHost = ['localhost','127.0.0.1',''].includes(location.hostname) || location.hostname.endsWith('.local');
-    if(!_isLocalHost) this._startDevToolsDetection();
+    let _isTouch = false;
+    try{
+      _isTouch = (window.matchMedia && window.matchMedia('(pointer: coarse)').matches)
+        || (navigator.maxTouchPoints > 0);
+    }catch{}
+    if(!_isLocalHost && !_isTouch) this._startDevToolsDetection();
     window.addEventListener('keydown', e => {
       // F12
       if(e.key === 'F12'){ e.preventDefault(); this.stealthFlash('#EA4335'); return; }
