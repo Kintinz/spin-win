@@ -153,8 +153,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Spin & Win","item":"https://spinwin.io.vn/"},{"@type":"ListItem","position":2,"name":"Chọn Số Trong Khoảng","item":"https://spinwin.io.vn/range/"}]}
 </script>
+<link rel="stylesheet" href="assets/css/ui.css?v=1">
 </head>
-<body data-mode="range">
+<body data-mode="range" class="site-app">
 
 <header>
   <div class="header-primary">
@@ -208,15 +209,16 @@
 <main>
   <button class="mobile-panel-backdrop" id="mobilePanelBackdrop" type="button" onclick="app.closeMobilePanels()" aria-label="Đóng"></button>
   <section class="wheel-area">
-    <div class="wheel-grid" id="wheelGrid" data-n="1"></div>
-    <section class="seo-summary" aria-labelledby="seoTitle">
-      <div class="seo-summary-head">
+      <div class="app-intro">
         <span class="ui-icon-slot" data-icon="sparkles" aria-hidden="true"></span>
         <div>
           <h1 id="seoTitle" data-i18n="seo.title">Quay một số trong khoảng</h1>
           <p class="seo-summary-lead" data-i18n="seo.lead">Chọn một số ngẫu nhiên từ khoảng bạn đặt, với bước nhảy và định dạng phù hợp cho trò chơi, lớp học hoặc sự kiện.</p>
         </div>
       </div>
+    <div class="wheel-grid" id="wheelGrid" data-n="1"></div>
+    <section class="seo-summary" aria-labelledby="seoTitle">
+
       <div class="seo-summary-grid">
         <div>
           <h2 data-i18n="seo.whatTitle">Cách dùng công cụ quay dải số</h2>
@@ -600,7 +602,7 @@
 <div class="toast" id="toast"></div>
 <div class="save-indicator" id="saveIndicator">Đã lưu</div>
 
-<script src="assets/js/app.js?v=2" defer></script>
+<script src="assets/js/app.js?v=3" defer></script>
 
 <!-- ==================== SOURCE PROTECTION LAYER ====================
      Nhiều lớp gây khó khi user cố mở DevTools / xem source / copy.

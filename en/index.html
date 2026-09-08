@@ -793,8 +793,9 @@
     footer { flex-direction: column; text-align: center; }
   }
 </style>
+<link rel="stylesheet" href="../assets/css/ui.css?v=1">
 </head>
-<body>
+<body class="site-home">
 
 <div class="ambient-bg" aria-hidden="true">
   <div class="ambient-orb ambient-orb-1"></div>
@@ -1468,10 +1469,13 @@
     const tabs = document.querySelectorAll('.playground-tab');
     const views = document.querySelectorAll('.playground-view');
     tabs.forEach((tab) => {
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-selected', String(tab.classList.contains('active')));
       tab.addEventListener('click', () => {
-        tabs.forEach((t) => t.classList.remove('active'));
+        tabs.forEach((t) => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
         views.forEach((v) => v.classList.remove('active'));
         tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
         const targetView = document.getElementById(`demoView${tab.dataset.tab.charAt(0).toUpperCase() + tab.dataset.tab.slice(1)}`);
         if (targetView) targetView.classList.add('active');
       });

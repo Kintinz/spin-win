@@ -751,8 +751,9 @@
     background: rgba(37,99,235,.1);
   }
 </style>
+<link rel="stylesheet" href="assets/css/ui.css?v=1">
 </head>
-<body>
+<body class="site-race">
 
 <header>
   <div class="logo">
@@ -1479,6 +1480,7 @@
       const visual=element('span','racer-visual'), shadow=element('span','racer-shadow'), bubble=element('span','bubble'), number=element('span','racer-number'), name=element('span','racer-name');
       visual.appendChild(shadow);
       bubble.append(number,name); el.append(visual,bubble);
+      bubble.style.left=(emojiSize*1.92/2)+'px';
       const slot={el,visual,shadow,bubble,number,name,racer:null}; el.onclick=()=>{ if(slot.racer) follow(slot.racer.id); };
       slots.push(slot); frag.appendChild(el);
     }
@@ -1588,7 +1590,6 @@
       const y=poolY0+fieldHeight*yRatio;
       slot.el.style.transform='translate('+x.toFixed(2)+'px,'+y.toFixed(2)+'px) translate(-50%,-50%)';
       // The name is always anchored to this racer's visual center, never pushed to another lane.
-      slot.bubble.style.left=(artW/2)+'px';
       const isWinner=phase==='finished' && raceOrder[0] && r.id===raceOrder[0].id;
       slot.el.classList.toggle('leader',!isWinner && topRacers[0]===r && phase!=='idle');
       slot.el.classList.toggle('winner',isWinner);

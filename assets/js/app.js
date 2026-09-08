@@ -703,7 +703,7 @@ const app = {
   applyBg(){
     const bg = this.state.cfg.bg || {};
     const light = this.state.cfg.theme==='light';
-    let css = light ? '#f5f7fa' : '#171b21';
+    let css = getComputedStyle(document.body).getPropertyValue('--page-bg').trim() || (light ? '#f5f7fa' : '#171b21');
     if(bg.type==='preset' && bg.preset && bg.preset!=='default') css = BG_PRESETS[bg.preset]?.css || css;
     else if(bg.type==='solid') css = bg.color1 || '#171b21';
     else if(bg.type==='gradient') css = `linear-gradient(${bg.dir||'135deg'},${bg.color2a||'#5d87b0'},${bg.color2b||'#78a4c7'})`;
@@ -882,7 +882,10 @@ const app = {
     this.renderAll(true); this.save();
     this.toast('⎘ '+this.t('status.created')+': '+c.name);
   },
-  selectWheel(id){ this.state.activeWheelId = id; this.renderAll(true); this.save(); },
+  selectWheel(id){
+    if(this.state.activeWheelId === id) return;
+    this.state.activeWheelId = id; this.renderAll(true); this.save();
+  },
   async renameWheel(){
     const w = this.activeWheel();
     const n = await this.prompt(this.t('prompt.rename'), w.name, this.t('prompt.renameTitle'));

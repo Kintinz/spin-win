@@ -1,0 +1,134 @@
+/* Shared presentation for the home, picker tools and race. Gameplay stays in the existing engines. */
+body.site-home{--paper:#f5f6f3;--paper-deep:#ecefe9;--blue:#14685f;--blue-glow:rgba(20,104,95,.12);--coral:#cf644b;--ink:#172f32;--ink-soft:#3c5355;--muted:#627574;--line:#dce3de;--surface:#fff;--radius-lg:18px;--shadow-lg:0 16px 42px rgba(23,47,50,.07)}
+html[data-theme=dark] body.site-home{--paper:#101b20;--paper-deep:#15252b;--surface:#192b31;--surface-solid:#192b31;--ink:#eef5f3;--ink-soft:#c4d5d1;--muted:#a0b7b1;--line:#2d444a;--blue:#56b5a3}
+.site-home .ambient-bg,.site-home::before{display:none}
+.site-home .page-shell{max-width:1280px;padding-top:0}
+.site-home .site-header{display:grid;grid-template-columns:auto 1fr;padding:19px 0;margin:0;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;background:transparent;backdrop-filter:none}
+.site-home .site-header-right{justify-content:flex-end;gap:24px}
+.site-home .brand img{width:164px}
+html[data-theme=dark] .site-home .brand{background:#f5f6f3;border-radius:8px;padding:6px 10px}
+.site-home .nav{gap:4px}
+.site-home .nav a{border-radius:6px;padding:8px 10px;font-size:12px}
+.site-home .nav-cta{display:none}
+.site-home .hero{grid-template-columns:1fr 1fr;gap:56px;padding:62px 0 48px}
+.site-home .hero h1{font-size:clamp(36px,4.2vw,58px);font-weight:800;line-height:1.16;letter-spacing:-1.8px}
+.site-home .hero-gradient-text{background:none;-webkit-text-fill-color:currentColor;color:var(--blue)}
+.site-home .hero-copy>p{font-size:16px;line-height:1.8;max-width:490px}
+.site-home .eyebrow{padding:0;border:0;background:none;border-radius:0;letter-spacing:1.5px;font-size:10px;margin-bottom:20px}
+.site-home .eyebrow-dot,.site-home .live-badge-dot{animation:none;box-shadow:none}
+.site-home .button{border-radius:9px;font-weight:700;box-shadow:none;transition:background .18s,color .18s}
+.site-home .button-primary{background:var(--blue);color:#fff}
+.site-home .button-secondary{background:transparent;backdrop-filter:none}
+.site-home .button:hover{transform:none;box-shadow:none}
+.site-home .hero-actions{gap:10px;margin-bottom:24px}
+.site-home .hero-badges{gap:14px}
+.site-home .hero-badge-item{font-size:11px}
+.site-home .playground-card{padding:24px;background:var(--surface);backdrop-filter:none;box-shadow:var(--shadow-lg);border-radius:18px}
+.site-home .playground-header{flex-direction:column;align-items:stretch;gap:16px}
+.site-home .playground-title-box{justify-content:space-between}
+.site-home .playground-tabs{display:grid;grid-template-columns:repeat(4,1fr);background:var(--paper);padding:4px}
+.site-home .playground-tab{min-height:36px;padding:6px;font-size:12px}
+.site-home .wheel-stage{width:260px;height:260px;margin:0 auto}
+.site-home .demo-result-bar{background:var(--paper);border-radius:8px;margin-top:18px}
+.site-home .trust-strip{background:transparent;border-radius:0;box-shadow:none;border-width:1px 0;padding:22px 0;margin-bottom:60px}
+.site-home .trust-icon{box-shadow:none;border-radius:10px}
+.site-home .tools-section{margin-bottom:60px}
+.site-home .section-heading h2{letter-spacing:-1px}
+.site-home .tool-card{box-shadow:none;border-radius:14px;transition:border-color .18s,background .18s}
+.site-home .tool-card:hover{transform:none;box-shadow:none;border-color:var(--blue)}
+.site-home .tool-card-featured{background:#173f47}
+.site-home .tool-illustration-badge{box-shadow:none;animation:none}
+.site-home .policy-public-card{box-shadow:none}
+.site-home :focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+@media(max-width:1050px){
+ .site-home .site-header-right{gap:10px}.site-home .nav a{padding:8px 6px;font-size:11px}
+ .site-home .hero{gap:28px}.site-home .hero h1{font-size:42px}.site-home .hero-badges{gap:8px}
+}
+@media(max-width:960px){
+ .site-home .site-header{grid-template-columns:1fr auto;gap:12px;padding:15px 0}
+ .site-home .site-header-right{display:contents}.site-home .home-controls{grid-column:2;grid-row:1}
+ .site-home .nav{grid-column:1/-1;grid-row:2;max-width:none;width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;gap:0;overflow:visible;border-top:1px solid var(--line);padding-top:9px}
+ .site-home .nav a{padding:9px 3px;font-size:10px}
+ .site-home .hero{grid-template-columns:1fr;text-align:left;padding:32px 0;gap:28px}
+ .site-home .hero-copy{margin:0}.site-home .hero h1{font-size:34px;letter-spacing:-1px;max-width:540px}
+ .site-home .hero-copy>p{font-size:14px;margin-bottom:22px}
+ .site-home .hero-actions,.site-home .hero-badges{justify-content:flex-start}
+ .site-home .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.site-home .hero-actions .button{font-size:11px;padding:0 8px;min-height:44px;gap:5px}
+ .site-home .hero-badges{gap:8px 13px}.site-home .hero-badge-item{font-size:10px}
+ .site-home .playground-card{padding:18px}.site-home .trust-strip{grid-template-columns:repeat(2,1fr);gap:20px;padding:22px 0;margin-bottom:40px}
+ .site-home .trust-strip .trust-item{gap:9px}.site-home .trust-strip .trust-icon{width:32px;height:32px;flex-shrink:0}
+ .site-home .tools-grid{grid-template-columns:1fr}.site-home .tool-card-featured{grid-column:auto}
+}
+body.site-app{--brand:#207d70;--brand2:#399888;--accent:#65b9a6;--page-bg:#111e25;--bg:#111e25;--bg2:#182930;--panel:#20333b;--panel2:#294149;--card-bg:#182930;--card-hover:#182930;--header-bg:#15252c;--input-bg:#14242b;--text:#ecf4f1;--muted:#b2c6c0;--border:rgba(183,213,202,.15);--header-shadow:none}
+body.site-app.light{--page-bg:#f3f6f3;--bg:#f3f6f3;--bg2:#fff;--panel:#fff;--panel2:#eef3ef;--card-bg:#fff;--card-hover:#fff;--header-bg:#fff;--input-bg:#f7f9f7;--text:#193a3a;--muted:#58716c;--border:#dce5df;--brand:#207d70;--brand2:#2a8f80}
+.site-app::before{animation:none;background:none}
+.site-app header{padding:12px 22px;box-shadow:none;gap:12px}
+.site-app .brand-name{font-family:inherit;font-size:20px;letter-spacing:-.6px;text-shadow:none}
+.site-app .brand-letter{color:var(--text)}
+.site-app .brand-mark{width:36px;height:36px;flex-basis:36px}
+.site-app .tbtn,.site-app .sbtn{min-height:36px}
+.site-app .tbtn:hover,.site-app .wheel-card:hover{transform:none}
+.site-app .wheel-area{padding:24px 28px}
+.app-intro{max-width:900px;margin:0 auto 20px}
+.app-intro h1{margin:0 0 6px;font-size:24px;letter-spacing:-.6px;font-weight:700}
+.app-intro p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+.site-app .wheel-card{border-radius:16px;padding:20px;gap:16px}
+.site-app .wheel-card.active{border-color:var(--border);box-shadow:0 8px 28px rgba(0,0,0,.06)}
+.site-app:not(.overlay):not(.display) .wheel-grid{min-height:0;align-content:start}.site-app:not(.overlay):not(.display) .wheel-grid[data-n="1"]{grid-template-columns:minmax(0,680px);place-content:start center}
+.site-app:not(.overlay):not(.display) .wheel-inner{max-width:min(480px,100%,calc(100dvh - 390px));margin-inline:auto}
+.site-app .wheel-canvas{filter:none}
+.site-app .spin-btn{background:var(--brand);border-radius:9px;min-height:46px;box-shadow:none}
+.site-app .toolbar{gap:5px;padding:12px;flex-wrap:wrap}
+.site-app .toolbar .sbtn{padding:7px 8px;font-size:12px}
+.site-app aside{padding-top:10px}.site-app.mobile-config-open
+.site-app #entriesText{margin:14px;width:calc(100% - 28px);padding:15px;border:1px solid var(--border);border-radius:10px;background:var(--input-bg);line-height:1.9;font-size:14px}
+.site-app .seo-summary{box-shadow:none;background:transparent;border:0;padding-inline:0;margin-top:24px}
+.site-app .policy-tooltip{animation:none}
+@media(min-width:961px){.site-app:not(.overlay):not(.display) main{grid-template-columns:minmax(0,1fr) 350px}}
+@media(max-width:700px){
+ .site-app header{padding:10px 12px}.site-app .wheel-area{padding:20px 12px}
+ .app-intro{margin-bottom:16px}.app-intro h1{font-size:22px}.app-intro p{font-size:12px}
+ .site-app:not(.overlay):not(.display) .wheel-inner{max-width:100%}.site-app .wheel-card{padding:14px;gap:12px}
+ .site-app .wheel-card-footer{gap:10px}.site-app .wheel-info{font-size:12px}
+ .site-app .toolbar{display:flex}.site-app .toolbar .sbtn{width:auto;flex:1 1 calc(50% - 5px)}
+}
+@media(prefers-reduced-motion:reduce){.site-home *{animation:none!important;scroll-behavior:auto!important}}
+
+.app-intro{display:block}.app-intro>.ui-icon-slot{display:none}
+.site-app.overlay .app-intro,.site-app.display .app-intro{display:none}
+.site-app .app-intro .seo-summary-lead{max-width:760px;font-size:13px;line-height:1.65}
+.site-app .modal .box,.site-app .dlg{border-radius:16px;box-shadow:0 18px 60px rgba(0,0,0,.2)}
+.site-app .tab-bar button{min-height:44px}.site-app .feature-config{border-radius:10px}
+.site-app .range-container,.site-app .roller-container,.site-app .slot-container{border-radius:12px;box-shadow:none}
+.site-app .range-container{min-height:220px}
+.site-app .results-list{padding:12px}.site-app .result-item{border-radius:9px}
+.site-app .sbtn:disabled,.site-app .spin-btn:disabled{cursor:wait}
+.site-app .wc-btn{min-width:36px;min-height:36px}
+.site-app .mobile-panel-backdrop{z-index:99}
+.site-home .home-language-select,.site-home .home-theme-toggle{min-height:40px}
+.site-home .trust-icon-box{box-shadow:none}
+.site-home .playground-tab:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.site-race{--bg:#111e25;--bg2:#182930;--panel:#20333b;--panel2:#294149;--text:#ecf4f1;--muted:#b2c6c0;--brand:#207d70;--brand2:#65b9a6;--border:rgba(183,213,202,.15);--setup-bg:#111e25;--setup-shadow:0 16px 48px rgba(0,0,0,.16);--field-bg:#14242b;--field-bg-focus:#192f35;--field-border:#36544f;--field-text:#ecf4f1;--control-bg:#20333b;--control-hover:#294149;--control-border:#36544f;--menu-bg:#20333b;--menu-selected:#294149;--list-bg:#20333b;--list-hover:#294149}
+html[data-theme=light] .site-race{--bg:#f3f6f3;--bg2:#fff;--panel:#fff;--panel2:#eef3ef;--text:#193a3a;--muted:#58716c;--border:#dce5df;--brand:#207d70;--brand2:#2a8f80;--setup-bg:#f3f6f3;--field-bg:#f7f9f7;--field-bg-focus:#fff;--field-border:#dce5df;--field-text:#193a3a;--control-bg:#fff;--control-hover:#eef3ef;--control-border:#dce5df;--menu-bg:#fff;--menu-selected:#eef3ef;--list-bg:#fff;--list-hover:#eef3ef;--setup-shadow:0 16px 48px rgba(25,58,58,.06)}
+.site-race header{background:var(--bg2);backdrop-filter:none;-webkit-backdrop-filter:none;padding:14px 22px}
+.site-race .setup-card{background:var(--bg2);border:1px solid var(--border);border-radius:18px;box-shadow:var(--setup-shadow);padding:32px}
+.site-race .setup-card h2{background:none;-webkit-text-fill-color:var(--text);color:var(--text);font-size:28px;letter-spacing:-.7px}
+.site-race .participant-block,.site-race .race-config,.site-race .follow-panel{background:var(--bg2);box-shadow:none;border:1px solid var(--border);border-radius:12px}
+.site-race .fs-trigger,.site-race .number-field,.site-race select,.site-race .segmented{box-shadow:none;border-radius:9px;background:var(--control-bg)}
+.site-race .tbtn{min-height:40px;border-radius:8px;box-shadow:none}
+.site-race .tbtn.primary,.site-race #enterArenaBtn{background:var(--brand);box-shadow:none;color:#fff;border-radius:9px}
+.site-race #namesTa{background:var(--field-bg);box-shadow:none;border-radius:10px;line-height:1.8}
+.site-race .race-toolbar{gap:12px}.site-race .track{border-radius:16px;box-shadow:none}
+.site-race .lb-row{border-radius:9px;box-shadow:none}.site-race .modal-card{border-radius:16px;box-shadow:var(--setup-shadow)}
+.site-race .fs-trigger:focus-visible,.site-race .tbtn:focus-visible,.site-race button:focus-visible{outline:2px solid var(--brand2);outline-offset:3px}
+@media(max-width:700px){
+ .site-app .app-intro .seo-summary-lead{font-size:12px}.site-app .app-intro h1{font-size:21px}
+ .site-app .header-utilities .header-direct-tool{display:none}
+ .site-app .header-utilities{justify-content:space-between}
+ .site-app .wheel-picker{min-width:0;width:0}.site-app .aside-header .sbtn{flex-shrink:0}
+ .site-app .toolbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .site-app .toolbar .sbtn{width:100%}.site-app .wheel-card-footer .spin-btn{width:100%}
+ .site-race header{padding:12px}.site-race .setup-card{padding:22px 16px;border-radius:14px}
+ .site-race .setup-card h2{font-size:23px}.site-race .race-actions{flex-wrap:wrap}
+ .site-race #enterArenaBtn{min-height:48px}
+}
