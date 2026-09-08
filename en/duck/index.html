@@ -859,7 +859,7 @@
     <label class="toggle-row"><span class="toggle-label"><span class="ui-icon" data-icon="volume"></span>Đọc tên winner</span><input type="checkbox" id="ttsCk" checked></label>
     <label class="toggle-row"><span class="toggle-label"><span class="ui-icon" data-icon="music"></span>Âm thanh cuộc đua</span><input type="checkbox" id="soundCk" checked></label>
     <div class="field" id="musicPickerField">
-      <label for="musicPicker"><span class="ui-icon" data-icon="music"></span>Nhạc nền</label>
+      <label for="musicPicker"><span class="ui-icon" data-icon="music"></span><span id="musicPickerLabel">Nhạc nền</span></label>
       <select id="musicPicker" aria-label="Chọn nhạc nền cuộc đua">
         <!-- options được inject bởi JS từ mảng RACE_MUSIC -->
       </select>
@@ -1305,11 +1305,15 @@
   // The file/label is the ONLY thing to change; the picker + audio switching
   // wire up automatically.
   const RACE_MUSIC = [
-    {id:'nhacdua',   label:'Nhạc đua (mặc định)', file:'assets/mp3/nhacdua.mp3'},
-    // {id:'racing',  label:'Racing beat',           file:'assets/mp3/racing.mp3'},
-    // {id:'suspense',label:'Suspense',              file:'assets/mp3/suspense.mp3'},
-    // {id:'epic',    label:'Epic race',             file:'assets/mp3/epic.mp3'},
-    {id:'off',       label:'Không nhạc',           file:''},
+    {id:'nhacdua',  label:{vi:'Nhạc đua (mặc định)',       en:'Race beat (default)'},   file:'assets/mp3/nhacdua.mp3'},
+    {id:'clumsy',   label:{vi:'Vụng về mà đáng yêu',       en:'Clumsy but caring'},     file:'assets/mp3/aberrantrealities-clumsy-but-caring-ultra-remaster-569314.mp3'},
+    {id:'mischief', label:{vi:'Hoạt hình tinh nghịch',     en:'Bouncy cartoon mischief'}, file:'assets/mp3/alex-morgan-funny-bouncy-cartoon-mischief-578469.mp3'},
+    {id:'funny',    label:{vi:'Nhạc vui nhộn',             en:'Funny music'},           file:'assets/mp3/alex-morgan-funny-funny-music-545489.mp3'},
+    {id:'comedy',   label:{vi:'Nhạc hài',                  en:'Comedy music'},          file:'assets/mp3/maksymmalko-comedy-music-421646.mp3'},
+    {id:'kids',     label:{vi:'Trẻ em',                    en:'Kids'},                  file:'assets/mp3/sub_clair-kids-581150.mp3'},
+    {id:'cartoon',  label:{vi:'Nền hoạt hình vui',         en:'Cartoon background'},    file:'assets/mp3/tatamusic-comedy-funny-cartoon-background-music-390026.mp3'},
+    {id:'acoustic', label:{vi:'Acoustic hài hước',         en:'Cute acoustic comedy'},  file:'assets/mp3/villatic_music-this-cute-funny-acoustic-comedy-music-343494.mp3'},
+    {id:'off',      label:{vi:'Không nhạc',                en:'No music'},              file:''},
   ];
   const raceMusic = $('#raceMusic');
   function _currentMusicFile(){
@@ -1918,6 +1922,9 @@
     canonical?.setAttribute('href',currentUrl.href);
     $('#titleH1').textContent=tr('Đường đua ngẫu nhiên miễn phí','Free online race track');
     $('#subLine').textContent=tr('Cùng xuất phát. Cùng cơ hội.','One starting line. Equal opportunity.');
+    $('#musicPickerLabel').textContent=tr('Nhạc nền','Background music');
+    $('#musicPicker')?.setAttribute('aria-label',tr('Chọn nhạc nền cuộc đua','Choose race background music'));
+    if(typeof renderMusicPicker==='function') renderMusicPicker();
     setButtonLabel($('#startBtn'),racing?'pause':'play',racing?tr('ĐANG ĐUA','RACING'):L().start); updateSummary(); renderSearch(); updateFollow();
   }
   function editNames(){
@@ -1950,10 +1957,14 @@
     };
   }
   // Music picker — populate from RACE_MUSIC, honour saved state, swap track mid-race.
+  function renderMusicPicker(){
+    const sel = $('#musicPicker'); if(!sel) return;
+    sel.innerHTML = RACE_MUSIC.map(m => `<option value="${m.id}">${tr(m.label.vi, m.label.en)}</option>`).join('');
+    sel.value = RACE_MUSIC.some(m=>m.id===state.musicTrack) ? state.musicTrack : RACE_MUSIC[0].id;
+  }
   (function initMusicPicker(){
     const sel = $('#musicPicker'); if(!sel) return;
-    sel.innerHTML = RACE_MUSIC.map(m => `<option value="${m.id}">${m.label}</option>`).join('');
-    sel.value = RACE_MUSIC.some(m=>m.id===state.musicTrack) ? state.musicTrack : RACE_MUSIC[0].id;
+    renderMusicPicker();
     sel.onchange = e => {
       state.musicTrack = e.target.value;
       save();
