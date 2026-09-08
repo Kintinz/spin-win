@@ -1481,6 +1481,7 @@
     const confettiCanvas = document.getElementById('confettiCanvas');
     const ctx = confettiCanvas.getContext('2d');
     let particles = [];
+    let confettiFrame = 0;
     const colors = ['#e85549', '#f5bc2c', '#3ab070', '#2273b5', '#8b5cf6', '#ffffff'];
 
     const resizeConfetti = () => {
@@ -1491,6 +1492,7 @@
     window.addEventListener('resize', resizeConfetti);
 
     const burstConfetti = () => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       resizeConfetti();
       particles = [];
       const cx = confettiCanvas.width / 2;
@@ -1507,9 +1509,11 @@
           decay: Math.random() * 0.02 + 0.015
         });
       }
+      if (!confettiFrame) confettiFrame = requestAnimationFrame(renderConfetti);
     };
 
     const renderConfetti = () => {
+      confettiFrame = 0;
       ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
       particles.forEach((p, idx) => {
         p.x += p.vx;
@@ -1521,13 +1525,15 @@
         ctx.fillStyle = p.color;
         ctx.fillRect(p.x, p.y, p.size, p.size);
       });
-      requestAnimationFrame(renderConfetti);
+      if (particles.length) confettiFrame = requestAnimationFrame(renderConfetti);
     };
-    renderConfetti();
 
     // Wheel Canvas Drawing & Spin Logic
     const wheelCanvas = document.getElementById('heroWheelCanvas');
     const wCtx = wheelCanvas.getContext('2d');
+    const wheelPixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    wheelCanvas.width = wheelCanvas.height = Math.round(200 * wheelPixelRatio);
+    wCtx.setTransform(wheelPixelRatio, 0, 0, wheelPixelRatio, 0, 0);
     const wheelNames = ['Alex', 'Sarah', 'Michael', 'Emma', 'David', 'Olivia'];
     const sliceColors = ['#e85549', '#f5bc2c', '#3ab070', '#2273b5', '#8b5cf6', '#0d9488'];
     let currentAngle = 0;
@@ -1536,7 +1542,7 @@
     const drawWheel = () => {
       const numSlices = wheelNames.length;
       const arc = (Math.PI * 2) / numSlices;
-      const radius = wheelCanvas.width / 2;
+      const radius = 100;
 
       wCtx.clearRect(0, 0, wheelCanvas.width, wheelCanvas.height);
 
