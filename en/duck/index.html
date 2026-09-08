@@ -1204,6 +1204,7 @@
     if(['vi','en'].includes(saved.lang)) state.lang=saved.lang;
     const queryLang=new URL(location.href).searchParams.get('lang');
     if(['vi','en'].includes(queryLang)) state.lang=queryLang;
+    else if(location.pathname.startsWith('/en/')) state.lang='en';
     if(['light','dark'].includes(saved.theme)) state.theme=saved.theme;
     if(Array.isArray(saved.lastResults) && saved.lastResults.length<=MAX_RACERS){
       const places=new Set();
@@ -1962,7 +1963,9 @@
   $('#langSel').onchange=e=>{
     state.lang=e.target.value;
     const nextUrl=new URL(location.href);
-    if(state.lang==='en') nextUrl.searchParams.set('lang','en'); else nextUrl.searchParams.delete('lang');
+    if(state.lang==='en') nextUrl.searchParams.set('lang','en');
+    else if(location.pathname.startsWith('/en/')) nextUrl.searchParams.set('lang','vi');
+    else nextUrl.searchParams.delete('lang');
     history.replaceState(null,'',nextUrl.href);
     applyLang(); save();
   };

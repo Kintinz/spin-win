@@ -638,6 +638,7 @@ const app = {
     if(PAGE_MODE){
       const url = new URL(location.href);
       if(next === 'en') url.searchParams.set('lang','en');
+      else if(url.pathname.startsWith('/en/')) url.searchParams.set('lang','vi');
       else url.searchParams.delete('lang');
       history.replaceState(null, '', url.href);
     }
@@ -732,6 +733,7 @@ const app = {
   applyURLLanguage(){
     const lang = new URL(location.href).searchParams.get('lang');
     if(lang === 'en' || lang === 'vi') this.state.cfg.language = lang;
+    else if(location.pathname.startsWith('/en/')) this.state.cfg.language = 'en';
   },
 
   // Restrict the app to one wheel type when the page declares a data-mode. Drops
