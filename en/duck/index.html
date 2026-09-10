@@ -8,7 +8,8 @@
 <meta name="description" content="Free random race track for up to 3,000 participants: choose ducks, horses, cars, turtles, snails or spaceships. Fair random draw and full results.">
 <meta name="keywords" content="random race, race track online, duck race, horse race, car race, random winner race, race picker, random draw race">
 <meta name="author" content="Spin &amp; Win">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
 <meta name="theme-color" content="#3a7db0">
 <meta name="color-scheme" content="dark light">
 <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
@@ -17,6 +18,12 @@
 <link rel="alternate" hreflang="vi" href="https://spinwin.io.vn/duck/">
 <link rel="alternate" hreflang="en" href="https://spinwin.io.vn/en/duck/">
 <link rel="alternate" hreflang="x-default" href="https://spinwin.io.vn/duck/">
+<script>
+  const internalMode = new URLSearchParams(location.search);
+  if (internalMode.get('admin') === '1' || internalMode.get('overlay') === '1' || internalMode.get('panel') === 'trick') {
+    document.querySelectorAll('meta[name="robots"],meta[name="googlebot"]').forEach(meta => meta.setAttribute('content','noindex, nofollow, noarchive'));
+  }
+</script>
 <!-- Open Graph -->
 <meta property="og:site_name" content="Spin &amp; Win">
 <meta property="og:type" content="website">
@@ -907,6 +914,21 @@
     <div class="leaderboard" id="lbList"></div><p id="lbEmpty" class="small-note">Nhập danh sách để bắt đầu.</p>
     <button class="tbtn ghost" id="showResultsBtn" hidden><span class="ui-icon" data-icon="trophy"></span><span>Xem kết quả · <span id="resultCount">0</span> người thắng</span></button>
   </aside>
+  <section class="seo-summary-extended" aria-label="About the Race Track">
+    <h2>What is a random race track?</h2>
+    <p>A random race track is a raffle tool in the shape of a race: each participant gets assigned a character (duck, horse, car, turtle, snail or spaceship) and they all race to the finish line at randomized speeds. The first to cross wins. Unlike a name wheel that picks one person at a time, a race track runs up to 3,000 participants at once and returns the full ranking of the entire list.</p>
+    <h2>Who should use a random race track?</h2>
+    <p>Large giveaway hosts use it to pick one or several winners out of thousands of entrants, with a more visual and engaging effect than a wheel or a flat list. Companies use it for internal awards, roadshows and year-end parties when the participant count is high. Streamers and MCs use it for livestream minigames: instead of showing one result, the audience watches the entire race and cheers when their name pulls ahead. Teachers use it to split teams or pick several students in the exact order they finish.</p>
+    <h2>Frequently asked questions</h2>
+    <h3>What is the maximum number of racers?</h3>
+    <p>Up to 3,000 racers per race. For large fields, the tool automatically shows representative lanes and still returns the full ranking in the leaderboard.</p>
+    <h3>Can I mix multiple skins (duck, horse, car…) in one race?</h3>
+    <p>Yes. You can choose a unified character or mix multiple skins in the same race.</p>
+    <h3>Are the results fair?</h3>
+    <p>Yes. Each racer's speed is generated randomly using the browser's Math.random — no bias, no cheating and no data is sent to any server.</p>
+    <h3>Is there background music during the race?</h3>
+    <p>Yes. The tool includes multiple race music tracks; you can preview, disable or change the track in the music picker.</p>
+  </section>
 </main>
 
 <!-- Race BGM: looped background music that plays only while the race is running.

@@ -8,7 +8,8 @@
 <meta name="description" content="Đường đua ngẫu nhiên cho tới 3.000 người: chọn vịt, ngựa, xe, rùa hoặc tàu vũ trụ. Bốc thăm ngẫu nhiên công bằng, xem đủ kết quả.">
 <meta name="keywords" content="đường đua, đường đua ngẫu nhiên, race track, bốc thăm ngẫu nhiên, random name picker, chọn ngẫu nhiên, vòng quay may mắn, spin win">
 <meta name="author" content="Spin &amp; Win">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
 <meta name="theme-color" content="#3a7db0">
 <meta name="color-scheme" content="dark light">
 <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
@@ -17,6 +18,12 @@
 <link rel="alternate" hreflang="vi" href="https://spinwin.io.vn/duck/">
 <link rel="alternate" hreflang="en" href="https://spinwin.io.vn/en/duck/">
 <link rel="alternate" hreflang="x-default" href="https://spinwin.io.vn/duck/">
+<script>
+  const internalMode = new URLSearchParams(location.search);
+  if (internalMode.get('admin') === '1' || internalMode.get('overlay') === '1' || internalMode.get('panel') === 'trick') {
+    document.querySelectorAll('meta[name="robots"],meta[name="googlebot"]').forEach(meta => meta.setAttribute('content','noindex, nofollow, noarchive'));
+  }
+</script>
 <!-- Open Graph -->
 <meta property="og:site_name" content="Spin &amp; Win">
 <meta property="og:type" content="website">
@@ -926,6 +933,21 @@
     <div class="leaderboard" id="lbList"></div><p id="lbEmpty" class="small-note">Nhập danh sách để bắt đầu.</p>
     <button class="tbtn ghost" id="showResultsBtn" hidden><span class="ui-icon" data-icon="trophy"></span><span>Xem kết quả · <span id="resultCount">0</span> người thắng</span></button>
   </aside>
+  <section class="seo-summary-extended" aria-label="Thông tin về Đường đua">
+    <h2>Đường đua ngẫu nhiên là gì?</h2>
+    <p>Đường đua ngẫu nhiên là công cụ bốc thăm dạng cuộc đua: mỗi người tham gia được gắn một nhân vật (vịt, ngựa, xe, rùa, ốc sên hoặc tàu vũ trụ) và tất cả cùng chạy đến đích với tốc độ ngẫu nhiên. Người về đích trước là người thắng. Khác với vòng quay tên chỉ chọn 1 người mỗi lần, đường đua thi ngẫu nhiên đồng thời tối đa 3.000 người và trả về đầy đủ thứ hạng của toàn bộ danh sách.</p>
+    <h2>Ai nên dùng đường đua ngẫu nhiên?</h2>
+    <p>Người tổ chức giveaway lớn dùng để bốc thăm 1 hoặc nhiều người thắng từ hàng ngàn khán giả, với hiệu ứng trực quan hấp dẫn hơn vòng quay hay danh sách phẳng. Doanh nghiệp dùng cho lễ trao thưởng nội bộ, roadshow, tiệc cuối năm khi số lượng người tham gia lớn. Streamer và MC dùng cho minigame trên livestream: thay vì hiển thị 1 kết quả, khán giả xem cả cuộc đua và ăn mừng khi tên mình vượt lên. Giáo viên dùng để chia đội hoặc chọn nhiều học sinh cùng lúc theo thứ tự về đích.</p>
+    <h2>Câu hỏi thường gặp về đường đua ngẫu nhiên</h2>
+    <h3>Đường đua hỗ trợ tối đa bao nhiêu người?</h3>
+    <p>Tối đa 3.000 người tham gia trong một cuộc đua. Với số lượng lớn, công cụ tự hiển thị đại diện và giữ cả danh sách kết quả đầy đủ ở bảng xếp hạng.</p>
+    <h3>Có thể chọn nhiều loại skin (vịt, ngựa, xe...) trong cùng cuộc đua không?</h3>
+    <p>Có. Bạn có thể chọn nhân vật đồng bộ hoặc trộn nhiều loại skin trong cùng một cuộc đua.</p>
+    <h3>Kết quả có công bằng không?</h3>
+    <p>Có. Tốc độ mỗi người được sinh ngẫu nhiên bằng Math.random của trình duyệt, không có gian lận, không thiên vị và không lưu dữ liệu lên máy chủ.</p>
+    <h3>Có nhạc nền khi đua không?</h3>
+    <p>Có. Công cụ đi kèm nhiều track nhạc đua ngẫu nhiên, có thể tắt hoặc chọn track khác trong bộ chọn nhạc.</p>
+  </section>
 </main>
 
 <!-- Race BGM: looped background music that plays only while the race is running.
