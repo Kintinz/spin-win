@@ -148,6 +148,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
     font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+  body.site-race{overflow-x:hidden;overflow-y:auto}
   body::before{content:"";position:fixed;inset:0;background:
     radial-gradient(ellipse 60% 40% at 10% 0%, rgba(93,135,176,.15), transparent 60%),
     radial-gradient(ellipse 40% 40% at 100% 100%, rgba(247,201,72,.08), transparent 60%);
@@ -155,6 +156,11 @@
   @keyframes ambientDrift{0%{transform:translate3d(-1.5%,-1%,0) scale(1)}50%{transform:translate3d(1%,1.5%,0) scale(1.025)}100%{transform:translate3d(-.5%,2%,0) scale(1.01)}}
   a{color:var(--brand2);text-decoration:none}
   button,select,input,textarea{font:inherit}
+
+  .seo-summary-extended{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px;color:var(--text)}
+  .seo-summary-extended h2{margin:24px 0 8px;font-size:22px;line-height:1.25}
+  .seo-summary-extended h3{margin:18px 0 6px;font-size:16px;line-height:1.35}
+  .seo-summary-extended p{margin:0 0 12px;color:var(--muted);line-height:1.7}
 
   header{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--glass-brd);flex-wrap:wrap}
   .logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:15px}
@@ -656,6 +662,7 @@
   body[data-stage="arena"] #setupScreen{display:none}
   /* When setup stage active: hide arena UI so nothing shows behind the blur */
   body[data-stage="setup"] main,
+  body[data-stage="setup"] .seo-summary-extended,
   body[data-stage="setup"] #confetti,
   body[data-stage="setup"] .fab-share,
   body[data-stage="setup"] #policyFab{display:none}
@@ -933,22 +940,23 @@
     <div class="leaderboard" id="lbList"></div><p id="lbEmpty" class="small-note">Nhập danh sách để bắt đầu.</p>
     <button class="tbtn ghost" id="showResultsBtn" hidden><span class="ui-icon" data-icon="trophy"></span><span>Xem kết quả · <span id="resultCount">0</span> người thắng</span></button>
   </aside>
-  <section class="seo-summary-extended" aria-label="Thông tin về Đường đua">
-    <h2>Đường đua ngẫu nhiên là gì?</h2>
-    <p>Đường đua ngẫu nhiên là công cụ bốc thăm dạng cuộc đua: mỗi người tham gia được gắn một nhân vật (vịt, ngựa, xe, rùa, ốc sên hoặc tàu vũ trụ) và tất cả cùng chạy đến đích với tốc độ ngẫu nhiên. Người về đích trước là người thắng. Khác với vòng quay tên chỉ chọn 1 người mỗi lần, đường đua thi ngẫu nhiên đồng thời tối đa 3.000 người và trả về đầy đủ thứ hạng của toàn bộ danh sách.</p>
-    <h2>Ai nên dùng đường đua ngẫu nhiên?</h2>
-    <p>Người tổ chức giveaway lớn dùng để bốc thăm 1 hoặc nhiều người thắng từ hàng ngàn khán giả, với hiệu ứng trực quan hấp dẫn hơn vòng quay hay danh sách phẳng. Doanh nghiệp dùng cho lễ trao thưởng nội bộ, roadshow, tiệc cuối năm khi số lượng người tham gia lớn. Streamer và MC dùng cho minigame trên livestream: thay vì hiển thị 1 kết quả, khán giả xem cả cuộc đua và ăn mừng khi tên mình vượt lên. Giáo viên dùng để chia đội hoặc chọn nhiều học sinh cùng lúc theo thứ tự về đích.</p>
-    <h2>Câu hỏi thường gặp về đường đua ngẫu nhiên</h2>
-    <h3>Đường đua hỗ trợ tối đa bao nhiêu người?</h3>
-    <p>Tối đa 3.000 người tham gia trong một cuộc đua. Với số lượng lớn, công cụ tự hiển thị đại diện và giữ cả danh sách kết quả đầy đủ ở bảng xếp hạng.</p>
-    <h3>Có thể chọn nhiều loại skin (vịt, ngựa, xe...) trong cùng cuộc đua không?</h3>
-    <p>Có. Bạn có thể chọn nhân vật đồng bộ hoặc trộn nhiều loại skin trong cùng một cuộc đua.</p>
-    <h3>Kết quả có công bằng không?</h3>
-    <p>Có. Tốc độ mỗi người được sinh ngẫu nhiên bằng Math.random của trình duyệt, không có gian lận, không thiên vị và không lưu dữ liệu lên máy chủ.</p>
-    <h3>Có nhạc nền khi đua không?</h3>
-    <p>Có. Công cụ đi kèm nhiều track nhạc đua ngẫu nhiên, có thể tắt hoặc chọn track khác trong bộ chọn nhạc.</p>
-  </section>
 </main>
+
+<section class="seo-summary-extended" aria-label="Thông tin về Đường đua">
+  <h2>Đường đua ngẫu nhiên là gì?</h2>
+  <p>Đường đua ngẫu nhiên là công cụ bốc thăm dạng cuộc đua: mỗi người tham gia được gắn một nhân vật (vịt, ngựa, xe, rùa, ốc sên hoặc tàu vũ trụ) và tất cả cùng chạy đến đích với tốc độ ngẫu nhiên. Người về đích trước là người thắng. Khác với vòng quay tên chỉ chọn 1 người mỗi lần, đường đua thi ngẫu nhiên đồng thời tối đa 3.000 người và trả về đầy đủ thứ hạng của toàn bộ danh sách.</p>
+  <h2>Ai nên dùng đường đua ngẫu nhiên?</h2>
+  <p>Người tổ chức giveaway lớn dùng để bốc thăm 1 hoặc nhiều người thắng từ hàng ngàn khán giả, với hiệu ứng trực quan hấp dẫn hơn vòng quay hay danh sách phẳng. Doanh nghiệp dùng cho lễ trao thưởng nội bộ, roadshow, tiệc cuối năm khi số lượng người tham gia lớn. Streamer và MC dùng cho minigame trên livestream: thay vì hiển thị 1 kết quả, khán giả xem cả cuộc đua và ăn mừng khi tên mình vượt lên. Giáo viên dùng để chia đội hoặc chọn nhiều học sinh cùng lúc theo thứ tự về đích.</p>
+  <h2>Câu hỏi thường gặp về đường đua ngẫu nhiên</h2>
+  <h3>Đường đua hỗ trợ tối đa bao nhiêu người?</h3>
+  <p>Tối đa 3.000 người tham gia trong một cuộc đua. Với số lượng lớn, công cụ tự hiển thị đại diện và giữ cả danh sách kết quả đầy đủ ở bảng xếp hạng.</p>
+  <h3>Có thể chọn nhiều loại skin (vịt, ngựa, xe...) trong cùng cuộc đua không?</h3>
+  <p>Có. Bạn có thể chọn nhân vật đồng bộ hoặc trộn nhiều loại skin trong cùng một cuộc đua.</p>
+  <h3>Kết quả có công bằng không?</h3>
+  <p>Có. Tốc độ mỗi người được sinh ngẫu nhiên bằng Math.random của trình duyệt, không có gian lận, không thiên vị và không lưu dữ liệu lên máy chủ.</p>
+  <h3>Có nhạc nền khi đua không?</h3>
+  <p>Có. Công cụ đi kèm nhiều track nhạc đua ngẫu nhiên, có thể tắt hoặc chọn track khác trong bộ chọn nhạc.</p>
+</section>
 
 <!-- Race BGM: looped background music that plays only while the race is running.
      Volume is capped low so it doesn't drown out the TTS winner announcement. -->
