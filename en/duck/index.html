@@ -148,6 +148,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
     font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+  body.site-race{overflow-x:hidden;overflow-y:auto}
   body::before{content:"";position:fixed;inset:0;background:
     radial-gradient(ellipse 60% 40% at 10% 0%, rgba(93,135,176,.15), transparent 60%),
     radial-gradient(ellipse 40% 40% at 100% 100%, rgba(247,201,72,.08), transparent 60%);
@@ -155,6 +156,11 @@
   @keyframes ambientDrift{0%{transform:translate3d(-1.5%,-1%,0) scale(1)}50%{transform:translate3d(1%,1.5%,0) scale(1.025)}100%{transform:translate3d(-.5%,2%,0) scale(1.01)}}
   a{color:var(--brand2);text-decoration:none}
   button,select,input,textarea{font:inherit}
+
+  .seo-summary-extended{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px;color:var(--text)}
+  .seo-summary-extended h2{margin:24px 0 8px;font-size:22px;line-height:1.25}
+  .seo-summary-extended h3{margin:18px 0 6px;font-size:16px;line-height:1.35}
+  .seo-summary-extended p{margin:0 0 12px;color:var(--muted);line-height:1.7}
 
   header{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--glass-brd);flex-wrap:wrap}
   .logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:15px}
@@ -656,6 +662,7 @@
   body[data-stage="arena"] #setupScreen{display:none}
   /* When setup stage active: hide arena UI so nothing shows behind the blur */
   body[data-stage="setup"] main,
+  body[data-stage="setup"] .seo-summary-extended,
   body[data-stage="setup"] #confetti,
   body[data-stage="setup"] .fab-share,
   body[data-stage="setup"] #policyFab{display:none}
@@ -914,22 +921,23 @@
     <div class="leaderboard" id="lbList"></div><p id="lbEmpty" class="small-note">Nhập danh sách để bắt đầu.</p>
     <button class="tbtn ghost" id="showResultsBtn" hidden><span class="ui-icon" data-icon="trophy"></span><span>Xem kết quả · <span id="resultCount">0</span> người thắng</span></button>
   </aside>
-  <section class="seo-summary-extended" aria-label="About the Race Track">
-    <h2>What is a random race track?</h2>
-    <p>A random race track is a raffle tool in the shape of a race: each participant gets assigned a character (duck, horse, car, turtle, snail or spaceship) and they all race to the finish line at randomized speeds. The first to cross wins. Unlike a name wheel that picks one person at a time, a race track runs up to 3,000 participants at once and returns the full ranking of the entire list.</p>
-    <h2>Who should use a random race track?</h2>
-    <p>Large giveaway hosts use it to pick one or several winners out of thousands of entrants, with a more visual and engaging effect than a wheel or a flat list. Companies use it for internal awards, roadshows and year-end parties when the participant count is high. Streamers and MCs use it for livestream minigames: instead of showing one result, the audience watches the entire race and cheers when their name pulls ahead. Teachers use it to split teams or pick several students in the exact order they finish.</p>
-    <h2>Frequently asked questions</h2>
-    <h3>What is the maximum number of racers?</h3>
-    <p>Up to 3,000 racers per race. For large fields, the tool automatically shows representative lanes and still returns the full ranking in the leaderboard.</p>
-    <h3>Can I mix multiple skins (duck, horse, car…) in one race?</h3>
-    <p>Yes. You can choose a unified character or mix multiple skins in the same race.</p>
-    <h3>Are the results fair?</h3>
-    <p>Yes. Each racer's speed is generated randomly using the browser's Math.random — no bias, no cheating and no data is sent to any server.</p>
-    <h3>Is there background music during the race?</h3>
-    <p>Yes. The tool includes multiple race music tracks; you can preview, disable or change the track in the music picker.</p>
-  </section>
 </main>
+
+<section class="seo-summary-extended" aria-label="About the Race Track">
+  <h2>What is a random race track?</h2>
+  <p>A random race track is a raffle tool in the shape of a race: each participant gets assigned a character (duck, horse, car, turtle, snail or spaceship) and they all race to the finish line at randomized speeds. The first to cross wins. Unlike a name wheel that picks one person at a time, a race track runs up to 3,000 participants at once and returns the full ranking of the entire list.</p>
+  <h2>Who should use a random race track?</h2>
+  <p>Large giveaway hosts use it to pick one or several winners out of thousands of entrants, with a more visual and engaging effect than a wheel or a flat list. Companies use it for internal awards, roadshows and year-end parties when the participant count is high. Streamers and MCs use it for livestream minigames: instead of showing one result, the audience watches the entire race and cheers when their name pulls ahead. Teachers use it to split teams or pick several students in the exact order they finish.</p>
+  <h2>Frequently asked questions</h2>
+  <h3>What is the maximum number of racers?</h3>
+  <p>Up to 3,000 racers per race. For large fields, the tool automatically shows representative lanes and still returns the full ranking in the leaderboard.</p>
+  <h3>Can I mix multiple skins (duck, horse, car…) in one race?</h3>
+  <p>Yes. You can choose a unified character or mix multiple skins in the same race.</p>
+  <h3>Are the results fair?</h3>
+  <p>Yes. Each racer's speed is generated randomly using the browser's Math.random — no bias, no cheating and no data is sent to any server.</p>
+  <h3>Is there background music during the race?</h3>
+  <p>Yes. The tool includes multiple race music tracks; you can preview, disable or change the track in the music picker.</p>
+</section>
 
 <!-- Race BGM: looped background music that plays only while the race is running.
      Volume is capped low so it doesn't drown out the TTS winner announcement. -->
